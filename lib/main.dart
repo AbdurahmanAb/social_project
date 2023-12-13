@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
      ),
       themeMode: ThemeMode.dark,    darkTheme: ThemeData(brightness: Brightness.dark),
           debugShowCheckedModeBanner: false,
-      initialRoute: Routes.splash,
+        
+      initialRoute: Routes.welcome,
       getPages :Routes.routes,
     );
   }

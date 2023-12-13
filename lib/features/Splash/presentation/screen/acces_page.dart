@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kim/features/Splash/presentation/widgets/HeaderText.dart';
-import 'package:kim/features/Splash/presentation/widgets/button.dart';
+import 'package:kim/core/button.dart';
 import 'package:kim/utils/constsnts.dart';
 
 class AccessPage extends StatefulWidget {
@@ -44,7 +44,7 @@ class _AccessPageState extends State<AccessPage> {
                 ],
                           ),
               ))),
-            AppButton(text: "yes")
+   
          ],
        ),
      ),

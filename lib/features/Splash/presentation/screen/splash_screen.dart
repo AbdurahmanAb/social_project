@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void initState(){
     Timer(Duration(seconds: 2), () {
-      Get.toNamed("/access");
+      Get.toNamed("/first");
      });
       }
   @override
