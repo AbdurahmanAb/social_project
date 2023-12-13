@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kim/core/BottomBar.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/LongPostCard.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
 import 'package:kim/utils/constsnts.dart';
 
@@ -17,9 +18,9 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     print("h iss" + Constants.screen_height.toString());
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Container(
-           
+           height: double.maxFinite,
           child: Column(
             children: [
               TopBar(),
@@ -39,7 +40,9 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
-PostCard()
+          PostCard(),
+        SizedBox(height: Constants.height20,),
+           Expanded(child: LongPost())
             ],
           ),
         ),

@@ -7,6 +7,7 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar( 
+      backgroundColor: Constants.black,
         selectedItemColor: Constants.appColor,
         
         items: [
@@ -15,7 +16,7 @@ class BottomBar extends StatelessWidget {
         
           icon: Image.asset("assets/Lounge/icon__lounge.png") ,label:"라운지" ),
            BottomNavigationBarItem( icon: Image.asset("assets/Lounge/button_gab_write.png") ,label: "" ),
-        BottomNavigationBarItem(icon: Image.asset("assets/Lounge/icon_explore.png") ,label:"탐험" )
+        BottomNavigationBarItem(icon: Image.asset("assets/Lounge/icon_explore.png") ,label:"탐험", )
       ],);
   }
 }

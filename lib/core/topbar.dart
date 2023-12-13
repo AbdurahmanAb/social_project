@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:kim/core/avatar.dart';
 import 'package:kim/utils/constsnts.dart';
 
 class TopBar extends StatelessWidget {
@@ -23,35 +24,7 @@ class TopBar extends StatelessWidget {
                       SizedBox(width: Constants.height10,),
                       Image.asset("assets/Lounge/button_alarm.png"),
                   SizedBox(width: Constants.height10,),
-              Stack(
-  children: [
-   Stack(
-  children: [
-    Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: Constants.appColor,
-          width: 3.0,
-        ),
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Image.asset(
-          "assets/join/image.png",
-          height: 50,
-        ),
-      ),
-    ),
-    Positioned(
-      bottom: 5,
-      right: 0,
-      child: Image.asset("assets/Lounge/emoji.png",),
-    ),
-  ],
-)
-  ],
-)
+         AvatarImg()
             ],
           )
         ],

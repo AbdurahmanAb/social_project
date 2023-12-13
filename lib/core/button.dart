@@ -13,6 +13,6 @@ class AppButton extends StatelessWidget {
 borderRadius: BorderRadius.circular(10),
       color:Constants.appColor
       
-    ), alignment:Alignment.center ,padding: EdgeInsets.only(top: 7, bottom: 7, left: 40, right: 40), child:Text(text, style: TextStyle( color: Colors.black, fontWeight: FontWeight.w600),) ,);  
+    ), alignment:Alignment.center ,padding: const EdgeInsets.only(top: 10, bottom: 10, left: 40, right: 40), child:Text(text, style: const TextStyle( color: Colors.black, fontWeight: FontWeight.w600),) ,);  
   }
 }
