@@ -37,7 +37,7 @@ body: SafeArea(
     child:    Column(
       children: [
         TopBar(),
-        TopButtons(text: "GO OUT",),
+        // TopButtons(text: "GO OUT",),
         TextButtons(),
         Row(
           children: [

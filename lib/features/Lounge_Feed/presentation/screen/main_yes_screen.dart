@@ -19,36 +19,38 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-           height: double.maxFinite,
-          child: Column(
-            children: [
-              const TopBar(),
-              const TopButtons(),
-              Container(
-                padding: EdgeInsets.all(Constants.height10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                           const Row(
-                             children: [
-                               Text("최신순"),
-                             Icon(Icons.arrow_drop_down)
-                             ],
-                           ),
-                           GestureDetector(
-                            onTap: (){
-                        Get.toNamed("/search");      
-                            },
-                            child: Image.asset("assets/Lounge/icon_search.png"))
-                  ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+             height: double.maxFinite,
+            child: Column(
+              children: [
+                const TopBar(),
+                 TopButtons(),
+                Container(
+                  padding: EdgeInsets.all(Constants.height10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                             const Row(
+                               children: [
+                                 Text("최신순"),
+                               Icon(Icons.arrow_drop_down)
+                               ],
+                             ),
+                             GestureDetector(
+                              onTap: (){
+                          Get.toNamed("/search");      
+                              },
+                              child: Image.asset("assets/Lounge/icon_search.png"))
+                    ],
+                  ),
                 ),
-              ),
-          const PostCard(),
-        SizedBox(height: Constants.height20,),
-           const Expanded(child: LongPost())
-            ],
+            const PostCard(),
+          SizedBox(height: Constants.height20,),
+             const Expanded(child: LongPost())
+              ],
+            ),
           ),
         ),
       ),

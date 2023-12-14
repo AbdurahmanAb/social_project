@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kim/features/Splash/presentation/widgets/HeaderText.dart';
+import 'package:kim/core/HeaderText.dart';
 import 'package:kim/utils/constsnts.dart';
 
 class FirtOnBoard extends StatefulWidget {
