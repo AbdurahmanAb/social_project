@@ -9,7 +9,7 @@ class LongPost extends StatelessWidget {
   Widget build(BuildContext context) {
     return    Container(
     
-    color: Colors.amberAccent,
+    color: Constants.mainColor,
     padding: EdgeInsets.all(Constants.height20),
     child: Column(
       children: [

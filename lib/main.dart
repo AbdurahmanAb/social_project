@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kim/routes/get_routes.dart';
-import 'package:kim/utils/constsnts.dart';
+
 
 void main() {
   runApp(const MyApp());

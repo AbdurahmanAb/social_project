@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kim/core/BottomBar.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
@@ -16,38 +17,42 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    print("h iss" + Constants.screen_height.toString());
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
            height: double.maxFinite,
           child: Column(
             children: [
-              TopBar(),
-              TopButtons(),
+              const TopBar(),
+              const TopButtons(),
               Container(
                 padding: EdgeInsets.all(Constants.height10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                           Row(
+                           const Row(
                              children: [
                                Text("최신순"),
                              Icon(Icons.arrow_drop_down)
                              ],
                            ),
-                           Image.asset("assets/Lounge/icon_search.png")
+                           GestureDetector(
+                            onTap: (){
+                        Get.toNamed("/search");      
+                            },
+                            child: Image.asset("assets/Lounge/icon_search.png"))
                   ],
                 ),
               ),
-          PostCard(),
+          const PostCard(),
         SizedBox(height: Constants.height20,),
-           Expanded(child: LongPost())
+           const Expanded(child: LongPost())
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
         
      
     );

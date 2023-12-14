@@ -7,5 +7,5 @@ class AuthButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(style: ButtonStyle(padding: MaterialStatePropertyAll(EdgeInsets.only(top:20, bottom: 20, left: 42, right: 42),)), onPressed: (){}, icon:Icon(icon) , label: Text(text));
+    return ElevatedButton.icon(style: const ButtonStyle(padding: MaterialStatePropertyAll(EdgeInsets.only(top:20, bottom: 20, left: 42, right: 42),)), onPressed: (){}, icon:Icon(icon) , label: Text(text));
 }}
