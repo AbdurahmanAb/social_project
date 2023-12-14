@@ -28,14 +28,19 @@ class TopButtons extends StatelessWidget {
 
                 // child: Image.asset("assets/Lounge/brand_badge.png",)
 
-                child: Chip(
-                    padding: const EdgeInsets.all(5),
-                    backgroundColor: Constants.white,
-                    label: Text(
-                      text,
-                      style: const TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w900),
-                    )),
+                child: GestureDetector(
+                  onTap: (){
+                    
+                  },
+                  child: Chip(
+                      padding: const EdgeInsets.all(5),
+                      backgroundColor: Constants.white,
+                      label: Text(
+                        text,
+                        style: const TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w900),
+                      )),
+                ),
               ),
               const Header(
                 text: "@라코스테",

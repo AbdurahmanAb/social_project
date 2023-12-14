@@ -19,7 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
 if(_controller.text=="abc"){
 return Container();
 }else{
-  return Center(child: Text("404"));
+  return Center(child: Image.asset("assets/Lounge/illust_search.png"));
 }
     }
 
@@ -42,13 +42,13 @@ body: SafeArea(
         Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.symmetric(vertical:8.0,horizontal: 10),
               child: Stack(
                 
                 children: [
                   SizedBox(
                     height: 28,
-                    width: Constants.screen_width-50,
+                    width: Constants.screen_width*0.8,
                     child: TextField(
                     controller: _controller,
                     onChanged: (value) {
