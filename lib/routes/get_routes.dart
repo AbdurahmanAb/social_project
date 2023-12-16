@@ -13,7 +13,7 @@ class Routes{
   static const String search = "/search";
   static const String feed = "/feed";
 
-static String getFeed(int id) => '$feed/$id';
+static String getFeed(int id) => '$feed?id=$id';
 
 
   static List<GetPage> routes =[
