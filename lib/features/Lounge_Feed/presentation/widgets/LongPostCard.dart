@@ -59,14 +59,16 @@ SizedBox(height: 20,),
          Text("https:/www.gooogle.com/q=?kim/", style: TextStyle(color: Colors.blue), textAlign: TextAlign.start,)
      ,SizedBox(height: 10,),
      Container(
-      height: 90,
+
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
         color: Constants.white
       ),
        child:Row(
         children: [
-          Image.asset("assets/Lounge/image_feed.png", fit: BoxFit.cover,),
+          SizedBox(
+            height: 90,
+            child: Image.asset("assets/Lounge/image_feed.png", fit: BoxFit.cover,)),
           SizedBox(width: Constants.height20,),
           Expanded(child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

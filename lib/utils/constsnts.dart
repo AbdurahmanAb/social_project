@@ -9,9 +9,11 @@ static double screen_width = Get.context!.width;
 
 static double height20 = screen_height/38;
 static double height10 = screen_height/76.1;
+static double height15 = screen_height/54;
 
 
  static const Color appColor = Color(0xFFDBFF00);
+ static const Color disabled = Color(0xFFAEAEB2);
 static const Color black = Color(0xFF242426);
 static const Color appBgColor = Color(0xFF1C1C1E);
 static const Color bottom = Color(0xFF545456);
