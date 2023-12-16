@@ -1,26 +1,16 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-// class CheckedRadioListTile extends StatefulWidget {
-//   final String title;
+class Fedd extends StatefulWidget {
+  final int id;
+  const Fedd({ required this.id ,super.key});
 
-//   final Function onChanged;
+  @override
+  State<Fedd> createState() => _FeddState();
+}
 
-//   const CheckedRadioListTile({
-//     required this.title,
-  
-//     required this.onChanged,
-//   });
-
-//   @override
-//   _CheckedRadioListTileState createState() => _CheckedRadioListTileState();
-// }
-
-// class _CheckedRadioListTileState extends State<CheckedRadioListTile> {
-//   Color borderColor = Colors.grey;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return 
-     
-//   }
-// }
+class _FeddState extends State<Fedd> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}

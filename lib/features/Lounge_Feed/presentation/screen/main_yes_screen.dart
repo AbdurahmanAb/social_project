@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:get/get.dart';
+
 import 'package:kim/core/BottomBar.dart';
+import 'package:kim/core/BottomRadioBar.dart';
 import 'package:kim/core/HeaderText.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 
@@ -13,8 +14,9 @@ import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/LongPostCard.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
 import 'package:kim/utils/constsnts.dart';
+import 'package:radio_group_v2/radio_group_v2.dart';
 
-import '../../../feed/presentation/screen/get_feed.dart';
+
 import '../../../../core/RadioButtonGroup.dart';
 
 class MainScreen extends StatefulWidget {
@@ -35,6 +37,7 @@ String label = "";
      RadioOption("OPT3", "고아웃 캠핑 패스티벌"),
     RadioOption("OPT4", "양양 서퍼비치 캠핑 축제")
   ];
+        RadioGroupController myController = RadioGroupController();
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +66,8 @@ String label = "";
                         ),
                         GestureDetector(
                             onTap: () {
-                              Get.toNamed("/search");
+                              // Get.toNamed("/search");
+                             BottomRadioSheet.showBottomSheet(context);
                             },
                             child: Image.asset("assets/Lounge/icon_search.png"))
                       ],
