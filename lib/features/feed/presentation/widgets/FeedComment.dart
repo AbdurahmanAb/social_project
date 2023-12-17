@@ -12,38 +12,36 @@ class FeedComment extends StatefulWidget {
 class _FeedCommentState extends State<FeedComment> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Constants.black,
-      padding: EdgeInsets.only(top: 20,bottom: 40,left: 10,right: 10),
-      child: Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-children: [
-  Icon(CupertinoIcons.camera),
-  SizedBox(width: Constants.height15,),
-  SizedBox(
-    height: 35,
-  width: Constants.screen_width*0.7,
-
-    child: TextField(
-     autofocus: false, 
-     
-      decoration: InputDecoration(
-     filled: true,
-     
-     fillColor: Constants.Iconbg,
-     labelStyle: TextStyle(
-      fontSize: 12
-     ),
-     contentPadding: EdgeInsets.symmetric(vertical: Constants.height15, horizontal: Constants.height10),
-        border: OutlineInputBorder(
-        
-          borderRadius: BorderRadius.circular(25)
-          
-        )
-      ),
-    ),
-  )
-],
+    return SingleChildScrollView(
+      child: Container(
+        color: Constants.black,
+        padding: EdgeInsets.only(top: 20, bottom: 40, left: 10, right: 10),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(CupertinoIcons.camera),
+            SizedBox(
+              width: Constants.height15,
+            ),
+            SizedBox(
+                height: 32,
+                width: Constants.screen_width * 0.8,
+                child: TextField(
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    filled: true,
+                    hintStyle: TextStyle(fontSize: 12),
+                    fillColor: Constants.bottom,
+                    hintText: "댓글을 남겨주세요",
+                    contentPadding: EdgeInsets.all(Constants.height20),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                  ),
+                ))
+          ],
+        ),
       ),
     );
   }

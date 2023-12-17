@@ -29,7 +29,7 @@ class TopButtons extends StatelessWidget {
        ,  color: Constants.bottom
           ),
           child: Column(
-mainAxisAlignment: MainAxisAlignment.spaceAround,
+
        crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
@@ -100,7 +100,7 @@ mainAxisAlignment: MainAxisAlignment.spaceAround,
               GestureDetector(
                   onTap: () {
                    Share.showBottomSheet(context);
-                    print("tabedddddddddd");
+                   
                   },
                   child: Image.asset("assets/Lounge/button_share.png")),
               

@@ -1,5 +1,6 @@
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kim/utils/constsnts.dart';
 
@@ -383,8 +384,10 @@ class _BasicButton extends StatelessWidget {
             Row(
               children: [
           isSelected? Icon(Icons.radio_button_checked,color: selectedIconColor,):Icon(Icons.radio_button_off),
-                SizedBox(
-                  width: Constants.height20,
+              Container(
+
+
+                   width: Constants.height20,
                 ),
                 Text(
                   label,

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:kim/core/button.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
 import 'package:kim/utils/constsnts.dart';
 
 class PostCard extends StatelessWidget {
@@ -112,43 +113,7 @@ _showBottomSheet(context);
               ],
           ),
           SizedBox(height: Constants.height20,),
-          Row(
-         
-            children: [
-             
-               Row(
-              
-                 children: [
-                   Image.asset("assets/Lounge/happy.png"),
-                                SizedBox(width: Constants.height10,),
-             const Text("315"),
-                           SizedBox(width: Constants.height10,),
-                   Image.asset("assets/Lounge/sad.png"),
-                                 SizedBox(width: Constants.height20,),
-                 ],
-               ),
-            
-                
-               Row(
-                 children: [
-                   Image.asset("assets/Lounge/comment.png"),
-                   const SizedBox(width: 5,),
-             const Text("72", style: TextStyle()),
-                           const SizedBox(width: 20,),
-                 ],
-               ),
-               
-                              
-               Row(
-                 children: [
-                   Image.asset("assets/Lounge/view.png"),
-                                 const SizedBox(width: 5,),
-             const Text("792"),
-                 ],
-               ),
-              
-                          ],
-          )
+         Comment()
         ],
       ),
     ));

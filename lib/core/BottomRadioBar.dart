@@ -36,7 +36,7 @@ class _BottomRadioState extends State<BottomRadio> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Constants.Iconbg,
             borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
         padding: EdgeInsets.symmetric(
@@ -45,17 +45,17 @@ class _BottomRadioState extends State<BottomRadio> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            const Row(
               children: [
                 Icon(Icons.close),
                 Expanded(child: Center(child: Text("갭 신고"))),
               ],
             ),
-            Divider(),
+            const Divider(),
             SizedBox(
               height: Constants.height20,
             ),
-            Text("갭을 신고하는 이유를 알려주세요."),
+            const Text("갭을 신고하는 이유를 알려주세요."),
             SizedBox(
               height: Constants.height20,
             ),
@@ -67,7 +67,7 @@ class _BottomRadioState extends State<BottomRadio> {
                 onChanged: onRadioGroupChanged,
                 key: radioGroupKey1,
                 controller: myController,
-                decoration: RadioGroupDecoration(
+                decoration: const RadioGroupDecoration(
                   spacing: 40.0,
                   labelStyle: TextStyle(),
                   activeColor: Constants.appColor,
@@ -88,17 +88,17 @@ class _BottomRadioState extends State<BottomRadio> {
             ),
             Row(
               children: [
-                Icon(Icons.info_outlined, color: Constants.pink,),
+                const Icon(Icons.info_outlined, color: Constants.pink,),
                 SizedBox(
                   width: Constants.height10,
                 ),
-                Text("주의사항", style: TextStyle(color: Constants.pink, fontWeight: FontWeight.bold),),
+                const Text("주의사항", style: TextStyle(color: Constants.pink, fontWeight: FontWeight.bold),),
               ],
             ),
              SizedBox(
                   height: Constants.height10,
                 ),
-            Text(
+            const Text(
                 "운영정책 위반 여부를 확인하기 위해 신고한 댓글 내용을 위갭팀으로 접수합니다. 허위로 신고할 경우 서비스 이용이 제한될 수 있으니 유의해 주시기 바랍니다.", style: TextStyle(
                   color: Constants.pink, fontWeight: FontWeight.bold
                 ),),
@@ -116,7 +116,7 @@ class BottomRadioSheet {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
       constraints: BoxConstraints(
         minHeight: 0.8,

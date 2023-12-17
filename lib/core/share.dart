@@ -15,8 +15,8 @@ class Share{
      showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(10))),
-      constraints: BoxConstraints(minHeight: 0.8, maxHeight: Constants.screen_height*0.7 ,),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(10))),
+      constraints: BoxConstraints(minHeight: 0.8, maxHeight: Constants.screen_height*0.8 ,),
       builder: (BuildContext context) {
         return SingleChildScrollView(
           child: Container(
@@ -42,8 +42,8 @@ class Share{
                        color: Constants.Iconbg,
                       child: Image.asset("assets/avatar/App Icon(1).png"),
                      ),
-                     SizedBox(width: 5,),
-                     Column(
+                     const SizedBox(width: 5,),
+                     const Column(
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
                          Header( text: "iOS 15 Kit for Figma",size: 12),
@@ -53,17 +53,17 @@ class Share{
                    ],
                  )],),
                  Container(
-                   padding: EdgeInsets.all(10),
+                   padding: const EdgeInsets.all(10),
                               
                   decoration: BoxDecoration(
                        color:Constants.Iconbg,
                    borderRadius: BorderRadius.circular(50)
                   ),
-                   child: Icon(Icons.close, size: 12,),
+                   child: const Icon(Icons.close, size: 12,),
                  )
                               ],),
               ),
-              Divider(),
+              const Divider(),
                
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -79,7 +79,7 @@ class Share{
                           height: 50,
                           width: 50,
                           child: Image.asset("assets/avatar/AirDrop.png")),
-                        Text("AirDrop",style: TextStyle(fontSize: 8),)
+                        const Text("AirDrop",style: TextStyle(fontSize: 8),)
                       ],
                     ),
                      SizedBox(width: Constants.height20,
@@ -94,9 +94,9 @@ class Share{
                           
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(500),
-                            child: Image.asset("assets/avatar/1.jpg", fit: BoxFit.cover,)),
+                            child: Image.asset("assets/avatar/post1.jpg", fit: BoxFit.cover,)),
                         ),
-                          Text("Firt La",style: TextStyle(fontSize: 8),)
+                          const Text("Firt La",style: TextStyle(fontSize: 8),)
                       ],
                     ),
                     SizedBox(width: Constants.height20,
@@ -110,10 +110,10 @@ class Share{
                           
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(500),
-                            child: Image.asset("assets/avatar/2.jpg", fit: BoxFit.cover,)),
+                            child: Image.asset("assets/avatar/post2.jpg", fit: BoxFit.cover,)),
                         ),
-                          Text("Group",style: TextStyle(fontSize: 8),),
-                            Text("2 people",style: TextStyle(fontSize: 5),)
+                          const Text("Group",style: TextStyle(fontSize: 8),),
+                            const Text("2 people",style: TextStyle(fontSize: 5),)
                       ],
                     ), SizedBox(width: Constants.height20,
                   ),Column(
@@ -125,9 +125,9 @@ class Share{
                           
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(500),
-                            child: Image.asset("assets/avatar/3.jpg", fit: BoxFit.cover,)),
+                            child: Image.asset("assets/avatar/post3.jpg", fit: BoxFit.cover,)),
                         ),
-                        Text("First",style: TextStyle(fontSize: 8),)
+                        const Text("First",style: TextStyle(fontSize: 8),)
                       ],
                     ), SizedBox(width: Constants.height20,
                   ),Column(
@@ -139,30 +139,30 @@ class Share{
                           
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(500),
-                            child: Image.asset("assets/avatar/4.jpg", fit: BoxFit.cover,)),
+                            child: Image.asset("assets/avatar/post4.jpg", fit: BoxFit.cover,)),
                         ),
-                        Text("Third",style: TextStyle(fontSize: 8),)
+                        const Text("Third",style: TextStyle(fontSize: 8),)
                       ],
                     ), SizedBox(width: Constants.height20,
                   ),Column(
                       children: [
                         SizedBox(
-                          height: 40,
-                          width:40,
+                          height: 50,
+                          width:50,
                         
                           
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(500),
-                            child: Image.asset("assets/avatar/5.jpg", fit: BoxFit.cover,)),
+                            child: Image.asset("assets/avatar/post5.jpg", fit: BoxFit.cover,)),
                         ),
-                         Text("Fourth",style: TextStyle(fontSize: 8),)
+                         const Text("Fourth",style: TextStyle(fontSize: 8),)
                       ],
                     ),
                   ],
                 ),
               ),
             )    ,
-            Divider(),
+            const Divider(),
            Padding(
              padding: const EdgeInsets.all(8.0),
              child: Row(
@@ -171,60 +171,60 @@ class Share{
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(10)
                         
                       ),
-                      child: Icon(Icons.cleaning_services_rounded),
+                      child: const Icon(Icons.cleaning_services_rounded),
                     ),
-            Text("AirDrop",style: TextStyle(fontSize: 8),)
+            const Text("AirDrop",style: TextStyle(fontSize: 8),)
                   ],
                 ),
                     Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(10)
                         
                       ),
-                      child: Icon(Icons.cleaning_services_rounded),
+                      child: const Icon(Icons.cleaning_services_rounded),
                     ),
-            Text("AirDrop",style: TextStyle(fontSize: 8),)
+            const Text("AirDrop",style: TextStyle(fontSize: 8),)
                   ],
                 ),    Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(10)
                         
                       ),
-                      child: Icon(Icons.cleaning_services_rounded),
+                      child: const Icon(Icons.cleaning_services_rounded),
                     ),
-            Text("AirDrop",style: TextStyle(fontSize: 8),)
+            const Text("AirDrop",style: TextStyle(fontSize: 8),)
                   ],
                 ),    Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(10)
                         
                       ),
-                      child: Icon(Icons.cleaning_services_rounded),
+                      child: const Icon(Icons.cleaning_services_rounded),
                     ),
-           Text("AirDrop",style: TextStyle(fontSize: 8),)
+           const Text("AirDrop",style: TextStyle(fontSize: 8),)
                   ],
                 ),
               ],
              ),
-           ),Divider(),
+           ),const Divider(),
            Padding(
              padding: EdgeInsets.all(Constants.height10),
              child: Container(
@@ -234,7 +234,7 @@ class Share{
                borderRadius: BorderRadius.circular(Constants.height10)
              ),
               child: 
-                RowWidget(content1:   MidText(text:"Copy Link"), content2:    Icon(Icons.copy))      
+                const RowWidget(content1:   MidText(text:"Copy Link"), content2:    Icon(Icons.copy))      
             
              ),
            ),
@@ -246,7 +246,7 @@ class Share{
                                  color: Constants.Iconbg,
                                  borderRadius: BorderRadius.circular(Constants.height10)
                                ),
-                               child: Column(
+                               child: const Column(
                                 children: [
                                   RowWidget(content1: MidText(text: "Add to Reading List"), content2: Icon(Icons.read_more_sharp))
                                 , Divider(), RowWidget(content1: MidText(text: "Add BookMark"), content2: Icon(Icons.bookmark_add))
@@ -257,8 +257,8 @@ class Share{
                                
                                ),
                     ),
-                  ),Padding(
-                    padding: const EdgeInsets.all(10.0),
+                  ),const Padding(
+                    padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [
                       Text( "Edit Actions...",style: TextStyle(color: Colors.blue)),

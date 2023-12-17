@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/utils/constsnts.dart';
+
+import '../../../../core/BottomRadioBar.dart';
 class FeedTop extends StatelessWidget {
   const FeedTop({super.key});
 
@@ -27,7 +29,11 @@ class FeedTop extends StatelessWidget {
               SizedBox(width: Constants.height15,),
               Icon(CupertinoIcons.bell),
                SizedBox(width: Constants.height15,),
-              Icon(Icons.more_horiz), SizedBox(width: Constants.height15,),            ],
+              GestureDetector(
+                onTap: (){
+                  BottomRadioSheet.showBottomSheet(context);
+                },
+                child: Icon(Icons.more_horiz)), SizedBox(width: Constants.height15,),            ],
           )
         ],
       ),

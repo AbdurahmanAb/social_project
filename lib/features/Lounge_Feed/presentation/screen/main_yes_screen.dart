@@ -12,6 +12,7 @@ import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/core/button.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/LongPostCard.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
 import 'package:kim/utils/constsnts.dart';
@@ -67,8 +68,8 @@ String label = "";
                         ),
                         GestureDetector(
                             onTap: () {
-                              // Get.toNamed("/search");
-                             BottomRadioSheet.showBottomSheet(context);
+                              Get.toNamed("/search");
+                             
                             },
                             child: Image.asset("assets/Lounge/icon_search.png"))
                       ],
@@ -87,7 +88,8 @@ String label = "";
                                MyBottomSheet.showBottomSheet(context, "신고하기", "assets/feed/icon_warning.png", "assets/feed/icon_hide.png", "숨기기", "닫기");
 
                             },
-                            child: LongPost()),
+                            child: LongPost(img: "assets/avatar/post5.jpg",hasAd: true,)),
+                          
                           SizedBox(
                             height: Constants.height20,
                           ),
@@ -162,13 +164,17 @@ String label = "";
                               ),
                             ),
                           ),
-
+    LongPost(),
+    Comment()
                         ],
+                    
                       ),
                     ),
                   ),
+                 
                 ],
               ),
+              
             show ?   GestureDetector(
               onTap: (){
                 Get.toNamed("/feed?id=3");
@@ -199,7 +205,10 @@ String label = "";
                      ),
                    ),
               ),
-            ):SizedBox.shrink()
+            ):SizedBox.shrink(),
+                                    
+                                     
+
             ],
           ),
         ),
