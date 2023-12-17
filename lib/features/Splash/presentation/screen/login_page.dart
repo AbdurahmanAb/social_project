@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kim/features/Splash/presentation/widgets/auth_buttons.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

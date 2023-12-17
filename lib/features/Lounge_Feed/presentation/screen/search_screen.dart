@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/TextButtons.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});

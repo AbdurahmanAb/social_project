@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kim/core/HeaderText.dart';
 import 'package:kim/core/button.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class AccessPage extends StatefulWidget {
   const AccessPage({super.key});

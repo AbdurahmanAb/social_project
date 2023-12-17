@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/TopText.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class TextButtons extends StatelessWidget {
   const TextButtons({super.key});

@@ -15,7 +15,7 @@ import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/LongPostCard.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
 
 

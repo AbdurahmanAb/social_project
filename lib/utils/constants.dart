@@ -11,7 +11,7 @@ static double height20 = screen_height/38;
 static double height10 = screen_height/76.1;
 static double height15 = screen_height/54;
 
-
+static const Color chipColor = Color(0xFFAEAEB2);
  static const Color appColor = Color(0xFFDBFF00);
  static const Color disabled = Color(0xFFAEAEB2);
  static const Color pink = Color(0xFFFF0089);

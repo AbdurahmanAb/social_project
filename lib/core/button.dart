@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class AppButton extends StatefulWidget {
  final String text;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kim/core/HeaderText.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class FirtOnBoard extends StatefulWidget {
   const FirtOnBoard({super.key});

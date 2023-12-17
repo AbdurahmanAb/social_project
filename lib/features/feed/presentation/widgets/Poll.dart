@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_polls/flutter_polls.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class ExamplePolls extends StatefulWidget {
   const ExamplePolls({Key? key}) : super(key: key);

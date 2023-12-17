@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kim/core/button.dart';
 
-import '../utils/constsnts.dart';
+import '../utils/constants.dart';
 
 class MyBottomSheet {
  static void showBottomSheet(BuildContext context, text1,icon1,icon2, text2, btnTxt, [text3, icon3]) {

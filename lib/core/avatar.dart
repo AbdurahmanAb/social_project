@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constsnts.dart';
+import '../utils/constants.dart';
 
 class AvatarImg extends StatelessWidget {
   final double height;

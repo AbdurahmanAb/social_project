@@ -7,7 +7,7 @@ import 'package:kim/core/Row_widget.dart';
 import 'package:kim/core/button.dart';
 import 'package:kim/core/HeaderText.dart';
 
-import '../utils/constsnts.dart';
+import '../utils/constants.dart';
 
 class Share{
  static void   showBottomSheet(BuildContext context) {

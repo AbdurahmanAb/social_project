@@ -6,7 +6,7 @@ import 'package:kim/core/button.dart';
 import 'package:kim/core/share.dart';
 
 import 'package:kim/core/HeaderText.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class TopButtons extends StatelessWidget {
   final String text;

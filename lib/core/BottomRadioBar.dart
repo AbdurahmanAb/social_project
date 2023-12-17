@@ -7,7 +7,7 @@ import 'package:kim/core/Row_widget.dart';
 import 'package:kim/core/HeaderText.dart';
 import 'package:kim/core/button.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
-import '../utils/constsnts.dart';
+import '../utils/constants.dart';
 
 class BottomRadio extends StatefulWidget {
   @override

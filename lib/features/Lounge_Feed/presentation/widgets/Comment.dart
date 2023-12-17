@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../utils/constsnts.dart';
+import '../../../../utils/constants.dart';
 
 class Comment extends StatelessWidget {
   const Comment({super.key});

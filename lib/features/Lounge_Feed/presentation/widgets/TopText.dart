@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/utils/constants.dart';
 
 class TopText extends StatelessWidget {
   final String text;

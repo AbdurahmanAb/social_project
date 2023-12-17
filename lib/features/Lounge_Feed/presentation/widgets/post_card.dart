@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:kim/core/button.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
-import 'package:kim/utils/constsnts.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/showBottom.dart';
+import 'package:kim/utils/constants.dart';
 
 class PostCard extends StatelessWidget {
   const PostCard({super.key});
@@ -10,48 +11,7 @@ class PostCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-  void _showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          padding: EdgeInsets.all(Constants.height20),
-          height: 300,
-          
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(topRight:Radius.circular(25), topLeft: Radius.circular(25) )
-       ,  color: Constants.bottom
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              
-              Row(
-                children: [
-                  Image.asset("assets/Lounge/text_icon(1).png"), SizedBox(width: Constants.height10,),
-                  Text("최신순"),
-                ],
-              ),
-              Row(
-                children: [
-                   Image.asset("assets/Lounge/text_icon.png"), SizedBox(width: Constants.height10,),
-                  Text("인기순"),
-                ],
-              ),
-              Row(
-                children: [
-                   Image.asset("assets/Lounge/text_icon(2).png"), SizedBox(width: Constants.height10,),
-                  Text("갭스타"),
-                ],
-              )
-,              AppButton(text: "닫기")
-            ],
-          ),
-        );
-      },
-    );
-  }
+
 
     return  SingleChildScrollView(child: Container(
       color: const Color(0xFF363638),
@@ -94,7 +54,7 @@ class PostCard extends StatelessWidget {
                 child: Expanded(
                   child: GestureDetector(
                     onTap: (){
-_showBottomSheet(context);
+ShowBottom.showBottomSheet(context);
                     },
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
