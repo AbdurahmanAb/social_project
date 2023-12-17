@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:kim/utils/constants.dart';
 
 import '../../../../core/BottomRadioBar.dart';
+
 class FeedTop extends StatelessWidget {
   const FeedTop({super.key});
 
@@ -12,28 +13,35 @@ class FeedTop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Constants.black,
-      padding: EdgeInsets.symmetric(vertical: Constants.height20 + 5,horizontal: Constants.height10),
+      padding: EdgeInsets.symmetric(
+          vertical: Constants.height20 + 5, horizontal: Constants.height10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector
-          (
-            onTap: (){
-              Get.back();
-            },
-            child: Icon(CupertinoIcons.back)),
+          GestureDetector(
+              onTap: () {
+                Get.back();
+              },
+              child: const Icon(CupertinoIcons.back)),
           Row(
-            
             children: [
               Image.asset("assets/Lounge/button_share.png"),
-              SizedBox(width: Constants.height15,),
-              Icon(CupertinoIcons.bell),
-               SizedBox(width: Constants.height15,),
+              SizedBox(
+                width: Constants.height15,
+              ),
+              const Icon(CupertinoIcons.bell),
+              SizedBox(
+                width: Constants.height15,
+              ),
               GestureDetector(
-                onTap: (){
-                  BottomRadioSheet.showBottomSheet(context);
-                },
-                child: Icon(Icons.more_horiz)), SizedBox(width: Constants.height15,),            ],
+                  onTap: () {
+                    BottomRadioSheet.showBottomSheet(context);
+                  },
+                  child: const Icon(Icons.more_horiz)),
+              SizedBox(
+                width: Constants.height15,
+              ),
+            ],
           )
         ],
       ),

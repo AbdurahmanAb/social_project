@@ -1,18 +1,41 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:kim/features/feed/presentation/widgets/Tags.dart';
 
 import '../../../../core/button.dart';
 import '../../../../utils/constants.dart';
 
-class ShowBottom {
-  static void showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
+//SHOW BOTTOMBAR ON BOTTOMSHEET
+
+
+class Trigger extends StatefulWidget {
+  const Trigger({super.key});
+
+  @override
+  State<Trigger> createState() => _TriggerState();
+}
+
+class _TriggerState extends State<Trigger> {
+bool show1 = false;
+        bool show2 = false;
+        void toggleButtom(){
+            setState(() {
+                  show1 =!show1;
+                });
+        }
+
+void ToggleBtn2(){
+   setState(() {
+                  show2 =!show2;
+                });
+}
+  @override
+  Widget build(BuildContext context) {
+      
+    return Container(
           padding: EdgeInsets.all(Constants.height20),
-          height: Constants.screen_height * 0.34,
+          height: Constants.screen_height * 0.4,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(25), topLeft: Radius.circular(25)),
@@ -31,7 +54,10 @@ class ShowBottom {
                 ],
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+              toggleButtom();
+print(show1);
+                 },
                 child: Row(
                   children: [
                     Image.asset("assets/Lounge/text_icon.png"),
@@ -42,35 +68,50 @@ class ShowBottom {
                   ],
                 ),
               ),
-              const Row(
+           show1 ?   Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Tags(name: "이번 주", color: Constants.chipColor,),
                   Tags(name: "이번 달",color: Constants.chipColor,),
                   Tags(name: "올 해",color: Constants.chipColor,)
                 ],
+              ):SizedBox(height: 0,width: 0,),
+              GestureDetector(
+                onTap: (){
+                  ToggleBtn2();
+                },
+                child: Row(
+                  children: [
+                    Image.asset("assets/Lounge/text_icon(2).png"),
+                    SizedBox(
+                      width: Constants.height10,
+                    ),
+                    const Text("갭스타"),
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Image.asset("assets/Lounge/text_icon(2).png"),
-                  SizedBox(
-                    width: Constants.height10,
-                  ),
-                  const Text("갭스타"),
-                ],
-              ),
-                const Row(
+                show2 ? const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Tags(name: "이번 주",color: Constants.chipColor,),
                   Tags(name: "이번 달",color: Constants.chipColor,),
                   Tags(name: "올 해",color: Constants.chipColor,)
                 ],
-              ),
+              ):SizedBox(height: 0,width: 0,),
               const AppButton(text: "닫기")
             ],
           ),
         );
+  }
+}
+
+class ShowBottomSubmenu {
+  static void showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+      
+        return Trigger();
       },
     );
   }

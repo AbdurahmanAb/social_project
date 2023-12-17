@@ -113,6 +113,10 @@ class _FeddState extends State<Fedd> {
                         ),
                         const Wrap(
                           direction: Axis.horizontal,
+                          alignment: WrapAlignment.start,
+                          runAlignment: WrapAlignment.start,
+                          crossAxisAlignment: WrapCrossAlignment.start,
+                          
                           spacing: 10,
                           runSpacing: 5,
                           children: [

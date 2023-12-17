@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:kim/core/button.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
-import 'package:kim/features/Lounge_Feed/presentation/widgets/showBottom.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/showBottomSuMenu.dart';
 import 'package:kim/utils/constants.dart';
 
 class PostCard extends StatelessWidget {
@@ -54,7 +54,7 @@ class PostCard extends StatelessWidget {
                 child: Expanded(
                   child: GestureDetector(
                     onTap: (){
-ShowBottom.showBottomSheet(context);
+ShowBottomSubmenu.showBottomSheet(context);
                     },
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
