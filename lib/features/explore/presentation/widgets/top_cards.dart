@@ -28,35 +28,36 @@ class TopCard extends StatelessWidget {
             ],
           ),
           SizedBox(height: Constants.height10,),
-          Swiper(
-            itemBuilder: (context, index) {
-              return   Container(
-     
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Constants.bottom
-            ),
-            padding: EdgeInsets.all(12),
-            child: Column(
-              children: [
-            Row(
-              
-              children: [
-            Chip(label: Text(brand),color:MaterialStatePropertyAll(  Constants.white, ),labelStyle: TextStyle(color: Constants.black, fontWeight: FontWeight.bold),),
-            SizedBox(width: 5,),
-            Text(brandText)
 
-            ],),
-              SizedBox(height: 5,),
-            Text(text)
-              ],
-            ),
-           );
-            },
-            itemCount: 3,
-            pagination: SwiperPagination(),
-          ),
-         
+           Swiper(
+itemCount: 2,
+containerHeight:150 ,
+itemHeight: 170,
+itemWidth: 170,
+containerWidth: 150,
+             itemBuilder:(context, i)=> Container(
+                  
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Constants.bottom
+              ),
+              padding: EdgeInsets.all(12),
+              child: Column(
+                children: [
+              Row(
+                
+                children: [
+              Chip(label: Text(brand),color:MaterialStatePropertyAll(  Constants.white, ),labelStyle: TextStyle(color: Constants.black, fontWeight: FontWeight.bold),),
+              SizedBox(width: 5,),
+              Text(brandText)
+             
+              ],),
+                SizedBox(height: 5,),
+              Text(text)
+                ],
+              ),
+             ),
+           ),
          ],
        ),
     );
