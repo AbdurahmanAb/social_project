@@ -37,7 +37,6 @@ class _FeddState extends State<Fedd> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      
       backgroundColor: Constants.Iconbg,
       body: SingleChildScrollView(
         child: SafeArea(
@@ -73,22 +72,26 @@ class _FeddState extends State<Fedd> {
                                 const Text(
                                   "@고아웃#캠핑",
                                   style: TextStyle(
-                                      fontSize: 10, fontWeight: FontWeight.w200),
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w200),
                                 ),
                                 const SizedBox(
                                   height: 5,
                                 ),
                                 Row(
                                   children: [
-                                    Image.asset("assets/Lounge/frame_badge.png"),
+                                    Image.asset(
+                                        "assets/Lounge/frame_badge.png"),
                                     SizedBox(
                                       width: Constants.height10,
                                     ),
-                                    Image.asset("assets/Lounge/frame_badge(1).png"),
+                                    Image.asset(
+                                        "assets/Lounge/frame_badge(1).png"),
                                     SizedBox(
                                       width: Constants.height10,
                                     ),
-                                    Image.asset("assets/Lounge/frame_badge(2).png")
+                                    Image.asset(
+                                        "assets/Lounge/frame_badge(2).png")
                                   ],
                                 )
                               ],
@@ -100,8 +103,8 @@ class _FeddState extends State<Fedd> {
                         ),
                         const Text(
                           "올해 고아웃 캠핑 너무 좋았어요~ 행사도 다양하고 사람들도 많이 만나고 내년도 좋은 추억 만들고 싶네요~ 예약 ㄱ ㄱ",
-                          style:
-                              TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
                         ),
                         SizedBox(
                           height: Constants.height20,
@@ -116,7 +119,6 @@ class _FeddState extends State<Fedd> {
                           alignment: WrapAlignment.start,
                           runAlignment: WrapAlignment.start,
                           crossAxisAlignment: WrapCrossAlignment.start,
-                          
                           spacing: 10,
                           runSpacing: 5,
                           children: [
@@ -141,16 +143,18 @@ class _FeddState extends State<Fedd> {
                           height: Constants.height20,
                         ),
                         GestureDetector(
-                          onTap: () {
-                            Get.toNamed("/image?id=5");
-                          },
-                          child:Container(width: double.maxFinite, child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                "assets/avatar/post3.jpg",
-                                fit: BoxFit.cover,
-                              )),
-                        )),
+                            onTap: () {
+                              Get.toNamed("/image?id=5");
+                            },
+                            child: Container(
+                              width: double.maxFinite,
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    "assets/avatar/post3.jpg",
+                                    fit: BoxFit.cover,
+                                  )),
+                            )),
                         SizedBox(
                           height: Constants.height10,
                         ),
@@ -164,7 +168,6 @@ class _FeddState extends State<Fedd> {
                                 borderRadius: BorderRadius.circular(10),
                                 child: Image.asset(
                                   "assets/avatar/post2.jpg",
-                                
                                   fit: BoxFit.cover,
                                 )),
                           ),
@@ -173,16 +176,18 @@ class _FeddState extends State<Fedd> {
                           height: Constants.height10,
                         ),
                         GestureDetector(
-                          onTap: () {
-                            Get.toNamed("/image?id=5");
-                          },
-                          child:Container(width: double.maxFinite, child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                "assets/avatar/post5.jpg",
-                                fit: BoxFit.cover,
-                              )),
-                        )),
+                            onTap: () {
+                              Get.toNamed("/image?id=5");
+                            },
+                            child: Container(
+                              width: double.maxFinite,
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    "assets/avatar/post5.jpg",
+                                    fit: BoxFit.cover,
+                                  )),
+                            )),
                         SizedBox(
                           height: Constants.height10,
                         ),
@@ -190,106 +195,103 @@ class _FeddState extends State<Fedd> {
                           onTap: () {
                             Get.toNamed("/image?id=5");
                           },
-                          child:Container(width: double.maxFinite, child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                "assets/avatar/post1.jpg",
-                                fit: BoxFit.cover,
-                              )),
-                        ),)
-                    ,                    const SizedBox(
+                          child: Container(
+                            width: double.maxFinite,
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  "assets/avatar/post1.jpg",
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                        ),
+                        const SizedBox(
                           height: 20,
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(Constants.height15),
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: Constants.height20,
-                                horizontal: Constants.height10),
-                            decoration: BoxDecoration(
-                                color: const Color(0xFF545456),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Header(
-                                  text: "최고의 캠핑 패스티발은?",
-                                  size: 14,
-                                ),
-                                const SizedBox(
-                                  height: 7,
-                                ),
-                                const Text("복수 선택 불가"),
-                                SizedBox(
-                                  height: Constants.height10,
-                                ),
-                                LayoutBuilder(builder: (BuildContext context,
-                                    BoxConstraints constraints) {
-                                  return RadioButtonGroup(
-                                      vertical: true,
-                                      options: options,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      textStyle: const TextStyle(
-                                          fontSize: 15, color: Colors.white),
-                                      selectedColor: const Color(0xFF363638),
-                                      mainColor: const Color(0xFF363638),
-                                      selectedIconColor: Constants.appColor,
-                                      selectedBorderSide: const BorderSide(
-                                          width: 1, color: Constants.appColor),
-                                      buttonWidth: constraints.maxWidth,
-                                      buttonHeight: 42,
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      callback: (RadioOption val) {
-                                        setState(() {
-                                          label = val.label;
-                                          disabled = false;
-                                        });
-                                        print(val);
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: Constants.height20,
+                              horizontal: Constants.height10),
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF545456),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Header(
+                                text: "최고의 캠핑 패스티발은?",
+                                size: 14,
+                              ),
+                              const SizedBox(
+                                height: 7,
+                              ),
+                              const Text("복수 선택 불가"),
+                              SizedBox(
+                                height: Constants.height10,
+                              ),
+                              LayoutBuilder(builder: (BuildContext context,
+                                  BoxConstraints constraints) {
+                                return RadioButtonGroup(
+                                    vertical: true,
+                                    options: options,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    textStyle: const TextStyle(
+                                        fontSize: 15, color: Colors.white),
+                                    selectedColor: const Color(0xFF363638),
+                                    mainColor: const Color(0xFF363638),
+                                    selectedIconColor: Constants.appColor,
+                                    selectedBorderSide: const BorderSide(
+                                        width: 1, color: Constants.appColor),
+                                    buttonWidth: constraints.maxWidth,
+                                    buttonHeight: 42,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    callback: (RadioOption val) {
+                                      setState(() {
+                                        label = val.label;
+                                        disabled = false;
                                       });
-                                }),
-                                SizedBox(
-                                  height: Constants.height10,
-                                ),
-                                AppButton(
-                                  text: "투표하기",
-                                  disabled: disabled,
-                                ),
-                                SizedBox(
-                                  height: Constants.height10,
-                                ),
-                                const Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "투표참여 : 16명",
-                                    ),
-                                    Text("7 일 뒤 종료")
-                                  ],
-                                )
-                              ],
-                            ),
+                                      print(val);
+                                    });
+                              }),
+                              SizedBox(
+                                height: Constants.height10,
+                              ),
+                              AppButton(
+                                text: "투표하기",
+                                disabled: disabled,
+                              ),
+                              SizedBox(
+                                height: Constants.height10,
+                              ),
+                              const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "투표참여 : 16명",
+                                  ),
+                                  Text("7 일 뒤 종료")
+                                ],
+                              )
+                            ],
                           ),
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         const Comment(),
-                     
                       ],
                     ),
                   ),
-                  
-                      
-                      ExamplePolls(),
-        
+                  ExamplePolls(),
                 ],
               ),
-                            FeedComment(),
+              FeedComment(),
             ],
           ),
         ),
       ),
-      
     );
   }
 }

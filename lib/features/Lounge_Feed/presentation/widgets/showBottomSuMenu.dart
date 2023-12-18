@@ -35,13 +35,13 @@ void ToggleBtn2(){
       
     return Container(
           padding: EdgeInsets.all(Constants.height20),
-          height: Constants.screen_height * 0.4,
+          height: Constants.screen_height * 0.35,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(25), topLeft: Radius.circular(25)),
               color: Constants.bottom),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -56,7 +56,7 @@ void ToggleBtn2(){
               GestureDetector(
                 onTap: () {
               toggleButtom();
-print(show1);
+
                  },
                 child: Row(
                   children: [
@@ -68,14 +68,14 @@ print(show1);
                   ],
                 ),
               ),
-           show1 ?   Row(
+           show1 ?   const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Tags(name: "이번 주", color: Constants.chipColor,),
                   Tags(name: "이번 달",color: Constants.chipColor,),
                   Tags(name: "올 해",color: Constants.chipColor,)
                 ],
-              ):SizedBox(height: 0,width: 0,),
+              ):const SizedBox(height: 0,width: 0,),
               GestureDetector(
                 onTap: (){
                   ToggleBtn2();
@@ -97,7 +97,7 @@ print(show1);
                   Tags(name: "이번 달",color: Constants.chipColor,),
                   Tags(name: "올 해",color: Constants.chipColor,)
                 ],
-              ):SizedBox(height: 0,width: 0,),
+              ):const SizedBox(height: 0,width: 0,),
               const AppButton(text: "닫기")
             ],
           ),
@@ -111,7 +111,7 @@ class ShowBottomSubmenu {
       context: context,
       builder: (BuildContext context) {
       
-        return Trigger();
+        return const Trigger();
       },
     );
   }

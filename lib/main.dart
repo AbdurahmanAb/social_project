@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kim/features/feed/domian/PollController.dart';
 import 'package:kim/routes/get_routes.dart';
 import 'package:kim/utils/dependecies.dart';
 
 
-void main() {
-  init();
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+ await init();
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
+Get.find<PollController>().polls;
     return GetMaterialApp(
       title: 'KIM APP',
      theme: ThemeData(
