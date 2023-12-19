@@ -3,6 +3,7 @@ import 'package:kim/features/Lounge_Feed/presentation/screen/main_yes_screen.dar
 import 'package:kim/features/Lounge_Feed/presentation/screen/search_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/welcome.dart';
 import 'package:kim/features/explore/presentation/screen/gab_explore.dart';
+import 'package:kim/features/explore/presentation/screen/explore_search.dart';
 import 'package:kim/features/feed/presentation/screen/get_feed.dart';
 import 'package:kim/features/feed/presentation/widgets/ImageView.dart';
 
@@ -22,7 +23,7 @@ class Routes {
     GetPage(name: main, page: () => const MainScreen()),
     GetPage(name: search, page: () => const SearchScreen()),
     GetPage(name: explore, page: () => const GabFeed()),
-    GetPage(name: feedExplore, page: ()=>const SearchScreen()),
+    GetPage(name: feedExplore, page: ()=>const ExploreSearch()),
     GetPage(
         name: feed,
         page: () {

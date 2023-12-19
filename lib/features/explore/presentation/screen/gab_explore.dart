@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kim/core/topbar.dart';
+import 'package:kim/features/explore/presentation/widgets/ImageCard.dart';
 import 'package:kim/features/explore/presentation/widgets/feed_search.dart';
 import 'package:kim/features/explore/presentation/widgets/top_cards.dart';
 import 'package:kim/features/explore/presentation/widgets/vertical_card.dart';
@@ -29,6 +30,7 @@ class _GabFeedState extends State<GabFeed> {
           SizedBox(height: Constants.height10 /2,),
           TopCard(brand: "POsta", brandText: "@posta", text: "p[d]"),
            SizedBox(height: Constants.height10 /2,),
+           ImageCard()
         
           
           

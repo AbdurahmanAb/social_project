@@ -11,19 +11,19 @@ class VerticalCard extends StatelessWidget {
     return Container(
       height: 220,
       color: Constants.Iconbg,
-      padding: EdgeInsets.all(Constants.height10/2),
-      child:  Column(
+      padding: EdgeInsets.all(Constants.height10 / 2),
+      child: Column(
         children: [
-           Padding(
-             padding: const EdgeInsets.all(8.0),
-             child: Row(
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Lide"),
                 Icon(CupertinoIcons.forward),
-              ],  
-                       ),
-           ),
+              ],
+            ),
+          ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,35 +31,40 @@ class VerticalCard extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text("data"),
-                  Container(
-                  
-                  padding: EdgeInsets.all(10),
-                    decoration:  BoxDecoration(
-                      color: Constants.bottom,
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        
-                        Text("vlfdmvlkdfnmvvnkdmv lsba sdvbxc hebffn fvhfbdvfbvjdhxbhjsdbc "),
-                        Row(
-                          children: [
-                            Brand(brand: "gg", brandText: "fff")
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text("data"),
+                    Container(
+                      padding: const EdgeInsets.all(25),
+                      decoration: BoxDecoration(
+                          color: Constants.bottom,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "테니스는 라코스테인데.. 난 왜이리 안어울릴까~~다른 브랜드 추천해주세요 ",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Row(
+                            children: [
+                              Brand(
+                                brand: "Lactose",
+                                brandText: "@라코스테",
+                                brandText2: "#테니스 ",
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               )
             ],
           ),
-
         ],
       ),
     );

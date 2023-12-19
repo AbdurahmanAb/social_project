@@ -32,7 +32,9 @@ class Brand extends StatelessWidget {
         const SizedBox(
           width: 5,
         ),
-        brandText2 != "" ? Text(brandText2) : SizedBox.shrink(),
+        brandText2 != "" ? Text(brandText2, style: TextStyle(
+          color: Constants.appColor
+        ),) : SizedBox.shrink(),
       ],
     );
   }

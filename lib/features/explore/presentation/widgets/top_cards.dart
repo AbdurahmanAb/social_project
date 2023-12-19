@@ -1,8 +1,10 @@
-import 'package:card_swiper/card_swiper.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:kim/features/explore/presentation/widgets/brand.dart';
-import 'package:kim/features/feed/presentation/widgets/Tags.dart';
+
 import 'package:kim/utils/constants.dart';
 
 class TopCard extends StatefulWidget {
@@ -39,20 +41,24 @@ class _TopCardState extends State<TopCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      
    width: double.maxFinite,
       color: Constants.mainColor,
       padding: EdgeInsets.all(Constants.height10),
       child: Column(
         children: [
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 "새로 열린 브랜드 라운지",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              Icon(CupertinoIcons.forward)
+              GestureDetector(
+                onTap: (){
+                   Get.toNamed("/feedexplore");
+                },
+                child: Icon(CupertinoIcons.forward))
             ],
           ),
           SizedBox(
