@@ -4,7 +4,8 @@ import '../utils/constants.dart';
 
 class AvatarImg extends StatelessWidget {
   final double height;
-  const AvatarImg({this.height =40, super.key});
+  final String ImgUrl;
+  const AvatarImg({ this.ImgUrl = "assets/join/image.png",this.height =40, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class AvatarImg extends StatelessWidget {
                  child: ClipRRect(
                    borderRadius: BorderRadius.circular(12),
                    child: Image.asset(
-                     "assets/join/image.png",
+                    ImgUrl,
                      height: height,
                    ),
                  ),

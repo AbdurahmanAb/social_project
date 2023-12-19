@@ -7,8 +7,14 @@ class Brand extends StatelessWidget {
   final String brand;
   final String brandText;
   final String brandText2;
+  final Color colors;
+  final Color txtColor;
+  
   const Brand(
-      {required this.brand,
+      {
+        this.txtColor = Constants.black,
+        this.colors=Constants.white,
+        required this.brand,
       required this.brandText,
       this.brandText2 = "",
       super.key});
@@ -19,11 +25,9 @@ class Brand extends StatelessWidget {
       children: [
         Chip(
           label: Text(brand),
-          color: const MaterialStatePropertyAll(
-            Constants.white,
-          ),
-          labelStyle: const TextStyle(
-              color: Constants.black, fontWeight: FontWeight.bold),
+          color:MaterialStatePropertyAll(colors),
+          labelStyle:  TextStyle(
+              color: txtColor, fontWeight: FontWeight.bold),
         ),
         const SizedBox(
           width: 5,

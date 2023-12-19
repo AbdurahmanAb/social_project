@@ -65,7 +65,7 @@ class _TopCardState extends State<TopCard> {
             height: Constants.height10,
           ),
           Container(
-            height: 149,
+            height: Constants.screen_height * 0.22,
             child: PageView.builder(
               controller: _PageController,
               itemCount: 4,
@@ -79,7 +79,7 @@ class _TopCardState extends State<TopCard> {
                   padding: const EdgeInsets.all(12),
                   child: Column(
                     children: [
-                    Brand(brand: "Lacoste",brandText: "p"),
+                    Brand(brand: "Lacoste",brandText: "@라코스테"),
                       const SizedBox(
                         height: 5,
                       ),

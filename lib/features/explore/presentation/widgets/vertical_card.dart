@@ -9,7 +9,7 @@ class VerticalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
+ 
       color: Constants.Iconbg,
       padding: EdgeInsets.all(Constants.height10 / 2),
       child: Column(
@@ -19,7 +19,7 @@ class VerticalCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Lide"),
+                Text("친구의 Gab"),
                 Icon(CupertinoIcons.forward),
               ],
             ),
@@ -35,7 +35,10 @@ class VerticalCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("data"),
+                    const Text("sean_kim77님이 갭을 등록하였습니다."),
+                    const SizedBox(
+                height: 10,
+              ),
                     Container(
                       padding: const EdgeInsets.all(25),
                       decoration: BoxDecoration(
