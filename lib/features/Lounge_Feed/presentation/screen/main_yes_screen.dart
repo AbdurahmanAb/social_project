@@ -9,6 +9,7 @@ import 'package:kim/core/HeaderText.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 
 import 'package:kim/core/button.dart';
+import 'package:kim/core/modal.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
@@ -179,44 +180,7 @@ class _MainScreenState extends State<MainScreen> {
                 ],
               ),
               show
-                  ? GestureDetector(
-                      onTap: () {
-                        Get.toNamed("/feed?id=3");
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.all(Constants.height10),
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Constants.white,
-                                  borderRadius: BorderRadius.circular(21)),
-                              padding: EdgeInsets.symmetric(
-                                  vertical: Constants.height10,
-                                  horizontal: Constants.height15),
-                              height: 72,
-                              child: Row(
-                                children: [
-                                  Image.asset("assets/feed/icon_popup.png"),
-                                  SizedBox(
-                                    width: Constants.height10,
-                                  ),
-                                  const Text(
-                                    "갭이 고정이 해제되었습니다.",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Constants.black,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
+                  ?BottomModal()
                   : const SizedBox.shrink(),
             ],
           ),

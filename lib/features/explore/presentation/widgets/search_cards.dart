@@ -9,9 +9,12 @@ class SearchCards extends StatelessWidget {
   String imageUrl;
   final String text;
   final String bottomtxt1;
+  final Widget brand;
   final String bottomtxt2;
   SearchCards(
-      {required this.text,
+      {
+        required this.brand,
+        required this.text,
       required this.bottomtxt1,
       required this.bottomtxt2,
       required this.date,
@@ -31,11 +34,7 @@ class SearchCards extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Brand(
-                          brand: "LACOSTE",
-                          brandText: "@라코스테",
-                          brandText2: "#테니스",
-                        ),
+                      brand,
                         SizedBox(
                           height: 15,
                         ),
@@ -43,7 +42,7 @@ class SearchCards extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        Text(text),
+                        Text(text, style:TextStyle(fontSize: 12)),
                         SizedBox(
                           height: 10,
                         ),
@@ -76,15 +75,9 @@ class SearchCards extends StatelessWidget {
           : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Brand(
-                  brand: "Kenzo",
-                  txtColor: Constants.white,
-                  colors: Colors.red,
-                  brandText: "@겐조",
-                  brandText2: "#파리",
-                ),
+              brand,
                 Text(date),
-                Text(text),
+                Text(text, style:TextStyle(fontSize: 12)),
                 FractionallySizedBox(
                   widthFactor: 0.7,
                   child: Row(

@@ -22,9 +22,9 @@ padding: EdgeInsets.all(Constants.height10),
               
             
               decoration: InputDecoration(
-              contentPadding: EdgeInsets.only(top:13, bottom: 25, right: 10, left: 10),
+              contentPadding: const EdgeInsets.only(top:13, bottom: 25, right: 10, left: 10),
             
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.w200
               ),

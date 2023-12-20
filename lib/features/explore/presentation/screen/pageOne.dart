@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:kim/features/explore/presentation/widgets/brand.dart';
 
 import '../../../../utils/constants.dart';
 import '../widgets/search_cards.dart';
@@ -17,7 +18,11 @@ class PageOne extends StatelessWidget {
 
 
         SearchCards(
-          
+          brand:   Brand(
+                          brand: "assets/avatar/apple.png",
+                          brandText: "@라코스테",
+                          brandText2: "#테니스",
+                        ),
             text: "LACOSTE(라코스테)는 1920년대 프랑스의 테니스 스타인 장 르네 라코스테(Jean Rene Lacoste)에 의해 만들어진 브랜드입니다.테니스 스타인 장 ",
             bottomtxt1: "12 업보트",
             bottomtxt2: "24 댓글,",
@@ -25,6 +30,12 @@ class PageOne extends StatelessWidget {
             imageUrl: "j"),
                     SizedBox(height: Constants.height10,),
               SearchCards(
+                brand: Brand(
+                  
+                          brand: "assets/avatar/supreme.png",
+                          brandText: "@라코스테",
+                          brandText2: "#테니스",
+                        ),
             text: "LACOSTE(라코스테)는 1920년대 프랑스의 테니스 스타인 장 르네 라코스테(Jean Rene Lacoste)에 의해 만들어진 브랜드입니다.테니스 스타인 장 ",
             bottomtxt1: "12 업보트",
             bottomtxt2: "24 댓글,",

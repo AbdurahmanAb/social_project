@@ -6,9 +6,14 @@ class EmojiPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return    Column(
-      children: [Text("검색된 갭이 없습니다."),
-      Text("😂")],
+    return    Container(
+height: Constants.screen_height *0.5,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [Text("검색된 갭이 없습니다.", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
+        Text("😂")],
+      ),
     );
   }
 }
