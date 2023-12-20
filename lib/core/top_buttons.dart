@@ -18,7 +18,7 @@ class TopButtons extends StatelessWidget {
         builder: (BuildContext context) {
           return Container(
             padding: EdgeInsets.symmetric(
-                vertical: Constants.height10, horizontal: Constants.height10),
+              horizontal: Constants.height10),
             height: Constants.screen_height * 0.3,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -71,20 +71,13 @@ class TopButtons extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(right: 10),
 
-                // child: Image.asset("assets/Lounge/brand_badge.png",)
+               
 
                 child: GestureDetector(
                   onTap: () {
                     _showBottomSheet(context);
                   },
-                  child: Chip(
-                      padding: const EdgeInsets.all(5),
-                      backgroundColor: Constants.white,
-                      label: Text(
-                        text,
-                        style: const TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.w900),
-                      )),
+                  child: Image.asset("assets/Lounge/brand_badge.png",)
                 ),
               ),
               const Header(

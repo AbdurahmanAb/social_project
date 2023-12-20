@@ -57,7 +57,8 @@ class _MainScreenState extends State<MainScreen> {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.all(Constants.height10),
+                    color: Constants.Iconbg,
+                    padding: EdgeInsets.only(top: 5, right:Constants.height10,left: Constants.height10, bottom: 5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

@@ -33,31 +33,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ],
             )),
             Container(
-            
-              child: Column(
-                 
-                children: [
-                
-            Expanded(
-              child:   Center(
-                child: Align(
-                  alignment: Alignment.center,
+            height: Constants.screen_height,
+              child: Expanded(
+                child:   Center(
                   child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset("assets/Lounge/welcome.png"),
-              SizedBox(height: Constants.height10,),
-             GestureDetector(
-              onTap: () {
-                Get.toNamed("/main");
-              },
-              child: AppButton(text: "갭 작성하기"))
-                ],
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset("assets/Lounge/welcome.png",height: 200,
+                                                            width: 300,),
+                              
+                               GestureDetector(
+                                onTap: () {
+                                  Get.toNamed("/main");
+                                },
+                                child: AppButton(text: "갭 작성하기"))
+                                  ],
                   ),
                 ),
-              ),
-            )
-                ],
               ),
             ),
           ],

@@ -10,7 +10,7 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Constants.black,
-      padding: const EdgeInsets.all(10),
+      padding:  EdgeInsets.only(top:Constants.height10, left:Constants.height10, right: Constants.height10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
