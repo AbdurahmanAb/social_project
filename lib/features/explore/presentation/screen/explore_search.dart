@@ -57,7 +57,7 @@ void dispose(){
                 width: Constants.height10,
               ),
               SizedBox(
-                width: Constants.screen_width * 0.75,
+                width: Constants.screen_width * 0.74,
                 height: 35,
                 child: Stack(
                   children: [

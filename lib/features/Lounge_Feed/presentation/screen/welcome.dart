@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:get/get.dart';
 import 'package:kim/core/BottomBar.dart';
+import 'package:kim/core/CustomDrawer.dart';
 import 'package:kim/core/button.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
+import 'package:kim/features/explore/presentation/screen/pageOne.dart';
 import 'package:kim/utils/constants.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -14,16 +17,24 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+
+void Open(){
+  _scaffoldKey.currentState!.openDrawer();
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    key: _scaffoldKey,
         backgroundColor: Constants.mainColor,
         body: SafeArea(
           child: Column(
             children: [
+            
               Column(
                 children: [
-                  TopBar(),
+                  TopBar(Triger:  Open  ),
                   TopButtons(),
                 ],
               ),
@@ -50,6 +61,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ],
           ),
         ),
+          drawer: CustomDrawer(),
         bottomNavigationBar: BottomBar());
   }
 }

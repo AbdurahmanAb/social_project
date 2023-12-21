@@ -36,6 +36,7 @@ class _BottomRadioState extends State<BottomRadio> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
+      
         decoration: const BoxDecoration(
             color: Constants.Iconbg,
             borderRadius: BorderRadius.vertical(top: Radius.circular(20))),

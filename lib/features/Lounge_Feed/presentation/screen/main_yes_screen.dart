@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import 'package:kim/core/BottomBar.dart';
 import 'package:kim/core/BottomRadioBar.dart';
+import 'package:kim/core/CustomDrawer.dart';
 import 'package:kim/core/HeaderText.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 
@@ -28,6 +29,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+
   bool disabled = true;
   bool show = true;
 
@@ -39,10 +43,16 @@ class _MainScreenState extends State<MainScreen> {
     RadioOption("OPT4", "양양 서퍼비치 캠핑 축제")
   ];
   RadioGroupController myController = RadioGroupController();
+void Open(){
+  _scaffoldKey.currentState!.openDrawer();
+}
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: CustomDrawer(),
       body: SafeArea(
         child: Container(
           height: double.maxFinite,
@@ -52,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
                 children: [
                   Column(
                     children: [
-                      const TopBar(),
+                      TopBar ( Triger:Open  ),
                       TopButtons(),
                     ],
                   ),

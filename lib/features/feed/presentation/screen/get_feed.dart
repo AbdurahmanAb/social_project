@@ -246,7 +246,8 @@ class _FeddState extends State<Fedd> {
                                           width: 1, color: Constants.appColor),
                                       buttonWidth: constraints.maxWidth,
                                       buttonHeight: 42,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       callback: (RadioOption val) {
                                         setState(() {
                                           label = val.label;

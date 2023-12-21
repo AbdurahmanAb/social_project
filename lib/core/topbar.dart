@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:kim/core/avatar.dart';
 import 'package:kim/utils/constants.dart';
 
 class TopBar extends StatelessWidget {
-  const TopBar({super.key});
+  final Function Triger;
+  const TopBar({required this.Triger, super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,11 @@ class TopBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Icon(Icons.menu),
+          GestureDetector(
+            onTap: (){
+Triger();
+            },
+            child: const Icon(Icons.menu)),
           Row(
          
             children: [

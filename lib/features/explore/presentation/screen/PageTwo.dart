@@ -86,7 +86,7 @@ class PageTwo extends StatelessWidget {
                 children: [
                   Text("12 업보트"),
                   SizedBox(
-                    width: Constants.height10,
+                    width: Constants.height20,
                   ),
                   Text("24 댓글")
                 ],

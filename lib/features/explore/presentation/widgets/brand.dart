@@ -7,6 +7,7 @@ import '../../../../utils/constants.dart';
 class Brand extends StatelessWidget {
  
   final double Height;
+  final double fsize;
   final String brand;
 
   final String brandText;
@@ -16,6 +17,7 @@ class Brand extends StatelessWidget {
   
   const Brand(
       {
+        this.fsize=14,
         this.Height =20,
         this.txtColor = Constants.black,
         this.colors=Constants.white,
@@ -42,12 +44,15 @@ class Brand extends StatelessWidget {
          SizedBox(
           width:Constants.height10 ,
         ),
-        Text(brandText),
+        Text(brandText, style: TextStyle(
+          fontSize: fsize
+        ),),
          SizedBox(
           width:Constants.height10 ,
         ),
         brandText2 != "" ? Text(brandText2, style: TextStyle(
-          color: Constants.appColor
+          color: Constants.appColor,
+          fontSize: fsize
         ),) : SizedBox.shrink(),
       ],
     );
