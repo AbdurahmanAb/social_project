@@ -26,7 +26,7 @@ class _FeedCommentState extends State<FeedComment> {
             ),
             SizedBox(
                 height: 32,
-                width: Constants.screen_width * 0.6,
+                width: Constants.screen_width * 0.8,
                 child: TextField(
                   autofocus: true,
                   decoration: InputDecoration(

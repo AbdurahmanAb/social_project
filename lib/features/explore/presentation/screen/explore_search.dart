@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:kim/core/BottomBar.dart';
 import 'package:kim/features/explore/presentation/screen/PageTwo.dart';
 import 'package:kim/features/explore/presentation/screen/emoji_page.dart';
@@ -52,7 +53,11 @@ void dispose(){
           padding: EdgeInsets.only(left: 10, top: 20, bottom: 20, right: 10),
           child: Row(
             children: [
-              Icon(CupertinoIcons.back),
+              GestureDetector(
+                onTap: (){
+                  Get.back();
+                },
+                child: Icon(CupertinoIcons.back)),
               SizedBox(
                 width: Constants.height10,
               ),

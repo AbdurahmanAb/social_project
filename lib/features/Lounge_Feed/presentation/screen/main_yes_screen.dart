@@ -29,8 +29,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   bool disabled = true;
   bool show = true;
@@ -43,10 +42,9 @@ final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     RadioOption("OPT4", "양양 서퍼비치 캠핑 축제")
   ];
   RadioGroupController myController = RadioGroupController();
-void Open(){
-  _scaffoldKey.currentState!.openDrawer();
-}
-
+  void Open() {
+    _scaffoldKey.currentState!.openDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +60,7 @@ void Open(){
                 children: [
                   Column(
                     children: [
-                      TopBar ( Triger:Open  ),
+                      TopBar(Triger: Open),
                       TopButtons(),
                     ],
                   ),

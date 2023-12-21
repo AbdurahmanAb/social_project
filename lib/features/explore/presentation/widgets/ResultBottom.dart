@@ -39,7 +39,7 @@ return Row(
   children: [
     Container(
       height: 36,
-      width: 174,
+      width: Constants.screen_width *.4,
        decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
    color: Constants.black,
@@ -54,10 +54,10 @@ return Row(
     ),
      Container(
       height: 36,
-      width: 174,
+ width: Constants.screen_width *.4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-     color: Constants.pink,
+   
       ),
  
       child: Center(

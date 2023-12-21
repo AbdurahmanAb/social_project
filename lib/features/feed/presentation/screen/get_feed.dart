@@ -48,8 +48,9 @@ class _FeddState extends State<Fedd> {
                     const FeedTop(),
                     Container(
                       color: Constants.mainColor,
-                      padding: EdgeInsets.all(Constants.height20),
+                      padding: EdgeInsets.symmetric(vertical:Constants.height20,),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Row(
                             children: [
@@ -115,17 +116,16 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height20,
                           ),
-                          const Wrap(
+                           Wrap(
                             direction: Axis.horizontal,
-                            alignment: WrapAlignment.start,
+                            // alignment: WrapAlignment.spaceBetween,
                             runAlignment: WrapAlignment.start,
-                            crossAxisAlignment: WrapCrossAlignment.start,
+                            
+                            // spacing: 10,
+                            // runSpacing: 5,
                             spacing: 10,
-                            runSpacing: 5,
                             children: [
-                              Tags(
-                                name: "@아디다스",
-                              ),
+                          
                               Tags(
                                 name: "@나이키",
                               ),
@@ -210,6 +210,7 @@ class _FeddState extends State<Fedd> {
                             height: 20,
                           ),
                           Container(
+                            width: double.maxFinite,
                             padding: EdgeInsets.symmetric(
                                 vertical: Constants.height20,
                                 horizontal: Constants.height10),

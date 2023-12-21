@@ -35,7 +35,7 @@ void ToggleBtn2(){
       
     return Container(
           padding: EdgeInsets.all(Constants.height20),
-          height: Constants.screen_height * 0.35,
+          height: show1 & show2? Constants.screen_height*0.4 :show1 || show2? Constants.screen_height * 0.35:Constants.screen_height*0.3,
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(25), topLeft: Radius.circular(25)),
@@ -97,7 +97,7 @@ void ToggleBtn2(){
                   Tags(name: "이번 달",color: Constants.chipColor,),
                   Tags(name: "올 해",color: Constants.chipColor,)
                 ],
-              ):const SizedBox(height: 0,width: 0,),
+              ): SizedBox(height: Constants.height15,width: 0,),
               const AppButton(text: "닫기")
             ],
           ),

@@ -89,24 +89,30 @@ class LongPost extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(img))
               : const SizedBox.shrink(),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height:Constants.height15,
           ),
          
-          const SizedBox(
-            height: 10,
+          const Row(
+            children: [
+              Text(
+                'https://www.hyundai.com/kr-brand',
+                style: TextStyle(
+                  color: Color(0xFF0099FF),
+                  fontSize: 14,
+                ),
+              ),
+            ],
           ),
-          hasAd
-              ? Container(
+          SizedBox(
+            height:Constants.height15,
+          ),
+         Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(10),
                       color: Constants.white),
                   child: Column(
-                    children: [ Text(
-                "https:/www.gooogle.com/q=?kim/",
-                style: TextStyle(color: Colors.blue),
-                textAlign: TextAlign.start,
-              ),
+                    children: [
                       Row(
                         children: [
                           SizedBox(
@@ -136,8 +142,8 @@ class LongPost extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
-              : const SizedBox.shrink(),
+                ),
+              
           SizedBox(
             height: Constants.height20,
           ),
