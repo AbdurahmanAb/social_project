@@ -65,13 +65,14 @@ class _TopCardState extends State<TopCard> {
             height: Constants.height10,
           ),
           Container(
-            height: Constants.screen_height * 0.22,
+            height: Constants.screen_height * 0.19,
             child: PageView.builder(
               controller: _PageController,
               itemCount: 4,
               
               itemBuilder: (context, index) {
                 return Container(
+                  
                   margin: EdgeInsets.symmetric(horizontal: 5),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -79,7 +80,7 @@ class _TopCardState extends State<TopCard> {
                   padding: const EdgeInsets.all(12),
                   child: Column(
                     children: [
-                    Brand(brand: "Lacoste",brandText: "@라코스테"),
+                    Brand(brand:widget.brand ,brandText: "@라코스테"),
                       const SizedBox(
                         height: 5,
                       ),

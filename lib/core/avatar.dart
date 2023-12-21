@@ -4,8 +4,9 @@ import '../utils/constants.dart';
 
 class AvatarImg extends StatelessWidget {
   final double height;
+  final bool Enableborder;
   final String ImgUrl;
-  const AvatarImg({ this.ImgUrl = "assets/join/image.png",this.height =40, super.key});
+  const AvatarImg({this.Enableborder=true, this.ImgUrl = "assets/join/image.png",this.height =40, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +15,10 @@ class AvatarImg extends StatelessWidget {
                Container(
                  decoration: BoxDecoration(
                    borderRadius: BorderRadius.circular(18),
-                   border: Border.all(
+                 border: Enableborder ?  Border.all(
                      color: Constants.appColor,
                      width: 4,
-                   ),
+                   ):Border.all(),
                  ),
                  child: ClipRRect(
                    borderRadius: BorderRadius.circular(12),
@@ -27,11 +28,8 @@ class AvatarImg extends StatelessWidget {
                    ),
                  ),
                ),
-               Positioned(
-                 bottom: 5,
-                 right: 0,
-                 child: Image.asset("assets/Lounge/emoji.png",),
-               ),
+              // 
+              
   ],
 );
   }

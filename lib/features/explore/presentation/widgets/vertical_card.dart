@@ -54,7 +54,7 @@ class VerticalCard extends StatelessWidget {
                           Row(
                             children: [
                               Brand(
-                                brand: "Lactose",
+                                brand: "assets/avatar/apple.png",
                                 brandText: "@라코스테",
                                 brandText2: "#테니스 ",
                               )

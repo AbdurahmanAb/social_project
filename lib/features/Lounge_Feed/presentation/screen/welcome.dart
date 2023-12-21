@@ -17,45 +17,39 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constants.mainColor,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Positioned(
-              
-               top: 0,
-              left: 0,
-              right: 0,
-              child: Column(
-              children: [
+        backgroundColor: Constants.mainColor,
+        body: SafeArea(
+          child: Column(
+            children: [
+              Column(
+                children: [
                   TopBar(),
-                TopButtons(),
-              ],
-            )),
-            Container(
-            height: Constants.screen_height,
-              child: Expanded(
-                child:   Center(
+                  TopButtons(),
+                ],
+              ),
+                  
+              Expanded(
+                child: Center(
                   child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset("assets/Lounge/welcome.png",height: 200,
-                                                            width: 300,),
-                              
-                               GestureDetector(
-                                onTap: () {
-                                  Get.toNamed("/main");
-                                },
-                                child: AppButton(text: "갭 작성하기"))
-                                  ],
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/Lounge/welcome.png",
+                        height: 200,
+                        width: 300,
+                      ),
+                      GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/main");
+                          },
+                          child: AppButton(text: "갭 작성하기"))
+                    ],
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      bottomNavigationBar: BottomBar()
-    );
+        bottomNavigationBar: BottomBar());
   }
 }

@@ -14,7 +14,7 @@ class PostCard extends StatelessWidget {
 
 
     return  SingleChildScrollView(child: Container(
-      color: const Color(0xFF363638),
+      color: Constants.postColor,
       padding: EdgeInsets.all(Constants.height20),
       child: Column(
         children: [

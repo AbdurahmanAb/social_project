@@ -58,7 +58,11 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   Container(
                     color: Constants.Iconbg,
-                    padding: EdgeInsets.only(top: 5, right:Constants.height10,left: Constants.height10, bottom: 5),
+                    padding: EdgeInsets.only(
+                        top: 5,
+                        right: Constants.height10,
+                        left: Constants.height10,
+                        bottom: 5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -79,7 +83,7 @@ class _MainScreenState extends State<MainScreen> {
                         children: [
                           const PostCard(),
                           SizedBox(
-                            height: Constants.height20,
+                            height: 5,
                           ),
                           GestureDetector(
                               onTap: () {
@@ -180,9 +184,7 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ],
               ),
-              show
-                  ?BottomModal()
-                  : const SizedBox.shrink(),
+              show ? BottomModal() : const SizedBox.shrink(),
             ],
           ),
         ),

@@ -16,7 +16,7 @@ class Brand extends StatelessWidget {
   
   const Brand(
       {
-        this.Height =40,
+        this.Height =20,
         this.txtColor = Constants.black,
         this.colors=Constants.white,
         required this.brand,
@@ -39,12 +39,12 @@ class Brand extends StatelessWidget {
         //   labelStyle:  TextStyle(
         //       color: txtColor, fontWeight: FontWeight.bold),
         // ),
-        const SizedBox(
-          width: 5,
+         SizedBox(
+          width:Constants.height10 ,
         ),
         Text(brandText),
-        const SizedBox(
-          width: 5,
+         SizedBox(
+          width:Constants.height10 ,
         ),
         brandText2 != "" ? Text(brandText2, style: TextStyle(
           color: Constants.appColor

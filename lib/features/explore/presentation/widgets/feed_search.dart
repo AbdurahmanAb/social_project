@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/utils/constants.dart';
 
@@ -19,8 +20,7 @@ padding: EdgeInsets.all(Constants.height10),
         child: Stack(
           children: [
             TextField(
-              
-            
+                    
               decoration: InputDecoration(
               contentPadding: const EdgeInsets.only(top:13, bottom: 25, right: 10, left: 10),
             

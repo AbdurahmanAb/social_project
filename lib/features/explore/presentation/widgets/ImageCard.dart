@@ -35,7 +35,7 @@ class ImageCard extends StatelessWidget {
                       child: Image.asset("assets/avatar/post1.jpg"),
                     ),
                     SizedBox(height: 10,),
-                    Brand(brand: "Nike", brandText:"@나이키", brandText2: "#Air Jordan",)
+                    Brand(brand: "assets/avatar/nike.png", brandText:"@나이키", brandText2: "#Air Jordan",)
 
                   ],
                 ))

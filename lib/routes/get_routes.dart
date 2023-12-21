@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/main_yes_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/search_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/welcome.dart';
+import 'package:kim/features/explore/presentation/screen/detail_brand.dart';
 import 'package:kim/features/explore/presentation/screen/gab_explore.dart';
 import 'package:kim/features/explore/presentation/screen/explore_search.dart';
 import 'package:kim/features/feed/presentation/screen/get_feed.dart';
@@ -15,6 +16,10 @@ class Routes {
   static const String image = "/image";
   static const String explore = "/explore";
   static const String feedExplore = "/feedexplore";
+  static const String detailBrand = "/detail";
+
+
+
   static String getFeed(int id) => '$feed?id=$id';
   static String getImage(int id) => '$image?id=$id';
 
@@ -24,6 +29,8 @@ class Routes {
     GetPage(name: search, page: () => const SearchScreen()),
     GetPage(name: explore, page: () => const GabFeed()),
     GetPage(name: feedExplore, page: ()=>const ExploreSearch()),
+    GetPage(name: detailBrand, page: ()=>const DetailBrand()),
+    
     GetPage(
         name: feed,
         page: () {

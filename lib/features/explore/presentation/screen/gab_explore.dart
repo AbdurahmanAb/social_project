@@ -25,7 +25,7 @@ class _GabFeedState extends State<GabFeed> {
             child: Column(
           children: [TopBar(),
           FeedSearch(),
-          TopCard(brand: "assets/avatar/nike.png", brandText: "@라코스테", text: "LACOSTE(라코스테)는 1920년대 프랑스의 테니스 스타인 장 르네 라코스테(Jean Rene Lacoste)에 의해 만들어진 브랜드입니다."),
+          TopCard(brand: "assets/avatar/lacoste.png", brandText: "@라코스테", text: "LACOSTE(라코스테)는 1920년대 프랑스의 테니스 스타인 장 르네 라코스테(Jean Rene Lacoste)에 의해 만들어진 브랜드입니다."),
           SizedBox(height: Constants.height10 /2,),
           VerticalCard(),
           SizedBox(height: Constants.height10 /2,),

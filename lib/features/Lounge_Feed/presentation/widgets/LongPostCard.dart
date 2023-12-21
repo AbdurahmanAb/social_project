@@ -12,7 +12,7 @@ class LongPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Constants.mainColor,
+      color: Constants.postColor,
       padding: EdgeInsets.all(Constants.height20),
       child: Column(
         children: [
