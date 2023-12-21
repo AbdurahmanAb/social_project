@@ -9,6 +9,6 @@ class Tags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(label:  Text(name) ,color:MaterialStatePropertyAll(color),shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)) , );
+    return Chip( label:  Text(name) ,color:MaterialStatePropertyAll(color),shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)) , );
   }
 }

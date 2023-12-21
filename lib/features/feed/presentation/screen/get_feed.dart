@@ -7,7 +7,8 @@ import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/LongPostCard.dart';
 import 'package:kim/features/feed/presentation/widgets/FeedComment.dart';
 import 'package:kim/features/feed/presentation/widgets/FeedTop.dart';
-import 'package:kim/features/feed/presentation/widgets/Poll.dart';
+import 'package:kim/features/feed/presentation/widgets/ExamplePoll.dart';
+import 'package:kim/features/feed/presentation/widgets/RealPoll.dart';
 import 'package:kim/features/feed/presentation/widgets/Tags.dart';
 import 'package:kim/utils/constants.dart';
 
@@ -48,7 +49,7 @@ class _FeddState extends State<Fedd> {
                     const FeedTop(),
                     Container(
                       color: Constants.mainColor,
-                      padding: EdgeInsets.symmetric(vertical:Constants.height20,),
+                      padding: EdgeInsets.symmetric(vertical:Constants.height20,horizontal: Constants.height20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -121,8 +122,8 @@ class _FeddState extends State<Fedd> {
                             // alignment: WrapAlignment.spaceBetween,
                             runAlignment: WrapAlignment.start,
                             
-                            // spacing: 10,
-                            // runSpacing: 5,
+                          
+                            runSpacing: 5,
                             spacing: 10,
                             children: [
                           
@@ -267,12 +268,15 @@ class _FeddState extends State<Fedd> {
                                 SizedBox(
                                   height: Constants.height10,
                                 ),
-                                const Row(
+                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       "투표참여 : 16명",
+                                    ),
+                                    SizedBox(
+                                      height: Constants.height10,
                                     ),
                                     Text("7 일 뒤 종료")
                                   ],
@@ -280,14 +284,19 @@ class _FeddState extends State<Fedd> {
                               ],
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
+                           SizedBox(
+                            height: Constants.height20,
                           ),
-                          const Comment(),
+                          const Comment(),  
+                             SizedBox(
+                            height: Constants.height20,
+                          ),
+                          ExamplePolls(),
                         ],
                       ),
                     ),
-                    ExamplePolls(),
+                 
+                   // RealPoll()
                   ],
                 ),
               ),

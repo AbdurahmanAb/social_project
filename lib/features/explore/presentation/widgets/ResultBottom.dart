@@ -57,7 +57,7 @@ return Row(
  width: Constants.screen_width *.4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-   
+   color: Constants.pink
       ),
  
       child: Center(
