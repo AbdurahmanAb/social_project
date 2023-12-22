@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kim/features/Lounge_Feed/presentation/widgets/TopText.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/top_text.dart';
 import 'package:kim/utils/constants.dart';
 
 class TextButtons extends StatelessWidget {

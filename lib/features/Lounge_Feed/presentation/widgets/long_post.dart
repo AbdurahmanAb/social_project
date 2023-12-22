@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kim/core/avatar.dart';
-import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 import 'package:kim/utils/constants.dart';
 
 class LongPost extends StatelessWidget {

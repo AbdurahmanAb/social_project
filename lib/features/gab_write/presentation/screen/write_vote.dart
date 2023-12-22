@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kim/features/gab_write/presentation/widgets/add_poll.dart';
 import 'package:kim/utils/constants.dart';
 
 class WriteVote extends StatefulWidget {
@@ -98,6 +99,9 @@ class _WriteVoteState extends State<WriteVote> {
                       width: Constants.height10,
                     ),
                     GestureDetector(
+                      onTap: (){
+                        Addpoll.showAddPoll(context);
+                      },
                         child: Image.asset("assets/icons/icon_list.png")),
                     SizedBox(
                       width: Constants.height10,

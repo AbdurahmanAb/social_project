@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import 'package:kim/features/feed/domian/PollController.dart';
 import 'package:kim/utils/constants.dart';
 
-class ExamplePolls extends StatefulWidget {
-  const ExamplePolls({Key? key}) : super(key: key);
+class CustomPolls extends StatefulWidget {
+  const CustomPolls({Key? key}) : super(key: key);
 
   @override
-  State<ExamplePolls> createState() => _ExamplePollsState();
+  State<CustomPolls> createState() => _CustomPollsState();
 }
 
-class _ExamplePollsState extends State<ExamplePolls> {
+class _CustomPollsState extends State<CustomPolls> {
   List polls = Get.find<PollController>().polls;
 
   List<Map<String, dynamic>> getOptions(int pollIndex) {

@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/core/RadioButtonGroup.dart';
-import 'package:kim/features/Lounge_Feed/presentation/widgets/Comment.dart';
-import 'package:kim/features/Lounge_Feed/presentation/widgets/LongPostCard.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
+
 import 'package:kim/features/feed/presentation/widgets/FeedComment.dart';
 import 'package:kim/features/feed/presentation/widgets/FeedTop.dart';
-import 'package:kim/features/feed/presentation/widgets/ExamplePoll.dart';
-import 'package:kim/features/feed/presentation/widgets/RealPoll.dart';
+
 import 'package:kim/features/feed/presentation/widgets/Tags.dart';
+import 'package:kim/features/feed/presentation/widgets/custom_polls.dart';
 import 'package:kim/utils/constants.dart';
 
 import '../../../../core/text/HeaderText.dart';
@@ -49,7 +49,9 @@ class _FeddState extends State<Fedd> {
                     const FeedTop(),
                     Container(
                       color: Constants.mainColor,
-                      padding: EdgeInsets.symmetric(vertical:Constants.height20,horizontal: Constants.height20),
+                      padding: EdgeInsets.symmetric(
+                          vertical: Constants.height20,
+                          horizontal: Constants.height20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -117,16 +119,14 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height20,
                           ),
-                           Wrap(
+                          Wrap(
                             direction: Axis.horizontal,
                             // alignment: WrapAlignment.spaceBetween,
                             runAlignment: WrapAlignment.start,
-                            
-                          
+
                             runSpacing: 5,
                             spacing: 10,
                             children: [
-                          
                               Tags(
                                 name: "@나이키",
                               ),
@@ -268,7 +268,7 @@ class _FeddState extends State<Fedd> {
                                 SizedBox(
                                   height: Constants.height10,
                                 ),
-                                 Row(
+                                Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
@@ -284,19 +284,19 @@ class _FeddState extends State<Fedd> {
                               ],
                             ),
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: Constants.height20,
                           ),
-                          const Comment(),  
-                             SizedBox(
+                          const Comment(),
+                          SizedBox(
                             height: Constants.height20,
                           ),
-                          ExamplePolls(),
+                          CustomPolls(),
                         ],
                       ),
                     ),
-                 
-                   // RealPoll()
+
+                    // RealPoll()
                   ],
                 ),
               ),
