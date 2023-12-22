@@ -6,10 +6,10 @@ import 'package:get/get.dart';
 import 'package:kim/core/BottomBar.dart';
 import 'package:kim/core/BottomRadioBar.dart';
 import 'package:kim/core/Hamburger.dart';
-import 'package:kim/core/HeaderText.dart';
+import 'package:kim/core/text/HeaderText.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 
-import 'package:kim/core/button.dart';
+import 'package:kim/core/ui/Appbutton.dart';
 import 'package:kim/core/modal.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';

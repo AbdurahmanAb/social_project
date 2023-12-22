@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kim/utils/constants.dart';
@@ -48,7 +46,7 @@ class RadioButtonGroup extends StatefulWidget {
 
   //Selected icon Color
 
- final Color selectedIconColor;
+  final Color selectedIconColor;
 
   /// Main Axis Alignment of the buttons. Default [MainAxisAlignment.spaceAround]
   final MainAxisAlignment? mainAxisAlignment;
@@ -96,29 +94,28 @@ class RadioButtonGroup extends StatefulWidget {
   /// Transparent and 0 with by default.
   final BorderSide? selectedBorderSide;
 
-  const RadioButtonGroup(
-      {Key? key,
-      required this.options,
-      required this.callback,
-      this.selectedColor,
-      this.mainColor = Colors.grey,
-        this.selectedIconColor =Colors.green,
-      this.vertical = false,
-      this.buttonHeight = 50,
-      this.buttonWidth = 50,
-      this.circular = false,
-      this.spaceBetween = 8.0,
-      this.preSelectedIdx,
-      this.mainAxisAlignment,
-      this.crossAxisAlignment,
-      this.textStyle,
-      this.selectedBorderSide,
-      this.multilineNumber = 1,
-      this.betweenMultiLines = 0,
-      this.unselectEnabled = false,
-      this.buttonsEnabled = true,
-      })
-      : super(key: key);
+  const RadioButtonGroup({
+    Key? key,
+    required this.options,
+    required this.callback,
+    this.selectedColor,
+    this.mainColor = Colors.grey,
+    this.selectedIconColor = Colors.green,
+    this.vertical = false,
+    this.buttonHeight = 50,
+    this.buttonWidth = 50,
+    this.circular = false,
+    this.spaceBetween = 8.0,
+    this.preSelectedIdx,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.textStyle,
+    this.selectedBorderSide,
+    this.multilineNumber = 1,
+    this.betweenMultiLines = 0,
+    this.unselectEnabled = false,
+    this.buttonsEnabled = true,
+  }) : super(key: key);
 
   @override
   State<RadioButtonGroup> createState() => _RadioButtonGroupState();
@@ -147,7 +144,7 @@ class RadioButtonGroup extends StatefulWidget {
       callback: callback ?? this.callback,
       selectedColor: selectedColor ?? this.selectedColor,
       mainColor: mainColor ?? this.mainColor,
-      selectedIconColor:selectedIconColor?? this.selectedIconColor,
+      selectedIconColor: selectedIconColor ?? this.selectedIconColor,
       vertical: vertical ?? this.vertical,
       buttonHeight: buttonHeight ?? this.buttonHeight,
       buttonWidth: buttonWidth ?? this.buttonWidth,
@@ -179,7 +176,7 @@ class _RadioButtonGroupState extends State<RadioButtonGroup> {
   List<Widget> getRadioButtons() {
     List<Widget> radioButtons = [];
 
-    for (RadioOption radioOption in widget.options ) {
+    for (RadioOption radioOption in widget.options) {
       radioButtons.add(Padding(
         padding: EdgeInsets.symmetric(
             vertical: widget.vertical ? widget.spaceBetween : 0.0,
@@ -288,7 +285,6 @@ class _RadioButton extends StatelessWidget {
   final bool unselectEnabled;
   final bool buttonsEnabled;
 
-
   const _RadioButton({
     Key? key,
     required this.value,
@@ -300,7 +296,7 @@ class _RadioButton extends StatelessWidget {
     required this.buttonHeight,
     required this.buttonWidth,
     required this.circular,
-     this.selectedIconColor =Colors.green,
+    this.selectedIconColor = Colors.green,
     this.textStyle,
     this.borderSide,
     required this.unselectEnabled,
@@ -312,7 +308,7 @@ class _RadioButton extends StatelessWidget {
     final isSelected = value == groupValue;
 
     return _BasicButton(
-      selectedIconColor:selectedIconColor ,
+      selectedIconColor: selectedIconColor,
       radius: circular ? 100 : 2.5,
       height: buttonHeight,
       width: buttonWidth,
@@ -326,8 +322,11 @@ class _RadioButton extends StatelessWidget {
       label: text,
       textStyle: textStyle,
       isSelected: isSelected,
-      color: isSelected ? colorSelected?.withOpacity(buttonsEnabled ? 1 : 0.4) : colorMain.withOpacity(buttonsEnabled ? 1 : 0.4),
-      borderSide: borderSide?.copyWith(color: borderSide?.color.withOpacity(buttonsEnabled ? 1 : 0.5)),
+      color: isSelected
+          ? colorSelected?.withOpacity(buttonsEnabled ? 1 : 0.4)
+          : colorMain.withOpacity(buttonsEnabled ? 1 : 0.4),
+      borderSide: borderSide?.copyWith(
+          color: borderSide?.color.withOpacity(buttonsEnabled ? 1 : 0.5)),
     );
   }
 }
@@ -340,7 +339,7 @@ class _BasicButton extends StatelessWidget {
   final bool isSelected;
   final double radius;
   final Color? color;
-    final Color selectedIconColor;
+  final Color selectedIconColor;
   final BorderSide? borderSide;
   final TextStyle? textStyle;
 
@@ -350,7 +349,7 @@ class _BasicButton extends StatelessWidget {
       required this.label,
       required this.height,
       required this.width,
-      this.selectedIconColor =Colors.green,
+      this.selectedIconColor = Colors.green,
       this.radius = 0,
       this.color,
       this.textStyle,
@@ -377,23 +376,23 @@ class _BasicButton extends StatelessWidget {
         onPressed: () {
           callback();
         },
-        child: Row
-        (
-        
+        child: Row(
           children: [
             Row(
               children: [
-          isSelected? Icon(Icons.radio_button_checked,color: selectedIconColor,):Icon(Icons.radio_button_off),
-              Container(
-
-
-                   width: Constants.height20,
+                isSelected
+                    ? Icon(
+                        Icons.radio_button_checked,
+                        color: selectedIconColor,
+                      )
+                    : Icon(Icons.radio_button_off),
+                Container(
+                  width: Constants.height20,
                 ),
                 Text(
                   label,
-                  
-                  style:
-                      textStyle ?? const TextStyle(color: Colors.white, fontSize: 16),
+                  style: textStyle ??
+                      const TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ],
             ),

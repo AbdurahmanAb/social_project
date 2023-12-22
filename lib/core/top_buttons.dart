@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kim/core/button.dart';
+import 'package:kim/core/ui/Appbutton.dart';
 
 import 'package:kim/core/share.dart';
 
-import 'package:kim/core/HeaderText.dart';
+import 'package:kim/core/text/HeaderText.dart';
 import 'package:kim/utils/constants.dart';
 
 class TopButtons extends StatelessWidget {

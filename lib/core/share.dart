@@ -2,10 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kim/core/MidText.dart';
+import 'package:kim/core/text/MidText.dart';
 import 'package:kim/core/Row_widget.dart';
-import 'package:kim/core/button.dart';
-import 'package:kim/core/HeaderText.dart';
+import 'package:kim/core/ui/Appbutton.dart';
+import 'package:kim/core/text/HeaderText.dart';
 
 import '../utils/constants.dart';
 

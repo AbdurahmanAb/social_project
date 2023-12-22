@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get_navigation/src/routes/get_transition_mixin.dart';
-import 'package:kim/core/MidText.dart';
+import 'package:kim/core/text/MidText.dart';
 import 'package:kim/core/Row_widget.dart';
-import 'package:kim/core/HeaderText.dart';
-import 'package:kim/core/button.dart';
+import 'package:kim/core/text/HeaderText.dart';
+import 'package:kim/core/ui/Appbutton.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
 import '../utils/constants.dart';
 
@@ -26,7 +26,7 @@ class _BottomRadioState extends State<BottomRadio> {
     });
   }
 
-  void onRadioGroupChanged( value) {
+  void onRadioGroupChanged(value) {
     setState(() {
       disabled = false;
     });
@@ -36,7 +36,6 @@ class _BottomRadioState extends State<BottomRadio> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-      
         decoration: const BoxDecoration(
             color: Constants.Iconbg,
             borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
@@ -89,20 +88,28 @@ class _BottomRadioState extends State<BottomRadio> {
             ),
             Row(
               children: [
-                const Icon(Icons.info_outlined, color: Constants.pink,),
+                const Icon(
+                  Icons.info_outlined,
+                  color: Constants.pink,
+                ),
                 SizedBox(
                   width: Constants.height10,
                 ),
-                const Text("주의사항", style: TextStyle(color: Constants.pink, fontWeight: FontWeight.bold),),
+                const Text(
+                  "주의사항",
+                  style: TextStyle(
+                      color: Constants.pink, fontWeight: FontWeight.bold),
+                ),
               ],
             ),
-             SizedBox(
-                  height: Constants.height10,
-                ),
+            SizedBox(
+              height: Constants.height10,
+            ),
             const Text(
-                "운영정책 위반 여부를 확인하기 위해 신고한 댓글 내용을 위갭팀으로 접수합니다. 허위로 신고할 경우 서비스 이용이 제한될 수 있으니 유의해 주시기 바랍니다.", style: TextStyle(
-                  color: Constants.pink, fontWeight: FontWeight.bold
-                ),),
+              "운영정책 위반 여부를 확인하기 위해 신고한 댓글 내용을 위갭팀으로 접수합니다. 허위로 신고할 경우 서비스 이용이 제한될 수 있으니 유의해 주시기 바랍니다.",
+              style:
+                  TextStyle(color: Constants.pink, fontWeight: FontWeight.bold),
+            ),
             SizedBox(height: Constants.height20),
             AppButton(text: "신고하기", disabled: disabled),
           ],

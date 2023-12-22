@@ -7,15 +7,19 @@ class TextButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       color: Constants.black,
-      padding: EdgeInsets.only(bottom:Constants.height10, left: 5),
+      padding: EdgeInsets.only(bottom: Constants.height10, left: 5),
       child: Row(
         children: [
           TopText(text: "#캠핑"),
-          SizedBox(width: Constants.height10,),
+          SizedBox(
+            width: Constants.height10,
+          ),
           TopText(text: "#하이킹"),
-           SizedBox(width: Constants.height10,),
+          SizedBox(
+            width: Constants.height10,
+          ),
           TopText(text: "#낚시")
         ],
       ),

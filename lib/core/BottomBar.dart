@@ -20,7 +20,7 @@ class _BottomBarState extends State<BottomBar> {
         Get.toNamed("/explore");
         break;
       default:
-          break;
+        break;
     }
   }
 
@@ -28,7 +28,6 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       onTap: (index) {
-     
         handleTap(index);
       },
       backgroundColor: Constants.black,

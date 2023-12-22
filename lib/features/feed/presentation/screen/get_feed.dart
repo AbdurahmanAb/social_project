@@ -12,9 +12,9 @@ import 'package:kim/features/feed/presentation/widgets/RealPoll.dart';
 import 'package:kim/features/feed/presentation/widgets/Tags.dart';
 import 'package:kim/utils/constants.dart';
 
-import '../../../../core/HeaderText.dart';
+import '../../../../core/text/HeaderText.dart';
 import '../../../../core/avatar.dart';
-import '../../../../core/button.dart';
+import '../../../../core/ui/Appbutton.dart';
 
 class Fedd extends StatefulWidget {
   final int id;

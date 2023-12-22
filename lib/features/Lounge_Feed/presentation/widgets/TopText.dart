@@ -8,9 +8,8 @@ class TopText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,style: TextStyle(
-        color: Constants.appColor
-      ),
+      text,
+      style: TextStyle(color: Constants.appColor),
     );
   }
 }
