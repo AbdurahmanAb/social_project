@@ -7,6 +7,7 @@ import 'package:kim/features/explore/presentation/screen/gab_explore.dart';
 import 'package:kim/features/explore/presentation/screen/explore_search.dart';
 import 'package:kim/features/feed/presentation/screen/get_feed.dart';
 import 'package:kim/features/feed/presentation/widgets/ImageView.dart';
+import 'package:kim/features/gab_write/presentation/screen/write_vote.dart';
 
 class Routes {
   static const String welcome = "/welcome";
@@ -17,20 +18,21 @@ class Routes {
   static const String explore = "/explore";
   static const String feedExplore = "/feedexplore";
   static const String detailBrand = "/detail";
-
-
-
+  static const String write = "/write";
   static String getFeed(int id) => '$feed?id=$id';
   static String getImage(int id) => '$image?id=$id';
 
   static List<GetPage> routes = [
-      GetPage(name: welcome, page: () => const WelcomeScreen()),
+    GetPage(name: welcome, page: () => const WelcomeScreen()),
     GetPage(name: main, page: () => const MainScreen()),
     GetPage(name: search, page: () => const SearchScreen()),
     GetPage(name: explore, page: () => const GabFeed()),
-    GetPage(name: feedExplore, page: ()=>const ExploreSearch()),
-    GetPage(name: detailBrand, page: ()=>const DetailBrand()),
-    
+    GetPage(name: feedExplore, page: () => const ExploreSearch()),
+    GetPage(name: detailBrand, page: () => const DetailBrand()),
+    GetPage(
+      name: write,
+      page: () => const WriteVote(),
+    ),
     GetPage(
         name: feed,
         page: () {
@@ -43,6 +45,5 @@ class Routes {
           var id = Get.parameters['id'];
           return ImageView(id: int.parse(id!));
         }),
-  
   ];
 }

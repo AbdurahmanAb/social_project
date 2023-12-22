@@ -31,9 +31,9 @@ class _ExamplePollsState extends State<ExamplePolls> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.maxFinite,
+      width: double.maxFinite -130,
      
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(top:16, bottom: 16, left: 10, right: 10),
  
       decoration: ShapeDecoration(
         color: Color(0xFF545456),
@@ -63,13 +63,13 @@ class _ExamplePollsState extends State<ExamplePolls> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                 
+                  
                   child: Text(
                     '복수 선택 불가',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,
-                 
+                    
                       fontWeight: FontWeight.w500,
                    
                     ),

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import 'package:kim/core/BottomBar.dart';
 import 'package:kim/core/BottomRadioBar.dart';
-import 'package:kim/core/CustomDrawer.dart';
+import 'package:kim/core/Hamburger.dart';
 import 'package:kim/core/HeaderText.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 

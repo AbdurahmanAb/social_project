@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:get/get.dart';
 import 'package:kim/core/BottomBar.dart';
-import 'package:kim/core/CustomDrawer.dart';
+import 'package:kim/core/Hamburger.dart';
 import 'package:kim/core/button.dart';
 import 'package:kim/core/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
@@ -17,28 +17,26 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  void Open() {
+    _scaffoldKey.currentState!.openDrawer();
+  }
 
-void Open(){
-  _scaffoldKey.currentState!.openDrawer();
-}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    key: _scaffoldKey,
+        key: _scaffoldKey,
         backgroundColor: Constants.mainColor,
         body: SafeArea(
           child: Column(
             children: [
-            
               Column(
                 children: [
-                  TopBar(Triger:  Open  ),
+                  TopBar(Triger: Open),
                   TopButtons(),
                 ],
               ),
-                  
               Expanded(
                 child: Center(
                   child: Column(
@@ -51,7 +49,9 @@ void Open(){
                       ),
                       GestureDetector(
                           onTap: () {
-                            Get.toNamed("/main");
+                            Get.toNamed(
+                              "/write",
+                            );
                           },
                           child: AppButton(text: "갭 작성하기"))
                     ],
@@ -61,7 +61,7 @@ void Open(){
             ],
           ),
         ),
-          drawer: CustomDrawer(),
+        drawer: CustomDrawer(),
         bottomNavigationBar: BottomBar());
   }
 }
