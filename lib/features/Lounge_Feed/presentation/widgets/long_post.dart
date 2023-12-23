@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kim/core/avatar.dart';
+import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 import 'package:kim/utils/constants.dart';
 

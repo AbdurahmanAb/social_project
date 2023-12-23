@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kim/core/avatar.dart';
+import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/utils/constants.dart';
 
 class TopBar extends StatelessWidget {

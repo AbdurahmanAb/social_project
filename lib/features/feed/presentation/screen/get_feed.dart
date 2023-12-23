@@ -13,7 +13,7 @@ import 'package:kim/features/feed/presentation/widgets/custom_polls.dart';
 import 'package:kim/utils/constants.dart';
 
 import '../../../../core/text/HeaderText.dart';
-import '../../../../core/avatar.dart';
+import '../../../../core/ui/avatar.dart';
 import '../../../../core/ui/Appbutton.dart';
 
 class Fedd extends StatefulWidget {

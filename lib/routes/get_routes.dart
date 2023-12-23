@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kim/core/ui/profile_thumbnail.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/main_yes_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/search_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/welcome.dart';
@@ -19,6 +20,8 @@ class Routes {
   static const String feedExplore = "/feedexplore";
   static const String detailBrand = "/detail";
   static const String write = "/write";
+  static const String profile = "/profile";
+
   static String getFeed(int id) => '$feed?id=$id';
   static String getImage(int id) => '$image?id=$id';
 
@@ -29,9 +32,10 @@ class Routes {
     GetPage(name: explore, page: () => const GabFeed()),
     GetPage(name: feedExplore, page: () => const ExploreSearch()),
     GetPage(name: detailBrand, page: () => const DetailBrand()),
+    GetPage(name: profile, page: () => const ProfileThumbnail()),
     GetPage(
       name: write,
-      page: () =>  WriteVote(),
+      page: () => const WriteVote(),
     ),
     GetPage(
         name: feed,

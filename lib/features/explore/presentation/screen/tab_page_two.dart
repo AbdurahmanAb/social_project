@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kim/core/avatar.dart';
+import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/explore/presentation/widgets/brand.dart';
 import 'package:kim/utils/constants.dart';
 

@@ -12,6 +12,9 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     final TextEditingController _controller = TextEditingController();
@@ -30,69 +33,75 @@ class _SearchScreenState extends State<SearchScreen> {
     }
 
     return Scaffold(
+      backgroundColor: Constants.Iconbg,
       body: SafeArea(
-        child: Container(
-          child: Column(
-            children: [
-              TopBar(Triger: () {}),
-              // TopButtons(text: "GO OUT",),
-              TextButtons(),
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 10),
-                    child: Stack(
-                      children: [
-                        SizedBox(
-                          height: 28,
-                          width: Constants.screen_width * 0.8,
-                          child: TextField(
-                            controller: _controller,
-                            onChanged: (value) {
-                              print(_controller.text);
-                            },
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w300),
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15)),
-                                  borderSide: BorderSide.none,
-                                ),
-                                hintText: '검색어 입력',
-                                hintStyle: TextStyle(fontSize: 10),
-                                filled: true,
-                                fillColor: Color.fromARGB(255, 94, 93, 93),
-                                contentPadding: EdgeInsets.only(
-                                    top: 10, bottom: 10, left: 35, right: 20)),
+        child: GestureDetector(
+          onTap: (){
+          
+          },
+          child: Container(
+            child: Column(
+              children: [
+                TopBar(Triger: () {}),
+                // TopButtons(text: "GO OUT",),
+                TextButtons(),
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 10),
+                      child: Stack(
+                        children: [
+                          SizedBox(
+                            height: 28,
+                            width: Constants.screen_width * 0.8,
+                            child: TextField(
+                              controller: _controller,
+                              onChanged: (value) {
+                                print(_controller.text);
+                              },
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w300),
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(15)),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  hintText: '검색어 입력',
+                                  hintStyle: TextStyle(fontSize: 10),
+                                  filled: true,
+                                  fillColor: Color.fromARGB(255, 94, 93, 93),
+                                  contentPadding: EdgeInsets.only(
+                                      top: 10, bottom: 10, left: 35, right: 20)),
+                            ),
                           ),
-                        ),
-                        Positioned(
-                            top: 8,
-                            left: 8,
-                            child: Image.asset(
-                              "assets/Lounge/icon_search.png",
-                              height: 15,
-                            ))
-                      ],
+                          Positioned(
+                              top: 8,
+                              left: 8,
+                              child: Image.asset(
+                                "assets/Lounge/icon_search.png",
+                                height: 15,
+                              ))
+                        ],
+                      ),
                     ),
-                  ),
-                  Text("취소")
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: 8, horizontal: Constants.height10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text("최근 검색어"), Text("전체 삭제")],
+                    Text("취소")
+                  ],
                 ),
-              ),
-              Expanded(
-                child: Center(child: render()),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      vertical: 8, horizontal: Constants.height10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [Text("최근 검색어"), Text("전체 삭제")],
+                  ),
+                ),
+                Expanded(
+                  child: Center(child: render()),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kim/core/avatar.dart';
+import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/core/modal.dart';
 import 'package:kim/features/explore/presentation/widgets/ResultBottom.dart';
 import 'package:kim/features/explore/presentation/widgets/ResultBtn.dart';
