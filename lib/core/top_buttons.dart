@@ -17,8 +17,7 @@ class TopButtons extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: Constants.height10),
+            padding: EdgeInsets.symmetric(horizontal: Constants.height10),
             height: Constants.screen_height * 0.3,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -49,10 +48,10 @@ class TopButtons extends StatelessWidget {
                   ],
                 ),
                 const Text(
-                    "<GO OUT>은 경험하는 매거진을 주제로 한 아웃도어 라이프스타일 편집 잡지입니다. 시시각각 변화하는 아웃도어 트렌드와 최신 뉴스, 패션, 캠핑, 액티비티에 관한 정보를 함께 제공합니다.", style: TextStyle(
-                      fontSize: 12
-                    ),),
-                const AppButton(text: "닫기")
+                  "<GO OUT>은 경험하는 매거진을 주제로 한 아웃도어 라이프스타일 편집 잡지입니다. 시시각각 변화하는 아웃도어 트렌드와 최신 뉴스, 패션, 캠핑, 액티비티에 관한 정보를 함께 제공합니다.",
+                  style: TextStyle(fontSize: 12),
+                ),
+                 AppButton(text: "닫기")
               ],
             ),
           );
@@ -70,15 +69,13 @@ class TopButtons extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.only(right: 10),
-
-               
-
                 child: GestureDetector(
-                  onTap: () {
-                    _showBottomSheet(context);
-                  },
-                  child: Image.asset("assets/Lounge/brand_badge.png",)
-                ),
+                    onTap: () {
+                      _showBottomSheet(context);
+                    },
+                    child: Image.asset(
+                      "assets/Lounge/brand_badge.png",
+                    )),
               ),
               const Header(
                 text: "@라코스테",

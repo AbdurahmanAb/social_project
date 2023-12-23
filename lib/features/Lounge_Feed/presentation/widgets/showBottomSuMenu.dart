@@ -128,7 +128,7 @@ class _TriggerState extends State<Trigger> {
                   height: Constants.height15,
                   width: 0,
                 ),
-          const AppButton(text: "닫기")
+          AppButton(text: "닫기")
         ],
       ),
     );

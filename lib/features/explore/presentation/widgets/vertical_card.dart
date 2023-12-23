@@ -10,24 +10,15 @@ class VerticalCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
  
-      color: Constants.Iconbg,
+     
       padding: EdgeInsets.all(Constants.height10 / 2),
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("친구의 Gab"),
-                Icon(CupertinoIcons.forward),
-              ],
-            ),
-          ),
+          
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const AvatarImg(),
+              const AvatarImg(Enableborder: false),
               const SizedBox(
                 width: 5,
               ),
@@ -39,28 +30,31 @@ class VerticalCard extends StatelessWidget {
                     const SizedBox(
                 height: 10,
               ),
-                    Container(
-                      padding: const EdgeInsets.all(25),
-                      decoration: BoxDecoration(
-                          color: Constants.bottom,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "테니스는 라코스테인데.. 난 왜이리 안어울릴까~~다른 브랜드 추천해주세요 ",
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          Row(
-                            children: [
-                              Brand(
-                                brand: "assets/avatar/apple.png",
-                                brandText: "@라코스테",
-                                brandText2: "#테니스 ",
-                              )
-                            ],
-                          )
-                        ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Container(
+                        padding: const EdgeInsets.all(25),
+                        decoration: BoxDecoration(
+                            color: Constants.bottom,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "테니스는 라코스테인데.. 난 왜이리 안어울릴까~~다른 브랜드 추천해주세요 ",
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            Row(
+                              children: [
+                                Brand(
+                                  brand: "assets/avatar/apple.png",
+                                  brandText: "@라코스테",
+                                  brandText2: "#테니스 ",
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],

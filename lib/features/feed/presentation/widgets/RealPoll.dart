@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_polls/flutter_polls.dart';
+
 import 'package:get/get.dart';
 import 'package:kim/features/feed/domian/PollController.dart';
 import 'package:kim/utils/constants.dart';

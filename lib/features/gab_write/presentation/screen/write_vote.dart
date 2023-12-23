@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_poll.dart';
+import 'package:kim/features/gab_write/presentation/widgets/add_tag.dart';
 import 'package:kim/utils/constants.dart';
 
 class WriteVote extends StatefulWidget {
@@ -94,19 +96,31 @@ class _WriteVoteState extends State<WriteVote> {
                 Row(
                   children: [
                     GestureDetector(
+                        onTap: () {
+                          MyBottomSheet.showBottomSheet(
+                              context,
+                              "카메라",
+                              "assets/icons/icon_modify.png",
+                              "assets/icons/icon__picture.png",
+                              "사진 앨범",
+                              "닫기");
+                        },
                         child: Image.asset("assets/icons/icon_picture.png")),
                     SizedBox(
                       width: Constants.height10,
                     ),
                     GestureDetector(
-                      onTap: (){
-                        Addpoll.showAddPoll(context);
-                      },
+                        onTap: () {
+                          Addpoll.showAddPoll(context);
+                        },
                         child: Image.asset("assets/icons/icon_list.png")),
                     SizedBox(
                       width: Constants.height10,
                     ),
                     GestureDetector(
+                        onTap: () {
+                          ToggleAddTag.showBottomSheet(context);
+                        },
                         child: Image.asset("assets/icons/icon_tag.png")),
                     SizedBox(
                       width: Constants.height10,

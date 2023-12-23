@@ -31,7 +31,7 @@ class Routes {
     GetPage(name: detailBrand, page: () => const DetailBrand()),
     GetPage(
       name: write,
-      page: () => const WriteVote(),
+      page: () =>  WriteVote(),
     ),
     GetPage(
         name: feed,
