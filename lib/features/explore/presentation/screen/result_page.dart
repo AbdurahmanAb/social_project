@@ -8,7 +8,19 @@ import 'package:kim/features/explore/presentation/widgets/ResultBtn.dart';
 import 'package:kim/utils/constants.dart';
 
 class ResultPage extends StatefulWidget {
-  const ResultPage({super.key});
+  final String name;
+  final String subtitle;
+  final Widget avatar;
+  final bool isFollowed;
+  final List brands;
+
+  const ResultPage(
+      {super.key,
+      required this.name,
+      required this.subtitle,
+      required this.avatar,
+      required this.isFollowed,
+      required this.brands});
 
   @override
   State<ResultPage> createState() => _ResultPageState();
@@ -18,23 +30,89 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(children: [
-        Column(
-          children: [
-            Padding(
+      child: Column(
+        children: [
+          // Padding(
+          //   padding: EdgeInsets.only(
+          //       left: Constants.height10,
+          //       right: Constants.height10,
+          //       top: 20,
+          //       bottom: Constants
+          //           .height15), // padding: const EdgeInsets.all(8.0),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       Row(
+          //         crossAxisAlignment: CrossAxisAlignment.center,
+          //         children: [
+          //           SizedBox(height: 48, width: 48, child: widget.avatar),
+          //           SizedBox(
+          //             width: Constants.height10,
+          //           ),
+          //           Column(
+          //             crossAxisAlignment: CrossAxisAlignment.start,
+          //             children: [
+          //                Text(
+          //                 widget.name,
+          //                 style: TextStyle(fontSize: 12),
+          //               ),
+          //               const SizedBox(
+          //                 height: 5,
+          //               ),
+          //                Text(widget.subtitle,
+          //                   style: TextStyle(fontSize: 10)),
+          //               const SizedBox(
+          //                 height: 5,
+          //               ),
+          //               ListView.builder(
+          //                 itemBuilder: (context, index) {
+          //                   return Row(
+          //                     children: [
+          //                       Image.asset(
+          //                         widget.brands[index],
+          //                         height: 20,
+          //                       ),
+          //                     ],
+          //                   );
+          //                 },
+          //               )
+          //             ],
+          //           )
+          //         ],
+          //       ),
+          //       widget.isFollowed
+          //           ? const ResultBtn(text: "팔로잉", disabled: true)
+          //           : const ResultBtn(text: "팔로우", disabled: false),
+          //     ],
+          //   ),
+          // ),
+          // const Divider(
+          //   color: Constants.black,
+          // ),
+          GestureDetector(
+            onTap: () {
+              ResultBottom.showResultBottom(context);
+            },
+            child: Padding(
               padding: EdgeInsets.only(
                   left: Constants.height10,
                   right: Constants.height10,
                   top: 20,
                   bottom: Constants
                       .height15), // padding: const EdgeInsets.all(8.0),
+              //             padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(height: 48, width: 48, child: const AvatarImg()),
+                      SizedBox(
+                          height: 48,
+                          width: 48,
+                          child: const AvatarImg(
+                            ImgUrl: "assets/avatar/post5.jpg",
+                          )),
                       SizedBox(
                         width: Constants.height10,
                       ),
@@ -42,7 +120,7 @@ class _ResultPageState extends State<ResultPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
-                            "sanasana_love",
+                            "spider_maninga",
                             style: TextStyle(fontSize: 12),
                           ),
                           const SizedBox(
@@ -53,99 +131,40 @@ class _ResultPageState extends State<ResultPage> {
                           const SizedBox(
                             height: 5,
                           ),
-                          Image.asset(
-                            "assets/avatar/nike.png",
-                            height: 20,
+                          Row(
+                            children: [
+                              Image.asset(
+                                "assets/avatar/goout.png",
+                              ),
+                              const SizedBox(
+                                width: 3,
+                              ),
+                              Image.asset(
+                                "assets/avatar/supreme.png",
+                              ),
+                              const SizedBox(
+                                width: 3,
+                              ),
+                              Image.asset(
+                                "assets/avatar/nike.png",
+                                height: 15,
+                              ),
+                            ],
                           ),
                         ],
                       )
                     ],
                   ),
-                  const ResultBtn(text: "팔로잉", disabled: true)
+                  const ResultBtn(text: "팔로우", disabled: false)
                 ],
               ),
             ),
-            const Divider(
-              color: Constants.black,
-            ),
-            GestureDetector(
-              onTap: () {
-                ResultBottom.showResultBottom(context);
-              },
-              child: Padding(
-                padding: EdgeInsets.only(
-                    left: Constants.height10,
-                    right: Constants.height10,
-                    top: 20,
-                    bottom: Constants
-                        .height15), // padding: const EdgeInsets.all(8.0),
-                //             padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                            height: 48,
-                            width: 48,
-                            child: const AvatarImg(
-                                ImgUrl: "assets/avatar/post5.jpg")),
-                        SizedBox(
-                          width: Constants.height10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "spider_maninga",
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text("나이키 조깅 멤버 구해요~~",
-                                style: TextStyle(fontSize: 10)),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  "assets/avatar/goout.png",
-                                ),
-                                const SizedBox(
-                                  width: 3,
-                                ),
-                                Image.asset(
-                                  "assets/avatar/supreme.png",
-                                ),
-                                const SizedBox(
-                                  width: 3,
-                                ),
-                                Image.asset(
-                                  "assets/avatar/nike.png",
-                                  height: 15,
-                                ),
-                              ],
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    const ResultBtn(text: "팔로우", disabled: false)
-                  ],
-                ),
-              ),
-            ),
-            const Divider(
-              color: Constants.black,
-            ),
-         
-          ],
-        ),
-        // Positioned(top:0, left: 8, child: BottomModal())
-      ]),
+          ),
+          const Divider(
+            color: Constants.black,
+          ),
+        ],
+      ),
     );
   }
 }
