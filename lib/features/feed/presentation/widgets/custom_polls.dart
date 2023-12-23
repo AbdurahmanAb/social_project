@@ -31,10 +31,8 @@ class _CustomPollsState extends State<CustomPolls> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.maxFinite -130,
-     
-      padding: const EdgeInsets.only(top:16, bottom: 16, left: 10, right: 10),
- 
+      width: double.maxFinite - 130,
+      padding: const EdgeInsets.only(top: 16, bottom: 16, left: 10, right: 10),
       decoration: ShapeDecoration(
         color: Color(0xFF545456),
         shape: RoundedRectangleBorder(
@@ -50,38 +48,33 @@ class _CustomPollsState extends State<CustomPolls> {
             style: TextStyle(
               color: Colors.white,
               fontSize: 14,
-
               fontWeight: FontWeight.w700,
-         
             ),
           ),
           Container(
-         
             child: Row(
-       
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  
                   child: Text(
                     '복수 선택 불가',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,
-                    
                       fontWeight: FontWeight.w500,
-                   
                     ),
                   ),
                 ),
               ],
             ),
-          ),  SizedBox(height: Constants.height15,),
+          ),
+          SizedBox(
+            height: Constants.height15,
+          ),
           Container(
             width: double.maxFinite,
             height: 32,
-         
             decoration: ShapeDecoration(
               color: Color(0xFF363638),
               shape: RoundedRectangleBorder(
@@ -113,7 +106,7 @@ class _CustomPollsState extends State<CustomPolls> {
                   top: 5,
                   child: Container(
                     width: 329,
-                    padding:  EdgeInsets.symmetric(horizontal: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 12),
                     clipBehavior: Clip.antiAlias,
                     decoration: ShapeDecoration(
                       shape: RoundedRectangleBorder(
@@ -155,25 +148,20 @@ class _CustomPollsState extends State<CustomPolls> {
                                   style: TextStyle(
                                     color: Color(0xFF7C7C80),
                                     fontSize: 14,
-                                  
                                     fontWeight: FontWeight.w700,
-                                 
                                   ),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                       
                         Text(
                           '30% (00명)',
                           textAlign: TextAlign.right,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
-                         
                             fontWeight: FontWeight.w700,
-                       
                           ),
                         ),
                       ],
@@ -182,7 +170,10 @@ class _CustomPollsState extends State<CustomPolls> {
                 ),
               ],
             ),
-          ),  SizedBox(height: Constants.height15,),
+          ),
+          SizedBox(
+            height: Constants.height15,
+          ),
           Container(
             width: double.maxFinite,
             height: 32,
@@ -233,7 +224,6 @@ class _CustomPollsState extends State<CustomPolls> {
                         Expanded(
                           child: Container(
                             height: 21,
-                      
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
                               color: Colors.white
@@ -261,9 +251,7 @@ class _CustomPollsState extends State<CustomPolls> {
                                   style: TextStyle(
                                     color: Color(0xFF7C7C80),
                                     fontSize: 14,
-                                
                                     fontWeight: FontWeight.w700,
-                             
                                   ),
                                 ),
                               ],
@@ -279,7 +267,6 @@ class _CustomPollsState extends State<CustomPolls> {
                             fontSize: 16,
                             fontFamily: 'KoPubDotum_Pro',
                             fontWeight: FontWeight.w700,
-                           
                           ),
                         ),
                       ],
@@ -288,8 +275,10 @@ class _CustomPollsState extends State<CustomPolls> {
                 ),
               ],
             ),
-          ),  
-          SizedBox(height: Constants.height15,),
+          ),
+          SizedBox(
+            height: Constants.height15,
+          ),
           Container(
             width: double.maxFinite,
             height: 32,
@@ -369,7 +358,6 @@ class _CustomPollsState extends State<CustomPolls> {
                                     fontSize: 14,
                                     fontFamily: 'KoPubDotum_Pro',
                                     fontWeight: FontWeight.w700,
-                                  
                                   ),
                                 ),
                               ],
@@ -387,7 +375,6 @@ class _CustomPollsState extends State<CustomPolls> {
                                   fontSize: 16,
                                   fontFamily: 'KoPubDotum_Pro',
                                   fontWeight: FontWeight.w700,
-                                
                                 ),
                               ),
                               TextSpan(
@@ -397,7 +384,6 @@ class _CustomPollsState extends State<CustomPolls> {
                                   fontSize: 16,
                                   fontFamily: 'KoPubDotum_Pro',
                                   fontWeight: FontWeight.w700,
-                                
                                 ),
                               ),
                             ],
@@ -411,7 +397,9 @@ class _CustomPollsState extends State<CustomPolls> {
               ],
             ),
           ),
-                 SizedBox(height: Constants.height15,),
+          SizedBox(
+            height: Constants.height15,
+          ),
           Container(
             width: double.maxFinite,
             height: 32,
@@ -452,7 +440,6 @@ class _CustomPollsState extends State<CustomPolls> {
                       ),
                     ),
                     child: Row(
-               
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -464,7 +451,6 @@ class _CustomPollsState extends State<CustomPolls> {
                                   .withOpacity(0.000009999999747378752),
                             ),
                             child: Row(
-                            
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -501,7 +487,6 @@ class _CustomPollsState extends State<CustomPolls> {
                                           ),
                                         ),
                                       ),
-                                   
                                       Positioned(
                                         left: 4,
                                         top: 4,
@@ -520,16 +505,13 @@ class _CustomPollsState extends State<CustomPolls> {
                                     ],
                                   ),
                                 ),
-                                
                                 Text(
                                   '문항',
                                   style: TextStyle(
                                     color: Colors.black
                                         .withOpacity(0.20000000298023224),
                                     fontSize: 14,
-                                  
                                     fontWeight: FontWeight.w700,
-                                 
                                   ),
                                 ),
                               ],
@@ -543,9 +525,7 @@ class _CustomPollsState extends State<CustomPolls> {
                           style: TextStyle(
                             color: Color(0xFF363638),
                             fontSize: 16,
-
                             fontWeight: FontWeight.w700,
-                       
                           ),
                         ),
                       ],
@@ -554,7 +534,10 @@ class _CustomPollsState extends State<CustomPolls> {
                 ),
               ],
             ),
-          ),  SizedBox(height: Constants.height15,),
+          ),
+          SizedBox(
+            height: Constants.height15,
+          ),
           Container(
             width: double.infinity,
             height: 13,
@@ -573,7 +556,6 @@ class _CustomPollsState extends State<CustomPolls> {
                       fontSize: 12,
                       fontFamily: 'KoPubDotum_Pro',
                       fontWeight: FontWeight.w500,
-                  
                     ),
                   ),
                 ),

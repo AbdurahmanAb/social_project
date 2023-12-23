@@ -79,6 +79,7 @@ class _TopCardState extends State<TopCard> {
                       color: Constants.bottom),
                   padding: const EdgeInsets.all(12),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                     Brand(brand:widget.brand ,brandText: "@라코스테"),
                       const SizedBox(

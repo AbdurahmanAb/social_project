@@ -9,7 +9,7 @@ class TagButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 170,
+      width: 160,
       height: 32,
    decoration: BoxDecoration(
        color: colors,

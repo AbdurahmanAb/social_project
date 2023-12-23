@@ -118,14 +118,15 @@ class _WriteVoteState extends State<WriteVote> {
                       width: Constants.height10,
                     ),
                     GestureDetector(
-                        onTap: () {
-                          ToggleAddTag.showBottomSheet(context);
-                        },
+                       
                         child: Image.asset("assets/icons/icon_tag.png")),
                     SizedBox(
                       width: Constants.height10,
                     ),
                     GestureDetector(
+                       onTap: () {
+                          ToggleAddTag.showBottomSheet(context);
+                        },
                         child:
                             Image.asset("assets/icons/icon_brand_mention.png")),
                     SizedBox(

@@ -31,7 +31,7 @@ class _GabFeedState extends State<GabFeed> {
         Container(
   color: Constants.Iconbg,
   padding: EdgeInsets.only(bottom:20),
-      height: 650,
+      height: Constants.screen_height * .85,
           child: Column(
             children: [
  const Padding(
@@ -59,7 +59,7 @@ class _GabFeedState extends State<GabFeed> {
           TopCard(brand: "assets/avatar/nike.png", brandText: "@posta", text: "LACOSTE(라코스테)는 1920년대 프랑스의 테니스 스타인 장 르네 라코스테(Jean Rene Lacoste)에 의해 만들어진 브랜드입니다."),
            SizedBox(height: Constants.height10 /2,),
            ImageCard(),
-           TopCard(brand: "asse", brandText: brandText, text: text)
+           TopCard(brand: "assets/avatar/lacoste.png", brandText: "", text: "LACOSTE(라코스테)는 1920년대 프랑스의 테니스 스타인 장 르네 라코스테(Jean Rene Lacoste)에 의해 만들어진 브랜드입니다.")
 
           
           

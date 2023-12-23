@@ -13,6 +13,7 @@ class _BottomBarState extends State<BottomBar> {
   void handleTap(i) {
     switch (i) {
       case 0:
+        Get.toNamed("/main");
         break;
       case 1:
         break;

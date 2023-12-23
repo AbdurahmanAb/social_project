@@ -18,16 +18,16 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(
-        children:[ Column(
+      child: Stack(children: [
+        Column(
           children: [
             Padding(
               padding: EdgeInsets.only(
                   left: Constants.height10,
                   right: Constants.height10,
                   top: 20,
-                  bottom:
-                      Constants.height15), // padding: const EdgeInsets.all(8.0),
+                  bottom: Constants
+                      .height15), // padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -69,7 +69,7 @@ class _ResultPageState extends State<ResultPage> {
               color: Constants.black,
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 ResultBottom.showResultBottom(context);
               },
               child: Padding(
@@ -77,8 +77,8 @@ class _ResultPageState extends State<ResultPage> {
                     left: Constants.height10,
                     right: Constants.height10,
                     top: 20,
-                    bottom:
-                        Constants.height15), // padding: const EdgeInsets.all(8.0),
+                    bottom: Constants
+                        .height15), // padding: const EdgeInsets.all(8.0),
                 //             padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,8 +89,8 @@ class _ResultPageState extends State<ResultPage> {
                         SizedBox(
                             height: 48,
                             width: 48,
-                            child:
-                                const AvatarImg(ImgUrl: "assets/avatar/post5.jpg")),
+                            child: const AvatarImg(
+                                ImgUrl: "assets/avatar/post5.jpg")),
                         SizedBox(
                           width: Constants.height10,
                         ),
@@ -141,272 +141,11 @@ class _ResultPageState extends State<ResultPage> {
             const Divider(
               color: Constants.black,
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: Constants.height10,
-                  right: Constants.height10,
-                  top: 20,
-                  bottom:
-                      Constants.height15), // padding: const EdgeInsets.all(8.0),
-              //             padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 48,
-                            width: 48,
-                        child: const AvatarImg(ImgUrl: "assets/avatar/post1.jpg")),
-                      SizedBox(
-                        width: Constants.height10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "spider_maninga",
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text("나이키 조깅 멤버 구해요~~",
-                              style: TextStyle(fontSize: 10)),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(
-                                "assets/avatar/apple.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/supreme.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/nike.png",
-                                height: 15,
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  const ResultBtn(text: "팔로우", disabled: false)
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: Constants.height10,
-                  right: Constants.height10,
-                  top: 20,
-                  bottom:
-                      Constants.height15), // padding: const EdgeInsets.all(8.0),
-              //             padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 48,
-                            width: 48,
-                        child: const AvatarImg(ImgUrl: "assets/avatar/post4.jpg")),
-                      SizedBox(
-                        width: Constants.height10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "spider_maninga",
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text("나이키 조깅 멤버 구해요~~",
-                              style: TextStyle(fontSize: 10)),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(
-                                "assets/avatar/apple.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/supreme.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/nike.png",
-                                height: 15,
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  const ResultBtn(text: "팔로우", disabled: false)
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: Constants.height10,
-                  right: Constants.height10,
-                  top: 20,
-                  bottom:
-                      Constants.height15), // padding: const EdgeInsets.all(8.0),
-              //             padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 48,
-                            width: 48,
-                        child: const AvatarImg(ImgUrl: "assets/avatar/post4.jpg")),
-                      SizedBox(
-                        width: Constants.height10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "spider_maninga",
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text("나이키 조깅 멤버 구해요~~",
-                              style: TextStyle(fontSize: 10)),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(
-                                "assets/avatar/apple.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/supreme.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/nike.png",
-                                height: 15,
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  const ResultBtn(text: "팔로우", disabled: false)
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: Constants.height10,
-                  right: Constants.height10,
-                  top: 20,
-                  bottom:
-                      Constants.height15), // padding: const EdgeInsets.all(8.0),
-              //             padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 48,
-                            width: 48,
-                        child: const AvatarImg(ImgUrl: "assets/avatar/post3.jpg")),
-                      SizedBox(
-                        width: Constants.height10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "spider_maninga",
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text("나이키 조깅 멤버 구해요~~",
-                              style: TextStyle(fontSize: 10)),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(
-                                "assets/avatar/apple.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/supreme.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/nike.png",
-                                height: 15,
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  const ResultBtn(text: "팔로우", disabled: false)
-                ],
-              ),
-            ),
-            
+         
           ],
         ),
-        
-        Positioned(
-      bottom: 2,
-      left: 8,
-          child: BottomModal())
-        ]
-      ),
+        // Positioned(top:0, left: 8, child: BottomModal())
+      ]),
     );
   }
 }

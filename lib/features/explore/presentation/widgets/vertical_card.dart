@@ -37,13 +37,15 @@ class VerticalCard extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Constants.bottom,
                             borderRadius: BorderRadius.circular(10)),
-                        child: const Column(
+                        child:  Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "테니스는 라코스테인데.. 난 왜이리 안어울릴까~~다른 브랜드 추천해주세요 ",
-                              style: TextStyle(fontSize: 20),
-                            ),
+                              style: TextStyle(fontSize: 14),
+                            ),   SizedBox(
+                height: Constants.height15,
+              ),
                             Row(
                               children: [
                                 Brand(
