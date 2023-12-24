@@ -9,21 +9,43 @@ import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/profile/presentation/widgets/data_followers_folloiwing.dart';
 import 'package:kim/features/profile/presentation/widgets/gab_illust.dart';
+import 'package:kim/features/profile/presentation/widgets/no_gab.dart';
 import 'package:kim/features/profile/presentation/widgets/social_row.dart';
 import 'package:kim/features/profile/presentation/widgets/titles_text.dart';
 import 'package:kim/utils/constants.dart';
 
-class ProfileThumbnail extends StatelessWidget {
+class ProfileThumbnail extends StatefulWidget {
   const ProfileThumbnail({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<ProfileThumbnail> createState() => _ProfileThumbnailState();
+}
 
-    /// THESE ARE ARGUMENT THAT GOING TO BE PASSED FOR THE FOLLOWERS WIDGET 
+class _ProfileThumbnailState extends State<ProfileThumbnail>
+    with TickerProviderStateMixin {
+  late TabController tabController;
+  int selectedIndex = 0;
+
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 3, vsync: this);
+    tabController.addListener(
+      () {
+        setState(() {
+          selectedIndex = tabController.index;
+        });
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    /// THESE ARE ARGUMENT THAT GOING TO BE PASSED FOR THE FOLLOWERS WIDGET
     int followers = 0;
     int following = 0;
     return SingleChildScrollView(
       child: Container(
+        height: Constants.screen_height,
         color: Constants.lightblack,
         width: double.maxFinite,
         child: Column(
@@ -41,26 +63,25 @@ class ProfileThumbnail extends StatelessWidget {
                       height: Constants.screen_height * .18,
                     )),
                 Positioned(
-                  
                     top: Constants.height15,
                     left: Constants.height10,
                     //width: Constants.screen_width *1,
                     child: GestureDetector(
-                      onTap: (){
-                      Get.back();
-                      },
-                      child: Image.asset("assets/icons/button_closed.png"))),
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Image.asset("assets/icons/button_closed.png"))),
                 Positioned(
                   top: Constants.height15,
                   right: Constants.height10,
                   child: Row(
                     children: [
                       GestureDetector(
-                        onTap: (){
-                          Get.back();
-                          Share.showBottomSheet(context);
-                        },
-                        child: Image.asset("assets/icons/button_share.png")),
+                          onTap: () {
+                            Get.back();
+                            Share.showBottomSheet(context);
+                          },
+                          child: Image.asset("assets/icons/button_share.png")),
                       SizedBox(
                         width: Constants.height10,
                       ),
@@ -132,7 +153,33 @@ class ProfileThumbnail extends StatelessWidget {
               height: Constants.height10,
             ),
             const TitleText(),
-         const GabIllust()
+            // const GabIllust()
+            SizedBox(
+              height: Constants.height15 * 2.6,
+              child: TabBar(
+                  indicatorColor: Constants.appColor,
+                  unselectedLabelColor: Constants.white,
+                  labelColor: Constants.appColor,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  controller: tabController,
+                  tabs: [
+                    selectedIndex == 0
+                        ? Image.asset(
+                            "assets/avatar/gab_logo.png",
+                          )
+                        : Image.asset(
+                            "assets/avatar/gab_white.png",
+                          ),
+                    Text("댓글"),
+                    Text("연결")
+                  ]),
+            ),
+            Expanded(
+                child: TabBarView(controller: tabController, children: [
+              NoGab(gab: GabEnum.gab),
+              NoGab(gab: GabEnum.comment),
+              NoGab(gab: GabEnum.connection)
+            ]))
           ],
         ),
       ),
@@ -141,13 +188,16 @@ class ProfileThumbnail extends StatelessWidget {
 }
 
 class ProfileThumbnailShow {
-  static void showProfileThumnail(context) {
+  static void showProfileThumnail(context, isFull) {
     showModalBottomSheet(
         isScrollControlled: true,
         clipBehavior: Clip.antiAlias,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-        constraints: BoxConstraints(maxHeight: Constants.screen_height * .84),
+        constraints: BoxConstraints(
+            maxHeight: isFull
+                ? Constants.screen_height
+                : Constants.screen_height * .86),
         context: context,
         builder: (context) => const ProfileThumbnail());
   }

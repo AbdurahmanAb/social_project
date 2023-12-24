@@ -6,9 +6,9 @@ import '../utils/constants.dart';
 
 class MyBottomSheet {
 
-/// accept 4 (2, icons and 2 text) arguments to show when the bottomSheet is trigered
+/// accept 4 (2, icons and 2 text) arguments to show when the bottomSheet is opened
 ///  the elements will be displayed as row
-/// 
+///  MyBottoSheet.showBottomSheet(...argumentss) will open the bottomSheet
 
 
 

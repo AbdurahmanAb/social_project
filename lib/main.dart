@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:kim/features/feed/domian/poll_controller.dart';
 import 'package:kim/routes/get_routes.dart';
+import 'package:kim/utils/constants.dart';
 import 'package:kim/utils/dependecies.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
  await init();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Constants.black, // Replace with your desired color
+  ));
   runApp( const MyApp());
 }
 

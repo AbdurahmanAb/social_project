@@ -8,9 +8,12 @@ class AvatarImg extends StatelessWidget {
   final double height;
   final bool Enableborder;
   final double width;
+  final bool? isFull;
   final String ImgUrl;
   const AvatarImg(
-      {this.Enableborder = true,
+      {
+        this.isFull =true,
+        this.Enableborder = true,
       this.width = 46,
       this.ImgUrl = "assets/avatar/avatar5.jpg",
       this.height = 45,
@@ -20,7 +23,7 @@ class AvatarImg extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        ProfileThumbnailShow.showProfileThumnail(context);
+        ProfileThumbnailShow.showProfileThumnail(context,isFull );
       },
       child: Stack(
         children: [

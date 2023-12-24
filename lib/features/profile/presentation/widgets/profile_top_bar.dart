@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:kim/utils/constants.dart';
 
 import '../../../../core/text/HeaderText.dart';
@@ -13,10 +15,14 @@ class ProfileTopBar extends StatelessWidget {
     return Container(
       color: Constants.black,
       padding: EdgeInsets.symmetric(
-          vertical: Constants.height20, horizontal: Constants.height10),
+          vertical: Constants.height20*0.8, horizontal: Constants.height10),
       child: Row(
         children: [
-          Icon(CupertinoIcons.back),
+          GestureDetector(
+            onTap: (){
+              Get.back();
+            },
+            child: Icon(CupertinoIcons.back)),
           Expanded(
               child: Center(
                   child: Header(
