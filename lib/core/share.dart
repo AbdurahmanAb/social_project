@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:kim/core/text/MidText.dart';
 import 'package:kim/core/Row_widget.dart';
 import 'package:kim/core/ui/app_button.dart';
@@ -63,14 +64,19 @@ class Share {
                           )
                         ],
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Constants.Iconbg,
-                            borderRadius: BorderRadius.circular(50)),
-                        child: const Icon(
-                          Icons.close,
-                          size: 12,
+                      GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Constants.Iconbg,
+                              borderRadius: BorderRadius.circular(50)),
+                          child: const Icon(
+                            Icons.close,
+                            size: 12,
+                          ),
                         ),
                       )
                     ],

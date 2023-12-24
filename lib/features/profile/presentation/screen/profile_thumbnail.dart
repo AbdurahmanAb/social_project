@@ -7,7 +7,7 @@ import 'package:kim/core/Row_widget.dart';
 import 'package:kim/core/share.dart';
 import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/avatar.dart';
-import 'package:kim/features/profile/presentation/widgets/followers_folloiwing.dart';
+import 'package:kim/features/profile/presentation/widgets/data_followers_folloiwing.dart';
 import 'package:kim/features/profile/presentation/widgets/gab_illust.dart';
 import 'package:kim/features/profile/presentation/widgets/social_row.dart';
 import 'package:kim/features/profile/presentation/widgets/titles_text.dart';
@@ -18,6 +18,8 @@ class ProfileThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    /// THESE ARE ARGUMENT THAT GOING TO BE PASSED FOR THE FOLLOWERS WIDGET 
     int followers = 0;
     int following = 0;
     return SingleChildScrollView(
@@ -79,7 +81,7 @@ class ProfileThumbnail extends StatelessWidget {
                     bottom: Constants.height15,
                     right: Constants.height10,
                     child: Container(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             top: 4, bottom: 4, left: 8, right: 8),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(9),
@@ -88,7 +90,7 @@ class ProfileThumbnail extends StatelessWidget {
                           '프로필 편집',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0xFF7C7C80),
+                            color: const Color(0xFF7C7C80),
                             fontSize: Constants.smFont,
                             fontWeight: FontWeight.w700,
                           ),
@@ -96,13 +98,13 @@ class ProfileThumbnail extends StatelessWidget {
               ],
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               transform: Matrix4.translationValues(
                   0, -Constants.screen_height * .02, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  AvatarImg(
+                  const AvatarImg(
                     ImgUrl: "assets/avatar/avatar5.jpg",
                     height: 67,
                     width: 63,
@@ -121,16 +123,16 @@ class ProfileThumbnail extends StatelessWidget {
             ),
             Container(
                 padding: EdgeInsets.symmetric(horizontal: Constants.height10),
-                child: SocialWidget()),
+                child: const SocialWidget()),
             SizedBox(
               height: Constants.height10,
             ),
-            Divider(),
+            const Divider(),
             SizedBox(
               height: Constants.height10,
             ),
-            TitleText(),
-         GabIllust()
+            const TitleText(),
+         const GabIllust()
           ],
         ),
       ),
@@ -143,10 +145,10 @@ class ProfileThumbnailShow {
     showModalBottomSheet(
         isScrollControlled: true,
         clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
         constraints: BoxConstraints(maxHeight: Constants.screen_height * .84),
         context: context,
-        builder: (context) => ProfileThumbnail());
+        builder: (context) => const ProfileThumbnail());
   }
 }

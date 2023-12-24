@@ -9,6 +9,7 @@ import 'package:kim/features/explore/presentation/screen/explore_search.dart';
 import 'package:kim/features/feed/presentation/screen/get_feed.dart';
 import 'package:kim/features/feed/presentation/widgets/ImageView.dart';
 import 'package:kim/features/gab_write/presentation/screen/write_vote.dart';
+import 'package:kim/features/profile/presentation/screen/profile_follow.dart';
 
 class Routes {
   static const String welcome = "/welcome";
@@ -21,7 +22,7 @@ class Routes {
   static const String detailBrand = "/detail";
   static const String write = "/write";
   static const String profile = "/profile";
-
+  static const String follows = "/follows";
   static String getFeed(int id) => '$feed?id=$id';
   static String getImage(int id) => '$image?id=$id';
 
@@ -33,6 +34,7 @@ class Routes {
     GetPage(name: feedExplore, page: () => const ExploreSearch()),
     GetPage(name: detailBrand, page: () => const DetailBrand()),
     GetPage(name: profile, page: () => const ProfileThumbnail()),
+    GetPage(name: follows, page: () => const ProfileFollower()),
     GetPage(
       name: write,
       page: () => const WriteVote(),
