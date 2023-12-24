@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:kim/utils/constants.dart';
 
+enum alignment{
+  row,column
+}
+
 class SocialRow extends StatelessWidget {
   final Widget content1;
   final Widget content2;

@@ -7,6 +7,8 @@ import 'package:kim/core/Row_widget.dart';
 import 'package:kim/core/share.dart';
 import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/avatar.dart';
+import 'package:kim/features/profile/presentation/screen/gab_page.dart';
+import 'package:kim/features/profile/presentation/widgets/brands_list.dart';
 import 'package:kim/features/profile/presentation/widgets/data_followers_folloiwing.dart';
 import 'package:kim/features/profile/presentation/widgets/gab_illust.dart';
 import 'package:kim/features/profile/presentation/widgets/no_gab.dart';
@@ -40,6 +42,9 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
 
   @override
   Widget build(BuildContext context) {
+    ///radom boolean value for checkinh otherpages
+    bool hasBrand = true;
+
     /// THESE ARE ARGUMENT THAT GOING TO BE PASSED FOR THE FOLLOWERS WIDGET
     int followers = 0;
     int following = 0;
@@ -92,8 +97,13 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                             color: Constants.white,
                           ),
                           padding: EdgeInsets.all(Constants.height15 / 3),
-                          child: Image.asset(
-                            "assets/icons/icon_component.png",
+                          child: GestureDetector(
+                            onTap: () {
+                              Get.toNamed("/profileEdit");
+                            },
+                            child: Image.asset(
+                              "assets/icons/icon_component.png",
+                            ),
                           ))
                     ],
                   ),
@@ -152,8 +162,100 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
             SizedBox(
               height: Constants.height10,
             ),
-            const TitleText(),
-            // const GabIllust()
+            //TitleText(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: Constants.height10 / 2,
+                  horizontal: Constants.height10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  BrandLlist(),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/avatar/goout.png",
+                        height: 25,
+                      ),
+                      SizedBox(
+                        width: Constants.height10,
+                      ),
+                      Column(
+                        children: [
+                          Image.asset("assets/avatar/leauge.png"),
+                          SizedBox(
+                            height: Constants.height10 * .8,
+                          ),
+                          Container(
+                            height: 7,
+                            width: 53,
+                            decoration: BoxDecoration(
+                                color: Constants.bottom,
+                                borderRadius: BorderRadius.circular(15)),
+                            child: FractionallySizedBox(
+                              widthFactor: .8,
+                              alignment: Alignment.bottomLeft,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Constants.appColor,
+                                    borderRadius: BorderRadius.circular(15)),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: Constants.height10,
+                      ),
+                      Column(
+                        children: [
+                          Image.asset("assets/avatar/nike.png"),
+                          SizedBox(
+                            height: Constants.height10 * .8,
+                          ),
+                          Container(
+                            height: 7,
+                            width: 53,
+                            decoration: BoxDecoration(
+                                color: Constants.bottom,
+                                borderRadius: BorderRadius.circular(15)),
+                            child: FractionallySizedBox(
+                              widthFactor: .4,
+                              alignment: Alignment.bottomLeft,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Constants.appColor,
+                                    borderRadius: BorderRadius.circular(15)),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: Constants.height20 * 1.8,
+                  ),
+                  Text(
+                    '가치를 만물은 뭇 피고, 꽃이 품에 커다란 봄날의 보라. 곳이 뜨거운지라, 심장은 노년에게서 품고 피고, 교향악이다. 착목한는 많이 되는 그러므로 노래하며 피가 위한다.',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: Constants.smFont,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: Constants.height20 * 1.8,
+            ),
+            //GabIllust(),
             SizedBox(
               height: Constants.height15 * 2.6,
               child: TabBar(
@@ -174,12 +276,13 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                     Text("연결")
                   ]),
             ),
-            Expanded(
-                child: TabBarView(controller: tabController, children: [
-              NoGab(gab: GabEnum.gab),
+            TabBarView(controller: tabController, children: [
+              // NoGab(gab: GabEnum.gab),
+
+              GabPage(),
               NoGab(gab: GabEnum.comment),
               NoGab(gab: GabEnum.connection)
-            ]))
+            ])
           ],
         ),
       ),
