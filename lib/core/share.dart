@@ -289,7 +289,7 @@ class Share {
                           color: Constants.Iconbg,
                           borderRadius:
                               BorderRadius.circular(Constants.height10)),
-                      child: const RowWidget(
+                      child: const RowWidget( alignment: MainAxisAlignment.spaceBetween,
                           content1: MidText(text: "Copy Link"),
                           content2: Icon(Icons.copy))),
                 ),
@@ -303,19 +303,19 @@ class Share {
                             BorderRadius.circular(Constants.height10)),
                     child: const Column(
                       children: [
-                        RowWidget(
+                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Add to Reading List"),
                             content2: Icon(Icons.read_more_sharp)),
                         Divider(),
-                        RowWidget(
+                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Add BookMark"),
                             content2: Icon(Icons.bookmark_add)),
                         Divider(),
-                        RowWidget(
+                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Add to Favorites"),
                             content2: Icon(Icons.star)),
                         Divider(),
-                        RowWidget(
+                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Find on Page"),
                             content2: Icon(Icons.search)),
                       ],

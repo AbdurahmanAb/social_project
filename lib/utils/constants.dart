@@ -10,6 +10,12 @@ class Constants {
   static double height10 = screen_height / 76.1;
   static double height15 = screen_height / 54;
 
+
+
+  static double smFont = 12;
+  static double mdFont =14;
+  static double lgFont =20; 
+
   static const Color invisible = Color(0xFF7C7C80);
   static const Color postColor = Color(0xFF444446);
   static const Color lightblack = Color(0xFF363638);
