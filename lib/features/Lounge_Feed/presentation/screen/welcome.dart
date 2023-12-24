@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:kim/core/BottomBar.dart';
-import 'package:kim/core/CutomDrawer.dart';
-import 'package:kim/core/ui/Appbutton.dart';
+import 'package:kim/core/bottom_bar.dart';
+import 'package:kim/core/custom_drawer.dart';
+import 'package:kim/core/ui/app_button.dart';
 import 'package:kim/core/ui/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
 import 'package:kim/features/explore/presentation/screen/tab_page_one.dart';

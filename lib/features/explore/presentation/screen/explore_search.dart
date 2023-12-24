@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:kim/core/BottomBar.dart';
+import 'package:kim/core/bottom_bar.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/explore/presentation/screen/tab_page_two.dart';
 import 'package:kim/features/explore/presentation/screen/emoji_page.dart';

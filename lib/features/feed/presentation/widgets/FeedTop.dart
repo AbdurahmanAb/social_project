@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/utils/constants.dart';
 
-import '../../../../core/BottomRadioBar.dart';
+import '../../../../core/bottom_radio_button.dart';
 
 class FeedTop extends StatelessWidget {
   const FeedTop({super.key});

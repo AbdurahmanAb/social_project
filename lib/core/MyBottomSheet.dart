@@ -1,10 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kim/core/ui/Appbutton.dart';
+import 'package:kim/core/ui/app_button.dart';
 
 import '../utils/constants.dart';
 
 class MyBottomSheet {
+
+/// accept 4 (2, icons and 2 text) arguments to show when the bottomSheet is trigered
+///  the elements will be displayed as row
+/// 
+
+
+
  static void showBottomSheet(BuildContext context, text1,icon1,icon2, text2, btnTxt, [text3, icon3]) {
     showModalBottomSheet(
       context: context,
@@ -12,7 +19,7 @@ class MyBottomSheet {
         return Container(
           padding: EdgeInsets.all(Constants.height20),
           height:text3!=null? 300:170,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(25), topLeft: Radius.circular(25)),
               color: Constants.bottom),
@@ -46,7 +53,7 @@ class MyBottomSheet {
                   ),
                   Text(text3!),
                 ],
-              ):SizedBox.shrink(),
+              ):const SizedBox.shrink(),
               AppButton(text: btnTxt)
             ],
           ),

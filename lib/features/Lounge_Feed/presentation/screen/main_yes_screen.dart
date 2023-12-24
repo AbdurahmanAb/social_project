@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-import 'package:kim/core/BottomBar.dart';
+import 'package:kim/core/bottom_bar.dart';
 
-import 'package:kim/core/CutomDrawer.dart';
+import 'package:kim/core/custom_drawer.dart';
 
 import 'package:kim/core/MyBottomSheet.dart';
 
@@ -19,7 +19,7 @@ import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
 import 'package:kim/utils/constants.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
 
-import '../../../../core/RadioButtonGroup.dart';
+import '../../../../core/radio_button_group.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

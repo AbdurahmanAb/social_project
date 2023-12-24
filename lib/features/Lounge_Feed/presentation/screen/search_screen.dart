@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kim/core/custom_drawer.dart';
 import 'package:kim/core/ui/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/text-buttom.dart';
@@ -12,7 +13,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -33,18 +33,20 @@ class _SearchScreenState extends State<SearchScreen> {
     }
 
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: const CustomDrawer(),
       backgroundColor: Constants.Iconbg,
       body: SafeArea(
         child: GestureDetector(
-          onTap: (){
-          
-          },
+          onTap: () {},
           child: Container(
             child: Column(
               children: [
-                TopBar(Triger: () {}),
+                TopBar(Triger: () {
+                  _scaffoldKey.currentState!.openDrawer();
+                }),
                 // TopButtons(text: "GO OUT",),
-                TextButtons(),
+                const TextButtons(),
                 Row(
                   children: [
                     Container(
@@ -60,9 +62,9 @@ class _SearchScreenState extends State<SearchScreen> {
                               onChanged: (value) {
                                 print(_controller.text);
                               },
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w300),
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15)),
@@ -73,7 +75,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                   filled: true,
                                   fillColor: Color.fromARGB(255, 94, 93, 93),
                                   contentPadding: EdgeInsets.only(
-                                      top: 10, bottom: 10, left: 35, right: 20)),
+                                      top: 10,
+                                      bottom: 10,
+                                      left: 35,
+                                      right: 20)),
                             ),
                           ),
                           Positioned(
@@ -86,13 +91,13 @@ class _SearchScreenState extends State<SearchScreen> {
                         ],
                       ),
                     ),
-                    Text("취소")
+                    const Text("취소")
                   ],
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: 8, horizontal: Constants.height10),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [Text("최근 검색어"), Text("전체 삭제")],
                   ),

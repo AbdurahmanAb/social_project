@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kim/core/ui/profile_thumbnail.dart';
+import 'package:kim/features/profile/presentation/screen/profile_thumbnail.dart';
 
 import '../../utils/constants.dart';
 

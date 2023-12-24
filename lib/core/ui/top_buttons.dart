@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kim/core/ui/Appbutton.dart';
+import 'package:kim/core/ui/app_button.dart';
 
 import 'package:kim/core/share.dart';
 
@@ -17,7 +17,7 @@ class TopButtons extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return Container(
-            padding: EdgeInsets.symmetric(horizontal: Constants.height10),
+            padding: EdgeInsets.symmetric(horizontal: Constants.height15,  vertical: Constants.height20),
             height: Constants.screen_height * 0.3,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -25,19 +25,12 @@ class TopButtons extends StatelessWidget {
                     topLeft: Radius.circular(25)),
                 color: Constants.bottom),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Chip(
-                        padding: const EdgeInsets.all(5),
-                        backgroundColor: Constants.white,
-                        label: Text(
-                          text,
-                          style: const TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.w900),
-                        )),
+                    Image.asset("assets/avatar/lacoste.png"),
                     const SizedBox(
                       width: 10,
                     ),
@@ -47,10 +40,12 @@ class TopButtons extends StatelessWidget {
                     )
                   ],
                 ),
-                const Text(
+                SizedBox(height: Constants.height20,),
+                Text(
                   "<GO OUT>은 경험하는 매거진을 주제로 한 아웃도어 라이프스타일 편집 잡지입니다. 시시각각 변화하는 아웃도어 트렌드와 최신 뉴스, 패션, 캠핑, 액티비티에 관한 정보를 함께 제공합니다.",
-                  style: TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: Constants.smFont),
                 ),
+                  SizedBox(height: Constants.height15,),
                  AppButton(text: "닫기")
               ],
             ),

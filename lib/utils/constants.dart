@@ -11,7 +11,7 @@ class Constants {
   static double height15 = screen_height / 54;
 
 
-
+static double xsFont = 9;
   static double smFont = 12;
   static double mdFont =14;
   static double lgFont =20; 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:kim/features/feed/domian/PollController.dart';
+import 'package:kim/features/feed/domian/poll_controller.dart';
 import 'package:kim/utils/constants.dart';
 
 class CustomPolls extends StatefulWidget {
@@ -47,7 +47,7 @@ class _CustomPollsState extends State<CustomPolls> {
             '최고의 캠핑 패스티발은?',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: Constants.mdFont ,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -147,7 +147,7 @@ class _CustomPollsState extends State<CustomPolls> {
                                   '문항',
                                   style: TextStyle(
                                     color: Color(0xFF7C7C80),
-                                    fontSize: 14,
+                                    fontSize: Constants.mdFont ,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
@@ -160,7 +160,7 @@ class _CustomPollsState extends State<CustomPolls> {
                           textAlign: TextAlign.right,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: Constants.mdFont,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -250,7 +250,7 @@ class _CustomPollsState extends State<CustomPolls> {
                                   '문항',
                                   style: TextStyle(
                                     color: Color(0xFF7C7C80),
-                                    fontSize: 14,
+                                    fontSize: Constants.mdFont ,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
@@ -355,7 +355,7 @@ class _CustomPollsState extends State<CustomPolls> {
                                   '문항',
                                   style: TextStyle(
                                     color: Color(0xFF7C7C80),
-                                    fontSize: 14,
+                                    fontSize: Constants.mdFont ,
                                     fontFamily: 'KoPubDotum_Pro',
                                     fontWeight: FontWeight.w700,
                                   ),
@@ -510,7 +510,7 @@ class _CustomPollsState extends State<CustomPolls> {
                                   style: TextStyle(
                                     color: Colors.black
                                         .withOpacity(0.20000000298023224),
-                                    fontSize: 14,
+                                    fontSize: Constants.mdFont ,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),

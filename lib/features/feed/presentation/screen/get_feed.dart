@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:kim/core/RadioButtonGroup.dart';
+import 'package:kim/core/radio_button_group.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 
 import 'package:kim/features/feed/presentation/widgets/FeedComment.dart';
@@ -14,7 +14,7 @@ import 'package:kim/utils/constants.dart';
 
 import '../../../../core/text/HeaderText.dart';
 import '../../../../core/ui/avatar.dart';
-import '../../../../core/ui/Appbutton.dart';
+import '../../../../core/ui/app_button.dart';
 
 class Fedd extends StatefulWidget {
   final int id;

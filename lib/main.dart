@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kim/features/feed/domian/PollController.dart';
+import 'package:kim/features/feed/domian/poll_controller.dart';
 import 'package:kim/routes/get_routes.dart';
 import 'package:kim/utils/dependecies.dart';
 

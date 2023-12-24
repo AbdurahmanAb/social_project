@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kim/core/ui/profile_thumbnail.dart';
+import 'package:kim/features/profile/presentation/screen/profile_thumbnail.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/main_yes_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/search_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/welcome.dart';
