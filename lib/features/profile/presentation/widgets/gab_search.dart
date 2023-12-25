@@ -9,7 +9,7 @@ class GabSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-                    color: Constants.Iconbg,
+                  
                     padding: EdgeInsets.only(
                         top: 5,
                         right: Constants.height10,

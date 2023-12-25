@@ -7,6 +7,8 @@ import 'package:kim/core/Row_widget.dart';
 import 'package:kim/core/share.dart';
 import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/avatar.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
+import 'package:kim/features/explore/presentation/screen/tab_page_two.dart';
 import 'package:kim/features/profile/presentation/screen/gab_page.dart';
 import 'package:kim/features/profile/presentation/widgets/brands_list.dart';
 import 'package:kim/features/profile/presentation/widgets/data_followers_folloiwing.dart';
@@ -42,7 +44,7 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
 
   @override
   Widget build(BuildContext context) {
-    ///radom boolean value for checkinh otherpages
+    ///radom boolean value for checking otherpages
     bool hasBrand = true;
 
     /// THESE ARE ARGUMENT THAT GOING TO BE PASSED FOR THE FOLLOWERS WIDGET
@@ -50,7 +52,7 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
     int following = 0;
     return SingleChildScrollView(
       child: Container(
-        height: Constants.screen_height*5,
+   
         color: Constants.lightblack,
         width: double.maxFinite,
         child: Column(
@@ -179,7 +181,7 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                 children: [
                   Column(
                     children: [
-                      Image.asset("assets/avatar/goout.png", height: 28,),
+                      Image.asset("assets/avatar/goout-lg.png", height: 27,),
                 SizedBox(height: Constants.height10
                 ,),
                      Container(
@@ -232,6 +234,7 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                   ),
                   Column(
                     children: [
+                      
                       Image.asset("assets/avatar/nike.png"),
                        SizedBox(
                         height: Constants.height10 * .8,
@@ -293,16 +296,17 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                     Text("연결")
                   ]),
             ),
-            Expanded(
-              child: TabBarView(controller: tabController, children: [
-                           // NoGab(gab: GabEnum.gab),
+           selectedIndex ==0?GabPage():selectedIndex ==1? PageTwo():NoGab(gab: GabEnum.connection)
+            // Expanded(
+            //   child: TabBarView(controller: tabController, children: [
+            //                // NoGab(gab: GabEnum.gab),
                            
                            
-                           GabPage(),
-                            NoGab(gab: GabEnum.comment),
-                            NoGab(gab: GabEnum.connection)
-                          ]),
-            )
+            //                
+            //                 NoGab(gab: GabEnum.comment),
+            //                 NoGab(gab: GabEnum.connection)
+            //               ]),
+            // )
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kim/core/text/MidText.dart';
+import 'package:kim/utils/constants.dart';
 
 enum GabEnum{
   comment,
@@ -13,10 +14,12 @@ class NoGab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return gab == GabEnum.gab?  Center(
+    return Container( 
+      height: Constants.screen_height *.3,
+      child:gab == GabEnum.gab?  Center(
      child: MidText(text: "작성된 갭이 없습니다."),
     ):gab == GabEnum.comment? Center(
      child: MidText(text: "작성된 댓글이 없습니다.")):Center(
-     child: MidText(text: "연결된 사용자가 없습니다.")) ;
+     child: MidText(text: "연결된 사용자가 없습니다.")) );
   }
 }

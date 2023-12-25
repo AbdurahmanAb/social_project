@@ -26,19 +26,18 @@ class _GabPageState extends State<GabPage> {
   List asset = [
     "assets/avatar/nike_lg.png",
     "assets/avatar/leauge_lg.png",
-    "assets/avatar/HYPE.png",
-    "assets/avatar/marvel_lg.png"
+    "assets/avatar/marvel_lg.png",
+    "assets/avatar/HYPE.png"
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 10, left: 8),
+            padding: const EdgeInsets.only(top: 20, left: 8),
             child: Text(
               '최근 활동한 @브랜드 라운지',
               style: TextStyle(
@@ -49,33 +48,77 @@ class _GabPageState extends State<GabPage> {
             ),
           ),
           Divider(),
-          SizedBox(
-            height: 60,
-          
-            child: PageView.builder(
-              padEnds: false,
-              controller: pageController,
-              scrollDirection: Axis.horizontal,
-              itemCount: asset.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  
-                  padding: const EdgeInsets.all(8.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(9),
-                    child: Image.asset(
-                      asset[index],
-               
-                      fit: BoxFit.contain,
+           Container(
+                width:Constants.height15 * 36.6 ,
+                height: Constants.height10 * 5.5,
+                padding: const EdgeInsets.only(top: 0, left: 16, bottom: 0),
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(),
+                child: ListView.separated(
+                  separatorBuilder: (context, index) => SizedBox(width: 10,),
+                 scrollDirection: Axis.horizontal,
+                 
+                  itemBuilder:(context ,index) =>
+                    Container(
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: 80,
+                                        height: 48,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: ShapeDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage(asset[index ]),
+                                            fit: BoxFit.contain,
+                                          ),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        
+                        ],
+
+                      ),
                     ),
-                  ),
-                );
-              },
-            ),
-          ),
+                   
+                  itemCount: asset.length,
+                ),
+           ),
+    Divider(thickness: 3,color: Constants.black,),
           GabSearch(),
-         LongPost(),
-                LongPost(),
+          LongPost(brandPost: true,img: "assets/avatar/post5.jpg"),
+          LongPost(),
         ],
       ),
     );

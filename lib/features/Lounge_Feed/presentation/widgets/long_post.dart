@@ -1,23 +1,28 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
+import 'package:kim/features/explore/presentation/widgets/brand.dart';
 import 'package:kim/utils/constants.dart';
 
 class LongPost extends StatelessWidget {
   final String img;
   final bool hasAd;
+  final Color bgColor;
+  final bool brandPost;
 
-  const LongPost({this.hasAd = false, this.img = "", super.key});
+  const LongPost({this.brandPost=false,this.bgColor =Constants.postColor, this.hasAd = false, this.img = "", super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Constants.postColor,
+      color: bgColor,
       padding: EdgeInsets.all(Constants.height20),
       child: Column(
         children: [
           Row(
             children: [
+           brandPost?   Brand(brand: "assets/avatar/nike.png", brandText: "@나이키", brandText2: "#조던",):SizedBox.shrink(),
               const Spacer(),
               const Text("24분 전"),
               SizedBox(
@@ -26,10 +31,10 @@ class LongPost extends StatelessWidget {
               const Icon(Icons.more_horiz)
             ],
           ),
-          Row(
+      !brandPost ?    Row(
             children: [
               const AvatarImg(
-                height: 40,
+            
               ),
               SizedBox(
                 width: Constants.height10,
@@ -68,13 +73,13 @@ class LongPost extends StatelessWidget {
                 ],
               )
             ],
-          ),
+          ):SizedBox.shrink(),
           SizedBox(
             height: Constants.height10,
           ),
-          const Text(
+           Text(
             "올해 고아웃 캠핑 너무 좋았어요~ 행사도 다양하고 사람들도 많이 만나고 내년도 좋은 추억 만들고 싶네요~ 예약 ㄱ ㄱ",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: Constants.mdFont),
           ),
           const SizedBox(
             height: 20,
@@ -93,13 +98,13 @@ class LongPost extends StatelessWidget {
             height:Constants.height15,
           ),
          
-          const Row(
+           Row(
             children: [
               Text(
                 'https://www.hyundai.com/kr-brand',
                 style: TextStyle(
                   color: Color(0xFF0099FF),
-                  fontSize: 14,
+                  fontSize: Constants.mdFont,
                 ),
               ),
             ],
@@ -112,15 +117,17 @@ class LongPost extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       color: Constants.white),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
                         children: [
                           SizedBox(
-                              height: 90,
-                              child: Image.asset(
-                                "assets/Lounge/image_feed.png",
-                                fit: BoxFit.cover,
-                              )),
+                            height: 90,
+                            child: Image.asset(
+                              "assets/Lounge/image_feed.png",
+                              fit: BoxFit.fill,
+                            ),
+                          ),
                           SizedBox(
                             width: Constants.height20,
                           ),
