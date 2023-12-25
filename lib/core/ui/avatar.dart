@@ -22,7 +22,8 @@ class AvatarImg extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        ProfileThumbnailShow.showProfileThumnail(context, true);
+     // Get.toNamed("/profilelg");
+        ProfileThumbnailShow.showProfileThumnail(context,isFull);
       },
       child: Stack(
         children: [

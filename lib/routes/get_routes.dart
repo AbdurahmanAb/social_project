@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:kim/features/profile/presentation/screen/profile_edit.dart';
+import 'package:kim/features/profile/presentation/screen/profile_page.dart';
 import 'package:kim/features/profile/presentation/screen/profile_thumbnail.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/main_yes_screen.dart';
 import 'package:kim/features/Lounge_Feed/presentation/screen/search_screen.dart';
@@ -25,6 +26,7 @@ class Routes {
   static const String profile = "/profile";
   static const String follows = "/follows";
   static const String profileEdit = "/profileEdit";
+  static const String profileLg = "/profilelg";
 
   static String getFeed(int id) => '$feed?id=$id';
   static String getImage(int id) => '$image?id=$id';
@@ -39,6 +41,7 @@ class Routes {
     GetPage(name: profile, page: () => const ProfileThumbnail()),
     GetPage(name: follows, page: () => const ProfileFollower()),
     GetPage(name: profileEdit, page: () => ProfileEdit()),
+    GetPage(name: profileLg, page: ()=>ProfilePage()),
     GetPage(
       name: write,
       page: () => const WriteVote(),
