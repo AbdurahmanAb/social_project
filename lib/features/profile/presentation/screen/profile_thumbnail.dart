@@ -9,6 +9,7 @@ import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
 import 'package:kim/features/explore/presentation/screen/tab_page_two.dart';
+import 'package:kim/features/profile/presentation/screen/connection_page.dart';
 import 'package:kim/features/profile/presentation/screen/gab_page.dart';
 import 'package:kim/features/profile/presentation/widgets/brands_list.dart';
 import 'package:kim/features/profile/presentation/widgets/data_followers_folloiwing.dart';
@@ -296,7 +297,7 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                     Text("연결")
                   ]),
             ),
-           selectedIndex ==0?GabPage():selectedIndex ==1? PageTwo():NoGab(gab: GabEnum.connection)
+           selectedIndex ==0?GabPage():selectedIndex ==1? PageTwo():ConnectionPage()
             // Expanded(
             //   child: TabBarView(controller: tabController, children: [
             //                // NoGab(gab: GabEnum.gab),

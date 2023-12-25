@@ -155,7 +155,7 @@ class _ResultPageState extends State<ResultPage> {
                       )
                     ],
                   ),
-                  const ResultBtn(text: "팔로우", disabled: false)
+                  const ResultBtn( disabled: false)
                 ],
               ),
             ),

@@ -49,7 +49,7 @@ class _GabPageState extends State<GabPage> {
           ),
           Divider(),
            Container(
-                width:Constants.height15 * 36.6 ,
+                width:Constants.height15 *40 ,
                 height: Constants.height10 * 5.5,
                 padding: const EdgeInsets.only(top: 0, left: 16, bottom: 0),
                 clipBehavior: Clip.antiAlias,
