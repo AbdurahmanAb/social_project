@@ -22,19 +22,20 @@ class _ConnectionHeaderState extends State<ConnectionHeader> {
         children: [
           Container(
             color: Constants.postColor,
-            padding: EdgeInsets.all(Constants.height15),
+            padding: EdgeInsets.symmetric(vertical:Constants.height15, horizontal: Constants.height10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(style: TextStyle(fontWeight: FontWeight.bold), "순위"),
                 Text(style: TextStyle(fontWeight: FontWeight.bold), "대화명"),
+                SizedBox(width:Constants.height10),
                 Text(style: TextStyle(fontWeight: FontWeight.bold), "댓글"),
                 Text(style: TextStyle(fontWeight: FontWeight.bold), "업보트"),
                 Image.asset("assets/avatar/right_side.png")
               ],
             ),
           ),
-RowData(Upvote: 1000, avatar: AvatarImg(height: 35,width: 30,),comment: 1000,isFollowed: true,nickname: "슝카_828hgh2",ranking: 2,),
+RowData(Upvote: 1000, avatar: AvatarImg(height: 35,width: 30,),comment: 1000,isFollowed: true,nickname: "슝카_828hgh2",ranking: 1,),
 RowData(Upvote: 1000, avatar: AvatarImg(height: 35,width: 30,),comment: 1000,isFollowed: false,nickname: "슝카_8282",ranking: 2,)
 ,  RowData(Upvote: 1000, avatar: AvatarImg(height: 35,width: 30,),comment: 1000,isFollowed: true,nickname: "슝카_8282",ranking: 3,)
  ,  RowData(Upvote: 1000, avatar: AvatarImg(height: 35,width: 30,),comment: 1000,isFollowed: false,nickname: "슝카_8282",ranking: 4,)

@@ -225,7 +225,7 @@ class _ExploreSearchState extends State<ExploreSearch> {
                         : index == 1
                             ? PageTwo()
                             : index == 3
-                                ? ResultPage(name: "sanasana_love",avatar: AvatarImg(),brands: ["assets/avatar/nike.png"],subtitle: "나이키 조깅 멤버 구해요",isFollowed: true,)
+                                ? ResultPage(name: "sanasana_love",avatar: AvatarImg(),brands: ["assets/avatar/nike.png","assets/avatar/marvel.png", "assets/avatar/leauge.png"],subtitle: "나이키 조깅 멤버 구해요",isFollowed: true,)
                                 : index == 2
                                     ? EmojiPage()
                                     : EmojiPage()

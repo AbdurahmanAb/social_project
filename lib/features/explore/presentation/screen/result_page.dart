@@ -29,141 +29,163 @@ class ResultPage extends StatefulWidget {
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          // Padding(
-          //   padding: EdgeInsets.only(
-          //       left: Constants.height10,
-          //       right: Constants.height10,
-          //       top: 20,
-          //       bottom: Constants
-          //           .height15), // padding: const EdgeInsets.all(8.0),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       Row(
-          //         crossAxisAlignment: CrossAxisAlignment.center,
-          //         children: [
-          //           SizedBox(height: 48, width: 48, child: widget.avatar),
-          //           SizedBox(
-          //             width: Constants.height10,
-          //           ),
-          //           Column(
-          //             crossAxisAlignment: CrossAxisAlignment.start,
-          //             children: [
-          //                Text(
-          //                 widget.name,
-          //                 style: TextStyle(fontSize: 12),
-          //               ),
-          //               const SizedBox(
-          //                 height: 5,
-          //               ),
-          //                Text(widget.subtitle,
-          //                   style: TextStyle(fontSize: 10)),
-          //               const SizedBox(
-          //                 height: 5,
-          //               ),
-          //               ListView.builder(
-          //                 itemBuilder: (context, index) {
-          //                   return Row(
-          //                     children: [
-          //                       Image.asset(
-          //                         widget.brands[index],
-          //                         height: 20,
-          //                       ),
-          //                     ],
-          //                   );
-          //                 },
-          //               )
-          //             ],
-          //           )
-          //         ],
-          //       ),
-          //       widget.isFollowed
-          //           ? const ResultBtn(text: "팔로잉", disabled: true)
-          //           : const ResultBtn(text: "팔로우", disabled: false),
-          //     ],
-          //   ),
-          // ),
-          // const Divider(
-          //   color: Constants.black,
-          // ),
-          GestureDetector(
-            onTap: () {
-              ResultBottom.showResultBottom(context);
-            },
-            child: Padding(
+    return SingleChildScrollView(
+      child: Container(
+        child: Column(
+          children: [
+            Padding(
               padding: EdgeInsets.only(
                   left: Constants.height10,
                   right: Constants.height10,
                   top: 20,
                   bottom: Constants
                       .height15), // padding: const EdgeInsets.all(8.0),
-              //             padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(
-                          height: 48,
-                          width: 48,
-                          child: const AvatarImg(
-                            ImgUrl: "assets/avatar/post5.jpg",
-                          )),
+                      SizedBox(height: 48, width: 48, child: widget.avatar),
                       SizedBox(
                         width: Constants.height10,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            "spider_maninga",
+                          Text(
+                            widget.name,
                             style: TextStyle(fontSize: 12),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          const Text("나이키 조깅 멤버 구해요~~",
-                              style: TextStyle(fontSize: 10)),
+                          Text(widget.subtitle, style: TextStyle(fontSize: 10)),
                           const SizedBox(
                             height: 5,
                           ),
-                          Row(
-                            children: [
-                              Image.asset(
-                                "assets/avatar/goout.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/supreme.png",
-                              ),
-                              const SizedBox(
-                                width: 3,
-                              ),
-                              Image.asset(
-                                "assets/avatar/nike.png",
-                                height: 15,
-                              ),
-                            ],
-                          ),
+
+                      
+                      for(int i=0; i<=widget.brands.length; ) Row(
+                                      children: [
+                                        Image.asset(
+                                          widget.brands[0],
+                                          height: 20,
+                                        ),
+                                      ],
+                                    ),
+                          
+                          // SizedBox(
+                          //   height: 300,
+                          //   child: Expanded(
+                          //     child: SingleChildScrollView(
+                          //       child: ListView.builder(
+                          //         scrollDirection: Axis.horizontal,
+                          //         shrinkWrap: true,
+                          //         itemCount: widget.brands.length,
+                          //         itemBuilder: (context, index) {
+                          //           return Row(
+                          //             children: [
+                          //               Image.asset(
+                          //                 widget.brands[index],
+                          //                 height: 20,
+                          //               ),
+                          //             ],
+                          //           );
+                          //         },
+                          //       ),
+                          //     ),
+                          //   ),
+                          // )
                         ],
                       )
                     ],
                   ),
-                  const ResultBtn( disabled: false)
+                  widget.isFollowed
+                      ? const ResultBtn(disabled: true)
+                      : const ResultBtn(disabled: false),
                 ],
               ),
             ),
-          ),
-          const Divider(
-            color: Constants.black,
-          ),
-        ],
+            // const Divider(
+            //   color: Constants.black,
+            // ),
+            // GestureDetector(
+            //   onTap: () {
+            //     ResultBottom.showResultBottom(context);
+            //   },
+            //   child: Padding(
+            //     padding: EdgeInsets.only(
+            //         left: Constants.height10,
+            //         right: Constants.height10,
+            //         top: 20,
+            //         bottom: Constants
+            //             .height15), // padding: const EdgeInsets.all(8.0),
+            //     //             padding: const EdgeInsets.all(8.0),
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Row(
+            //           crossAxisAlignment: CrossAxisAlignment.center,
+            //           children: [
+            //             SizedBox(
+            //                 height: 48,
+            //                 width: 48,
+            //                 child: const AvatarImg(
+            //                   ImgUrl: "assets/avatar/post5.jpg",
+            //                 )),
+            //             SizedBox(
+            //               width: Constants.height10,
+            //             ),
+            //             Column(
+            //               crossAxisAlignment: CrossAxisAlignment.start,
+            //               children: [
+            //                 const Text(
+            //                   "spider_maninga",
+            //                   style: TextStyle(fontSize: 12),
+            //                 ),
+            //                 const SizedBox(
+            //                   height: 5,
+            //                 ),
+            //                 const Text("나이키 조깅 멤버 구해요~~",
+            //                     style: TextStyle(fontSize: 10)),
+            //                 const SizedBox(
+            //                   height: 5,
+            //                 ),
+            //                 Row(
+            //                   children: [
+            //                     Image.asset(
+            //                       "assets/avatar/goout.png",
+            //                     ),
+            //                     const SizedBox(
+            //                       width: 3,
+            //                     ),
+            //                     Image.asset(
+            //                       "assets/avatar/supreme.png",
+            //                     ),
+            //                     const SizedBox(
+            //                       width: 3,
+            //                     ),
+            //                     Image.asset(
+            //                       "assets/avatar/nike.png",
+            //                       height: 15,
+            //                     ),
+            //                   ],
+            //                 ),
+            //               ],
+            //             )
+            //           ],
+            //         ),
+            //         const ResultBtn( disabled: false)
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            const Divider(
+              color: Constants.black,
+            ),
+          ],
+        ),
       ),
     );
   }

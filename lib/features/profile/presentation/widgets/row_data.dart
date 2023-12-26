@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kim/features/explore/presentation/widgets/ResultBottom.dart';
+import 'package:kim/features/profile/presentation/widgets/connection_bottom_sheet.dart';
 
 import '../../../../core/ui/avatar.dart';
 import '../../../../utils/constants.dart';
@@ -16,36 +17,37 @@ class RowData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [          Container(
-            padding: EdgeInsets.all(Constants.height10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-              ranking == 1? Image.asset("assets/avatar/synbol.png", height: 15,) :Text(ranking.toString()),
-                Row(
+    return Container(
+          padding: EdgeInsets.all(Constants.height10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: 10,
+                child:   ranking == 1? Image.asset("assets/avatar/synbol.png",height: 20, ) :Text(ranking.toString(),),
+              
+              ),
+          SizedBox(
+                width: 140,
+                child: Row(
                   children: [
                     avatar,
                     SizedBox(width: 10,),
                     Text(nickname),
                   ],
                 ),
-                Text(comment.toString()),
-                Text(Upvote.toString()),
-                GestureDetector(
-                  onTap: (){
-                    ResultBottom.showResultBottom(context);
-                  },
-                  child: ResultBtn(disabled: !isFollowed))
-              ],
-            ),
+              ),  SizedBox(width:Constants.height10/2),
+              Text(comment.toString()),
+              Text(Upvote.toString()),
+              GestureDetector(
+                onTap: (){
+     
+     ConnectionBottomSheet.showConnectionBottomSheet(context);
+     //                   ResultBottom.showResultBottom(context);
+                },
+                child: ResultBtn(disabled: !isFollowed))
+            ],
           ),
-          Divider(
-            color: Constants.black,
-            thickness: 1,
-          )],
-    );
+        );
   }
 }

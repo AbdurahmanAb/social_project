@@ -21,29 +21,32 @@ class ProfileConncetion extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-             Padding(
-               padding: EdgeInsets.all(Constants.height15),
-               child:  Row(
-                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                       children: [
-                           GestureDetector(
-                            onTap: (){
-                              Get.back();
-                            },
-                            child: Icon(CupertinoIcons.back)),
-                         Row(
-                           children: [
-               
-                const Text( "이번주",style: TextStyle(fontWeight: FontWeight.w700,),),
-                Icon(Icons.arrow_drop_down),
-                MidText(text: "의 나와의 관계"),
-              
-                           ],
-                         ),
-                         SizedBox.shrink()
-                       ],
-                     ),
-             ),
+              Padding(
+                padding: EdgeInsets.all(Constants.height15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Icon(CupertinoIcons.back)),
+                    Row(
+                      children: [
+                        const Text(
+                          "이번주",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        Icon(Icons.arrow_drop_down),
+                        MidText(text: "의 나와의 관계"),
+                      ],
+                    ),
+                    SizedBox.shrink()
+                  ],
+                ),
+              ),
               ConnectionHeader(),
               RowData(
                 Upvote: 1000,
