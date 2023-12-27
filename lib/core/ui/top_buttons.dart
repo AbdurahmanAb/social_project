@@ -17,7 +17,7 @@ class TopButtons extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return Container(
-            padding: EdgeInsets.symmetric(horizontal: Constants.height15,  vertical: Constants.height20),
+            padding: EdgeInsets.symmetric(horizontal: Constants.height15,vertical: Constants.height20),
             height: Constants.screen_height * 0.25,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -55,7 +55,7 @@ class TopButtons extends StatelessWidget {
     }
 
     return Container(
-      padding: const EdgeInsets.only(left: 12, right: 12, top: 10, bottom: 10),
+      padding: const EdgeInsets.only(left: 12, right: 12, top: 10, bottom: 5),
       color: Constants.black,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,8 +81,8 @@ class TopButtons extends StatelessWidget {
           Row(
             children: [
               Image.asset("assets/Lounge/button_favorite.png"),
-              const SizedBox(
-                width: 10,
+             SizedBox(
+                width: Constants.height10,
               ),
               GestureDetector(
                   onTap: () {

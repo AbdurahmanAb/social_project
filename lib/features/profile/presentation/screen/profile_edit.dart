@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kim/core/text/MidText.dart';
 import 'package:kim/core/ui/avatar.dart';
+import 'package:kim/features/profile/presentation/widgets/add_username.dart';
 import 'package:kim/features/profile/presentation/widgets/profile_top_bar.dart';
 import 'package:kim/utils/constants.dart';
 
@@ -79,17 +80,17 @@ class _ProfileEditState extends State<ProfileEdit> {
                   SizedBox(
                     height: Constants.height20 * 2,
                     child: TextField(
+                      style:  TextStyle(
+                          
+                          fontSize: Constants.xsFont, fontWeight: FontWeight.w200),
+                       
                       decoration: InputDecoration(
                         filled: true,
                         isDense: true,
                         fillColor: Constants.postColor,
-                       contentPadding: const EdgeInsets.only(
-                            top: 5, bottom: 15, left: 10, right: 10),
+
                         hintText: "대화명을 입력하세요",
-                        hintStyle:  TextStyle(
-                          
-                          fontSize: Constants.xsFont, fontWeight: FontWeight.w200),
-                        border: OutlineInputBorder(
+                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide:
                                 const BorderSide(color: Constants.white, width: .3)),
@@ -119,6 +120,8 @@ class _ProfileEditState extends State<ProfileEdit> {
                      SizedBox(
               
                     child: TextField(
+                       style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w200),
+                      
                       maxLength: 500,
                        buildCounter: (context,
                     {required currentLength, required isFocused, maxLength=500}) {
@@ -135,8 +138,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                         contentPadding: const EdgeInsets.only(
                             top: 15, bottom: 15, left: 10, right: 10),
                         hintText: "대화명을 입력하세요",
-                        hintStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w200),
-                        border: OutlineInputBorder(
+                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide:
                                 const BorderSide(color: Constants.white, width: .3)),
@@ -163,7 +165,12 @@ class _ProfileEditState extends State<ProfileEdit> {
                   content2: Text(
                     "계정을 등록해주세요.",
                     style: TextStyle(fontSize: Constants.smFont),
-                  ))   , Icon(Icons.add)
+                  ))   , InkWell(
+                    overlayColor: MaterialStatePropertyAll(Colors.transparent),
+                    onTap: (){
+                    AddUserame.showUsernameDialog(context);
+                    },
+                    child: Icon(Icons.add))
             ],
           ), SizedBox(height: Constants.height10,),
           Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,

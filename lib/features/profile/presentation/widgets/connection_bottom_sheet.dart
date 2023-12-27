@@ -19,30 +19,31 @@ class ConnectionBottomSheet {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                height: 32,
+                height: 36,
                 decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Constants.chipColor),
+                  border: Border.all(width: 1, color: Constants.chipColor),
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color.fromARGB(255, 129, 129, 128),
+        color: Color.fromARGB(255, 109, 109, 109),
                 ),
                 child: const Center(
-                  child: Text(
-                    '이번 주',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    child: Text(
+                  '알 림',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                
+                    fontWeight: FontWeight.w700,
+                    height: 0,
                   ),
-                ),
+                )),
               ),
               Container(
-                height: 32,
-             decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Constants.chipColor),
+                height: 36,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Constants.chipColor),
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color.fromARGB(255, 129, 129, 128),
+                  color: Color.fromARGB(255, 109, 109, 109),
                 ),
                 child: const Center(
                   child: Text(
@@ -57,11 +58,11 @@ class ConnectionBottomSheet {
                 ),
               ),
               Container(
-                height: 32,
+                height: 36,
                 decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Constants.chipColor),
+                  border: Border.all(width: 1, color: Constants.chipColor),
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color.fromARGB(255, 134, 134, 131),
+                  color: Color.fromARGB(255, 109, 109, 109),
                 ),
                 child: const Center(
                   child: Text(
