@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:kim/features/profile/presentation/screen/gab_insight.dart';
+import 'package:kim/features/profile/presentation/screen/profile_badge.dart';
 import 'package:kim/features/profile/presentation/screen/profile_connection.dart';
 import 'package:kim/features/profile/presentation/screen/profile_edit.dart';
 import 'package:kim/features/profile/presentation/screen/profile_page.dart';
@@ -29,7 +31,8 @@ class Routes {
   static const String profileEdit = "/profileEdit";
   static const String profileLg = "/profilelg";
   static const String profileConnection = "/profileConnection";
-
+  static const String profileBadge = "/profilebadge";
+  static const String gabInsight = "/insight";
 
   static String getFeed(int id) => '$feed?id=$id';
   static String getImage(int id) => '$image?id=$id';
@@ -44,8 +47,10 @@ class Routes {
     GetPage(name: profile, page: () => const ProfileThumbnail()),
     GetPage(name: follows, page: () => const ProfileFollower()),
     GetPage(name: profileEdit, page: () => ProfileEdit()),
-    GetPage(name: profileLg, page: ()=>ProfilePage()),
-    GetPage(name: profileConnection, page: ()=>ProfileConncetion()),
+    GetPage(name: profileLg, page: () => ProfilePage()),
+    GetPage(name: profileConnection, page: () => ProfileConncetion()),
+    GetPage(name: profileBadge, page: () => ProfileBadge()),
+    GetPage(name: gabInsight, page: () => GabInsight()),
     GetPage(
       name: write,
       page: () => const WriteVote(),

@@ -15,7 +15,7 @@ class ProfileFollower extends StatefulWidget {
 
 class _ProfileFollowerState extends State<ProfileFollower> with TickerProviderStateMixin {
 late TabController tabController;
-final int follower =0;
+final int follower =2;
   final int following =0;
   int selectedIndex =0;
 
@@ -33,10 +33,11 @@ void initState(){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:      Constants.lightblack,
       body: SingleChildScrollView(
         child: SafeArea(
             child: Container(
-          color: Constants.lightblack,
+     
           child: Column(
             children: [ProfileTopBar(text: "빛나는_별다방"),
             SizedBox(
@@ -45,6 +46,7 @@ void initState(){
                 indicatorColor: Constants.appColor,
               unselectedLabelColor: Constants.white,
               labelColor: Constants.appColor,
+              overlayColor: MaterialStatePropertyAll(Colors.transparent),
               indicatorSize: TabBarIndicatorSize.tab,
                 controller: tabController,
                 tabs: [
@@ -52,13 +54,18 @@ void initState(){
                   Text("$following  팔로잉")
                 ]),
             ),
-            SizedBox(height: Constants.height20 *2,),
+            SizedBox(height: Constants.height20 ,),
             //IF THE USER HAS NO FOLLOWER AND FOLLOWING
             // Expanded(child: TabBarView(controller: tabController, children: [
             //        NoFollow(followerEnum:FollowerEnum.follower ),
             //         NoFollow(followerEnum:FollowerEnum.following ),
             // ]))
-             selectedIndex ==0?ResultPage(name: "abdu", subtitle: "abdu's post", avatar: AvatarImg(), isFollowed: true, brands: ["asstes/avata/nike.png","assets/avatar/HYPE.png"]):SizedBox()
+
+            //IF HAVE FOLLOWER  WE LOAD ALL OF THE THROUGH THI WIDGET
+            
+             selectedIndex ==0?ResultPage(name: "abdu", subtitle: "abdu's post", avatar: AvatarImg(), isFollowed: true, brands: ["assets/avatar/nike.png","assets/avatar/HYPE.png"]):SizedBox(),
+            ResultPage(name: "kim", subtitle: "kim's post", avatar: AvatarImg(ImgUrl: "assets/avatar/avatar.jpg"), isFollowed: false, brands: ["assets/avatar/goout-lg.png","assets/avatar/preme.png", "assets/avatar/leauge.png"]),
+            
             ]
           ),
         )),

@@ -243,8 +243,8 @@ class _CustomDrawerState extends State<CustomDrawer>
                               ),
                              
                               Container(
-                                width: Constants.screen_width * 0.35,
-                                height: 16,
+                                width: Constants.screen_width * 0.3,
+                                height: 12,
                                 clipBehavior: Clip.antiAlias,
                                 decoration: ShapeDecoration(
                                   color: Color(0xFF444446),
@@ -259,7 +259,7 @@ class _CustomDrawerState extends State<CustomDrawer>
                                   children: [
                                     Container(
                                       width: 62,
-                                      height: 16,
+                                      height: 12,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: ShapeDecoration(
                                         color: Constants.appColor,
@@ -299,7 +299,7 @@ class _CustomDrawerState extends State<CustomDrawer>
                              
                               Container(
                                 width: Constants.screen_width * 0.35,
-                                height: 16,
+                                height: 12,
                                 clipBehavior: Clip.antiAlias,
                                 decoration: ShapeDecoration(
                                   color: Color(0xFF444446),
@@ -314,7 +314,7 @@ class _CustomDrawerState extends State<CustomDrawer>
                                   children: [
                                     Container(
                                       width: 92,
-                                      height: 16,
+                                      height: 12,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: ShapeDecoration(
                                         color: Constants.appColor,
@@ -354,7 +354,7 @@ class _CustomDrawerState extends State<CustomDrawer>
                              
                               Container(
                                 width: Constants.screen_width * 0.35,
-                                height: 16,
+                                height: 12,
                                 clipBehavior: Clip.antiAlias,
                                 decoration: ShapeDecoration(
                                   color: Color(0xFF444446),
@@ -368,8 +368,8 @@ class _CustomDrawerState extends State<CustomDrawer>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      width: 30,
-                                      height: 16,
+                                      width: Constants.height10*2,
+                                      height: 12,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: ShapeDecoration(
                                         color: Constants.appColor,

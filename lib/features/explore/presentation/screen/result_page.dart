@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/core/modal.dart';
 import 'package:kim/features/explore/presentation/widgets/ResultBottom.dart';
@@ -27,6 +29,23 @@ class ResultPage extends StatefulWidget {
 }
 
 class _ResultPageState extends State<ResultPage> {
+  Widget Renderrows() {
+    List<Widget> rows = [];
+    for (int i = 0; i < widget.brands.length; i++) {
+      rows.add(Image.asset(
+        widget.brands[i],
+        height: 20,
+      ));
+      rows.add(SizedBox(
+        width: Constants.height10/2,
+      ));
+    }
+
+    return Row(
+      children: rows,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -37,67 +56,44 @@ class _ResultPageState extends State<ResultPage> {
               padding: EdgeInsets.only(
                   left: Constants.height10,
                   right: Constants.height10,
-                  top: 20,
+          
                   bottom: Constants
                       .height15), // padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  //  crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: 48, width: 48, child: widget.avatar),
                       SizedBox(
                         width: Constants.height10,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.name,
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(widget.subtitle, style: TextStyle(fontSize: 10)),
-                          const SizedBox(
-                            height: 5,
-                          ),
-
-                      
-                      for(int i=0; i<=widget.brands.length; ) Row(
-                                      children: [
-                                        Image.asset(
-                                          widget.brands[0],
-                                          height: 20,
-                                        ),
-                                      ],
-                                    ),
-                          
-                          // SizedBox(
-                          //   height: 300,
-                          //   child: Expanded(
-                          //     child: SingleChildScrollView(
-                          //       child: ListView.builder(
-                          //         scrollDirection: Axis.horizontal,
-                          //         shrinkWrap: true,
-                          //         itemCount: widget.brands.length,
-                          //         itemBuilder: (context, index) {
-                          //           return Row(
-                          //             children: [
-                          //               Image.asset(
-                          //                 widget.brands[index],
-                          //                 height: 20,
-                          //               ),
-                          //             ],
-                          //           );
-                          //         },
-                          //       ),
-                          //     ),
-                          //   ),
-                          // )
-                        ],
+                      InkWell(
+                        overlayColor: MaterialStatePropertyAll(Colors.transparent),
+                        onTap: (){
+                          Get.toNamed("/profilebadge");
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.name,
+                              style: TextStyle(fontSize: 12),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(widget.subtitle, style: TextStyle(fontSize: 10)),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Renderrows(),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),

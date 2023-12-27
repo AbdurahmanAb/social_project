@@ -8,9 +8,10 @@ import '../../../../core/text/HeaderText.dart';
 
 class ProfileTopBar extends StatelessWidget {
   final String text;
+  final Widget? textSpan;
   final String textRight;
   final IconData icon;
-  const ProfileTopBar({this.icon =CupertinoIcons.back, this.textRight="", super.key, required this.text});
+  const ProfileTopBar({this.textSpan,this.icon =CupertinoIcons.back, this.textRight="", super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +22,16 @@ class ProfileTopBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector(
+          InkWell(
             onTap: (){
               Get.back();
             },
             child: Icon(icon)),
           Expanded(
               child: Center(
-                  child: Header(
+                  child:text!=""? Header(
             text: text,size: Constants.mdFont + 2,
-          ))),
+          ):textSpan )),
           Text(textRight,style: TextStyle(color: Colors.blue),)
         ],
       ),

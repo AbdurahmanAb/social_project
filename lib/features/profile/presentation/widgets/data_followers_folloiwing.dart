@@ -18,12 +18,17 @@ class Followers extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              '빛나는_별다방',
-              style: TextStyle(
-                color: Constants.white,
-                fontSize: Constants.mdFont + 2,
-                fontWeight: FontWeight.w700,
+            InkWell(
+onTap: (){
+  Get.toNamed("/insight");
+},
+              child: Text(
+                '빛나는_별다방',
+                style: TextStyle(
+                  color: Constants.white,
+                  fontSize: Constants.mdFont + 2,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
@@ -31,7 +36,7 @@ class Followers extends StatelessWidget {
         SizedBox(
           height: Constants.height10,
         ),
-        GestureDetector(
+        InkWell(
           onTap: (){
             Get.toNamed("/follows");
           },
