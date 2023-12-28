@@ -10,8 +10,12 @@ class AvatarImg extends StatelessWidget {
   final double width;
   final bool? isFull;
   final String ImgUrl;
+
+
+   //IF the profile is mine it will be full but for others it will be false  
+   /// FOR THIS WE USE IS FULL FLAG
   const AvatarImg(
-      {this.isFull = true,
+      {this.isFull = false,
       this.Enableborder = true,
       this.width = 46,
       this.ImgUrl = "assets/avatar/avatar5.jpg",

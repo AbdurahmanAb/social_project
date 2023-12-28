@@ -17,7 +17,7 @@ class AppButton extends StatefulWidget {
 class _AppButtonState extends State<AppButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(width: Constants.screen_width-30,height: 36, decoration: BoxDecoration(
+    return Container(width: Constants.screen_width-30,height: Constants.height20*2.2, decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(10),
     color: this.widget.disabled? Constants.disabled:Constants.appColor
       

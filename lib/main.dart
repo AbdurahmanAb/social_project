@@ -6,14 +6,13 @@ import 'package:kim/routes/get_routes.dart';
 import 'package:kim/utils/constants.dart';
 import 'package:kim/utils/dependecies.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
- await init();
+  await init();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Constants.black, // Replace with your desired color
   ));
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,17 +21,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-Get.find<PollController>().polls;
+    Get.find<PollController>().polls;
     return GetMaterialApp(
       title: 'KIM APP',
-     theme: ThemeData(
-      
-     ),
-      themeMode: ThemeMode.dark,    darkTheme: ThemeData(brightness: Brightness.dark),
-          debugShowCheckedModeBanner: false,
-        
+      theme: ThemeData(),
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      debugShowCheckedModeBanner: false,
       initialRoute: Routes.welcome,
-      getPages :Routes.routes,
+      getPages: Routes.routes,
     );
   }
 }

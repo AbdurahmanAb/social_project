@@ -18,6 +18,25 @@ class ProfileEdit extends StatefulWidget {
 }
 
 class _ProfileEditState extends State<ProfileEdit> {
+// State variables
+  TextEditingController _usernameController = TextEditingController();
+  bool _usernameAvailable = true; // Initial availability
+
+// Function to check username availability
+  void _checkUsernameAvailability() {
+    // Simulate a network request to check availability
+
+    _usernameAvailable = !_usernameController.text
+        .contains("taken"); // Replace with your actual check logic
+    setState(() {
+      _usernameAvailable = false;
+    }); // Trigger a rebuild to update the border color
+  }
+
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,14 +52,14 @@ class _ProfileEditState extends State<ProfileEdit> {
               textRight: "저장",
             ),
             GestureDetector(
-              onTap: (){
-                 MyBottomSheet.showBottomSheet(
-                              context,
-                              "카메라",
-                              "assets/icons/icon_modify.png",
-                              "assets/icons/icon__picture.png",
-                              "사진 앨범",
-                              "닫기");
+              onTap: () {
+                MyBottomSheet.showBottomSheet(
+                    context,
+                    "카메라",
+                    "assets/icons/icon_modify.png",
+                    "assets/icons/icon__picture.png",
+                    "사진 앨범",
+                    "닫기");
               },
               child: Container(
                 height: Constants.screen_height * .2,
@@ -80,123 +99,172 @@ class _ProfileEditState extends State<ProfileEdit> {
                   SizedBox(
                     height: Constants.height20 * 2,
                     child: TextField(
-                      style:  TextStyle(
-                          
-                          fontSize: Constants.xsFont, fontWeight: FontWeight.w200),
-                       
+                      onChanged: (_)=>_checkUsernameAvailability(),
+                     controller: _usernameController,
+                      style: TextStyle(
+                          fontSize: Constants.smFont,
+                          fontWeight: FontWeight.w200),
                       decoration: InputDecoration(
                         filled: true,
                         isDense: true,
                         fillColor: Constants.postColor,
-
                         hintText: "대화명을 입력하세요",
-                         border: OutlineInputBorder(
+                        border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                const BorderSide(color: Constants.white, width: .3)),
-                        focusColor: Constants.white,
+                            borderSide: BorderSide(
+                                color:
+                                    _usernameAvailable ? Colors.cyan : Colors.red,
+                                width: .3)),
+                        // focusColor: Constants.white,
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                const BorderSide(color: Constants.white, width: .3)),
+                            borderSide: const BorderSide(
+                                color: Constants.white, width: .3)),
                       ),
                     ),
                   ),
-                  SizedBox(height: Constants.height10,),
+                  SizedBox(
+                    height: Constants.height10,
+                  ),
                   Text(
                     '대화명 변경 시, 3개월간 변경이 불가합니다.',
                     style: TextStyle(
-                      color:Constants.pink,
+                      color: Constants.pink,
                       fontSize: Constants.xsFont,
-                      
                       fontWeight: FontWeight.w500,
-                  
                     ),
-                  ),   SizedBox(height: Constants.height20,),
+                  ),
+                  SizedBox(
+                    height: Constants.height20,
+                  ),
                   Text("내 소개 (선택)"),
                   SizedBox(
                     height: Constants.height10,
                   ),
-                     SizedBox(
-              
+                  SizedBox(
                     child: TextField(
-                       style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w200),
-                      
+                      style: const TextStyle(
+                          fontSize: 14, fontWeight: FontWeight.w200),
                       maxLength: 500,
-                       buildCounter: (context,
-                    {required currentLength, required isFocused, maxLength=500}) {
-                  return Container(
-                    transform: Matrix4.translationValues(Constants.height10, 0, 0),
-                    child: Text("$currentLength/$maxLength", style: TextStyle(fontSize: Constants.smFont),),
-                  );
-                },
+                      buildCounter: (context,
+                          {required currentLength,
+                          required isFocused,
+                          maxLength = 500}) {
+                        return Container(
+                          transform: Matrix4.translationValues(
+                              Constants.height10, 0, 0),
+                          child: Text(
+                            "$currentLength/$maxLength",
+                            style: TextStyle(fontSize: Constants.smFont),
+                          ),
+                        );
+                      },
                       maxLines: 3,
                       decoration: InputDecoration(
-              
                         filled: true,
                         fillColor: Constants.postColor,
                         contentPadding: const EdgeInsets.only(
                             top: 15, bottom: 15, left: 10, right: 10),
                         hintText: "대화명을 입력하세요",
-                         border: OutlineInputBorder(
+                        border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                const BorderSide(color: Constants.white, width: .3)),
+                            borderSide: const BorderSide(
+                                color: Constants.white, width: .3)),
                         focusColor: Constants.white,
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                                const BorderSide(color: Constants.white, width: .3)),
+                            borderSide: const BorderSide(
+                                color: Constants.white, width: .3)),
                       ),
                     ),
                   ),
-               Column(
-               crossAxisAlignment:CrossAxisAlignment.stretch,
-                children: [
-                  MidText(text: "SNS 계정"),
-                  SizedBox(height: Constants.height10,),
-                   Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SocialRow(
-                  content1: Image.asset("assets/icons/icon_instagram.png"),
-                  content2: Text(
-                    "계정을 등록해주세요.",
-                    style: TextStyle(fontSize: Constants.smFont),
-                  ))   , InkWell(
-                    overlayColor: MaterialStatePropertyAll(Colors.transparent),
-                    onTap: (){
-                    AddUserame.showUsernameDialog(context);
-                    },
-                    child: Icon(Icons.add))
-            ],
-          ), SizedBox(height: Constants.height10,),
-          Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SocialRow(
-                  content1: Image.asset("assets/icons/icon_twitter.png"),
-                  content2: Text(
-                    "계정을 등록해주세요.",
-                    style: TextStyle(fontSize: Constants.smFont),
-                  )),Icon(Icons.add),
-            ],
-          ),   SizedBox(height: Constants.height10,),
-          Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SocialRow(
-                  content1: Image.asset("assets/icons/icon_youtube.png"),
-                  content2: Text(
-                    "계정을 등록해주세요.",
-                    style: TextStyle(fontSize: Constants.smFont),
-                  )  ),Icon(Icons.add)
-            ],
-          ) , 
-        ],
-            ),
-                ],
-               )
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      MidText(text: "SNS 계정"),
+                      SizedBox(
+                        height: Constants.height10,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SocialRow(
+                                  content1: Image.asset(
+                                      "assets/icons/icon_instagram.png"),
+                                  content2: Text(
+                                    "계정을 등록해주세요.",
+                                    style:
+                                        TextStyle(fontSize: Constants.smFont),
+                                  )),
+                              InkWell(
+                                  overlayColor: MaterialStatePropertyAll(
+                                      Colors.transparent),
+                                  onTap: () {
+                                    AddUserame.showUsernameDialog(
+                                      context,
+                                      "인스타그램 계정 등록",
+                                    );
+                                  },
+                                  child: Icon(Icons.add))
+                            ],
+                          ),
+                          SizedBox(
+                            height: Constants.height10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SocialRow(
+                                  content1: Image.asset(
+                                      "assets/icons/icon_twitter.png"),
+                                  content2: Text(
+                                    "계정을 등록해주세요.",
+                                    style:
+                                        TextStyle(fontSize: Constants.smFont),
+                                  )),
+                              InkWell(
+                                  overlayColor: MaterialStatePropertyAll(
+                                      Colors.transparent),
+                                  onTap: () {
+                                    AddUserame.showUsernameDialog(
+                                        context, "X 계정 등록");
+                                  },
+                                  child: Icon(Icons.add)),
+                            ],
+                          ),
+                          SizedBox(
+                            height: Constants.height10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SocialRow(
+                                  content1: Image.asset(
+                                      "assets/icons/icon_youtube.png"),
+                                  content2: Text(
+                                    "계정을 등록해주세요.",
+                                    style:
+                                        TextStyle(fontSize: Constants.smFont),
+                                  )),
+                              InkWell(
+                                  overlayColor: MaterialStatePropertyAll(
+                                      Colors.transparent),
+                                  onTap: () {
+                                    AddUserame.showUsernameDialog(
+                                      context,
+                                      "유튜브 계정 등록",
+                                    );
+                                  },
+                                  child: Icon(Icons.add))
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),

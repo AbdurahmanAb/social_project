@@ -1,57 +1,95 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/app_button.dart';
 import 'package:kim/utils/constants.dart';
 
-class AddUserName extends StatelessWidget {
-  const AddUserName({super.key});
+class AddUserName extends StatefulWidget {
+  final String text;
+  const AddUserName({super.key, required this.text});
+
+  @override
+  State<AddUserName> createState() => _AddUserNameState();
+}
+
+class _AddUserNameState extends State<AddUserName> {
+  bool disabled = true;
+  late final TextEditingController _editingController;
+  void initState() {
+    super.initState();
+    _editingController = TextEditingController();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(Constants.height20),
       child: Column(
-    
         children: [
-          Row(children: [
-            Icon(Icons.close),
-            Expanded(child: Center(
-              child: Text("Center"),
-            ))
-          ],),
-SizedBox(height: Constants.height10,),
+          Row(
+            children: [
+              Icon(Icons.close),
+              Expanded(
+                  child: Center(
+                child: Text(widget.text),
+              ))
+            ],
+          ),
           Divider(),
-          SizedBox(height: 38,child: TextField(
-
-            
-            style: TextStyle(fontSize: 12),
-
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(8),
-              filled: true,
-              hintText: "@supertramp2024",
-            
-              fillColor: Constants.Iconbg,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10)
-              )
-              
+          SizedBox(
+            height: Constants.height20,
+          ),
+          SizedBox(
+            height: 38,
+            child: TextField(
+              onChanged: (val) {
+                setState(() {
+                  disabled = false;
+                });
+              },
+              style: TextStyle(fontSize: 12),
+              decoration: InputDecoration(
+                
+                  contentPadding: EdgeInsets.all(8),
+                  filled: true,
+                  hintText: "@사용자명 (예 : @wegab)",
+                  fillColor: Constants.Iconbg,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10))),
             ),
-          ),),
-         AppButton(text: "add")
+          ),
+          SizedBox(
+            height: Constants.height20,
+          ),
+          Container(
+            height: 34,
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+                color:disabled?Constants.disabled: Constants.appColor2,
+                borderRadius: BorderRadius.circular(10)),
+            child: Center(
+              child: Text(
+                "저장",
+                style: TestStyles.style3,
+              ),
+            ),
+          ),
+          // AppButton(
+          //   text: "
+          //   disabled: disabled,
+          // )
         ],
       ),
     );
   }
 }
 
-class AddUserame{
-static void showUsernameDialog(context){
-showModalBottomSheet(backgroundColor: Constants.bottom,
-
-constraints: BoxConstraints(maxHeight: Constants.screen_height*0.3),
- context: context, builder:(context)=> AddUserName());
-
+class AddUserame {
+  static void showUsernameDialog(context, text) {
+    showModalBottomSheet(
+        backgroundColor: Constants.bottom,
+        constraints: BoxConstraints(maxHeight: Constants.screen_height * 0.3),
+        context: context,
+        builder: (context) => AddUserName(text: text));
+  }
 }
-}
-
