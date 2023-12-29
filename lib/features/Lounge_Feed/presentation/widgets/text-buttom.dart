@@ -9,10 +9,10 @@ class TextButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Constants.black,
-      padding: EdgeInsets.only(bottom:5, left: 5),
+      padding: EdgeInsets.only(bottom:5, left: 10),
       child: Row(
         children: [
-          TopText(text: "#캠핑"),
+          TopText(text: "#캠핑",),
           SizedBox(
             width: Constants.height10,
           ),

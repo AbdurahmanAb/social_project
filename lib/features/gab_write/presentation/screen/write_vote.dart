@@ -49,9 +49,12 @@ class _WriteVoteState extends State<WriteVote> {
                       child: Column(
                         children: [
                           TextField(
+                            cursorColor: Colors.blue,
+                          
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
                             decoration: InputDecoration(
+                              
                               border: InputBorder.none,
                               hintText: " | 제목을 입력하세요. ,",
                               hintStyle: TextStyle(
@@ -86,7 +89,7 @@ class _WriteVoteState extends State<WriteVote> {
                 ],
               ),
             ),
-          ),
+          ), 
           Container(
             padding: EdgeInsets.all(Constants.height15),
             color: Constants.black,

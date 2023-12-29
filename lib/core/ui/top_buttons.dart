@@ -7,8 +7,8 @@ import 'package:kim/core/text/HeaderText.dart';
 import 'package:kim/utils/constants.dart';
 
 class TopButtons extends StatelessWidget {
-  final String text;
-  TopButtons({this.text = "Lacstoe", super.key});
+  final String logo;
+  TopButtons({this.logo = "assets/avatar/lacoste.png", super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class TopButtons extends StatelessWidget {
         builder: (BuildContext context) {
           return Container(
             padding: EdgeInsets.symmetric(horizontal: Constants.height15,vertical: Constants.height20),
-            height: Constants.screen_height * 0.25,
+            height: Constants.screen_height * 0.27,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(25),
@@ -30,7 +30,7 @@ class TopButtons extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset("assets/avatar/lacoste.png"),
+                    Image.asset(logo),
                     const SizedBox(
                       width: 10,
                     ),

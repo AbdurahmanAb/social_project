@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kim/core/bottom_radio_button.dart';
+import 'package:kim/core/report_bottom.dart';
 import 'package:kim/core/ui/app_button.dart';
 import 'package:kim/features/gab_write/presentation/widgets/bottom_sheet_radio.dart';
 import 'package:kim/features/gab_write/presentation/widgets/input_poll.dart';

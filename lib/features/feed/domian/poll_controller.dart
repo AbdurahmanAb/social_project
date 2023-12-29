@@ -11,17 +11,17 @@ class PollController extends GetxController {
         {
           'id': 1,
           'title': 'Absolutely',
-          'votes': 0,
+          'votes': 20,
         },
         {
           'id': 2,
           'title': 'Maybe',
-          'votes': 0,
+          'votes': 120,
         },
         {
           'id': 3,
           'title': 'Meh!',
-          'votes': 0,
+          'votes': 033,
         },
       ],
     },
@@ -33,17 +33,17 @@ class PollController extends GetxController {
         {
           'id': 1,
           'title': 'Yes, they definitely do',
-          'votes': 40,
+          'votes': 4330,
         },
         {
           'id': 2,
           'title': 'No, they do not',
-          'votes': 70,
+          'votes': 700,
         },
         {
           'id': 3,
           'title': 'I do not know',
-          'votes': 10,
+          'votes': 103,
         },
         {
           'id': 4,
@@ -60,8 +60,8 @@ class PollController extends GetxController {
       'options': [
         {
           'id': 2,
-          'title': 'It is certain that it is the same',
-          'votes': 4,
+          'title': 'It is certain that it is the same uuuuuuuuu',
+          'votes': 14,
         },
         {
           'id': 3,

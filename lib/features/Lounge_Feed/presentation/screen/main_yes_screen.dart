@@ -11,6 +11,7 @@ import 'package:kim/core/MyBottomSheet.dart';
 
 
 import 'package:kim/core/modal.dart';
+import 'package:kim/core/report_bottom.dart';
 import 'package:kim/core/ui/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
@@ -20,6 +21,8 @@ import 'package:kim/utils/constants.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
 
 import '../../../../core/radio_button_group.dart';
+import '../../../../core/text/HeaderText.dart';
+import '../../../../core/ui/app_button.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -93,15 +96,26 @@ class _MainScreenState extends State<MainScreen> {
                           SizedBox(
                             height: 5,
                           ),
+                       
+                       //to show the report bottomSheet
                           GestureDetector(
                               onTap: () {
+                                ///The ReusableBottom Sheet that Accept argument and displays them
+                              //Arguments ("first text", " img url 1","img url 2","second text", "button text")
+                              //There are also optional argument like  third text and third icon and onTap   
+                              
                                 MyBottomSheet.showBottomSheet(
                                     context,
                                     "신고하기",
                                     "assets/feed/icon_warning.png",
                                     "assets/feed/icon_hide.png",
                                     "숨기기",
-                                    "닫기");
+                                    "닫기",
+                                  (){
+                                    Get.back();
+                                    ReportBottomSheet.showBottomSheet(context);
+                                  }
+                                    );
                               },
                               child: const LongPost(
                                 img: "assets/avatar/post5.jpg",
@@ -110,77 +124,77 @@ class _MainScreenState extends State<MainScreen> {
                           SizedBox(
                             height: Constants.height10,
                           ),
-                          // Container(
-                          //   padding: EdgeInsets.symmetric(
-                          //       vertical: Constants.height20,
-                          //       horizontal: Constants.height10),
-                          //   decoration: BoxDecoration(
-                          //       color: const Color(0xFF545456),
-                          //       borderRadius: BorderRadius.circular(10)),
-                          //   child: Column(
-                          //     crossAxisAlignment: CrossAxisAlignment.start,
-                          //     children: [
-                          //       const Header(
-                          //         text: "최고의 캠핑 패스티발은?",
-                          //         size: 14,
-                          //       ),
-                          //       const SizedBox(
-                          //         height: 7,
-                          //       ),
-                          //       const Text("복수 선택 불가"),
-                          //       SizedBox(
-                          //         height: Constants.height10,
-                          //       ),
-                          //       LayoutBuilder(builder: (BuildContext context,
-                          //           BoxConstraints constraints) {
-                          //         return RadioButtonGroup(
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: Constants.height20,
+                                horizontal: Constants.height10),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFF545456),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Header(
+                                  text: "최고의 캠핑 패스티발은?",
+                                  size: 14,
+                                ),
+                                const SizedBox(
+                                  height: 7,
+                                ),
+                                const Text("복수 선택 불가"),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                LayoutBuilder(builder: (BuildContext context,
+                                    BoxConstraints constraints) {
+                                  return RadioButtonGroup(
                                     
-                          //             vertical: true,
-                          //             options: options,
-                          //             crossAxisAlignment:
-                          //                 CrossAxisAlignment.start,
-                          //             textStyle: const TextStyle(
-                          //                 fontSize: 15, color: Colors.white),
-                          //             selectedColor: const Color(0xFF363638),
-                          //             mainColor: const Color(0xFF363638),
-                          //             selectedIconColor: Constants.appColor,
-                          //             selectedBorderSide: const BorderSide(
-                          //                 width: 1,
-                          //                 color: Constants.appColor),
-                          //             buttonWidth: constraints.maxWidth,
-                          //             buttonHeight: 42,
+                                      vertical: true,
+                                      options: options,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      textStyle: const TextStyle(
+                                          fontSize: 15, color: Colors.white),
+                                      selectedColor: const Color(0xFF363638),
+                                      mainColor: const Color(0xFF363638),
+                                      selectedIconColor: Constants.appColor,
+                                      selectedBorderSide: const BorderSide(
+                                          width: 1,
+                                          color: Constants.appColor),
+                                      buttonWidth: constraints.maxWidth,
+                                      buttonHeight: 42,
                                     
-                          //             callback: (RadioOption val) {
-                          //               setState(() {
-                          //                 label = val.label;
-                          //                 disabled = false;
-                          //               });
-                          //               print(val);
-                          //             });
-                          //       }),
-                          //       SizedBox(
-                          //         height: Constants.height10,
-                          //       ),
-                          //       AppButton(
-                          //         text: "투표하기",
-                          //         disabled: disabled,
-                          //       ),
-                          //       SizedBox(
-                          //         height: Constants.height10,
-                          //       ),
-                          //       const Row(
-                          //         mainAxisAlignment:
-                          //             MainAxisAlignment.spaceBetween,
-                          //         children: [
-                          //           Text(
-                          //             "투표참여 : 16명",
-                          //           ),
-                          //           Text("7 일 뒤 종료")
-                          //         ],
-                          //       )
-                          //     ],
-                          //   ),
-                          // ),
+                                      callback: (RadioOption val) {
+                                        setState(() {
+                                          label = val.label;
+                                          disabled = false;
+                                        });
+                                        print(val);
+                                      });
+                                }),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                AppButton(
+                                  text: "투표하기",
+                                  disabled: disabled,
+                                ),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "투표참여 : 16명",
+                                    ),
+                                    Text("7 일 뒤 종료")
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
                           const LongPost(),
                           const Comment()
                         ],

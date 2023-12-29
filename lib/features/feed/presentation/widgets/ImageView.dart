@@ -5,7 +5,11 @@ import 'package:get/get.dart';
 
 class ImageView extends StatelessWidget {
   final int id;
-  const ImageView({required this.id, super.key});
+
+ ImageView({required this.id, super.key});
+List<String> imagesList = [
+"assets/avatar/post1.jpg",
+];
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +32,7 @@ class ImageView extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(child: Center(child: Image.asset("assets/avatar/post4.jpg" ,fit: BoxFit.cover,width: double.maxFinite,))),
+            Expanded(child: Center(child: Image.asset(imagesList[id],fit: BoxFit.cover,width: double.maxFinite,))),
          
           ],
         ),

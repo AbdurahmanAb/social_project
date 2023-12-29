@@ -5,11 +5,13 @@ import 'package:get/get.dart';
 import 'package:kim/core/radio_button_group.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 
-import 'package:kim/features/feed/presentation/widgets/FeedComment.dart';
+import 'package:kim/features/feed/presentation/widgets/feed_comment_field.dart';
 import 'package:kim/features/feed/presentation/widgets/FeedTop.dart';
 
 import 'package:kim/features/feed/presentation/widgets/Tags.dart';
 import 'package:kim/features/feed/presentation/widgets/custom_polls.dart';
+import 'package:kim/features/feed/presentation/widgets/feed_comment_list.dart';
+import 'package:kim/features/feed/presentation/widgets/feed_image_list.dart';
 import 'package:kim/utils/constants.dart';
 
 import '../../../../core/text/HeaderText.dart';
@@ -130,6 +132,7 @@ class _FeddState extends State<Fedd> {
                               Tags(
                                 name: "@나이키",
                               ),
+                              Tags(name: "@나이키"),
                               Tags(
                                 name: "@현대",
                               ),
@@ -144,77 +147,16 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height20,
                           ),
-                          GestureDetector(
-                              onTap: () {
-                                Get.toNamed("/image?id=5");
-                              },
-                              child: Container(
-                                width: double.maxFinite,
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.asset(
-                                      "assets/avatar/post3.jpg",
-                                      fit: BoxFit.cover,
-                                    )),
-                              )),
+                          FeedImagesList(imgUrl: "assets/avatar/post1.jpg"),
                           SizedBox(
                             height: Constants.height10,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Get.toNamed("/image?id=5");
-                            },
-                            child: Container(
-                              width: double.maxFinite,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    "assets/avatar/post2.jpg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
-                          ),
-                          SizedBox(
-                            height: Constants.height10,
-                          ),
-                          GestureDetector(
-                              onTap: () {
-                                Get.toNamed("/image?id=5");
-                              },
-                              child: Container(
-                                width: double.maxFinite,
-                                child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.asset(
-                                      "assets/avatar/post5.jpg",
-                                      fit: BoxFit.cover,
-                                    )),
-                              )),
-                          SizedBox(
-                            height: Constants.height10,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Get.toNamed("/image?id=5");
-                            },
-                            child: Container(
-                              width: double.maxFinite,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    "assets/avatar/post1.jpg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
                           ),
                           const SizedBox(
                             height: 20,
                           ),
                           Container(
                             width: double.maxFinite,
-                            padding: EdgeInsets.symmetric(
-                                vertical: Constants.height20,
-                                horizontal: Constants.height10),
+                            padding: EdgeInsets.all(Constants.height20),
                             decoration: BoxDecoration(
                                 color: const Color(0xFF545456),
                                 borderRadius: BorderRadius.circular(10)),
@@ -239,15 +181,16 @@ class _FeddState extends State<Fedd> {
                                       options: options,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      textStyle: const TextStyle(
-                                          fontSize: 15, color: Colors.white),
+                                      textStyle: TextStyle(
+                                          fontSize: Constants.mdFont,
+                                          color: Colors.white),
                                       selectedColor: const Color(0xFF363638),
                                       mainColor: const Color(0xFF363638),
                                       selectedIconColor: Constants.appColor,
                                       selectedBorderSide: const BorderSide(
                                           width: 1, color: Constants.appColor),
                                       buttonWidth: constraints.maxWidth,
-                                      buttonHeight: 42,
+                                      buttonHeight: 38,
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       callback: (RadioOption val) {
@@ -291,17 +234,24 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height20,
                           ),
-                          CustomPolls(),
                         ],
                       ),
                     ),
-
+                    //   CustomPolls(),
                     // RealPoll()
+                      FeedCommentList(text: "답글 내용 " ,),
                   ],
                 ),
               ),
             ),
-            FeedComment(),
+          
+            Container(
+                padding: EdgeInsets.all(Constants.height10 / 2),
+                color: Constants.postColor,
+                child: Center(
+                  child: Text("댓글 전체보기"),
+                )),
+            FeedCommentField(),
           ],
         ),
       ),

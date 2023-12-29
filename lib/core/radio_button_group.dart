@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:kim/utils/constants.dart';
 
 /// [RadioOption] - an option passed to the [RadioButtonGroup]
@@ -385,14 +386,14 @@ class _BasicButton extends StatelessWidget {
                         Icons.radio_button_checked,
                         color: selectedIconColor,
                       )
-                    : Icon(Icons.radio_button_off),
-                Container(
-                  width: Constants.height20,
+                    : Icon(Icons.radio_button_off, size: 20 ),
+                SizedBox(
+                  width: Constants.height10,
                 ),
                 Text(
                   label,
                   style: textStyle ??
-                      const TextStyle(color: Colors.white, fontSize: 16),
+                     TextStyle(color: Colors.white, fontSize:12 ),
                 ),
               ],
             ),

@@ -1,22 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:get/get.dart';
 
 import 'package:kim/core/ui/app_button.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
 import '../utils/constants.dart';
 
-class BottomRadio extends StatefulWidget {
+class ReportBottom extends StatefulWidget {
   @override
-  _BottomRadioState createState() => _BottomRadioState();
+  _ReportBottomState createState() => _ReportBottomState();
 }
 
-class _BottomRadioState extends State<BottomRadio> {
+class _ReportBottomState extends State<ReportBottom> {
   RadioGroupController myController = RadioGroupController();
   final GlobalKey<RadioGroupState> radioGroupKey1 =
       GlobalKey<RadioGroupState>();
   bool disabled = true;
+  String Reportvalue ="";
 
   void enableButton() {
     setState(() {
@@ -25,7 +26,9 @@ class _BottomRadioState extends State<BottomRadio> {
   }
 
   void onRadioGroupChanged(value) {
+   
     setState(() {
+      Reportvalue = value;
       disabled = false;
     });
   }
@@ -109,7 +112,11 @@ class _BottomRadioState extends State<BottomRadio> {
                   TextStyle(color: Constants.pink, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: Constants.height20),
-            AppButton(text: "신고하기", disabled: disabled),
+            InkWell(
+              onTap: (){
+                Get.back();
+              },
+              child: AppButton(text: "신고하기", disabled: disabled)),
           ],
         ),
       ),
@@ -117,7 +124,7 @@ class _BottomRadioState extends State<BottomRadio> {
   }
 }
 
-class BottomRadioSheet {
+class ReportBottomSheet {
   static void showBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -129,7 +136,7 @@ class BottomRadioSheet {
         maxHeight: Constants.screen_height * 0.8,
       ),
       builder: (BuildContext context) {
-        return BottomRadio();
+        return ReportBottom();
       },
     );
   }

@@ -8,11 +8,11 @@ class MyBottomSheet {
 
 /// accept 4 (2, icons and 2 text) arguments to show when the bottomSheet is opened
 ///  the elements will be displayed as row
-///  MyBottoSheet.showBottomSheet(...argumentss) will open the bottomSheet
+/// MyBottoSheet.showBottomSheet(...argumentss) will open the bottomSheet
 
 
 
- static void showBottomSheet(BuildContext context, text1,icon1,icon2, text2, btnTxt, [text3, icon3]) {
+ static void showBottomSheet(BuildContext context, text1,icon1,icon2, text2, btnTxt, [onTap,text3, icon3,]) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
@@ -27,14 +27,20 @@ class MyBottomSheet {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Image.asset(icon1),
-                  SizedBox(
-                    width: Constants.height10,
-                  ),
-                  Text(text1),
-                ],
+              InkWell(
+                 onTap: (){
+                  //the onTap function that accept as argument
+                      onTap();
+                    },
+                child: Row(
+                  children: [
+                    Image.asset(icon1),
+                    SizedBox(
+                      width: Constants.height10,
+                    ),
+                    Text(text1),
+                  ],
+                ),
               ),
               Row(
                 children: [

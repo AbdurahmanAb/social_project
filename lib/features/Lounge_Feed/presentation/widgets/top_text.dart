@@ -9,7 +9,7 @@ class TopText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Constants.appColor),
+      style: TextStyle(color: Constants.appColor, fontSize: Constants.smFont),
     );
   }
 }

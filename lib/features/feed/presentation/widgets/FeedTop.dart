@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/utils/constants.dart';
 
-import '../../../../core/bottom_radio_button.dart';
+import '../../../../core/report_bottom.dart';
 
 class FeedTop extends StatelessWidget {
   const FeedTop({super.key});
@@ -35,7 +35,7 @@ class FeedTop extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: () {
-                    BottomRadioSheet.showBottomSheet(context);
+                    ReportBottomSheet.showBottomSheet(context);
                   },
                   child: const Icon(Icons.more_horiz)),
               SizedBox(

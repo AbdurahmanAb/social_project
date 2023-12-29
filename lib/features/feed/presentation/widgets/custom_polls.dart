@@ -26,6 +26,9 @@ class _CustomPollsState extends State<CustomPolls> {
     int votes = options[optionIndex]['votes'];
     double percentage = votes / totalVotes;
 
+if(percentage.isNaN){
+  return 0;
+}
     return percentage;
   }
 
@@ -42,14 +45,17 @@ class _CustomPollsState extends State<CustomPolls> {
         ),
       ),
       child: ListView.builder(
+        physics: NeverScrollableScrollPhysics(),
         itemCount: polls.length,
         itemBuilder: (context,index) {
+
+         var options = getOptions(index);
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '최고의 캠핑 패스티발은?',
+              Text(polls[index]['question'].toString(),
+               // '최고의 캠핑 패스티발은?',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: Constants.mdFont ,
@@ -77,115 +83,115 @@ class _CustomPollsState extends State<CustomPolls> {
               SizedBox(
                 height: Constants.height15,
               ),
-              Expanded(
-                child: SizedBox(
-    
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 2,
-                    itemBuilder: (context,i) {
-                      return Container(
-                        width: double.maxFinite,
-                        height: 32,
-                        decoration: ShapeDecoration(
-                          color: Color(0xFF363638),
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(width: 1, color: Color(0xFFDBFF00)),
-                            borderRadius: BorderRadius.circular(10),
+              ListView.separated(
+                separatorBuilder:(context,i)=> SizedBox(height: 10),
+                shrinkWrap: true,
+                itemCount:options.length,
+                itemBuilder: (context,i) {
+                  var percentage =getFillPercentage(index, i).toStringAsFixed(2);
+                
+                  return Container(
+                    width: double.maxFinite,
+                    height: 32,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFF363638),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 1, color: Color(0xFFDBFF00)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: 0,
+                          top: 0,
+                          child: Container(
+                            width: 94,
+                            height: 32,
+                            decoration: ShapeDecoration(
+                              color: Color(0xFFDBFF00),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: 94,
-                                height: 32,
-                                decoration: ShapeDecoration(
-                                  color: Color(0xFFDBFF00),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      bottomLeft: Radius.circular(10),
+                        Positioned(
+                          left: 0,
+                          top: 5,
+                          child: Container(
+                            width: 329,
+                            padding: EdgeInsets.symmetric(horizontal: 12),
+                            clipBehavior: Clip.antiAlias,
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    height: 21,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white
+                                          .withOpacity(0.000009999999747378752),
+                                    ),
+                                    child: Row(
+                                    //  mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          width: 16,
+                                          height: 16,
+                                          decoration: ShapeDecoration(
+                                            color: Color(0xFFDBFF00),
+                                            shape: RoundedRectangleBorder(
+                                              side: BorderSide(
+                                                  width: 1, color: Color(0xFFDBFF00)),
+                                              borderRadius: BorderRadius.circular(100),
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          options[i]['title'],
+                                           //'문항',
+                                          style: TextStyle(
+                                            color: Color(0xFF7C7C80),
+                                            fontSize: Constants.mdFont ,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 0,
-                              top: 5,
-                              child: Container(
-                                width: 329,
-                                padding: EdgeInsets.symmetric(horizontal: 12),
-                                clipBehavior: Clip.antiAlias,
-                                decoration: ShapeDecoration(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                                Text(
+                                 ' $percentage % (00명)',
+                                //  '30% (00명)',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: Constants.mdFont,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Expanded(
-                                      child: Container(
-                                        height: 21,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          color: Colors.white
-                                              .withOpacity(0.000009999999747378752),
-                                        ),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Container(
-                                              width: 16,
-                                              height: 16,
-                                              decoration: ShapeDecoration(
-                                                color: Color(0xFFDBFF00),
-                                                shape: RoundedRectangleBorder(
-                                                  side: BorderSide(
-                                                      width: 1, color: Color(0xFFDBFF00)),
-                                                  borderRadius: BorderRadius.circular(100),
-                                                ),
-                                              ),
-                                            ),
-                                            Text(
-                                              '문항',
-                                              style: TextStyle(
-                                                color: Color(0xFF7C7C80),
-                                                fontSize: Constants.mdFont ,
-                                                fontWeight: FontWeight.w700,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      '30% (00명)',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: Constants.mdFont,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
-                      );
-                    }
-                  ),
-                ),
+                      ],
+                    ),
+                  );
+                }
               ),
               SizedBox(
                 height: Constants.height15,
