@@ -17,7 +17,8 @@ class _ReportBottomState extends State<ReportBottom> {
   final GlobalKey<RadioGroupState> radioGroupKey1 =
       GlobalKey<RadioGroupState>();
   bool disabled = true;
-  String Reportvalue ="";
+  String Reportvalue = "";
+   int _selectedIndex =-1;
 
   void enableButton() {
     setState(() {
@@ -26,12 +27,21 @@ class _ReportBottomState extends State<ReportBottom> {
   }
 
   void onRadioGroupChanged(value) {
-   
     setState(() {
       Reportvalue = value;
       disabled = false;
     });
   }
+
+  List<String> values = [
+    "특정인, 특정 집단 비방",
+    "폭언, 욕설, 차별, 혐오 발언",
+    "광고, 스팸성",
+    "중복, 도배",
+    "주제와 무관",
+    "선정적인 컨텐츠, 음란물",
+    "기타 부적절한 글, 댓글"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +56,13 @@ class _ReportBottomState extends State<ReportBottom> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
+           Row(
               children: [
-                Icon(Icons.close),
+                GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+                  child: Icon(Icons.close)),
                 Expanded(child: Center(child: Text("갭 신고"))),
               ],
             ),
@@ -60,28 +74,36 @@ class _ReportBottomState extends State<ReportBottom> {
             SizedBox(
               height: Constants.height20,
             ),
-            GestureDetector(
-              onTap: () {
-                enableButton();
-              },
-              child: RadioGroup(
-                onChanged: onRadioGroupChanged,
-                key: radioGroupKey1,
-                controller: myController,
-                decoration: const RadioGroupDecoration(
-                  spacing: 40.0,
-                  labelStyle: TextStyle(),
-                  activeColor: Constants.appColor,
+            SingleChildScrollView(
+              child: ListView.separated(
+                separatorBuilder: (context, index) => SizedBox(
+                  height: Constants.height15,
                 ),
-                values: [
-                  "특정인, 특정 집단 비방",
-                  "폭언, 욕설, 차별, 혐오 발언",
-                  "광고, 스팸성",
-                  "중복, 도배",
-                  "주제와 무관",
-                  "선정적인 컨텐츠, 음란물",
-                  "기타 부적절한 글, 댓글"
-                ],
+                itemCount: values.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                         enableButton();
+                        _selectedIndex=index;
+                       
+                      });
+                    },
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        _selectedIndex == index
+                            ? Image.asset("assets/icons/radio_check.png")
+                            : Image.asset("assets/icons/radio.png"),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(values[index])
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
             SizedBox(
@@ -113,10 +135,10 @@ class _ReportBottomState extends State<ReportBottom> {
             ),
             SizedBox(height: Constants.height20),
             InkWell(
-              onTap: (){
-                Get.back();
-              },
-              child: AppButton(text: "신고하기", disabled: disabled)),
+                onTap: () {
+                  Get.back();
+                },
+                child: AppButton(text: "신고하기", disabled: disabled)),
           ],
         ),
       ),

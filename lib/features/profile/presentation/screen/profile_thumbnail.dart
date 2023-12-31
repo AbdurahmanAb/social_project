@@ -100,7 +100,8 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                               color: Constants.white,
                             ),
                             padding: EdgeInsets.all(Constants.height15 / 3),
-                            child: GestureDetector(
+                            child: InkWell(
+overlayColor: MaterialStatePropertyAll(Colors.transparent),
                               onTap: () {
                                 Get.back();
                                 Get.toNamed("/profileEdit");

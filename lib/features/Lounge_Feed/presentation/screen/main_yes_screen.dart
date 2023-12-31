@@ -5,13 +5,13 @@ import 'package:get/get.dart';
 
 import 'package:kim/core/bottom_bar.dart';
 
-import 'package:kim/core/custom_drawer.dart';
+import 'package:kim/core/drawer/custom_drawer.dart';
 
 import 'package:kim/core/MyBottomSheet.dart';
 
-
 import 'package:kim/core/modal.dart';
 import 'package:kim/core/report_bottom.dart';
+import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/core/ui/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
@@ -96,28 +96,26 @@ class _MainScreenState extends State<MainScreen> {
                           SizedBox(
                             height: 5,
                           ),
-                       
-                       //to show the report bottomSheet
+
+                          //to show the report bottomSheet
                           GestureDetector(
                               onTap: () {
                                 ///The ReusableBottom Sheet that Accept argument and displays them
-                              //Arguments ("first text", " img url 1","img url 2","second text", "button text")
-                              //There are also optional argument like  third text and third icon and onTap   
-                              
+                                //Arguments ("first text", " img url 1","img url 2","second text", "button text")
+                                //There are also optional argument like  third text and third icon and onTap
+
                                 MyBottomSheet.showBottomSheet(
                                     context,
                                     "신고하기",
                                     "assets/feed/icon_warning.png",
                                     "assets/feed/icon_hide.png",
                                     "숨기기",
-                                    "닫기",
-                                  (){
-                                    Get.back();
-                                    ReportBottomSheet.showBottomSheet(context);
-                                  }
-                                    );
+                                    "닫기", () {
+                                  Get.back();
+                                  ReportBottomSheet.showBottomSheet(context);
+                                });
                               },
-                              child: const LongPost(
+                              child:  LongPost(
                                 img: "assets/avatar/post5.jpg",
                                 hasAd: true,
                               )),
@@ -148,7 +146,6 @@ class _MainScreenState extends State<MainScreen> {
                                 LayoutBuilder(builder: (BuildContext context,
                                     BoxConstraints constraints) {
                                   return RadioButtonGroup(
-                                    
                                       vertical: true,
                                       options: options,
                                       crossAxisAlignment:
@@ -159,11 +156,9 @@ class _MainScreenState extends State<MainScreen> {
                                       mainColor: const Color(0xFF363638),
                                       selectedIconColor: Constants.appColor,
                                       selectedBorderSide: const BorderSide(
-                                          width: 1,
-                                          color: Constants.appColor),
+                                          width: 1, color: Constants.appColor),
                                       buttonWidth: constraints.maxWidth,
                                       buttonHeight: 42,
-                                    
                                       callback: (RadioOption val) {
                                         setState(() {
                                           label = val.label;
@@ -195,8 +190,9 @@ class _MainScreenState extends State<MainScreen> {
                               ],
                             ),
                           ),
-                          const LongPost(),
-                          const Comment()
+                          SizedBox(height: 10,),
+                           LongPost(text: "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다. 지나가는 오면 어머님, 나의 다하지 애기 소학교 이웃 있습니다. 무성할 그리워 하나에 위에 나의 소녀들의 까닭입니다. 보고, 잔디가 말 패, 그러나 위에도 어머님, 까닭입니다. 하늘에는 이름을 소학교 불러 했던 봅니다.", Avatar: AvatarImg(ImgUrl: "assets/avatar/avatar2.jpg",)),
+                         
                         ],
                       ),
                     ),

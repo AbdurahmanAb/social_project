@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/core/radio_button_group.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
 
 import 'package:kim/features/feed/presentation/widgets/feed_comment_field.dart';
 import 'package:kim/features/feed/presentation/widgets/FeedTop.dart';
@@ -53,7 +54,7 @@ class _FeddState extends State<Fedd> {
                       color: Constants.mainColor,
                       padding: EdgeInsets.symmetric(
                           vertical: Constants.height20,
-                          horizontal: Constants.height20),
+                          horizontal: Constants.height10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -238,8 +239,19 @@ class _FeddState extends State<Fedd> {
                       ),
                     ),
                     //   CustomPolls(),
-                    // RealPoll()
-                      FeedCommentList(text: "답글 내용 " ,),
+                    // RealPoll(),
+                    LayoutBuilder(builder: (context, constraints) {
+                 return     Container(
+                        width: constraints.maxWidth,
+                        //height: constraints.maxWidth,
+                        child: ListView.builder(physics: NeverScrollableScrollPhysics(), shrinkWrap: true, itemCount: 4, itemBuilder: (context, index) {
+                          return  FeedCommentList(text: "답글 내용 " ,imgUrl: "assets/avatar/post2.jpg", index: index.toDouble(),);
+                        },),
+                      );
+                    },),
+
+             
+                     FeedCommentList(text: "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다. 지나가는 오면 어머님, 나의 다하지 애기 소학교 이웃 있습니다. 무성할 그리워 하나에 위에 나의 소녀들의 까닭입니다. 보고, 잔디가 말 패, 그러나 위에도 어머님, 까닭입니다. 하늘에는 이름을 소학교 불러 했던 봅니다.", index:8 ,brandPost: false,)
                   ],
                 ),
               ),

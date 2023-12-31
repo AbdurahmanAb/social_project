@@ -15,7 +15,7 @@ class AvatarImg extends StatelessWidget {
    //IF the profile is mine it will be full but for others it will be false  
    /// FOR THIS WE USE IS FULL FLAG
   const AvatarImg(
-      {this.isFull = false,
+      {this.isFull = true,
       this.Enableborder = true,
       this.width = 46,
       this.ImgUrl = "assets/avatar/avatar5.jpg",
@@ -52,7 +52,7 @@ class AvatarImg extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-               // Positioned(bottom: 0, right: 0, child: Image.asset(""))
+            Enableborder?   Positioned(bottom: 0, right: 0, child: Image.asset("assets/avatar/emoji.png", height: height/3.4,)):SizedBox.shrink(),
               ],
             ),
           ),

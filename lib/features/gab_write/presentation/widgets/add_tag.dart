@@ -31,66 +31,69 @@ class _AddtagState extends State<Addtag> {
   
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        decoration: const BoxDecoration(
-            color: Constants.Iconbg,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
-        padding:
-            EdgeInsets.symmetric(vertical: 40, horizontal: Constants.height10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            GestureDetector(
-              onTap: () {
-                enableButton();
-              },
-              child: const TextField(
-                decoration: InputDecoration.collapsed(
-                  hintText: "@ 브랜드 입력 (최대 5개)",
-                  hintStyle: TextStyle(
-                    color: Color(0xFF7C7C80),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+    return Padding(
+      padding: MediaQuery.of(context).viewInsets,
+      child: SingleChildScrollView(
+        child: Container(
+          decoration: const BoxDecoration(
+              color: Constants.Iconbg,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
+          padding:
+              EdgeInsets.symmetric(vertical: 40, horizontal: Constants.height10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  enableButton();
+                },
+                child: const TextField(
+                  decoration: InputDecoration.collapsed(
+                    hintText: "@ 브랜드 입력 (최대 5개)",
+                    hintStyle: TextStyle(
+                      color: Color(0xFF7C7C80),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: Constants.height20,
-            ),
-            const Text(
-              "사용자의 브랜드의 언급량에 따라 ",
-              style: TextStyle(
-                color: Color(0xFF7C7C80),
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
+              SizedBox(
+                height: Constants.height20,
               ),
-            ),
-            const Text(
-              "서브 브랜드 채널이 생성됩니다.",
-              style: TextStyle(
-                color: Color(0xFF7C7C80),
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TagButton(colors: Constants.white, txt: "취 소"),
-                SizedBox(
-                  width: 10,
+              const Text(
+                "사용자의 브랜드의 언급량에 따라 ",
+                style: TextStyle(
+                  color: Color(0xFF7C7C80),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
-               
-                TagButton(colors: Constants.appColor, txt: "확 인")
-              ],
-            )
-          ],
+              ),
+              const Text(
+                "서브 브랜드 채널이 생성됩니다.",
+                style: TextStyle(
+                  color: Color(0xFF7C7C80),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TagButton(colors: Constants.white, txt: "취 소"),
+                  SizedBox(
+                    width: 10,
+                  ),
+                 
+                  TagButton(colors: Constants.appColor, txt: "확 인")
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -101,6 +104,7 @@ class ToggleAddTag {
   static void showBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
+       useRootNavigator: true,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(30))),

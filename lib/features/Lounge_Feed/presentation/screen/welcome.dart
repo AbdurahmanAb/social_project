@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:kim/core/bottom_bar.dart';
-import 'package:kim/core/custom_drawer.dart';
+import 'package:kim/core/drawer/custom_drawer.dart';
 import 'package:kim/core/ui/app_button.dart';
 import 'package:kim/core/ui/top_buttons.dart';
 import 'package:kim/core/topbar.dart';

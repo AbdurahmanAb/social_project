@@ -26,7 +26,7 @@ class ProfileTopBar extends StatelessWidget {
             onTap: (){
               Get.back();
             },
-            child: Icon(icon)),
+            child: Icon(icon, size: Constants.height20*1.5,)),
           Expanded(
               child: Center(
                   child:text!=""? Header(

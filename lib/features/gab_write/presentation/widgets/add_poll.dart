@@ -86,7 +86,12 @@ class _PollWidgetState extends State<PollWidget> {
               Text("중복 투표 허용"),
               Transform.scale(
                 scale: .7,
-                child: Switch(value: true, onChanged: (value) {}),
+                child: Switch(
+                  activeColor: Constants.appColor,
+                  activeTrackColor: Constants.appColor,
+                  value: true, onChanged: (value) {
+                  value = !value;
+                }),
               )
             ],
           ),

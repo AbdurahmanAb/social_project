@@ -14,6 +14,7 @@ class ResultPage extends StatefulWidget {
   final String subtitle;
   final Widget avatar;
   final bool isFollowed;
+  final Function? onTab;
   final List brands;
 
   const ResultPage(
@@ -22,7 +23,8 @@ class ResultPage extends StatefulWidget {
       required this.subtitle,
       required this.avatar,
       required this.isFollowed,
-      required this.brands});
+      required this.brands,
+      this.onTab});
 
   @override
   State<ResultPage> createState() => _ResultPageState();
@@ -37,7 +39,7 @@ class _ResultPageState extends State<ResultPage> {
         height: 20,
       ));
       rows.add(SizedBox(
-        width: Constants.height10/2,
+        width: Constants.height10 / 2,
       ));
     }
 
@@ -56,22 +58,22 @@ class _ResultPageState extends State<ResultPage> {
               padding: EdgeInsets.only(
                   left: Constants.height10,
                   right: Constants.height10,
-          
                   bottom: Constants
                       .height15), // padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                  //  crossAxisAlignment: CrossAxisAlignment.center,
+                    //  crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: 48, width: 48, child: widget.avatar),
                       SizedBox(
                         width: Constants.height10,
                       ),
                       InkWell(
-                        overlayColor: MaterialStatePropertyAll(Colors.transparent),
-                        onTap: (){
+                        overlayColor:
+                            MaterialStatePropertyAll(Colors.transparent),
+                        onTap: () {
                           Get.toNamed("/profilebadge");
                         },
                         child: Column(
@@ -84,7 +86,8 @@ class _ResultPageState extends State<ResultPage> {
                             const SizedBox(
                               height: 5,
                             ),
-                            Text(widget.subtitle, style: TextStyle(fontSize: 10)),
+                            Text(widget.subtitle,
+                                style: TextStyle(fontSize: 10)),
                             const SizedBox(
                               height: 5,
                             ),
@@ -98,8 +101,11 @@ class _ResultPageState extends State<ResultPage> {
                     ],
                   ),
                   widget.isFollowed
-                      ? const ResultBtn(disabled: true)
-                      : const ResultBtn(disabled: false),
+                      ? ResultBtn(
+                          disabled: true,
+                          onTab: widget.onTab,
+                        )
+                      : ResultBtn(disabled: false, onTab: widget.onTab,),
                 ],
               ),
             ),

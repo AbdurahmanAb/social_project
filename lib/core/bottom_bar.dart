@@ -16,6 +16,7 @@ class _BottomBarState extends State<BottomBar> {
         Get.toNamed("/main");
         break;
       case 1:
+         Get.toNamed("/write");
         break;
       case 2:
         Get.toNamed("/explore");
@@ -31,6 +32,7 @@ class _BottomBarState extends State<BottomBar> {
       onTap: (index) {
         handleTap(index);
       },
+      
       backgroundColor: Constants.black,
       selectedItemColor: Constants.appColor,
       items: [

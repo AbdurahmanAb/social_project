@@ -8,7 +8,7 @@ class ImageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(Constants.height20),
       color: Constants.Iconbg,
       child: Column(
         children: [
@@ -22,7 +22,7 @@ class ImageCard extends StatelessWidget {
           Column(
             children: [
               Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(Constants.height15                                                                            ),
                 decoration: BoxDecoration(
                   color: Constants.bottom,
                   borderRadius: BorderRadius.circular(10)
@@ -33,9 +33,24 @@ class ImageCard extends StatelessWidget {
                   SizedBox(
                 height: Constants.height15,
               ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Image.asset("assets/avatar/post1.jpg"),
+                    Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset("assets/avatar/post1.jpg",),
+                        ),
+                        Positioned(
+                          top: 10,
+                          right: 10,
+                          child: Container(
+                          padding: EdgeInsets.all(Constants.height10/1.5 ),
+                        
+                          decoration: BoxDecoration(
+                              color: Constants.white,
+                            borderRadius: BorderRadius.circular(1005)
+                          ),
+                          child: Center(child: Text("+3", style: TextStyle(color: Constants.black),)),))
+                      ],
                     ),
                     SizedBox(height: 10,),
                     Brand(brand: "assets/avatar/nike.png", brandText:"@나이키", brandText2: "#Air Jordan",)

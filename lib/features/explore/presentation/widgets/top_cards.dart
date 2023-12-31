@@ -47,50 +47,38 @@ class _TopCardState extends State<TopCard> {
       padding: EdgeInsets.all(Constants.height10),
       child: Column(
         children: [
-           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "새로 열린 브랜드 라운지",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              GestureDetector(
-                onTap: (){
-                   Get.toNamed("/feedexplore");
-                },
-                child: Icon(CupertinoIcons.forward))
-            ],
-          ),
-          SizedBox(
-            height: Constants.height10,
-          ),
-          Container(
-            height: Constants.screen_height * 0.2,
-            child: PageView.builder(
-              controller: _PageController,
-              itemCount: 4,
-              
-              itemBuilder: (context, index) {
-                return Container(
+          
+          LayoutBuilder(
+            builder: (context,BoxConstraints  constraints) {
+              return Container(
+                height: Constants.screen_height * 0.19,
+                child: PageView.builder(
+                  controller: _PageController,
+                  itemCount: 4,
                   
-                  margin: EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Constants.bottom),
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                    Brand(brand:widget.brand ,brandText: "@라코스테"),
-                      const SizedBox(
-                        height: 5,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Constants.bottom),
+                      padding: const EdgeInsets.all(12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                        Brand(brand:widget.brand ,brandText: "@라코스테"),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(widget.text)
+                        ],
                       ),
-                      Text(widget.text)
-                    ],
-                  ),
-                );
-              },
-            ),
+                    );
+                  },
+                ),
+              );
+            }
           ),
          
 
