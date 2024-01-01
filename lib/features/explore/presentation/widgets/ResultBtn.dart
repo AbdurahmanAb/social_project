@@ -9,9 +9,7 @@ class ResultBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        onTab!();
-      },
+     
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),

@@ -46,7 +46,7 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
   @override
   Widget build(BuildContext context) {
     ///radom boolean value for checking otherpages
-    bool hasBrand = true;
+    // bool hasBrand = true;
 
     /// THESE ARE ARGUMENT THAT GOING TO BE PASSED FOR THE FOLLOWERS WIDGET
     int followers = 0;

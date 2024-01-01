@@ -108,9 +108,7 @@ class InsightsCard extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: Constants.lgFont,
-        
                 fontWeight: FontWeight.w700,
-             
               ),
             ),
             Divider(),

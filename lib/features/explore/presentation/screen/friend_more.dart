@@ -23,32 +23,42 @@ class FriendMore extends StatelessWidget {
               ProfileTopBar(text: "친구의 Gab"),
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.only(top:10),
-                 padding: EdgeInsets.all(10.0),
+                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.all(10.0),
                   child: Expanded(
                     child: SingleChildScrollView(
                       child: ListView.separated(
-                        separatorBuilder: (context, index) => SizedBox(height: Constants.height20,),
+                        separatorBuilder: (context, index) => SizedBox(
+                          height: Constants.height20,
+                        ),
                         itemCount: imgUrl.length,
                         shrinkWrap: true,
-                        itemBuilder :(context, index)=> Column(
+                        itemBuilder: (context, index) => Column(
                           children: [
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AvatarImg(Enableborder: false, ImgUrl: imgUrl[index]),
+                                AvatarImg(
+                                    Enableborder: false, ImgUrl: imgUrl[index]),
                                 const SizedBox(
                                   width: 10,
                                 ),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
-                                          Text("sean_kim77님이 갭을 등록하였습니다.",style: TextStyle(fontSize: Constants.xsFont),),
+                                          Text(
+                                            "sean_kim77님이 갭을 등록하였습니다.",
+                                            style: TextStyle(
+                                                fontSize: Constants.xsFont),
+                                          ),
                                           Spacer(),
-                                          Text('20분 전',style: TextStyle(fontSize: Constants.xsFont))
+                                          Text('20분 전',
+                                              style: TextStyle(
+                                                  fontSize: Constants.xsFont))
                                         ],
                                       ),
                                       const SizedBox(
@@ -58,9 +68,11 @@ class FriendMore extends StatelessWidget {
                                         padding: const EdgeInsets.all(15),
                                         decoration: BoxDecoration(
                                             color: Constants.bottom,
-                                            borderRadius: BorderRadius.circular(18)),
+                                            borderRadius:
+                                                BorderRadius.circular(18)),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               "테니스는 라코스테인데.. 난 왜이리 안어울릴까~~다른 브랜드 추천해주세요 ",

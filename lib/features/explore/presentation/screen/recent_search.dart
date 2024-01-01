@@ -46,7 +46,7 @@ class _RecentPageState extends State<RecentPage> {
                   children: [
                     SizedBox(
                       width: Constants.screen_width * 0.8,
-                     height: 30,
+                      height: 30,
                       child: TextField(
                         controller: _textEditingController,
                         onChanged: (value) {
@@ -56,10 +56,11 @@ class _RecentPageState extends State<RecentPage> {
                         },
                         style: TextStyle(fontSize: Constants.mdFont),
                         decoration: InputDecoration(
-                      prefixIcon:  Image.asset("assets/Lounge/icon_explore.png"),
-                            contentPadding:  EdgeInsets.all(5),
-                            hintStyle: const TextStyle(
-                             fontWeight: FontWeight.w200),
+                            prefixIcon:
+                                Image.asset("assets/Lounge/icon_explore.png"),
+                            contentPadding: EdgeInsets.all(5),
+                            hintStyle:
+                                const TextStyle(fontWeight: FontWeight.w200),
                             hintText: "위갭을 탐험하세요",
                             border: OutlineInputBorder(
                               borderSide: BorderSide.none,
@@ -69,37 +70,42 @@ class _RecentPageState extends State<RecentPage> {
                             fillColor: Constants.bottom),
                       ),
                     ),
-SizedBox(width: 8,),
-                      Text("취소")
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text("취소")
                   ],
                 ),
               ),
               searchText == "nike"
-                  ? 
-                  
-                  SingleChildScrollView(
-                    child: ListView.separated(
-                      padding: EdgeInsets.only(top:20),
-                      itemCount: 6,
-                      shrinkWrap: true,
-                      separatorBuilder: (context, index) =>  Divider(thickness: 2,color: Constants.black,),
-                      itemBuilder:(context, index) {
-                       return  Padding(
-                         padding: EdgeInsets.all(Constants.height15),
-                         child: InkWell(
-                          onTap: (){
-                            Get.toNamed("/feedexplore");
-                          },
-                           child: Brand(
-                              brand: "assets/avatar/nike.png",
-                              brandText: "@나이키",
-                              brandText2: "#조던",
+                  ? SingleChildScrollView(
+                      child: ListView.separated(
+                        padding: EdgeInsets.only(top: 20),
+                        itemCount: 6,
+                        shrinkWrap: true,
+                        separatorBuilder: (context, index) => Divider(
+                          thickness: 2,
+                          color: Constants.black,
+                        ),
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: EdgeInsets.all(Constants.height15),
+                            child: InkWell(
+                              overlayColor: MaterialStatePropertyAll(Colors.transparent),
+                              onTap: () {
+                                Get.toNamed("/feedexplore");
+
+                              },
+                              child: Brand(
+                                brand: "assets/avatar/nike.png",
+                                brandText: "@나이키",
+                                brandText2: "#조던",
+                              ),
                             ),
-                         ),
-                       );
-                    }, ),
-                  )
-                
+                          );
+                        },
+                      ),
+                    )
                   : Column(
                       children: [
                         Container(

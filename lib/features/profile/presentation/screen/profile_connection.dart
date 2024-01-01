@@ -9,6 +9,7 @@ import 'package:kim/features/profile/presentation/widgets/row_data.dart';
 import '../../../../core/text/MidText.dart';
 import '../../../../core/ui/avatar.dart';
 import '../../../../utils/constants.dart';
+import '../../data/model/row_data.dart';
 
 class ProfileConncetion extends StatelessWidget {
   const ProfileConncetion({super.key});
@@ -47,117 +48,119 @@ class ProfileConncetion extends StatelessWidget {
                   ],
                 ),
               ),
-              ConnectionHeader(),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: true,
-                nickname: "슝카_828hgh2",
-                ranking: 2,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: false,
-                nickname: "슝카_8282",
-                ranking: 2,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: true,
-                nickname: "슝카_8282",
-                ranking: 3,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: false,
-                nickname: "슝카_8282",
-                ranking: 4,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: true,
-                nickname: "슝카_8282",
-                ranking: 5,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: true,
-                nickname: "슝카_828hgh2",
-                ranking: 2,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: false,
-                nickname: "슝카_8282",
-                ranking: 2,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: true,
-                nickname: "슝카_8282",
-                ranking: 3,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: false,
-                nickname: "슝카_8282",
-                ranking: 4,
-              ),
-              RowData(
-                Upvote: 1000,
-                avatar: AvatarImg(
-                  height: 35,
-                  width: 30,
-                ),
-                comment: 1000,
-                isFollowed: true,
-                nickname: "슝카_8282",
-                ranking: 5,
-              )
+           ConnectionHeader(
+  rows: rowDataList,
+)
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: true,
+              //   nickname: "슝카_828hgh2",
+              //   ranking: 2,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: false,
+              //   nickname: "슝카_8282",
+              //   ranking: 2,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: true,
+              //   nickname: "슝카_8282",
+              //   ranking: 3,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: false,
+              //   nickname: "슝카_8282",
+              //   ranking: 4,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: true,
+              //   nickname: "슝카_8282",
+              //   ranking: 5,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: true,
+              //   nickname: "슝카_828hgh2",
+              //   ranking: 2,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: false,
+              //   nickname: "슝카_8282",
+              //   ranking: 2,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: true,
+              //   nickname: "슝카_8282",
+              //   ranking: 3,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: false,
+              //   nickname: "슝카_8282",
+              //   ranking: 4,
+              // ),
+              // RowData(
+              //   Upvote: 1000,
+              //   avatar: AvatarImg(
+              //     height: 35,
+              //     width: 30,
+              //   ),
+              //   comment: 1000,
+              //   isFollowed: true,
+              //   nickname: "슝카_8282",
+              //   ranking: 5,
+              // )
             ],
           ),
         ),

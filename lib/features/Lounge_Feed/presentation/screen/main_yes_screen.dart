@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import 'package:kim/core/bottom_bar.dart';
+import 'package:kim/core/custom_check_box.dart';
 
 import 'package:kim/core/drawer/custom_drawer.dart';
 
@@ -17,6 +18,7 @@ import 'package:kim/core/topbar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
+import 'package:kim/features/feed/presentation/widgets/custom_polls.dart';
 import 'package:kim/utils/constants.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
 
@@ -115,7 +117,7 @@ class _MainScreenState extends State<MainScreen> {
                                   ReportBottomSheet.showBottomSheet(context);
                                 });
                               },
-                              child:  LongPost(
+                              child: LongPost(
                                 img: "assets/avatar/post5.jpg",
                                 hasAd: true,
                               )),
@@ -190,9 +192,116 @@ class _MainScreenState extends State<MainScreen> {
                               ],
                             ),
                           ),
-                          SizedBox(height: 10,),
-                           LongPost(text: "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다. 지나가는 오면 어머님, 나의 다하지 애기 소학교 이웃 있습니다. 무성할 그리워 하나에 위에 나의 소녀들의 까닭입니다. 보고, 잔디가 말 패, 그러나 위에도 어머님, 까닭입니다. 하늘에는 이름을 소학교 불러 했던 봅니다.", Avatar: AvatarImg(ImgUrl: "assets/avatar/avatar2.jpg",)),
-                         
+                          SizedBox(
+                            height: 10,
+                          ),
+                          
+                          SizedBox(
+                            height: Constants.height10,
+                          ),      Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: Constants.height20,
+                                horizontal: Constants.height10),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFF545456),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Header(
+                                  text: "최고의 캠핑 패스티발은?",
+                                  size: 14,
+                                ),
+                                const SizedBox(
+                                  height: 7,
+                                ),
+                                const Text("복수 선택 불가"),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                LayoutBuilder(builder: (BuildContext context,
+                                    BoxConstraints constraints) {
+                                  return CustomCheckBox();
+                                }),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                AppButton(
+                                  text: "투표하기",
+                                  disabled: disabled,
+                                ),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "투표참여 : 16명",
+                                    ),
+                                    Text("7 일 뒤 종료")
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),  SizedBox(
+                                  height: 10,
+                                ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: Constants.height20,
+                                horizontal: Constants.height10),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFF545456),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Header(
+                                  text: "최고의 캠핑 패스티발은?",
+                                  size: 14,
+                                ),
+                                const SizedBox(
+                                  height: 7,
+                                ),
+                                const Text("복수 선택 불가"),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                LayoutBuilder(builder: (BuildContext context,
+                                    BoxConstraints constraints) {
+                                  return CustomPolls();
+                                }),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                AppButton(
+                                  text: "투표하기",
+                                  disabled: disabled,
+                                ),
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "투표참여 : 16명",
+                                    ),
+                                    Text("7 일 뒤 종료")
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          LongPost(
+                              text:
+                                  "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다. 지나가는 오면 어머님, 나의 다하지 애기 소학교 이웃 있습니다. 무성할 그리워 하나에 위에 나의 소녀들의 까닭입니다. 보고, 잔디가 말 패, 그러나 위에도 어머님, 까닭입니다. 하늘에는 이름을 소학교 불러 했던 봅니다.",
+                              Avatar: AvatarImg(
+                                ImgUrl: "assets/avatar/avatar2.jpg",
+                              )),
                         ],
                       ),
                     ),

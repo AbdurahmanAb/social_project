@@ -16,7 +16,7 @@ class PollController extends GetxController {
         {
           'id': 2,
           'title': 'Maybe',
-          'votes': 120,
+          'votes': 120000,
         },
         {
           'id': 3,

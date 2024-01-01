@@ -15,7 +15,8 @@ class LongPost extends StatelessWidget {
   final bool brandPost;
 
   LongPost(
-      {this.text =   "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다. 지나가는 오면 어머님, 나의 다하지 애기 소학교 이웃 있습니다. 무성할 그리워 하나에 위에 나의 소녀들의 까닭입니다. 보고, 잔디가 말 패, 그러나 위에도 어머님, 까닭입니다. 하늘에는 이름을 소학교 불러 했던 봅니다.",
+      {this.text =
+          "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다. 지나가는 오면 어머님, 나의 다하지 애기 소학교 이웃 있습니다. 무성할 그리워 하나에 위에 나의 소녀들의 까닭입니다. 보고, 잔디가 말 패, 그러나 위에도 어머님, 까닭입니다. 하늘에는 이름을 소학교 불러 했던 봅니다.",
       this.brandPost = false,
       this.bgColor = Constants.postColor,
       this.hasAd = false,
@@ -60,7 +61,7 @@ class LongPost extends StatelessWidget {
           !brandPost
               ? Row(
                   children: [
-                     Avatar !=null ? Avatar! :AvatarImg(),
+                    Avatar != null ? Avatar! : AvatarImg(),
                     SizedBox(
                       width: Constants.height10,
                     ),
@@ -112,8 +113,7 @@ class LongPost extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-         Text(
-            text),
+          Text(text),
           SizedBox(
             height: Constants.height20,
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/core/ui/custom_alert.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_poll.dart';
@@ -16,13 +16,12 @@ class WriteVote extends StatefulWidget {
 
 class _WriteVoteState extends State<WriteVote> {
   bool hastext = false;
-  String titleValue ="";
-  String textValue ="";
+  String titleValue = "";
+  String textValue = "";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Dialog.fullscreen(
-        
         child: Column(
           children: [
             Expanded(
@@ -40,13 +39,24 @@ class _WriteVoteState extends State<WriteVote> {
                   children: [
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [Text("취소"), Text("새로운 피드"), GestureDetector(
-                          
-                          onTap: (){
-                            showDialog(context: context, builder:(context) =>  CustomAlert() );
-                           
-                          },
-                          child: Text("등록",style: TextStyle(color:textValue.length >0 || titleValue.length>0?Constants.appColor: Constants.disabled),))]),
+                        children: [
+                          Text("취소"),
+                          Text("새로운 피드"),
+                          GestureDetector(
+                              onTap: () {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => CustomAlert());
+                              },
+                              child: Text(
+                                "등록",
+                                style: TextStyle(
+                                    color: textValue.length > 0 ||
+                                            titleValue.length > 0
+                                        ? Constants.appColor
+                                        : Constants.disabled),
+                              ))
+                        ]),
                     const Divider(),
                     SizedBox(height: Constants.height15),
                     const Row(
@@ -63,16 +73,15 @@ class _WriteVoteState extends State<WriteVote> {
                             TextField(
                               maxLines: null,
                               cursorColor: Colors.blue,
-                            onChanged: (value) {
-                              setState(() {
-                               titleValue =value;
-                               
-                              });
-                            },
+                              onChanged: (value) {
+                                setState(() {
+                                  titleValue = value;
+                                });
+                              },
                               style: TextStyle(
-                                  fontSize: Constants.lgFont, fontWeight: FontWeight.bold),
+                                  fontSize: Constants.lgFont,
+                                  fontWeight: FontWeight.bold),
                               decoration: const InputDecoration(
-                                
                                 border: InputBorder.none,
                                 hintText: " | 제목을 입력하세요. ,",
                                 hintStyle: TextStyle(
@@ -84,13 +93,12 @@ class _WriteVoteState extends State<WriteVote> {
                               keyboardType: TextInputType.multiline,
                               autofocus: true,
                             ),
-                             TextField(
+                            TextField(
                               onChanged: (value) {
-                            setState(() {
-                              textValue = value;
-                            });    
+                                setState(() {
+                                  textValue = value;
+                                });
                               },
-                              
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w300),
                               decoration: InputDecoration.collapsed(
@@ -103,7 +111,7 @@ class _WriteVoteState extends State<WriteVote> {
                                 ),
                               ),
                               keyboardType: TextInputType.multiline,
-                              maxLines:10,
+                              maxLines: 10,
                               autofocus: true,
                             )
                           ],
@@ -113,7 +121,7 @@ class _WriteVoteState extends State<WriteVote> {
                   ],
                 ),
               ),
-            ), 
+            ),
             Container(
               padding: EdgeInsets.all(Constants.height15),
               color: Constants.black,
@@ -145,17 +153,16 @@ class _WriteVoteState extends State<WriteVote> {
                         width: Constants.height10,
                       ),
                       GestureDetector(
-                         
                           child: Image.asset("assets/icons/icon_tag.png")),
                       SizedBox(
                         width: Constants.height10,
                       ),
                       GestureDetector(
-                         onTap: () {
+                          onTap: () {
                             ToggleAddTag.showBottomSheet(context);
                           },
-                          child:
-                              Image.asset("assets/icons/icon_brand_mention.png")),
+                          child: Image.asset(
+                              "assets/icons/icon_brand_mention.png")),
                       SizedBox(
                         width: Constants.height10,
                       ),
