@@ -87,7 +87,7 @@ class _GabPageState extends State<GabPage> {
                                     children: [
                                       Container(
                                         width: 80,
-                                        height: 48,
+                                        height: Constants.height20*2.5,
                                         clipBehavior: Clip.antiAlias,
                                         decoration: ShapeDecoration(
                                           image: DecorationImage(

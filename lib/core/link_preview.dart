@@ -9,7 +9,7 @@ class LinkPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnyLinkPreview(
-              link: url, //"https://www.youtube.com/watch?v=tK5lwBSVdEc",
+              link: url != ""?url: "https://www.youtube.com/watch?v=tK5lwBSVdEc",
               displayDirection: UIDirection.uiDirectionHorizontal,
               showMultimedia: true,
               bodyMaxLines: 10,

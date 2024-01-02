@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kim/core/brand_post.dart';
+import 'package:kim/core/link_preview.dart';
 import 'package:kim/core/text/MidText.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/core/user_post.dart';
@@ -14,7 +15,7 @@ class FeedCommentList extends StatelessWidget {
   final String? url;
   final String? imgUrl;
   final String text;
-  final double index;
+  final int index;
 
   FeedCommentList(
       {this.brandPost = false,
@@ -71,35 +72,9 @@ class FeedCommentList extends StatelessWidget {
               ),
             ),
             SizedBox(height: Constants.height15,),
-          //  url != ""? AnyLinkPreview(
-          //     link: "https://www.youtube.com/watch?v=tK5lwBSVdEc",
-          //     displayDirection: UIDirection.uiDirectionHorizontal,
-          //     showMultimedia: true,
-          //     bodyMaxLines: 10,
-
-          //     previewHeight: 80,
-
-          //     bodyTextOverflow: TextOverflow.ellipsis,
-          //     titleStyle: TextStyle(
-          //       color: Colors.black,
-          //       fontWeight: FontWeight.bold,
-          //       fontSize: 15,
-          //     ),
-          //     bodyStyle: TextStyle(color: Colors.grey, fontSize: 12),
-          //     errorBody: 'Link Not found',
-          //     errorTitle: 'Show my custom error title',
-          //     errorWidget: Container(
-          //       color: Colors.grey[300],
-          //       child: Text('Oops!'),
-          //     ),
-          //     errorImage: "https://google.com/",
-          //     cache: Duration(days: 1),
-          //     backgroundColor: Colors.grey[300],
-          //     borderRadius: 12,
-          //     removeElevation: false,
-          //     boxShadow: [BoxShadow(blurRadius: 3, color: Colors.grey)],
-          //     onTap: () {}, // This disables tap event
-          //   ):SizedBox.shrink(),
+            //call the link preview widget to preview the link
+            LinkPreview(url: url.toString()),
+        
             SizedBox(height: Constants.height10/3,),
             Text(url!, style: TextStyle(color: Colors.blue, fontSize: Constants.mdFont),),
             SizedBox(

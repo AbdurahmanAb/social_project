@@ -14,7 +14,7 @@ class InputPoll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 329,
-      height: 38,
+      height: 46,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(

@@ -20,59 +20,66 @@ class _ConnectionHeaderState extends State<ConnectionHeader> {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      child: DataTable(
-        dividerThickness: 3,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: DataTable(
+        //  dividerThickness: 2,
+          showBottomBorder: true,
         
-        headingRowColor: MaterialStatePropertyAll(Constants.bottom),
-          //  dataRowColor:MaterialStatePropertyAll(Colors.amber)
-       columns: [
-        DataColumn(
-            label: Text(style: TextStyle(fontWeight: FontWeight.bold), "순위")),
-        DataColumn(
-            label:
-                Text(style: TextStyle(fontWeight: FontWeight.bold), "대화명")),
-        DataColumn(
-            label: Text(style: TextStyle(fontWeight: FontWeight.bold), "댓글")),
-        DataColumn(
-            label:
-                Text(style: TextStyle(fontWeight: FontWeight.bold), "업보트")),
-        DataColumn(label: Image.asset("assets/avatar/right_side.png"))
-      ], rows:    widget.rows.map((rowData) {
-          return DataRow(
-            
-            cells: [
-            DataCell(
+        
+        dataRowHeight: Constants.height20*4.5,
+                columnSpacing: 40,
+          headingRowColor: const MaterialStatePropertyAll(Constants.bottom),
+            //  dataRowColor:MaterialStatePropertyAll(Colors.amber)
+         columns: [
+          const DataColumn(
+              label: Text(style: TextStyle(fontWeight: FontWeight.bold), "순위")),
+          const DataColumn(
+              label:
+                  Text(style: TextStyle(fontWeight: FontWeight.bold), "대화명")),
+          const DataColumn(
+              label: Text(style: TextStyle(fontWeight: FontWeight.bold), "댓글")),
+          const DataColumn(
+              label:
+                  Text(style: TextStyle(fontWeight: FontWeight.bold), "업보트")),
+          DataColumn(label: Image.asset("assets/avatar/right_side.png"))
+        ], rows:    widget.rows.map((rowData) {
+            return DataRow(
               
-              rowData.ranking == 1
-                  ? Image.asset('assets/avatar/synbol.png')
-                  : Text(rowData.ranking.toString()),
-            ),
-            DataCell(
-              Row(
-                children: [
-                  rowData.avatar,
-                  const SizedBox(width: 10),
-                  Text(rowData.nickname),
-                ],
+              cells: [
+              DataCell(
+                
+                rowData.ranking == 1
+                    ? Image.asset('assets/avatar/synbol.png')
+                    : Text(rowData.ranking.toString()),
               ),
-            ),
-            DataCell(
-              Text(rowData.comment.toString()),
-            ),
-            DataCell(
-              Text(rowData.upvote.toString()),
-            ),
-            DataCell(
-              GestureDetector(
-                onTap: () {
-                  ConnectionBottomSheet.showConnectionBottomSheet(context);
-                },
-                child: ResultBtn(disabled: !rowData.isFollowed),
+              DataCell(
+                Row(
+                  children: [
+                    rowData.avatar,
+                    const SizedBox(width: 10),
+                    Text(rowData.nickname),
+                  ],
+                ),
               ),
-            ),
-          ]);
-        }).toList(),
-       
+              DataCell(
+                Text(rowData.comment.toString()),
+              ),
+              DataCell(
+                Text(rowData.upvote.toString()),
+              ),
+              DataCell(
+                GestureDetector(
+                  onTap: () {
+                    ConnectionBottomSheet.showConnectionBottomSheet(context);
+                  },
+                  child: ResultBtn(disabled: !rowData.isFollowed),
+                ),
+              ),
+            ]);
+          }).toList(),
+         
+        ),
       ),
     );
 //     return Container(

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/core/ui/custom_alert.dart';
@@ -40,7 +42,11 @@ class _WriteVoteState extends State<WriteVote> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("취소"),
+                          GestureDetector(
+                            onTap: (){
+                              Get.back();
+                            },
+                            child: Text("취소")),
                           Text("새로운 피드"),
                           GestureDetector(
                               onTap: () {

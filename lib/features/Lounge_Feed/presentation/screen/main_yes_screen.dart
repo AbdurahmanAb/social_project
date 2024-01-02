@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
 
   bool disabled = true;
   bool show = true;
-
+bool disabledCheck = true;
   String label = "";
   List<RadioOption> options = [
     RadioOption("OPT1", "자라섬 재즈/캠핑 패스티벌"),
@@ -221,14 +221,14 @@ class _MainScreenState extends State<MainScreen> {
                                 ),
                                 LayoutBuilder(builder: (BuildContext context,
                                     BoxConstraints constraints) {
-                                  return CustomCheckBox();
+                                  return CustomCheckBox(disabledCheck: disabledCheck,);
                                 }),
                                 SizedBox(
                                   height: Constants.height10,
                                 ),
                                 AppButton(
                                   text: "투표하기",
-                                  disabled: disabled,
+                                  disabled: disabledCheck,
                                 ),
                                 SizedBox(
                                   height: Constants.height10,
@@ -276,23 +276,23 @@ class _MainScreenState extends State<MainScreen> {
                                 SizedBox(
                                   height: Constants.height10,
                                 ),
-                                AppButton(
-                                  text: "투표하기",
-                                  disabled: disabled,
-                                ),
-                                SizedBox(
-                                  height: Constants.height10,
-                                ),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "투표참여 : 16명",
-                                    ),
-                                    Text("7 일 뒤 종료")
-                                  ],
-                                )
+                                // AppButton(
+                                //   text: "투표하기",
+                                //   disabled: disabled,
+                                // ),
+                                // SizedBox(
+                                //   height: Constants.height10,
+                                // ),
+                                // const Row(
+                                //   mainAxisAlignment:
+                                //       MainAxisAlignment.spaceBetween,
+                                //   children: [
+                                //     Text(
+                                //       "투표참여 : 16명",
+                                //     ),
+                                //     Text("7 일 뒤 종료")
+                                //   ],
+                                // )
                               ],
                             ),
                           ),

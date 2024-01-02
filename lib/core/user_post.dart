@@ -12,7 +12,7 @@ class UserPost extends StatelessWidget {
     return   Row(
             children: [
               const AvatarImg(
-            
+            isFull: false,
               ),
               SizedBox(
                 width: Constants.height10/2,

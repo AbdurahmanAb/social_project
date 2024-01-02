@@ -16,15 +16,13 @@ class PollWidget extends StatefulWidget {
 }
 
 class _PollWidgetState extends State<PollWidget> {
-
   final TextEditingController controller = TextEditingController();
   List polls = ["항목 입력"];
   bool haValue = false;
 
   void updatePoll(int index, String value) {
     setState(() {
-      
-   haValue = controller.text.isNotEmpty;
+      haValue = controller.text.isNotEmpty;
       pollList[index] = value;
     });
   }
@@ -36,7 +34,7 @@ class _PollWidgetState extends State<PollWidget> {
   }
 
   void addNewPoll() {
-    if (pollList.length < 12) {
+    if (pollList.length < 6) {
       setState(() {
         pollList.add("항목 입력");
       });
@@ -122,10 +120,10 @@ class _PollWidgetState extends State<PollWidget> {
                 // ),
                 SizedBox(
                   width: 340,
-                  height: pollList.length * 45 + 38,
+                  height: pollList.length * 46 + 46,
                   child: ListView.separated(
                     separatorBuilder: (context, index) => SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                     itemCount: pollList.length,
                     itemBuilder: (context, index) {
@@ -134,20 +132,21 @@ class _PollWidgetState extends State<PollWidget> {
                           Expanded(
                             child: InputPoll(
                               controller: controller,
-                              backgroundColor: haValue? index == 0 || index == 1
-                                  ? Constants.white
-                                  : null:null,
+                              backgroundColor: haValue
+                                  ? index == 0 || index == 1
+                                      ? Constants.white
+                                      : null
+                                  : null,
                               text: pollList[index],
                               onChanged: (value) {
                                 updatePoll(index, value);
-                                
                               },
                             ),
                           ),
                           index != 0 && index != 1
                               ? IconButton(
-                                highlightColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
                                   icon: Icon(CupertinoIcons.minus_circle),
                                   onPressed: () {
                                     removePoll(index);

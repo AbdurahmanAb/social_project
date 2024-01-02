@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:kim/utils/constants.dart';
 
 class CustomCheckBox extends StatefulWidget {
-  const CustomCheckBox({super.key});
+   bool disabledCheck;
+  CustomCheckBox({super.key, required this.disabledCheck});
 
   @override
   State<CustomCheckBox> createState() => _CustomCheckBoxState();
 }
 
 class _CustomCheckBoxState extends State<CustomCheckBox> {
-  List<int> _selectedIndex = [0];
+  List<int> _selectedIndex = [];
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -23,9 +25,13 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
           setState(() {
             if (_selectedIndex.contains(index)) {
               _selectedIndex.remove(index);
+              widget.disabledCheck = false;
+              
             } else {
               _selectedIndex.add(index);
+                widget.disabledCheck = false;
             }
+            widget.disabledCheck = _selectedIndex.isEmpty;
           });
         },
         child: Container(

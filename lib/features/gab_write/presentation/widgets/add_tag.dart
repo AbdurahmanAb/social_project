@@ -16,26 +16,27 @@ class _AddtagState extends State<Addtag> {
   final GlobalKey<RadioGroupState> radioGroupKey1 =
       GlobalKey<RadioGroupState>();
 
-late  TextEditingController _textEditingController;
+  late TextEditingController _textEditingController;
   bool disabled = true;
-  bool isStartWriting =false;
-  String tag= "";
-void initState(){
-  super.initState();
-  _textEditingController =  TextEditingController();
-}
+  bool isStartWriting = false;
+  String tag = "";
+  void initState() {
+    super.initState();
+    _textEditingController = TextEditingController();
+  }
+
   void enableButton() {
     setState(() {
       disabled = false;
     });
   }
-  check(value){
-    if(value.length>0){
- isStartWriting = true;
-    }else{
+
+  check(value) {
+    if (value.length > 0) {
+      isStartWriting = true;
+    } else {
       isStartWriting = false;
     }
-     
   }
 
   void onRadioGroupChanged(value) {
@@ -63,14 +64,14 @@ void initState(){
                 onTap: () {
                   enableButton();
                 },
-                child:  TextField(
-              controller: _textEditingController,
-              onChanged: (value) {
-                setState(() {
-                check(value);
-                  tag = value;
-                });
-              },
+                child: TextField(
+                  controller: _textEditingController,
+                  onChanged: (value) {
+                    setState(() {
+                      check(value);
+                      tag = value;
+                    });
+                  },
                   decoration: InputDecoration.collapsed(
                     hintText: "@ 브랜드 입력 (최대 5개)",
                     hintStyle: TextStyle(
@@ -84,121 +85,137 @@ void initState(){
               SizedBox(
                 height: Constants.height20,
               ),
-           isStartWriting?   Row(
-                children: [
-                  Container(
-                    //  width: 94,
-                    height: 31,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      color: Colors.black.withOpacity(0.500000003224),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 1, color: Colors.white),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    child: Row(
-                     // mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+              isStartWriting
+                  ? Row(
                       children: [
-                        Text(
-                          tag,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-             
-                            fontWeight: FontWeight.w700,
-                            height: 0.11,
+                        Container(
+                          //  width: 94,
+                          height: 31,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 5),
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: Colors.black.withOpacity(0.500000003224),
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(width: 1, color: Colors.white),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          child: Row(
+                            // mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                tag,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w700,
+                                  height: 0.11,
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              Transform(
+                                  transform: Matrix4.translationValues(0, 0, 0),
+                                  child: Icon(
+                                    Icons.close,
+                                    size: 17,
+                                  )),
+                            ],
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        Transform(
-                          transform: Matrix4.translationValues(0, 0, 0),
-                          child: Icon(Icons.close,size: 17,)),
-                      
+                        SizedBox(
+                          width: 12,
+                        ),
+                        //   Container(
+                        //   //  width: 94,
+                        //   height: 31,
+                        //   padding:
+                        //       const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                        //   clipBehavior: Clip.antiAlias,
+                        //   decoration: ShapeDecoration(
+                        //     color: Colors.black.withOpacity(0.500000003224),
+                        //     shape: RoundedRectangleBorder(
+                        //       side: BorderSide(width: 1, color: Colors.white),
+                        //       borderRadius: BorderRadius.circular(20),
+                        //     ),
+                        //   ),
+                        //   child: Row(
+                        //    // mainAxisSize: MainAxisSize.min,
+                        //     mainAxisAlignment: MainAxisAlignment.start,
+                        //     crossAxisAlignment: CrossAxisAlignment.center,
+                        //     children: [
+                        //       Text(
+                        //         '@ 나이키',
+                        //         textAlign: TextAlign.center,
+                        //         style: TextStyle(
+                        //           color: Colors.white,
+                        //           fontSize: 14,
+
+                        //           fontWeight: FontWeight.w700,
+                        //           height: 0.11,
+                        //         ),
+                        //       ),
+                        //       const SizedBox(width: 8),
+                        //       Transform(
+                        //         transform: Matrix4.translationValues(0, 0, 0),
+                        //         child: Icon(Icons.close,size: 17,)),
+
+                        //     ],
+                        //   ),
+                        // ),
+                        // SizedBox(
+                        //   width: Constants.height10,
+                        // ),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        const Text(
+                          "사용자의 브랜드의 언급량에 따라 ",
+                          style: TextStyle(
+                            color: Color(0xFF7C7C80),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const Text(
+                          "서브 브랜드 채널이 생성됩니다.",
+                          style: TextStyle(
+                            color: Color(0xFF7C7C80),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ],
                     ),
-                  ),  
-                  SizedBox(width: 12,),
-                  //   Container(
-                  //   //  width: 94,
-                  //   height: 31,
-                  //   padding:
-                  //       const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                  //   clipBehavior: Clip.antiAlias,
-                  //   decoration: ShapeDecoration(
-                  //     color: Colors.black.withOpacity(0.500000003224),
-                  //     shape: RoundedRectangleBorder(
-                  //       side: BorderSide(width: 1, color: Colors.white),
-                  //       borderRadius: BorderRadius.circular(20),
-                  //     ),
-                  //   ),
-                  //   child: Row(
-                  //    // mainAxisSize: MainAxisSize.min,
-                  //     mainAxisAlignment: MainAxisAlignment.start,
-                  //     crossAxisAlignment: CrossAxisAlignment.center,
-                  //     children: [
-                  //       Text(
-                  //         '@ 나이키',
-                  //         textAlign: TextAlign.center,
-                  //         style: TextStyle(
-                  //           color: Colors.white,
-                  //           fontSize: 14,
-             
-                  //           fontWeight: FontWeight.w700,
-                  //           height: 0.11,
-                  //         ),
-                  //       ),
-                  //       const SizedBox(width: 8),
-                  //       Transform(
-                  //         transform: Matrix4.translationValues(0, 0, 0),
-                  //         child: Icon(Icons.close,size: 17,)),
-                      
-                  //     ],
-                  //   ),
-                  // ),
-                  // SizedBox(
-                  //   width: Constants.height10,
-                  // ),
-                ],
-              ):
-              Column(
-                children: [
-                  const Text(
-                    "사용자의 브랜드의 언급량에 따라 ",
-                    style: TextStyle(
-                      color: Color(0xFF7C7C80),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const Text(
-                    "서브 브랜드 채널이 생성됩니다.",
-                    style: TextStyle(
-                      color: Color(0xFF7C7C80),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TagButton(colors: Constants.white, txt: "취 소"),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  TagButton(colors: Constants.appColor, txt: "확 인")
-                ],
-              )
+              Constants.screen_width <= 340
+                  ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        TagButton(colors: Constants.white, txt: "취 소"),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TagButton(colors: Constants.appColor, txt: "확 인")
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TagButton(colors: Constants.white, txt: "취 소"),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TagButton(colors: Constants.appColor, txt: "확 인")
+                      ],
+                    )
             ],
           ),
         ),
