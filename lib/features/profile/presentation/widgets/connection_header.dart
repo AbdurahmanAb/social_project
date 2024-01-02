@@ -37,11 +37,12 @@ class _ConnectionHeaderState extends State<ConnectionHeader> {
             label:
                 Text(style: TextStyle(fontWeight: FontWeight.bold), "업보트")),
         DataColumn(label: Image.asset("assets/avatar/right_side.png"))
-      ], rows: widget.rows.map((rowData) {
+      ], rows:    widget.rows.map((rowData) {
           return DataRow(
             
             cells: [
             DataCell(
+              
               rowData.ranking == 1
                   ? Image.asset('assets/avatar/synbol.png')
                   : Text(rowData.ranking.toString()),

@@ -122,7 +122,7 @@ class _PollWidgetState extends State<PollWidget> {
                 // ),
                 SizedBox(
                   width: 340,
-                  height: pollList.length * 43 + 32,
+                  height: pollList.length * 45 + 38,
                   child: ListView.separated(
                     separatorBuilder: (context, index) => SizedBox(
                       height: 15,
