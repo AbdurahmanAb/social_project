@@ -43,10 +43,10 @@ class _WriteVoteState extends State<WriteVote> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
-                            onTap: (){
-                              Get.back();
-                            },
-                            child: Text("취소")),
+                              onTap: () {
+                                Get.back();
+                              },
+                              child: Text("취소")),
                           Text("새로운 피드"),
                           GestureDetector(
                               onTap: () {
@@ -174,8 +174,14 @@ class _WriteVoteState extends State<WriteVote> {
                       ),
                     ],
                   ),
-                  const Row(
-                    children: [Text("공지로 고정")],
+                  Row(
+                    children: [
+                      Image.asset("assets/icons/checkbox.png"),
+                      SizedBox(
+                        width: Constants.height10,
+                      ),
+                      Text("공지로 고정")
+                    ],
                   )
                 ],
               ),

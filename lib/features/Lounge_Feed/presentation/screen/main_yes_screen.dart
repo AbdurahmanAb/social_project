@@ -15,6 +15,7 @@ import 'package:kim/core/report_bottom.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/core/ui/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/RadioButton.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
@@ -38,15 +39,8 @@ class _MainScreenState extends State<MainScreen> {
 
   bool disabled = true;
   bool show = true;
-bool disabledCheck = true;
-  String label = "";
-  List<RadioOption> options = [
-    RadioOption("OPT1", "자라섬 재즈/캠핑 패스티벌"),
-    RadioOption("OPT2", "군항제 캠핑 패스티벌"),
-    RadioOption("OPT3", "고아웃 캠핑 패스티벌"),
-    RadioOption("OPT4", "양양 서퍼비치 캠핑 축제")
-  ];
-  RadioGroupController myController = RadioGroupController();
+  bool disabledCheck = true;
+
   void Open() {
     _scaffoldKey.currentState!.openDrawer();
   }
@@ -124,6 +118,14 @@ bool disabledCheck = true;
                           SizedBox(
                             height: Constants.height10,
                           ),
+                          RadioButton(),
+                          SizedBox(
+                            height: 10,
+                          ),
+
+                          SizedBox(
+                            height: Constants.height10,
+                          ),
                           Container(
                             padding: EdgeInsets.symmetric(
                                 vertical: Constants.height20,
@@ -147,81 +149,9 @@ bool disabledCheck = true;
                                 ),
                                 LayoutBuilder(builder: (BuildContext context,
                                     BoxConstraints constraints) {
-                                  return RadioButtonGroup(
-                                      vertical: true,
-                                      options: options,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      textStyle: const TextStyle(
-                                          fontSize: 15, color: Colors.white),
-                                      selectedColor: const Color(0xFF363638),
-                                      mainColor: const Color(0xFF363638),
-                                      selectedIconColor: Constants.appColor,
-                                      selectedBorderSide: const BorderSide(
-                                          width: 1, color: Constants.appColor),
-                                      buttonWidth: constraints.maxWidth,
-                                      buttonHeight: 42,
-                                      callback: (RadioOption val) {
-                                        setState(() {
-                                          label = val.label;
-                                          disabled = false;
-                                        });
-                                        print(val);
-                                      });
-                                }),
-                                SizedBox(
-                                  height: Constants.height10,
-                                ),
-                                AppButton(
-                                  text: "투표하기",
-                                  disabled: disabled,
-                                ),
-                                SizedBox(
-                                  height: Constants.height10,
-                                ),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "투표참여 : 16명",
-                                    ),
-                                    Text("7 일 뒤 종료")
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          
-                          SizedBox(
-                            height: Constants.height10,
-                          ),      Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: Constants.height20,
-                                horizontal: Constants.height10),
-                            decoration: BoxDecoration(
-                                color: const Color(0xFF545456),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Header(
-                                  text: "최고의 캠핑 패스티발은?",
-                                  size: 14,
-                                ),
-                                const SizedBox(
-                                  height: 7,
-                                ),
-                                const Text("복수 선택 불가"),
-                                SizedBox(
-                                  height: Constants.height10,
-                                ),
-                                LayoutBuilder(builder: (BuildContext context,
-                                    BoxConstraints constraints) {
-                                  return CustomCheckBox(disabledCheck: disabledCheck,);
+                                  return CustomCheckBox(
+                                    disabledCheck: disabledCheck,
+                                  );
                                 }),
                                 SizedBox(
                                   height: Constants.height10,
@@ -245,9 +175,10 @@ bool disabledCheck = true;
                                 )
                               ],
                             ),
-                          ),  SizedBox(
-                                  height: 10,
-                                ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Container(
                             padding: EdgeInsets.symmetric(
                                 vertical: Constants.height20,
@@ -280,19 +211,18 @@ bool disabledCheck = true;
                                 //   text: "투표하기",
                                 //   disabled: disabled,
                                 // ),
-                                // SizedBox(
-                                //   height: Constants.height10,
-                                // ),
-                                // const Row(
-                                //   mainAxisAlignment:
-                                //       MainAxisAlignment.spaceBetween,
-                                //   children: [
-                                //     Text(
-                                //       "투표참여 : 16명",
-                                //     ),
-                                //     Text("7 일 뒤 종료")
-                                //   ],
-                                // )
+                                SizedBox(
+                                  height: Constants.height10,
+                                ),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "투표참여 : 16명",
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
                           ),

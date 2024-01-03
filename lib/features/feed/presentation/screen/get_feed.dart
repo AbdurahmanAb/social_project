@@ -240,26 +240,25 @@ class _FeddState extends State<Fedd> {
                       ),
                     ),
 
-                  //  CustomPolls(),
+                    //  CustomPolls(),
                     // RealPoll(),
 
                     // RealPoll(),
-                  
-SingleChildScrollView(
-  child: ListView.builder(
-    shrinkWrap: true,
-    itemCount: 8,
-    itemBuilder: (context, index) {
-    return FeedCommentList(
-                        text:
-                            "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가면 어머님다..",
-                        index: index,
-                        imgUrl: "assets/avatar/post2.jpg",
-                        brandPost: false,
-                      );
-  },),
-),
-                    
+
+                    SingleChildScrollView(
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: 8,
+                        itemBuilder: (context, index) {
+                          return FeedCommentList(
+                            text: "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가면 어머님다..",
+                            index: index,
+                            imgUrl: "assets/avatar/post2.jpg",
+                            brandPost: false,
+                          );
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),

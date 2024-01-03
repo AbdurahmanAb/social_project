@@ -10,16 +10,7 @@ class PageTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return ListView.separated(
-    //     shrinkWrap: true,
-    //   //  physics: AlwaysScrollableScrollPhysics(),
-    //  //   scrollDirection: Axis.vertical,
-    //     itemCount: 5,
-    //               separatorBuilder: (context, i) => Divider(
-    //           thickness: Constants.height10 - 3,
-    //           color: Constants.black,
-    //         ),
-    //     itemBuilder: (context, index) {
+ 
     return Container(
       padding: EdgeInsets.all(Constants.height20),
       child: Column(
@@ -185,10 +176,7 @@ class PageTwo extends StatelessWidget {
               ],
             ),
           ),
-          Divider(
-            color: Colors.blue,
-          
-          ),
+        
           Row(
             children: [
               Text("12 업보트"),

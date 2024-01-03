@@ -72,7 +72,7 @@ class _AddtagState extends State<Addtag> {
                       tag = value;
                     });
                   },
-                  decoration: InputDecoration.collapsed(
+                  decoration: const InputDecoration.collapsed(
                     hintText: "@ 브랜드 입력 (최대 5개)",
                     hintStyle: TextStyle(
                       color: Color(0xFF7C7C80),
@@ -97,7 +97,8 @@ class _AddtagState extends State<Addtag> {
                           decoration: ShapeDecoration(
                             color: Colors.black.withOpacity(0.500000003224),
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Colors.white),
+                              side: const BorderSide(
+                                  width: 1, color: Colors.white),
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
@@ -109,7 +110,7 @@ class _AddtagState extends State<Addtag> {
                               Text(
                                 tag,
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w700,
@@ -119,14 +120,14 @@ class _AddtagState extends State<Addtag> {
                               const SizedBox(width: 8),
                               Transform(
                                   transform: Matrix4.translationValues(0, 0, 0),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.close,
                                     size: 17,
                                   )),
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
                         //   Container(
@@ -171,9 +172,9 @@ class _AddtagState extends State<Addtag> {
                         // ),
                       ],
                     )
-                  : Column(
+                  : const Column(
                       children: [
-                        const Text(
+                        Text(
                           "사용자의 브랜드의 언급량에 따라 ",
                           style: TextStyle(
                             color: Color(0xFF7C7C80),
@@ -181,7 +182,7 @@ class _AddtagState extends State<Addtag> {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const Text(
+                        Text(
                           "서브 브랜드 채널이 생성됩니다.",
                           style: TextStyle(
                             color: Color(0xFF7C7C80),
@@ -191,11 +192,11 @@ class _AddtagState extends State<Addtag> {
                         ),
                       ],
                     ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Constants.screen_width <= 340
-                  ? Column(
+                  ? const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
@@ -206,7 +207,7 @@ class _AddtagState extends State<Addtag> {
                         TagButton(colors: Constants.appColor, txt: "확 인")
                       ],
                     )
-                  : Row(
+                  : const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TagButton(colors: Constants.white, txt: "취 소"),

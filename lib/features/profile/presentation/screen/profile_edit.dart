@@ -23,11 +23,11 @@ class _ProfileEditState extends State<ProfileEdit> {
   bool _usernameAvailable = true; // Initial availability
 
 // Function to check username availability
-  void _checkUsernameAvailability() {
+  void _checkUsernameAvailability(value) {
     // Simulate a network request to check availability
 
-    _usernameAvailable = !_usernameController.text
-        .contains("taken"); // Replace with your actual check logic
+    _usernameAvailable =
+        !value.contains("taken"); // Replace with your actual check logic
     setState(() {
       _usernameAvailable = false;
     }); // Trigger a rebuild to update the border color
@@ -99,21 +99,24 @@ class _ProfileEditState extends State<ProfileEdit> {
                   SizedBox(
                     height: Constants.height20 * 2,
                     child: TextField(
-                      onChanged: (_)=>_checkUsernameAvailability(),
-                     controller: _usernameController,
+                      onChanged: (value) => _checkUsernameAvailability(value),
+                      controller: _usernameController,
                       style: TextStyle(
                           fontSize: Constants.smFont,
                           fontWeight: FontWeight.w200),
                       decoration: InputDecoration(
                         filled: true,
-                        isDense: true,
+                        //isDense: true,
                         fillColor: Constants.postColor,
                         hintText: "대화명을 입력하세요",
+                        hintStyle: TextStyle(fontSize: Constants.smFont),
+                        contentPadding: EdgeInsets.only(top: 25, left: 10),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(
-                                color:
-                                    _usernameAvailable ? Colors.cyan : Colors.red,
+                                color: _usernameAvailable
+                                    ? Colors.cyan
+                                    : Colors.red,
                                 width: .3)),
                         // focusColor: Constants.white,
                         focusedBorder: OutlineInputBorder(

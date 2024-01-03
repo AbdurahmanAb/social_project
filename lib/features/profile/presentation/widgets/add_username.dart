@@ -51,15 +51,18 @@ class _AddUserNameState extends State<AddUserName> {
                     disabled = false;
                   });
                 },
+                
                 style: TextStyle(fontSize: 12),
                 decoration: InputDecoration(
-                  
+       focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Constants.chipColor, width: .5, ),  borderRadius: BorderRadius.circular(10)),
                     contentPadding: EdgeInsets.all(8),
                     filled: true,
                     hintText: "@사용자명 (예 : @wegab)",
                     fillColor: Constants.Iconbg,
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
+                        borderRadius: BorderRadius.circular(10))
+                        
+                        ),
               ),
             ),
             SizedBox(
@@ -93,7 +96,7 @@ class AddUserame {
   static void showUsernameDialog(context, text) {
     showModalBottomSheet(
      
-        backgroundColor: Constants.bottom,
+        backgroundColor: Constants.lightblack,
         useRootNavigator: true,
         constraints: BoxConstraints(minHeight: Constants.screen_height * 0.3),
         context: context,

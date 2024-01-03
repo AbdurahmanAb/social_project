@@ -27,7 +27,7 @@ class _ConnectionHeaderState extends State<ConnectionHeader> {
           showBottomBorder: true,
         
         
-        dataRowHeight: Constants.height20*4.5,
+        dataRowHeight: Constants.height20*3.5,
                 columnSpacing: 40,
           headingRowColor: const MaterialStatePropertyAll(Constants.bottom),
             //  dataRowColor:MaterialStatePropertyAll(Colors.amber)
