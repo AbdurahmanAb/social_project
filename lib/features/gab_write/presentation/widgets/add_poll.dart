@@ -34,43 +34,44 @@ class _PollWidgetState extends State<PollWidget> {
     });
   }
 
-  // void addNewPoll() {
-  //   if (pollList.length < 12) {
-  //     setState(() {
-  //       pollList.add(Row(
-  //         children: [
-  //           InputPoll(
-  //               text: "항목 입력",
-  //               onChanged: (value) => {},
-  //               controller: controller),
-  //         SizedBox(width: 3,),
-  //           IconButton(
-  //             highlightColor: Colors.transparent,
-  //             hoverColor: Colors.transparent,
-  //             icon: Icon(CupertinoIcons.minus_circle),
-  //             onPressed: () {
-  //               removePoll(index);
-  //             },
-  //           )
-  //         ],
-  //       ));
-  //       pollList.add(
-  //         SizedBox(
-  //           height: Constants.height15,
-  //         ),
-  //       );
-  //     });
-  //   } else {
-  //     showDialog(
-  //       context: context,
-  //       builder: (context) {
-  //         return AlertDialog(
-  //             insetPadding: EdgeInsets.zero,
-  //             content: Text("you can't add more"));
-  //       },
-  //     );
-  //   }
-  // }
+  void addNewPoll() {
+    if (pollList.length < 12) {
+      setState(() {
+        pollList.add("abdu");
+        // pollList.add(Row(
+        //   children: [
+        //     InputPoll(
+        //         text: "항목 입력",
+        //         onChanged: (value) => {},
+        //         controller: controller),
+        //   SizedBox(width: 3,),
+        //     IconButton(
+        //       highlightColor: Colors.transparent,
+        //       hoverColor: Colors.transparent,
+        //       icon: Icon(CupertinoIcons.minus_circle),
+        //       onPressed: () {
+        //         removePoll(index);
+        //       },
+        //     )
+        //   ],
+        // ));
+        // pollList.add(
+        //   SizedBox(
+        //     height: Constants.height15,
+        //   ),
+        // );
+      });
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+              insetPadding: EdgeInsets.zero,
+              content: Text("you can't add more"));
+        },
+      );
+    }
+  }
 
   var result = Get.arguments;
   int value = 3;
@@ -131,11 +132,58 @@ class _PollWidgetState extends State<PollWidget> {
 
                   Column(
                     children: pollList
-                        .mapIndexed((index, e) => InputPoll(
-                              text: "항목 싱가포르",
-                              onChanged: (value) => () {},
-                              controller: controller,
+                        .mapIndexed((index, e) => Column(
+                              children: [
+                                index <= 1
+                                    ? Column(
+                                        children: [
+                                          InputPoll(
+                                            text: "항목 싱가포르",
+                                            onChanged: (value) => () {},
+                                            controller: controller,
+                                          ),
+                                          SizedBox(
+                                            height: Constants.height15,
+                                          ),
+                                        ],
+                                      )
+                                    : Row(
+                                        children: [
+                                          SizedBox(
+                                            width: Constants.height20*20,
+                                            child: InputPoll(
+                                              text: "항목 싱가포르",
+                                              onChanged: (value) => () {},
+                                              controller: controller,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: Constants.height15,
+                                          ),
+                                          IconButton(
+                                            highlightColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            icon: Icon(
+                                                CupertinoIcons.minus_circle),
+                                            onPressed: () {
+                                              removePoll(index);
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                // IconButton(
+                                //   highlightColor: Colors.transparent,
+                                //   hoverColor: Colors.transparent,
+                                //   icon: Icon(CupertinoIcons.minus_circle),
+                                //   onPressed: () {
+                                //     removePoll(index);
+                                //   },
+                                // ),
 
+                                SizedBox(
+                                  height: Constants.height15,
+                                ),
+                              ],
                             ))
                         .toList(),
                   ),
@@ -182,7 +230,7 @@ class _PollWidgetState extends State<PollWidget> {
 
                   GestureDetector(
                     onTap: () {
-                      //   addNewPoll();
+                      addNewPoll();
                     },
                     child: AppButton(
                       text: "+ 추가하기",
