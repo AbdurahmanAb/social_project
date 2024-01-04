@@ -101,10 +101,15 @@ class _ResultPageState extends State<ResultPage> {
                     ],
                   ),
                   widget.isFollowed
-                      ? ResultBtn(
-                          disabled: true,
-                          onTab: widget.onTab,
-                        )
+                      ? GestureDetector(
+                        onTap: (){
+                          ResultBottom.showResultBottom(context);
+                        },
+                        child: ResultBtn(
+                            disabled: true,
+                            onTab: widget.onTab,
+                          ),
+                      )
                       : ResultBtn(disabled: false, onTab: widget.onTab,),
                 ],
               ),

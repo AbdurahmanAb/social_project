@@ -22,14 +22,14 @@ import 'package:kim/features/profile/presentation/screen/profile_follow_list.dar
 
 class Routes {
   static const String welcome = "/welcome";
-  static const String  welcomeLounge = "/welcomeLounge";
+  static const String welcomeLounge = "/welcomeLounge";
   static const String main = "/main";
   static const String search = "/search";
   static const String feed = "/feed";
   static const String image = "/image";
   static const String explore = "/explore";
   static const String feedExplore = "/feedexplore";
-  static const String  recentSearch = "/recentsearch"  ;
+  static const String recentSearch = "/recentsearch";
   static const String detailBrand = "/detail";
   static const String write = "/write";
   static const String profile = "/profile";
@@ -47,14 +47,14 @@ class Routes {
 
   static List<GetPage> routes = [
     GetPage(name: welcome, page: () => const WelcomeScreen()),
-    GetPage(name: welcomeLounge, page: ()=> const WelcomeLoungeChannel()),
+    GetPage(name: welcomeLounge, page: () => const WelcomeLoungeChannel()),
     GetPage(name: main, page: () => const MainScreen()),
     GetPage(name: search, page: () => const SearchScreen()),
     GetPage(name: explore, page: () => const GabFeed()),
     GetPage(name: feedExplore, page: () => const ExploreSearch()),
-    GetPage(name: recentSearch, page: ()=>RecentPage()),
+    GetPage(name: recentSearch, page: () => RecentPage()),
     GetPage(name: detailBrand, page: () => const DetailBrand()),
-    GetPage(name: profile, page: () => const ProfileThumbnail()),
+    GetPage(name: profile, page: () =>  ProfileThumbnail()),
     GetPage(name: follows, page: () => const ProfileFollower()),
     GetPage(name: profileEdit, page: () => ProfileEdit()),
     GetPage(name: profileLg, page: () => ProfilePage()),

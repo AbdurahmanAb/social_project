@@ -24,41 +24,35 @@ class AvatarImg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-     // Get.toNamed("/profilelg");
-        ProfileThumbnailShow.showProfileThumnail(context,isFull);
-      },
-      child: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              border: Enableborder
-                  ? Border.all(
-                      color: Constants.appColor,
-                      width: 2,
-                    )
-                  : null,
-            ),
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(25),
-                  child: Image.asset(
-                    height: height,
-                    width: width,
-                    ImgUrl,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-            Enableborder?   Positioned(bottom: 0, right: 0, child: Image.asset("assets/avatar/emoji.png", height: height/3.4,)):SizedBox.shrink(),
-              ],
-            ),
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            border: Enableborder
+                ? Border.all(
+                    color: Constants.appColor,
+                    width: 2,
+                  )
+                : null,
           ),
-          //
-        ],
-      ),
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image.asset(
+                  height: height,
+                  width: width,
+                  ImgUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
+          Enableborder?   Positioned(bottom: 0, right: 0, child: Image.asset("assets/avatar/emoji.png", height: height/3.4,)):SizedBox.shrink(),
+            ],
+          ),
+        ),
+        //
+      ],
     );
   }
 }

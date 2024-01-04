@@ -115,22 +115,11 @@ class _ExploreSearchState extends State<ExploreSearch> {
                       child: Container(
                           width: 75,
                           decoration: BoxDecoration(
-                              color: index == 0
-                                  ? Constants.appColor
-                                  : Colors.transparent,
+                              color:  Colors.transparent,
                               borderRadius: BorderRadius.circular(12)),
                           padding: EdgeInsets.all(8.0),
                           child: Center(
-                            child: Text(
-                              "gab",
-                              style: TextStyle(
-                                color: index != 0
-                                    ? Constants.white
-                                    : Constants.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                              ),
-                            ),
+                            child: index!=0? Image.asset("assets/avatar/gab_white.png") : Image.asset("assets/avatar/gab_logo.png") 
                           )),
                     ),
                     GestureDetector(

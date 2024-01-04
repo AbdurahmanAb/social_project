@@ -1,7 +1,9 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kim/core/ui/avatar.dart';
+import 'package:kim/features/profile/presentation/screen/profile_thumbnail.dart';
 import 'package:kim/utils/constants.dart';
 
 class TopBar extends StatelessWidget {
@@ -30,7 +32,11 @@ Triger();
                       SizedBox(width: Constants.height10,),
                       Image.asset("assets/Lounge/button_alarm.png"),
                   SizedBox(width: Constants.height10,),
-         const AvatarImg()
+       GestureDetector(
+        onTap:(){
+          ProfileThumbnailShow.showProfileThumnail(context, true);
+        },
+        child: AvatarImg())
             ],
           )
         ],
