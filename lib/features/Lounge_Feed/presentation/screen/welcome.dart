@@ -53,7 +53,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               "/write",
                             );
                           },
-                          child: AppButton(text: "갭 작성하기"))
+                          child: AppButton(text: "+  갭 작성하기"))
                     ],
                   ),
                 ),

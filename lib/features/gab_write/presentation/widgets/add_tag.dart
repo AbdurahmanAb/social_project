@@ -4,6 +4,7 @@ import 'package:kim/features/gab_write/presentation/widgets/input_poll.dart';
 import 'package:kim/features/gab_write/presentation/widgets/tag_button.dart';
 import 'package:kim/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:collection/collection.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
 
 class Addtag extends StatefulWidget {
@@ -15,7 +16,7 @@ class _AddtagState extends State<Addtag> {
   RadioGroupController myController = RadioGroupController();
   final GlobalKey<RadioGroupState> radioGroupKey1 =
       GlobalKey<RadioGroupState>();
-
+  List<String> tags = [];
   late TextEditingController _textEditingController;
   bool disabled = true;
   bool isStartWriting = false;
@@ -86,90 +87,184 @@ class _AddtagState extends State<Addtag> {
                 height: Constants.height20,
               ),
               isStartWriting
-                  ? Row(
+                  ? Column(
                       children: [
-                        Container(
-                          //  width: 94,
-                          height: 31,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 5),
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            color: Colors.black.withOpacity(0.500000003224),
-                            shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                  width: 1, color: Colors.white),
-                              borderRadius: BorderRadius.circular(20),
+                        Row(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  tags.add(tag);
+                                  tag = "";
+                                  //   isStartWriting = false;
+                                  _textEditingController.text = "";
+                                });
+                              },
+                              child: _textEditingController.text != ""
+                                  ? Container(
+                                      //  width: 94,
+                                      height: 31,
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8, vertical: 5),
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: ShapeDecoration(
+                                        color: Colors.black
+                                            .withOpacity(0.500000003224),
+                                        shape: RoundedRectangleBorder(
+                                          side: const BorderSide(
+                                              width: 1, color: Colors.white),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                      ),
+                                      child: Row(
+                                        // mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            tag,
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w700,
+                                              height: 0.11,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 8),
+                                          Transform(
+                                              transform:
+                                                  Matrix4.translationValues(
+                                                      0, 0, 0),
+                                              child: const Icon(
+                                                Icons.close,
+                                                size: 17,
+                                              )),
+                                        ],
+                                      ),
+                                    )
+                                  : SizedBox.shrink(),
                             ),
-                          ),
-                          child: Row(
-                            // mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                tag,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700,
-                                  height: 0.11,
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              Transform(
-                                  transform: Matrix4.translationValues(0, 0, 0),
-                                  child: const Icon(
-                                    Icons.close,
-                                    size: 17,
-                                  )),
-                            ],
-                          ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            //   Container(
+                            //   //  width: 94,
+                            //   height: 31,
+                            //   padding:
+                            //       const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                            //   clipBehavior: Clip.antiAlias,
+                            //   decoration: ShapeDecoration(
+                            //     color: Colors.black.withOpacity(0.500000003224),
+                            //     shape: RoundedRectangleBorder(
+                            //       side: BorderSide(width: 1, color: Colors.white),
+                            //       borderRadius: BorderRadius.circular(20),
+                            //     ),
+                            //   ),
+                            //   child: Row(
+                            //    // mainAxisSize: MainAxisSize.min,
+                            //     mainAxisAlignment: MainAxisAlignment.start,
+                            //     crossAxisAlignment: CrossAxisAlignment.center,
+                            //     children: [
+                            //       Text(
+                            //         '@ 나이키',
+                            //         textAlign: TextAlign.center,
+                            //         style: TextStyle(
+                            //           color: Colors.white,
+                            //           fontSize: 14,
+                  
+                            //           fontWeight: FontWeight.w700,
+                            //           height: 0.11,
+                            //         ),
+                            //       ),
+                            //       const SizedBox(width: 8),
+                            //       Transform(
+                            //         transform: Matrix4.translationValues(0, 0, 0),
+                            //         child: Icon(Icons.close,size: 17,)),
+                  
+                            //     ],
+                            //   ),
+                            // ),
+                            // SizedBox(
+                            //   width: Constants.height10,
+                            // ),
+                          ],
                         ),
-                        const SizedBox(
-                          width: 12,
+                        SizedBox(
+                          height: 10,
                         ),
-                        //   Container(
-                        //   //  width: 94,
-                        //   height: 31,
-                        //   padding:
-                        //       const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                        //   clipBehavior: Clip.antiAlias,
-                        //   decoration: ShapeDecoration(
-                        //     color: Colors.black.withOpacity(0.500000003224),
-                        //     shape: RoundedRectangleBorder(
-                        //       side: BorderSide(width: 1, color: Colors.white),
-                        //       borderRadius: BorderRadius.circular(20),
-                        //     ),
-                        //   ),
-                        //   child: Row(
-                        //    // mainAxisSize: MainAxisSize.min,
-                        //     mainAxisAlignment: MainAxisAlignment.start,
-                        //     crossAxisAlignment: CrossAxisAlignment.center,
-                        //     children: [
-                        //       Text(
-                        //         '@ 나이키',
-                        //         textAlign: TextAlign.center,
-                        //         style: TextStyle(
-                        //           color: Colors.white,
-                        //           fontSize: 14,
-
-                        //           fontWeight: FontWeight.w700,
-                        //           height: 0.11,
-                        //         ),
-                        //       ),
-                        //       const SizedBox(width: 8),
-                        //       Transform(
-                        //         transform: Matrix4.translationValues(0, 0, 0),
-                        //         child: Icon(Icons.close,size: 17,)),
-
-                        //     ],
-                        //   ),
-                        // ),
-                        // SizedBox(
-                        //   width: Constants.height10,
-                        // ),
+                        tags.length > 0
+                            ? Row(
+                                // runSpacing: 10,
+                                // spacing: 1,
+                                // alignment: WrapAlignment.start,
+                                // runAlignment: WrapAlignment.start,
+                                // crossAxisAlignment: WrapCrossAlignment.start,
+                                // verticalDirection: VerticalDirection.up,
+                                children: tags
+                                    .mapIndexed(
+                                      (index, e) => Container(
+                                       // width: 94,
+                                        height: 31,
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 8, vertical: 5),
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal:
+                                                Constants.height10 / 2.5),
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: ShapeDecoration(
+                                          color: Colors.black
+                                              .withOpacity(0.500000003224),
+                                          shape: RoundedRectangleBorder(
+                                            side: const BorderSide(
+                                                width: 1, color: Colors.white),
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          // mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              tags[index],
+                                              textAlign: TextAlign.center,
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w700,
+                                                height: 0.11,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 8),
+                                            Transform(
+                                                transform:
+                                                    Matrix4.translationValues(
+                                                        0, 0, 0),
+                                                child: InkWell(
+                                                  onTap: (){
+                                                    setState(() {
+                                                      tags.removeAt(index);
+                                                    });
+                                                    
+                                                  },
+                                                  child: Icon(
+                                                    Icons.close,
+                                                    size: 17,
+                                                  ),
+                                                )),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                    .toList())
+                            : SizedBox.shrink(),
                       ],
                     )
                   : const Column(

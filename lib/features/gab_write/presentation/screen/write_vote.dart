@@ -7,7 +7,10 @@ import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/core/ui/custom_alert.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_poll.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_tag.dart';
+import 'package:kim/features/gab_write/presentation/widgets/image_picker.dart';
 import 'package:kim/utils/constants.dart';
+
+import '../../../../core/ui/app_button.dart';
 
 class WriteVote extends StatefulWidget {
   const WriteVote({super.key});
@@ -17,6 +20,8 @@ class WriteVote extends StatefulWidget {
 }
 
 class _WriteVoteState extends State<WriteVote> {
+
+
   bool hastext = false;
   String titleValue = "";
   String textValue = "";
@@ -138,13 +143,7 @@ class _WriteVoteState extends State<WriteVote> {
                     children: [
                       GestureDetector(
                           onTap: () {
-                            MyBottomSheet.showBottomSheet(
-                                context,
-                                "카메라",
-                                "assets/icons/icon_modify.png",
-                                "assets/icons/icon__picture.png",
-                                "사진 앨범",
-                                "닫기");
+                          ImageBottomSheet.showBottomSheet(context, ImageBottomSheet(text1: "카메라", icon1: "assets/icons/icon_modify.png", icon2: "assets/icons/icon_picture.png", text2: "사진 앨범", btnTxt: "닫기", onTap2:()=> pickimage(),));
                           },
                           child: Image.asset("assets/icons/icon_picture.png")),
                       SizedBox(
@@ -201,6 +200,105 @@ class _WriteVoteState extends State<WriteVote> {
 
 
 
+
+
+class ImageBottomSheet extends StatelessWidget {
+  final String text1;
+  final String icon1;
+  final String icon2;
+  final String text2;
+  final String btnTxt;
+  final Function? onTap1;
+  final Function? onTap2;
+  final String? text3;
+  final String? icon3;
+  const ImageBottomSheet(
+      {super.key,
+      required this.text1,
+      required this.icon1,
+      required this.icon2,
+      required this.text2,
+      required this.btnTxt,
+      this.onTap1,
+      this.onTap2,
+     this.text3,
+      this.icon3});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(Constants.height20),
+      height: text3 != null ? 300 : 170,
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(25), topLeft: Radius.circular(25)),
+          color: Constants.bottom),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          InkWell(
+            onTap: () {
+              //the onTap function that accept as argument
+              onTap1!();
+            },
+            child: Row(
+              children: [
+                Image.asset(icon1),
+                SizedBox(
+                  width: Constants.height10,
+                ),
+                Text(text1),
+              ],
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              onTap2!();
+            },
+            child: Row(
+              children: [
+                Image.asset(icon2),
+                SizedBox(
+                  width: Constants.height10,
+                ),
+                Text(text2),
+              ],
+            ),
+          ),
+          text3 != null
+              ? Row(
+                  children: [
+                    Image.asset(icon3!),
+                    SizedBox(
+                      width: Constants.height10,
+                    ),
+                    Text(text3!),
+                  ],
+                )
+              : const SizedBox.shrink(),
+          AppButton(text: btnTxt)
+        ],
+      ),
+    );
+    ;
+  }
+
+  static void showBottomSheet(BuildContext context,  Widget Sheet) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Sheet;
+      });
+  }}
+
+/// accept 4 (2, icons and 2 text) arguments to show when the bottomSheet is opened
+///  the elements will be displayed as row
+/// MyBottoSheet.showBottomSheet(...argumentss) will open the bottomSheet
+
+
+
+ 
 
 
 
