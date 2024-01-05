@@ -34,7 +34,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
         key: _scaffoldKey,
         drawer: const CustomDrawer(),
-        backgroundColor: Constants.Iconbg,
+        backgroundColor: Constants.lightblack,
         body: SafeArea(
             child: GestureDetector(
           onTap: () {},
@@ -56,29 +56,32 @@ class _SearchScreenState extends State<SearchScreen> {
                       child: Stack(
                         children: [
                           SizedBox(
-                            height: 28,
+                            height: 32,
                             width: Constants.screen_width * 0.82,
                             child: TextField(
-                            //  maxLines: 2,
+                              //  maxLines: 2,
+
                               controller: _controller,
                               onChanged: (value) {
                                 setState(() {
                                   searchText = value;
                                   isLoading = true;
                                 });
-                                
-                               
-                               value !=''? filteredItems = searchItems
-                                    .where((item) => item.contains(searchText))
-                                    .toList():null;
+
+                                value != ''
+                                    ? filteredItems = searchItems
+                                        .where(
+                                            (item) => item.contains(searchText))
+                                        .toList()
+                                    : null;
 
                                 setState(() {
                                   isLoading = false;
                                 });
                               },
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w300),
-                              decoration: const InputDecoration(
+                              decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15)),
@@ -87,18 +90,15 @@ class _SearchScreenState extends State<SearchScreen> {
                                   hintText: '검색어 입력',
                                   // hintStyle: TextStyle(fontSize: 10),
                                   filled: true,
-                                  fillColor: Color.fromARGB(255, 94, 93, 93),
+                                  fillColor: Color.fromARGB(255, 78, 78, 81),
+                                  prefixIcon: Image.asset(
+                                    "assets/Lounge/icon_search.png",
+                                    height: 15,
+                                  ),
                                   contentPadding: EdgeInsets.only(
                                       top: 0, bottom: 0, left: 45, right: 20)),
                             ),
                           ),
-                          Positioned(
-                              top: 8,
-                              left: 8,
-                              child: Image.asset(
-                                "assets/Lounge/icon_search.png",
-                                height: 15,
-                              ))
                         ],
                       ),
                     ),
@@ -126,22 +126,23 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Widget Loading() => Center(
-                          child: Text("최근 검색어 내역이 없습니다."),
-                        );
+        child: Text("최근 검색어 내역이 없습니다."),
+      );
 
   Widget NoResults() =>
       Center(child: Image.asset("assets/Lounge/illust_search.png"));
 
   Widget SearchResults(items) => ListView.builder(
-  
         itemCount: items.length,
         itemBuilder: (_, index) => Column(
           children: [
             ListTile(
               title: Text(items[index]),
-            trailing: Icon(Icons.close),
+              trailing: Icon(Icons.close),
             ),
-            Divider(color: Constants.black,)
+            Divider(
+              color: Constants.black,
+            )
           ],
         ),
       );

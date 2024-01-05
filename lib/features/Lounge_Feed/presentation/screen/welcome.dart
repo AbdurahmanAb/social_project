@@ -50,7 +50,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       GestureDetector(
                           onTap: () {
                             Get.toNamed(
-                              "/write",
+                              "/main",
                             );
                           },
                           child: AppButton(text: "+  갭 작성하기"))
