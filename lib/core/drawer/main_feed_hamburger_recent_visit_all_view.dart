@@ -63,7 +63,7 @@ class VisitAllRecentView extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                padding:  EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -79,6 +79,7 @@ class VisitAllRecentView extends StatelessWidget {
             },
             separatorBuilder: (context, index) => Divider(),
             itemCount: assets.length),
+            Divider()
       ],
     );
   }

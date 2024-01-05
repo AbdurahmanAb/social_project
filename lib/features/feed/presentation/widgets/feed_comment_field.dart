@@ -38,20 +38,19 @@ class _FeedCommentFieldState extends State<FeedCommentField> {
                   width: Constants.height15,
                 ),
               Expanded(
-                child: IntrinsicHeight(
-                  child: TextField(
-                      maxLines: null,               //  maxLines: null,
-                    decoration: InputDecoration(
-                      filled: true,
-                      
-                      hintStyle: const TextStyle(fontSize: 12),
-                      fillColor: Constants.bottom,
-                      hintText: "댓글을 남겨주세요",
-                      //contentPadding: EdgeInsets.all(Constants.height20),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
+                child: TextField(
+                    maxLines: null,  
+                      style: TextStyle(fontSize: Constants.mdFont),           //  maxLines: null,
+                  decoration: InputDecoration(
+                    filled: true,
+                  isDense: true,  
+                    hintStyle: const TextStyle(fontSize: 12),
+                    fillColor: Constants.bottom,
+                    hintText: "댓글을 남겨주세요",
+                    contentPadding: EdgeInsets.symmetric(horizontal:  Constants.height20, vertical: Constants.height10),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(15),
                     ),
                   ),
                 ),
