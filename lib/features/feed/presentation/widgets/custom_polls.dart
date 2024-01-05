@@ -38,6 +38,7 @@ class _CustomPollsState extends State<CustomPolls> {
       separatorBuilder: (context, index) => const SizedBox(
         height: 10,
       ),
+      physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: 4,
       itemBuilder: (context, index) => Container(

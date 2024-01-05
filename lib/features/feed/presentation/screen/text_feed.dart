@@ -21,15 +21,15 @@ import '../../../../core/text/HeaderText.dart';
 import '../../../../core/ui/avatar.dart';
 import '../../../../core/ui/app_button.dart';
 
-class Fedd extends StatefulWidget {
-  final int id;
-  const Fedd({required this.id, super.key});
+class TextFeed extends StatefulWidget {
+
+  const TextFeed({ super.key});
 
   @override
-  State<Fedd> createState() => _FeddState();
+  State<TextFeed> createState() => _TextFeedState();
 }
 
-class _FeddState extends State<Fedd> {
+class _TextFeedState extends State<TextFeed> {
   bool disabled = true;
 
   String label = "";
@@ -106,11 +106,7 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height10,
                           ),
-                          const Text(
-                            "올해 고아웃 캠핑 너무 좋았어요~ 행사도 다양하고 사람들도 많이 만나고 내년도 좋은 추억 만들고 싶네요~ 예약 ㄱ ㄱ",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
-                          ),
+                         
                           SizedBox(
                             height: Constants.height20,
                           ),
@@ -119,40 +115,11 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height20,
                           ),
-                          Wrap(
-                            direction: Axis.horizontal,
-                            // alignment: WrapAlignment.spaceBetween,
-                            runAlignment: WrapAlignment.start,
-
-                            runSpacing: 5,
-                            spacing: 10,
-                            children: [
-                              Tags(
-                                name: "@나이키",
-                              ),
-                              Tags(name: "@나이키"),
-                              Tags(
-                                name: "@현대",
-                              ),
-                              Tags(
-                                name: "@프리미어리그",
-                              ),
-                              Tags(
-                                name: "@리그앙",
-                              ),
-                            ],
-                          ),
+                      
                           SizedBox(
                             height: Constants.height20,
                           ),
 
-                          ListView.separated(
-                            separatorBuilder: (context, index) => SizedBox(height: Constants.height15,),
-                            itemCount:assets.length,
-                            shrinkWrap: true,
-                            itemBuilder: (context, index) {
-                            return    FeedImagesList(imgUrl: assets[index]);
-                          },),
                        
                           SizedBox(
                             height: Constants.height10,
@@ -178,12 +145,13 @@ class _FeddState extends State<Fedd> {
                     SingleChildScrollView(
                       child: ListView.builder(
                         shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: 8,
                         itemBuilder: (context, index) {
                           return FeedCommentList(
                             text: "우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가면 어머님다..",
                             index: index,
-                            imgUrl: "assets/avatar/post2.jpg",
+                         //   imgUrl: "assets/avatar/post2.jpg",
                             brandPost: false,
                           );
                         },
@@ -202,7 +170,7 @@ class _FeddState extends State<Fedd> {
                 child: Center(
                   child: Text("댓글 전체보기"),
                 )),
-            SingleChildScrollView(child: FeedCommentField()),
+            FeedCommentField(),
           ],
         ),
       ),

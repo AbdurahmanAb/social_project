@@ -19,6 +19,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
     return Column(
       children: [
         ListView.separated(
+          physics: NeverScrollableScrollPhysics(),
           separatorBuilder: (context, index) => SizedBox(
             height: 10,
           ),

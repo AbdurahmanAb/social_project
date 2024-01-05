@@ -1,16 +1,16 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:get/get.dart';
 
+
 class ImageView extends StatelessWidget {
-  final int id;
+  final String path;
 
- ImageView({required this.id, super.key});
-List<String> imagesList = [
-"assets/avatar/post1.jpg",
-];
+ ImageView({ super.key, required this.path});
 
+List<String> assets =["assets/avatar/post1.jpg","assets/avatar/post2.jpg","assets/avatar/post3.jpg","assets/avatar/post5.jpg"];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +25,14 @@ List<String> imagesList = [
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.back();
+            Get.back();
                     },
                     child: Icon(Icons.close)),
                   Text("첨부",style: TextStyle(color: Colors.blue),)
                 ],
               ),
             ),
-            Expanded(child: Center(child: Image.asset(imagesList[id],fit: BoxFit.cover,width: double.maxFinite,))),
+            Expanded(child: Center(child: Image.asset(path,fit: BoxFit.cover,width: double.maxFinite,))),
          
           ],
         ),

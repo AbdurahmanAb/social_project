@@ -3,6 +3,7 @@ import 'package:kim/features/Lounge_Feed/presentation/screen/welcome_longe_chann
 import 'package:kim/features/explore/presentation/screen/friend_more.dart';
 import 'package:kim/features/explore/presentation/screen/new_open_brand.dart';
 import 'package:kim/features/explore/presentation/screen/recent_search.dart';
+import 'package:kim/features/feed/presentation/screen/text_feed.dart';
 import 'package:kim/features/profile/presentation/screen/gab_insight.dart';
 import 'package:kim/features/profile/presentation/screen/profile_badge.dart';
 import 'package:kim/features/profile/presentation/screen/profile_connection.dart';
@@ -38,12 +39,15 @@ class Routes {
   static const String profileLg = "/profilelg";
   static const String profileConnection = "/profileConnection";
   static const String profileBadge = "/profilebadge";
+  static const String othersprofile = "/otherprofile";
+
   static const String gabInsight = "/insight";
   static const String newbrand = "/newbrand";
+  static const String textFeed = "/textFeed";
   static const String frienmdMore = "/friendmore";
 
   static String getFeed(int id) => '$feed?id=$id';
-  static String getImage(int id) => '$image?id=$id';
+  static String getImage(id) => '$image?id=$id';
 
   static List<GetPage> routes = [
     GetPage(name: welcome, page: () => const WelcomeScreen()),
@@ -54,13 +58,14 @@ class Routes {
     GetPage(name: feedExplore, page: () => const ExploreSearch()),
     GetPage(name: recentSearch, page: () => RecentPage()),
     GetPage(name: detailBrand, page: () => const DetailBrand()),
-    GetPage(name: profile, page: () =>  ProfileThumbnail()),
+    GetPage(name: profile, page: () => ProfileThumbnail()),
     GetPage(name: follows, page: () => const ProfileFollower()),
     GetPage(name: profileEdit, page: () => ProfileEdit()),
     GetPage(name: profileLg, page: () => ProfilePage()),
     GetPage(name: profileConnection, page: () => ProfileConncetion()),
     GetPage(name: profileBadge, page: () => ProfileBadge()),
     GetPage(name: gabInsight, page: () => GabInsight()),
+    GetPage(name: textFeed, page: () => TextFeed()),
     GetPage(name: newbrand, page: () => NewOpenBrand()),
     GetPage(
         name: frienmdMore,
@@ -79,7 +84,9 @@ class Routes {
         name: image,
         page: () {
           var id = Get.parameters['id'];
-          return ImageView(id: int.parse(id!));
+          return ImageView(
+            path: id!,
+          );
         }),
   ];
 }

@@ -51,7 +51,7 @@ class _TopCardState extends State<TopCard> {
           LayoutBuilder(
             builder: (context,BoxConstraints  constraints) {
               return Container(
-                height: Constants.screen_height * 0.19,
+                height: Constants.screen_height * 0.2,
                 child: PageView.builder(
                   controller: _PageController,
                   itemCount: 4,

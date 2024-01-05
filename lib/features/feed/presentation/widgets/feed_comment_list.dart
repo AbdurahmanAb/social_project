@@ -33,7 +33,7 @@ class FeedCommentList extends StatelessWidget {
           padding: EdgeInsets.all(Constants.height20),
           decoration: BoxDecoration(
               border: Border(
-                   left: BorderSide(width: 1, color:index>0? Constants.chipColor:Colors.transparent))
+                   left: BorderSide(width: 1, color: Constants.chipColor))
                   
                   ),
           child:
@@ -41,7 +41,8 @@ class FeedCommentList extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                brandPost ? BrandPost() : UserPost(),
+                AvatarImg(ImgUrl: "assets/avatar/avatar.jpg",),
+               // brandPost ? BrandPost() : UserPost(),
                 Spacer(),
                 Text(
                   "24분 전",
@@ -59,7 +60,7 @@ class FeedCommentList extends StatelessWidget {
             SizedBox(
               height: Constants.height10,
             ),
-            MidText(text: text),
+            MidText(text: text, ),
             SizedBox(
               height: Constants.height15,
             ),
@@ -73,11 +74,11 @@ class FeedCommentList extends StatelessWidget {
             ),
             SizedBox(height: Constants.height15,),
             //call the link preview widget to preview the link
-            LinkPreview(url: url.toString()),
+         
         
-            SizedBox(height: Constants.height10/3,),
-            Text(url!, style: TextStyle(color: Colors.blue, fontSize: Constants.mdFont),),
-            SizedBox(
+            // SizedBox(height: Constants.height10/3,),
+            // Text(url!, style: TextStyle(color: Colors.blue, fontSize: Constants.mdFont),),
+           SizedBox(
               height: Constants.height20,
             ),
             CommentReply()

@@ -9,7 +9,7 @@ final String imgUrl;
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          Get.toNamed("/image?id=0");
+          Get.toNamed("/image?id=$imgUrl");
         },
         child: Container(
           width: double.maxFinite,

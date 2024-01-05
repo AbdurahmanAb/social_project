@@ -65,7 +65,7 @@ class _PollWidgetState extends State<PollWidget> {
       showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
+          return const AlertDialog(
               insetPadding: EdgeInsets.zero,
               content: Text("you can't add more"));
         },
@@ -92,11 +92,11 @@ class _PollWidgetState extends State<PollWidget> {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         child: AlertDialog(
-            contentPadding: EdgeInsets.all(13),
+            contentPadding: const EdgeInsets.all(13),
             backgroundColor: Constants.Iconbg,
             surfaceTintColor: Colors.transparent,
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 1, color: Color(0xFF7C7C80)),
+              side: const BorderSide(width: 1, color: Color(0xFF7C7C80)),
               borderRadius: BorderRadius.circular(10),
             ),
             insetPadding: EdgeInsets.all(Constants.height15),
@@ -109,9 +109,9 @@ class _PollWidgetState extends State<PollWidget> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
+                      const Expanded(
                         flex: 3,
-                        child: TextField(
+                        child: const TextField(
                           decoration: InputDecoration.collapsed(
                             hintText: "투표 제목을 입력하세요.",
                             hintStyle: TextStyle(
@@ -150,7 +150,7 @@ class _PollWidgetState extends State<PollWidget> {
                                     : Row(
                                         children: [
                                           SizedBox(
-                                            width: Constants.height20*12,
+                                            width: Constants.height20*15,
                                             child: InputPoll(
                                               text: "항목 싱가포르",
                                               onChanged: (value) => () {},
@@ -163,7 +163,7 @@ class _PollWidgetState extends State<PollWidget> {
                                           IconButton(
                                             highlightColor: Colors.transparent,
                                             hoverColor: Colors.transparent,
-                                            icon: Icon(
+                                            icon: const Icon(
                                                 CupertinoIcons.minus_circle),
                                             onPressed: () {
                                               removePoll(index);
@@ -243,7 +243,7 @@ class _PollWidgetState extends State<PollWidget> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("중복 투표 허용"),
+                      const Text("중복 투표 허용"),
                       Transform.scale(
                         scale: .7,
                         child: Switch(
@@ -260,7 +260,7 @@ class _PollWidgetState extends State<PollWidget> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("투표 기간 선택"),
+                      const Text("투표 기간 선택"),
                       GestureDetector(
                         onTap: () {
                           BottomradionSheet.showBottomSheet(context, value);
@@ -269,7 +269,7 @@ class _PollWidgetState extends State<PollWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             result == null ? Text("$value일") : Text("$result일"),
-                            Icon(Icons.arrow_drop_down)
+                            const Icon(Icons.arrow_drop_down)
                           ],
                         ),
                       )
@@ -290,7 +290,7 @@ class Addpoll {
         builder: (
           BuildContext context,
         ) {
-          return PollWidget();
+          return const PollWidget();
         });
   }
 }

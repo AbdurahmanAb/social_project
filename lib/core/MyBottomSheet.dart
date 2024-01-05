@@ -12,7 +12,7 @@ class MyBottomSheet {
 
 
 
- static void showBottomSheet(BuildContext context, text1,icon1,icon2, text2, btnTxt, [onTap,text3, icon3,]) {
+ static void showBottomSheet(BuildContext context, text1,icon1,icon2, text2, btnTxt, [onTap,onTap2,text3, icon3,]) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
@@ -42,14 +42,19 @@ class MyBottomSheet {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Image.asset(icon2),
-                  SizedBox(
-                    width: Constants.height10,
-                  ),
-                  Text(text2),
-                ],
+              InkWell(
+                onTap: (){
+                  onTap2();
+                },
+                child: Row(
+                  children: [
+                    Image.asset(icon2),
+                    SizedBox(
+                      width: Constants.height10,
+                    ),
+                    Text(text2),
+                  ],
+                ),
               ),
         text3 != null? Row(
                 children: [

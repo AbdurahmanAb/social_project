@@ -1,11 +1,32 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../utils/constants.dart';
 
-class BottomModal extends StatelessWidget {
+class BottomModal extends StatefulWidget {
   
   const BottomModal({super.key});
+
+  @override
+  State<BottomModal> createState() => _BottomModalState();
+}
+
+class _BottomModalState extends State<BottomModal> {
+
+
+void initState(){
+  super.initState();
+//   Timer(Duration(seconds: 2), () { 
+// setState(() {
+//   Get.back();
+// });
+
+
+//   });
+}
+
 
   @override
   Widget build(BuildContext context) {

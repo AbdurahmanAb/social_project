@@ -18,7 +18,7 @@ class TopButtons extends StatelessWidget {
         builder: (BuildContext context) {
           return Container(
             padding: EdgeInsets.symmetric(horizontal: Constants.height15,vertical: Constants.height20),
-            height: Constants.screen_height * 0.27,
+            height: Constants.screen_height * 0.29,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(25),

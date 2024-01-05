@@ -195,75 +195,83 @@ class _AddtagState extends State<Addtag> {
                         ),
                         SizedBox(
                           height: 10,
+                          
                         ),
                         tags.length > 0
-                            ? Row(
-                                // runSpacing: 10,
-                                // spacing: 1,
-                                // alignment: WrapAlignment.start,
-                                // runAlignment: WrapAlignment.start,
-                                // crossAxisAlignment: WrapCrossAlignment.start,
-                                // verticalDirection: VerticalDirection.up,
-                                children: tags
-                                    .mapIndexed(
-                                      (index, e) => Container(
-                                       // width: 94,
-                                        height: 31,
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 8, vertical: 5),
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal:
-                                                Constants.height10 / 2.5),
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: ShapeDecoration(
-                                          color: Colors.black
-                                              .withOpacity(0.500000003224),
-                                          shape: RoundedRectangleBorder(
-                                            side: const BorderSide(
-                                                width: 1, color: Colors.white),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                        ),
-                                        child: Row(
-                                          // mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              tags[index],
-                                              textAlign: TextAlign.center,
-                                              style: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w700,
-                                                height: 0.11,
+                            ? SizedBox(
+                              width: double.maxFinite,
+                              child: Wrap(
+                                runAlignment: WrapAlignment.start,
+                                   runSpacing: 10,
+                                  // spacing: 1,
+                                  // alignment: WrapAlignment.start,
+                                  // runAlignment: WrapAlignment.start,
+                                  // crossAxisAlignment: WrapCrossAlignment.start,
+                                  // verticalDirection: VerticalDirection.up,
+                                  children: tags
+                                      .mapIndexed(
+                                        (index, e) => IntrinsicWidth(
+                                          
+                                          child: Container(
+                                                                               //   width: tags[index].length*20,
+                                            height: 31,
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 8, vertical: 5),
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal:
+                                                    Constants.height10 / 2.5),
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: ShapeDecoration(
+                                              color: Colors.black
+                                                  .withOpacity(0.500000003224),
+                                              shape: RoundedRectangleBorder(
+                                                side: const BorderSide(
+                                                    width: 1, color: Colors.white),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
                                               ),
                                             ),
-                                            const SizedBox(width: 8),
-                                            Transform(
-                                                transform:
-                                                    Matrix4.translationValues(
-                                                        0, 0, 0),
-                                                child: InkWell(
-                                                  onTap: (){
-                                                    setState(() {
-                                                      tags.removeAt(index);
-                                                    });
-                                                    
-                                                  },
-                                                  child: Icon(
-                                                    Icons.close,
-                                                    size: 17,
+                                            child: Row(
+                                              // mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  tags[index],
+                                                  textAlign: TextAlign.center,
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.w700,
+                                                    height: 0.11,
                                                   ),
-                                                )),
-                                          ],
+                                                ),
+                                                const SizedBox(width: 8),
+                                                Transform(
+                                                    transform:
+                                                        Matrix4.translationValues(
+                                                            0, 0, 0),
+                                                    child: InkWell(
+                                                      onTap: (){
+                                                        setState(() {
+                                                          tags.removeAt(index);
+                                                        });
+                                                        
+                                                      },
+                                                      child: Icon(
+                                                        Icons.close,
+                                                        size: 17,
+                                                      ),
+                                                    )),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    )
-                                    .toList())
+                                      )
+                                      .toList()),
+                            )
                             : SizedBox.shrink(),
                       ],
                     )

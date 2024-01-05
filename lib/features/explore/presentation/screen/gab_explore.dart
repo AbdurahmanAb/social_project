@@ -79,7 +79,7 @@ class _GabFeedState extends State<GabFeed> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.toNamed("friendmore", arguments: asset);
+                      Get.toNamed("/friendmore", arguments: asset);
                     },
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),

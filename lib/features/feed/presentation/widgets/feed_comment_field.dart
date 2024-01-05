@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/utils/constants.dart';
 
@@ -36,22 +37,25 @@ class _FeedCommentFieldState extends State<FeedCommentField> {
                 SizedBox(
                   width: Constants.height15,
                 ),
-                SizedBox(
-                    height: 32,
-                    width: Constants.screen_width * 0.78,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        hintStyle: const TextStyle(fontSize: 12),
-                        fillColor: Constants.bottom,
-                        hintText: "댓글을 남겨주세요",
-                        contentPadding: EdgeInsets.all(Constants.height20),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(25),
-                        ),
+              Expanded(
+                child: IntrinsicHeight(
+                  child: TextField(
+                      maxLines: null,               //  maxLines: null,
+                    decoration: InputDecoration(
+                      filled: true,
+                      
+                      hintStyle: const TextStyle(fontSize: 12),
+                      fillColor: Constants.bottom,
+                      hintText: "댓글을 남겨주세요",
+                      //contentPadding: EdgeInsets.all(Constants.height20),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                    ))
+                    ),
+                  ),
+                ),
+              )
               ],
             ),
           ],
