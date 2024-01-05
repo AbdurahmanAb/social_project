@@ -44,7 +44,7 @@ class MyBottomSheet {
               ),
               InkWell(
                 onTap: (){
-                  onTap2();
+                  onTap2!();
                 },
                 child: Row(
                   children: [

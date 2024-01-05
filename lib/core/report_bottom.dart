@@ -155,7 +155,7 @@ class ReportBottomSheet {
           borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
       constraints: BoxConstraints(
         minHeight: 0.8,
-        maxHeight: Constants.screen_height * 0.8,
+        maxHeight: Constants.screen_height * 0.85,
       ),
       builder: (BuildContext context) {
         return ReportBottom();

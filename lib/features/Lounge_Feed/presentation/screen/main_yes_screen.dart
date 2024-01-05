@@ -23,6 +23,7 @@ import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
 import 'package:kim/features/feed/presentation/widgets/custom_polls.dart';
 import 'package:kim/features/feed/presentation/widgets/feed_comment_field.dart';
+import 'package:kim/features/profile/presentation/screen/others_profile_thumbnail.dart';
 import 'package:kim/features/profile/presentation/screen/profile_thumbnail.dart';
 import 'package:kim/utils/constants.dart';
 import 'package:radio_group_v2/radio_group_v2.dart';
@@ -234,13 +235,13 @@ setState(() {
                                 Avatar: GestureDetector(
                                   onTap: () {
                                     // Get.toNamed("/profilelg");
-                                    ProfileThumbnailShow.showProfileThumnail(
-                                        context, false, 
+                                    OtherProfileShow.showOtherProfile(
+                                        context, true, 
                                         "assets/avatar/avatar2.jpg");
                                   },
                                   child: AvatarImg(
                                     ImgUrl: "assets/avatar/avatar2.jpg",
-                                    isFull: false,
+                                
                                   ),
                                 )),
                           ),

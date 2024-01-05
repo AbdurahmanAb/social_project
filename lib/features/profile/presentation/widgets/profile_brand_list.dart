@@ -5,7 +5,8 @@ import 'package:kim/features/profile/presentation/widgets/brands_list.dart';
 import '../../../../utils/constants.dart';
 
 class ProfileBrandList extends StatelessWidget {
-  const ProfileBrandList({super.key});
+  final bool? isMine;
+   ProfileBrandList({super.key, this.isMine=true});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class ProfileBrandList extends StatelessWidget {
                             SizedBox(
                               height: Constants.height10,
                             ),
-                            Container(
+                          isMine!?  Container(
                               height: 6,
                               width: 53,
                               decoration: BoxDecoration(
@@ -47,8 +48,8 @@ class ProfileBrandList extends StatelessWidget {
                                       //  color: Constants.appColor,
                                       borderRadius: BorderRadius.circular(15)),
                                 ),
-                              ),
-                            )
+                              )
+                            ):SizedBox.shrink(),
                           ],
                         ),
                         SizedBox(
@@ -60,7 +61,7 @@ class ProfileBrandList extends StatelessWidget {
                             SizedBox(
                               height: Constants.height10 * .8,
                             ),
-                            Container(
+                           isMine!? Container(
                               height: 7,
                               width: 53,
                               decoration: BoxDecoration(
@@ -75,7 +76,7 @@ class ProfileBrandList extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(15)),
                                 ),
                               ),
-                            )
+                            ):SizedBox.shrink()
                           ],
                         ),
                         SizedBox(
@@ -87,7 +88,7 @@ class ProfileBrandList extends StatelessWidget {
                             SizedBox(
                               height: Constants.height10 * .8,
                             ),
-                            Container(
+                          isMine!?  Container(
                               height: 7,
                               width: 53,
                               decoration: BoxDecoration(
@@ -102,7 +103,7 @@ class ProfileBrandList extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(15)),
                                 ),
                               ),
-                            )
+                            ):SizedBox.shrink()
                           ],
                         ),
                       ],

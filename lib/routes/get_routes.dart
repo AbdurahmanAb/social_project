@@ -5,6 +5,7 @@ import 'package:kim/features/explore/presentation/screen/new_open_brand.dart';
 import 'package:kim/features/explore/presentation/screen/recent_search.dart';
 import 'package:kim/features/feed/presentation/screen/text_feed.dart';
 import 'package:kim/features/profile/presentation/screen/gab_insight.dart';
+import 'package:kim/features/profile/presentation/screen/others_profile_thumbnail.dart';
 import 'package:kim/features/profile/presentation/screen/profile_badge.dart';
 import 'package:kim/features/profile/presentation/screen/profile_connection.dart';
 import 'package:kim/features/profile/presentation/screen/profile_edit.dart';
@@ -67,6 +68,9 @@ class Routes {
     GetPage(name: gabInsight, page: () => GabInsight()),
     GetPage(name: textFeed, page: () => TextFeed()),
     GetPage(name: newbrand, page: () => NewOpenBrand()),
+    GetPage(name:othersprofile , page: ()=> OthersProfile()),
+
+
     GetPage(
         name: frienmdMore,
         page: () => FriendMore(imgUrl: Get.arguments as List<String>)),

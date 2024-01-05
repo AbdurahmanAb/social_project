@@ -54,7 +54,12 @@ final bool? hasTitle;
                         "assets/icons/icon_edit.png",
                         "assets/icons/icon_delete.png",
                         "삭제하기",
-                        "닫기");
+                        "닫기",
+                        (){},
+                        (){
+                          
+                        }
+                        );
                   },
                   child: Icon(Icons.more_horiz))
             ],

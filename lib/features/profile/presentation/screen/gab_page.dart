@@ -117,8 +117,8 @@ class _GabPageState extends State<GabPage> {
            ),
     Divider(thickness: 3,color: Constants.black,),
           GabSearch(),
-          LongPost(brandPost: true,img: "assets/avatar/post5.jpg"),
-          LongPost(),
+          LongPost(brandPost: true,hasTitle: false, img: "assets/avatar/post5.jpg"),
+          LongPost(hasTitle: false,),
         ],
       ),
     );

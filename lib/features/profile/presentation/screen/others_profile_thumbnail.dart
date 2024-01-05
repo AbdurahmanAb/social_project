@@ -20,22 +20,22 @@ import 'package:kim/features/profile/presentation/widgets/social_row.dart';
 import 'package:kim/features/profile/presentation/widgets/titles_text.dart';
 import 'package:kim/utils/constants.dart';
 
-class ProfileThumbnail extends StatefulWidget {
+class OthersProfile extends StatefulWidget {
   final String? ImgUrl;
-  ProfileThumbnail({super.key, this.ImgUrl });
+  OthersProfile({super.key, this.ImgUrl});
 
   @override
-  State<ProfileThumbnail> createState() => _ProfileThumbnailState();
+  State<OthersProfile> createState() => _OthersProfileState();
 }
 
-class _ProfileThumbnailState extends State<ProfileThumbnail>
+class _OthersProfileState extends State<OthersProfile>
     with TickerProviderStateMixin {
   late TabController tabController;
   int selectedIndex = 0;
 
   void initState() {
     super.initState();
-    tabController = TabController(length: 3, vsync: this);
+    tabController = TabController(length: 2, vsync: this);
     tabController.addListener(
       () {
         setState(() {
@@ -87,34 +87,10 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                     right: Constants.height10,
                     child: Row(
                       children: [
-                        GestureDetector(
-                            onTap: () {
-                              Get.back();
-                              Share.showBottomSheet(context);
-                            },
-                            child:
-                                Image.asset("assets/icons/button_share.png")),
+                        Image.asset("assets/icons/button_setting.png"),
                         SizedBox(
                           width: Constants.height10,
                         ),
-                        Container(
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.circular(Constants.height10 * 5),
-                              color: Constants.white,
-                            ),
-                            padding: EdgeInsets.all(Constants.height15 / 3),
-                            child: InkWell(
-                              overlayColor:
-                                  MaterialStatePropertyAll(Colors.transparent),
-                              onTap: () {
-                                Get.back();
-                                Get.toNamed("/profileEdit");
-                              },
-                              child: Image.asset(
-                                "assets/icons/icon_component.png",
-                              ),
-                            ))
                       ],
                     ),
                   ),
@@ -126,12 +102,12 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                               top: 4, bottom: 4, left: 8, right: 8),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(9),
-                              color: Constants.white),
+                              color: Constants.appColor),
                           child: Text(
-                            '프로필 편집',
+                            '팔로워',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: const Color(0xFF7C7C80),
+                              color: Colors.black,
                               fontSize: Constants.smFont,
                               fontWeight: FontWeight.w700,
                             ),
@@ -175,8 +151,24 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
               SizedBox(
                 height: Constants.height10,
               ),
-           ProfileBrandList(),   //TitleText(),
-         
+              Padding(
+
+                padding:  EdgeInsets.symmetric(horizontal:8.0,vertical: 2),
+                child: Text(
+                  '내 소개를 등록하세요.',
+                  style: TextStyle(
+                    color: Color(0xFFDBFF00),
+                    fontSize: 14,
+                    fontFamily: 'KoPubDotum_Pro',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: Constants.height15,
+              ),
+              ProfileBrandList(isMine: false,), //TitleText(),
+
               SizedBox(
                 height: Constants.height20 * 1.8,
               ),
@@ -200,14 +192,9 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
                               "assets/avatar/gab_white.png",
                             ),
                       Text("댓글"),
-                      Text("연결")
                     ]),
               ),
-              selectedIndex == 0
-                  ? GabPage()
-                  : selectedIndex == 1
-                      ? PageTwo()
-                      : ConnectionPage()
+              selectedIndex == 0 ? GabPage() : PageTwo()
 
               //IF USER HAVE NOGAB RENDER THIS WIDGET
               // Expanded(
@@ -227,8 +214,8 @@ class _ProfileThumbnailState extends State<ProfileThumbnail>
   }
 }
 
-class ProfileThumbnailShow {
-  static void showProfileThumnail(context, isFull, [imgUrl]) {
+class OtherProfileShow {
+  static void showOtherProfile(context, isFull, [imgUrl]) {
     showModalBottomSheet(
         isScrollControlled: true,
         clipBehavior: Clip.antiAlias,
@@ -236,10 +223,10 @@ class ProfileThumbnailShow {
             borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
         constraints: BoxConstraints(
             maxHeight: isFull
-                ? Constants.screen_height * .96
+                ? Constants.screen_height * 0.9
                 : Constants.screen_height * .86),
         context: context,
         builder: (context) =>
-            ProfileThumbnail(ImgUrl: imgUrl != "" ? imgUrl : ""));
+            OthersProfile(ImgUrl: imgUrl != "" ? imgUrl : ""));
   }
 }
