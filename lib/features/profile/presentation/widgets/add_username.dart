@@ -77,7 +77,7 @@ class _AddUserNameState extends State<AddUserName> {
               child: Center(
                 child: Text(
                   "저장",
-                  style: TestStyles.style3,
+                  style: TextStyles.style3,
                 ),
               ),
             ),

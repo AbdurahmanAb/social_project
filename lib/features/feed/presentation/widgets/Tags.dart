@@ -5,7 +5,7 @@ import 'package:kim/utils/constants.dart';
 class Tags extends StatelessWidget {
   final String name;
   final Color color;
-  const Tags({this.color=Constants.bottom, required this.name, super.key});
+  const Tags({this.color=Constants.postColor, required this.name, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Tags extends StatelessWidget {
       decoration: BoxDecoration(
         border:Border.all(width: 1, color: Constants.white),
   borderRadius: BorderRadius.circular(18),
-     color: Constants.postColor
+     color: color
       ),
     
 child: Text(name),

@@ -43,11 +43,11 @@ onTap: (){
           child: Row(
             children: [
               
-              Text('팔로워  $followers', style: TestStyles.style2),
+              Text('팔로워  $followers', style: TextStyles.style2),
               SizedBox(
                 width: Constants.height20,
               ),
-              Text('팔로잉  $following', style: TestStyles.style2)
+              Text('팔로잉  $following', style: TextStyles.style2)
             ],
           ),
         )

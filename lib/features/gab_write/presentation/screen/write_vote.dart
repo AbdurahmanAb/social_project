@@ -70,13 +70,13 @@ void accessImage() async{
                               onTap: () {
                                 Get.back();
                               },
-                              child: Text("취소")),
-                          Text("새로운 피드"),
+                              child: const Text("취소")),
+                          const Text("새로운 피드"),
                           GestureDetector(
                               onTap: () {
                                 showDialog(
                                     context: context,
-                                    builder: (context) => CustomAlert());
+                                    builder: (context) => const CustomAlert());
                               },
                               child: Text(
                                 "등록",
@@ -129,9 +129,12 @@ void accessImage() async{
                                   textValue = value;
                                 });
                               },
-                              style: TextStyle(
+                            
+                              style: const TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w300),
-                              decoration: InputDecoration.collapsed(
+                              decoration: const InputDecoration(
+                                isDense: true,
+                                border: InputBorder.none,
                                 hintText:
                                     " 내용을 입력해주세요. \n - 서로를 존중하고 누구나 기분 좋게 참여할 수 있는 커뮤니티가 될 수 있도록 함께 노력해주세요!- 토픽에 맞지 않는 글로 판단되어 다른 유저로부터 일정수 이상의 신고를 받는 경우 글리 자동으로 숨김처리 될 수 있습니다.- 불법촬영물등을 업로드하거나 유통으로 간주할 수 있는 게시물을 작성하는 경우 게시물은 숨김조치되며 영구적으로 이용제한 될 수 있습니다.",
                                 hintStyle: TextStyle(
@@ -141,25 +144,44 @@ void accessImage() async{
                                 ),
                               ),
                               keyboardType: TextInputType.multiline,
-                              maxLines: 10,
+                              maxLines:8,
+                            
                               autofocus: true,
                             ),
                           imageFileList!.length > 0?
                               SingleChildScrollView(
                                 child: ListView.separated(
-                                  physics: NeverScrollableScrollPhysics(),
+                                  physics: const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
                                     itemBuilder: (context, index) {
                                       return Container(
-                                        child:  Image.file(File(imageFileList![index].path),
+                                      //  height: 320,
+                                        child:  Stack(
+                                          children: [
+                                            ClipRRect(
+                                            borderRadius: BorderRadius.circular(15),                                          child: Image.file(fit: BoxFit.cover, File(imageFileList![index].path),
+                                              ),
+                                            ),
+
+                                            Positioned(
+                                              right: 18,top: 20,
+                                              child: InkWell(
+                                                
+                                                onTap: () {
+                                                  setState(() {
+                                                    imageFileList!.removeAt(index);
+                                                  });
+                                                },
+                                                child: Image.asset("assets/icons/button_closed.png")))
+                                          ],
                                         ));
                                     },
                                     separatorBuilder: (context, index) =>
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 10,
                                         ),
                                     itemCount: imageFileList!.length),
-                              ):SizedBox.shrink(),
+                              ):const SizedBox.shrink(),
                           ],
                         ),
                       ),
@@ -224,7 +246,7 @@ void accessImage() async{
                       SizedBox(
                         width: Constants.height10,
                       ),
-                      Text("공지로 고정")
+                      const Text("공지로 고정")
                     ],
                   )
                 ],

@@ -103,7 +103,7 @@ class _FeddState extends State<Fedd> {
                               )
                             ],
                           ),
-                          SizedBox(
+                          SizedBox( 
                             height: Constants.height10,
                           ),
                           const Text(
@@ -147,6 +147,7 @@ class _FeddState extends State<Fedd> {
                           ),
 
                           ListView.separated(
+                            physics: NeverScrollableScrollPhysics(),
                             separatorBuilder: (context, index) => SizedBox(height: Constants.height15,),
                             itemCount:assets.length,
                             shrinkWrap: true,
@@ -178,6 +179,7 @@ class _FeddState extends State<Fedd> {
                     SingleChildScrollView(
                       child: ListView.builder(
                         shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: 8,
                         itemBuilder: (context, index) {
                           return FeedCommentList(
