@@ -112,7 +112,8 @@ class _ExploreSearchState extends State<ExploreSearch> {
                           index = 0;
                         });
                       },
-                      child: Container(
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 500),
                           width: 75,
                           decoration: BoxDecoration(
                               color:  Colors.transparent,
@@ -128,7 +129,8 @@ class _ExploreSearchState extends State<ExploreSearch> {
                           index = 1;
                         });
                       },
-                      child: Container(
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 500),
                         width: 75,
                         decoration: BoxDecoration(
                             color: index == 1
@@ -156,14 +158,16 @@ class _ExploreSearchState extends State<ExploreSearch> {
                           index = 2;
                         });
                       },
-                      child: Container(
+                      child:AnimatedContainer(
                         width: 75,
+                        
                         decoration: BoxDecoration(
                             color: index == 2
                                 ? Constants.appColor
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(12)),
                         padding: EdgeInsets.all(8.0),
+                        duration: Duration(milliseconds: 500),
                         child: Center(
                           child: Text(
                             "라운지",
@@ -183,7 +187,8 @@ class _ExploreSearchState extends State<ExploreSearch> {
                           index = 3;
                         });
                       },
-                      child: Container(
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 500),
                         width: 75,
                         decoration: BoxDecoration(
                             color: index == 3

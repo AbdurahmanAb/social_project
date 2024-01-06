@@ -25,7 +25,7 @@ class TextFeed extends StatefulWidget {
 
   const TextFeed({ super.key});
 
-  @override
+  @override                                                                                                                     
   State<TextFeed> createState() => _TextFeedState();
 }
 
@@ -59,6 +59,7 @@ class _TextFeedState extends State<TextFeed> {
                             children: [
                               const AvatarImg(
                                 height: 40,
+                                
                               ),
                               SizedBox(
                                 width: Constants.height10,
