@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/core/ui/custom_alert.dart';
@@ -20,11 +23,27 @@ class WriteVote extends StatefulWidget {
 }
 
 class _WriteVoteState extends State<WriteVote> {
-
-
   bool hastext = false;
   String titleValue = "";
   String textValue = "";
+
+  final ImagePicker imagePicker = ImagePicker();
+  List<XFile>? imageFileList = [];
+ 
+  void selectImages() async {
+    Get.back();
+    final List<XFile>? selectedImages = await imagePicker.pickMultiImage();
+    if (selectedImages!.isNotEmpty) {
+      imageFileList!.addAll(selectedImages);
+    }
+    print("Image List Length:" + imageFileList!.length.toString());
+    setState(() {});
+  }
+void accessImage() async{
+//  final XFile? image= await imagePicker. ;
+
+
+}
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -124,7 +143,23 @@ class _WriteVoteState extends State<WriteVote> {
                               keyboardType: TextInputType.multiline,
                               maxLines: 10,
                               autofocus: true,
-                            )
+                            ),
+                          imageFileList!.length > 0?
+                              SingleChildScrollView(
+                                child: ListView.separated(
+                                  physics: NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    itemBuilder: (context, index) {
+                                      return Container(
+                                        child:  Image.file(File(imageFileList![index].path),
+                                        ));
+                                    },
+                                    separatorBuilder: (context, index) =>
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                    itemCount: imageFileList!.length),
+                              ):SizedBox.shrink(),
                           ],
                         ),
                       ),
@@ -143,7 +178,17 @@ class _WriteVoteState extends State<WriteVote> {
                     children: [
                       GestureDetector(
                           onTap: () {
-                          ImageBottomSheet.showBottomSheet(context, ImageBottomSheet(text1: "카메라", icon1: "assets/icons/icon_modify.png", icon2: "assets/icons/icon_picture.png", text2: "사진 앨범", btnTxt: "닫기", onTap2:()=> pickimage(),));
+                            ImageBottomSheet.showBottomSheet(
+                                context,
+                                ImageBottomSheet(
+                                  text1: "카메라",
+                                  icon1: "assets/icons/icon_modify.png",
+                                  icon2: "assets/icons/icon_picture.png",
+                                  text2: "사진 앨범",
+                                  btnTxt: "닫기",
+                                  onTap1: ()=>accessImage(),
+                                  onTap2: () => selectImages(),
+                                ));
                           },
                           child: Image.asset("assets/icons/icon_picture.png")),
                       SizedBox(
@@ -192,16 +237,6 @@ class _WriteVoteState extends State<WriteVote> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 class ImageBottomSheet extends StatelessWidget {
   final String text1;
   final String icon1;
@@ -221,7 +256,7 @@ class ImageBottomSheet extends StatelessWidget {
       required this.btnTxt,
       this.onTap1,
       this.onTap2,
-     this.text3,
+      this.text3,
       this.icon3});
 
   @override
@@ -284,13 +319,14 @@ class ImageBottomSheet extends StatelessWidget {
     ;
   }
 
-  static void showBottomSheet(BuildContext context,  Widget Sheet) {
+  static void showBottomSheet(BuildContext context, Widget Sheet) {
     showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return Sheet;
-      });
-  }}
+        context: context,
+        builder: (BuildContext context) {
+          return Sheet;
+        });
+  }
+}
 
 /// accept 4 (2, icons and 2 text) arguments to show when the bottomSheet is opened
 ///  the elements will be displayed as row

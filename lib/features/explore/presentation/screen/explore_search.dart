@@ -113,7 +113,7 @@ class _ExploreSearchState extends State<ExploreSearch> {
                         });
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 500),
+                        duration: Duration(milliseconds: 1000),
                           width: 75,
                           decoration: BoxDecoration(
                               color:  Colors.transparent,
@@ -130,7 +130,7 @@ class _ExploreSearchState extends State<ExploreSearch> {
                         });
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 500),
+                        duration: Duration(milliseconds: 1000),
                         width: 75,
                         decoration: BoxDecoration(
                             color: index == 1
@@ -167,7 +167,7 @@ class _ExploreSearchState extends State<ExploreSearch> {
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(12)),
                         padding: EdgeInsets.all(8.0),
-                        duration: Duration(milliseconds: 500),
+                        duration: Duration(milliseconds: 1000),
                         child: Center(
                           child: Text(
                             "라운지",
@@ -188,7 +188,7 @@ class _ExploreSearchState extends State<ExploreSearch> {
                         });
                       },
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 500),
+                        duration: Duration(milliseconds: 1000),
                         width: 75,
                         decoration: BoxDecoration(
                             color: index == 3

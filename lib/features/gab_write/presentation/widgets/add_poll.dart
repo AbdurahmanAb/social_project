@@ -150,7 +150,7 @@ class _PollWidgetState extends State<PollWidget> {
                                     : Row(
                                         children: [
                                           SizedBox(
-                                            width: Constants.height20*15,
+                                            width: Constants.height20*12,
                                             child: InputPoll(
                                               text: "항목 싱가포르",
                                               onChanged: (value) => () {},
