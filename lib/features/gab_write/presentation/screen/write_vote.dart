@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:kim/core/MyBottomSheet.dart';
+import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/custom_alert.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_poll.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_tag.dart';
@@ -23,13 +24,13 @@ class WriteVote extends StatefulWidget {
 }
 
 class _WriteVoteState extends State<WriteVote> {
-  bool hastext = false;
+  bool checked = false;
   String titleValue = "";
   String textValue = "";
 
   final ImagePicker imagePicker = ImagePicker();
   List<XFile>? imageFileList = [];
- 
+
   void selectImages() async {
     Get.back();
     final List<XFile>? selectedImages = await imagePicker.pickMultiImage();
@@ -39,11 +40,10 @@ class _WriteVoteState extends State<WriteVote> {
     print("Image List Length:" + imageFileList!.length.toString());
     setState(() {});
   }
-void accessImage() async{
+
+  void accessImage() async {
 //  final XFile? image= await imagePicker. ;
-
-
-}
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -129,7 +129,6 @@ void accessImage() async{
                                   textValue = value;
                                 });
                               },
-                            
                               style: const TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w300),
                               decoration: const InputDecoration(
@@ -144,44 +143,75 @@ void accessImage() async{
                                 ),
                               ),
                               keyboardType: TextInputType.multiline,
-                              maxLines:8,
-                            
+                              maxLines: 8,
                               autofocus: true,
                             ),
-                          imageFileList!.length > 0?
-                              SingleChildScrollView(
-                                child: ListView.separated(
-                                  physics: const NeverScrollableScrollPhysics(),
-                                    shrinkWrap: true,
-                                    itemBuilder: (context, index) {
-                                      return Container(
-                                      //  height: 320,
-                                        child:  Stack(
-                                          children: [
-                                            ClipRRect(
-                                            borderRadius: BorderRadius.circular(15),                                          child: Image.file(fit: BoxFit.cover, File(imageFileList![index].path),
+                            imageFileList!.length > 0
+                                ? SingleChildScrollView(
+                                    child: ListView.separated(
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        itemBuilder: (context, index) {
+                                          return Container(
+                                              //  height: 320,
+                                              child: Stack(
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                                child: Image.file(
+                                                  fit: BoxFit.cover,
+                                                  File(imageFileList![index]
+                                                      .path),
+                                                ),
                                               ),
+                                              index == 0
+                                                  ? Positioned(
+                                                      top: 10,
+                                                      left: 15,
+                                                      child: Container(
+                                                        width: 50,
+                                                        padding: EdgeInsets.all(
+                                                            Constants.height10 /
+                                                                2),
+                                                        decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        25),
+                                                            color: Constants
+                                                                .appColor),
+                                                        child: Center(
+                                                            child: Text(
+                                                          "대표",
+                                                          style:
+                                                              TextStyles.style3,
+                                                        )),
+                                                      ))
+                                                  : SizedBox.shrink(),
+                                              Positioned(
+                                                  right: 18,
+                                                  top: 20,
+                                                  child: InkWell(
+                                                      onTap: () {
+                                                        setState(() {
+                                                          imageFileList!
+                                                              .removeAt(index);
+                                                        });
+                                                      },
+                                                      child: Image.asset(
+                                                          "assets/icons/button_closed.png")))
+                                            ],
+                                          ));
+                                        },
+                                        separatorBuilder: (context, index) =>
+                                            const SizedBox(
+                                              height: 10,
                                             ),
-
-                                            Positioned(
-                                              right: 18,top: 20,
-                                              child: InkWell(
-                                                
-                                                onTap: () {
-                                                  setState(() {
-                                                    imageFileList!.removeAt(index);
-                                                  });
-                                                },
-                                                child: Image.asset("assets/icons/button_closed.png")))
-                                          ],
-                                        ));
-                                    },
-                                    separatorBuilder: (context, index) =>
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
-                                    itemCount: imageFileList!.length),
-                              ):const SizedBox.shrink(),
+                                        itemCount: imageFileList!.length),
+                                  )
+                                : const SizedBox.shrink(),
                           ],
                         ),
                       ),
@@ -208,7 +238,7 @@ void accessImage() async{
                                   icon2: "assets/icons/icon_picture.png",
                                   text2: "사진 앨범",
                                   btnTxt: "닫기",
-                                  onTap1: ()=>accessImage(),
+                                  onTap1: () => accessImage(),
                                   onTap2: () => selectImages(),
                                 ));
                           },
@@ -240,14 +270,21 @@ void accessImage() async{
                       ),
                     ],
                   ),
-                  Row(
-                    children: [
-                      Image.asset("assets/icons/checkbox.png"),
-                      SizedBox(
-                        width: Constants.height10,
-                      ),
-                      const Text("공지로 고정")
-                    ],
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        checked = !checked;
+                      });
+                    },
+                    child: Row(
+                      children: [
+                       checked ?Image.asset("assets/icons/checked.png"): Image.asset("assets/icons/checkbox.png"),
+                        SizedBox(
+                          width: Constants.height10,
+                        ),
+                        const Text("공지로 고정")
+                      ],
+                    ),
                   )
                 ],
               ),
