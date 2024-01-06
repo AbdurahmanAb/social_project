@@ -1,6 +1,7 @@
 import 'package:any_link_preview/any_link_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kim/utils/constants.dart';
 
 class LinkPreview extends StatelessWidget {
   final String url;
@@ -22,7 +23,7 @@ class LinkPreview extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 15,
               ),
-              bodyStyle: TextStyle(color: Colors.grey, fontSize: 12),
+              bodyStyle: TextStyle(color: Constants.black, fontSize: 12),
               errorBody: 'Link Not found',
               errorTitle: 'Show my custom error title',
               errorWidget: Container(
@@ -31,7 +32,7 @@ class LinkPreview extends StatelessWidget {
               ),
               errorImage: "https://google.com/",
               cache: Duration(days: 1),
-              backgroundColor: Colors.grey[300],
+              backgroundColor: Colors.white,
               borderRadius: 12,
               removeElevation: false,
               boxShadow: [BoxShadow(blurRadius: 3, color: Colors.grey)],

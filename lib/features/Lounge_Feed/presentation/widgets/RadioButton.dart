@@ -33,7 +33,7 @@ class _RadioButtonState extends State<RadioButton> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-          vertical: Constants.height20, horizontal: Constants.height10),
+          vertical: Constants.height20, horizontal: Constants.height20),
       decoration: BoxDecoration(
           color: const Color(0xFF545456),
           borderRadius: BorderRadius.circular(10)),

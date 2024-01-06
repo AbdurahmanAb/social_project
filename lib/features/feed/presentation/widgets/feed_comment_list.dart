@@ -41,8 +41,8 @@ class FeedCommentList extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AvatarImg(ImgUrl: "assets/avatar/avatar.jpg",),
-               // brandPost ? BrandPost() : UserPost(),
+               // AvatarImg(ImgUrl: "assets/avatar/avatar.jpg",),
+               brandPost ? BrandPost() : UserPost(),
                 Spacer(),
                 Text(
                   "24분 전",
@@ -60,7 +60,16 @@ class FeedCommentList extends StatelessWidget {
             SizedBox(
               height: Constants.height10,
             ),
-            MidText(text: text, ),
+        Text(
+    '답글 내용',
+    style: TextStyle(
+        color: Colors.white,
+        fontSize: 14,
+        fontFamily: 'KoPubDotum_Pro',
+        fontWeight: FontWeight.w500,
+        
+    ),
+),
             SizedBox(
               height: Constants.height15,
             ),

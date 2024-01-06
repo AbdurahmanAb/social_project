@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/core/custom_check_box.dart';
 import 'package:kim/core/radio_button_group.dart';
+import 'package:kim/core/text/link_text.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
 
@@ -20,6 +21,7 @@ import '../../../../core/link_preview.dart';
 import '../../../../core/text/HeaderText.dart';
 import '../../../../core/ui/avatar.dart';
 import '../../../../core/ui/app_button.dart';
+import '../../../Lounge_Feed/presentation/widgets/RadioButton.dart';
 
 class Fedd extends StatefulWidget {
   final int id;
@@ -33,7 +35,12 @@ class _FeddState extends State<Fedd> {
   bool disabled = true;
 
   String label = "";
-  List<String> assets =["assets/avatar/post1.jpg","assets/avatar/post2.jpg","assets/avatar/post3.jpg","assets/avatar/post5.jpg"];
+  List<String> assets = [
+    "assets/avatar/post1.jpg",
+    "assets/avatar/post2.jpg",
+    "assets/avatar/post3.jpg",
+    "assets/avatar/post5.jpg"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +110,7 @@ class _FeddState extends State<Fedd> {
                               )
                             ],
                           ),
-                          SizedBox( 
+                          SizedBox(
                             height: Constants.height10,
                           ),
                           const Text(
@@ -145,28 +152,36 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height20,
                           ),
-
                           ListView.separated(
                             physics: NeverScrollableScrollPhysics(),
-                            separatorBuilder: (context, index) => SizedBox(height: Constants.height15,),
-                            itemCount:assets.length,
+                            separatorBuilder: (context, index) => SizedBox(
+                              height: Constants.height15,
+                            ),
+                            itemCount: assets.length,
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
-                            return    FeedImagesList(imgUrl: assets[index]);
-                          },),
-                       
+                              return FeedImagesList(imgUrl: assets[index]);
+                            },
+                          ),
                           SizedBox(
                             height: Constants.height10,
                           ),
-               
-                          
+                          LinkText(text: "https://blog.naver.com/"),
+                           SizedBox(
+                            height: Constants.height10,
+                          ),
+                          LinkPreview(url: "https://blog.naver.com/"),
                           SizedBox(
+                            height: Constants.height20,
+                          ),      RadioButton(),
+                            SizedBox(
                             height: Constants.height20,
                           ),
                           const Comment(),
                           SizedBox(
                             height: Constants.height20,
                           ),
+                        
                         ],
                       ),
                     ),
@@ -175,7 +190,7 @@ class _FeddState extends State<Fedd> {
                     // RealPoll(),
 
                     // RealPoll(),
-
+  Divider(thickness: 4,color: Constants.appBgColor,),
                     SingleChildScrollView(
                       child: ListView.builder(
                         shrinkWrap: true,
@@ -191,13 +206,10 @@ class _FeddState extends State<Fedd> {
                         },
                       ),
                     ),
-
-               LinkPreview(url: "www.google.com"),
                   ],
                 ),
               ),
             ),
-
             Container(
                 padding: EdgeInsets.all(Constants.height10 / 2),
                 color: Constants.postColor,

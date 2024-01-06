@@ -11,6 +11,7 @@ import 'package:kim/core/custom_check_box.dart';
 import 'package:kim/core/drawer/custom_drawer.dart';
 
 import 'package:kim/core/MyBottomSheet.dart';
+import 'package:kim/core/link_preview.dart';
 
 import 'package:kim/core/modal.dart';
 import 'package:kim/core/report_bottom.dart';
@@ -245,7 +246,7 @@ setState(() {
                                   ),
                                 )),
                           ),
-                    
+                     
                         ],
                       ),
                     ),
