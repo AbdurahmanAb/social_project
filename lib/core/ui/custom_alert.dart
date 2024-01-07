@@ -5,7 +5,11 @@ import 'package:kim/utils/constants.dart';
 
 class CustomAlert extends StatelessWidget {
   final bool? verticaldivider;
-  const CustomAlert({super.key, this.verticaldivider=false});
+  final String  title;
+  final String subtitle;
+  final String option1;
+  final String option2;
+   CustomAlert({super.key, this.verticaldivider=false, required this.title, required this.subtitle, required this.option1, required this.option2});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class CustomAlert extends StatelessWidget {
       backgroundColor: Constants.white,
       contentTextStyle: TextStyle(color: Colors.black),
       title: Text(
-        "갭 등록",
+      title,
         textAlign: TextAlign.center,
       ),
       alignment: Alignment.center,
@@ -29,9 +33,9 @@ class CustomAlert extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("글을 등록하시겠습니까?"),
-            SizedBox(height: Constants.height10,),
-           Divider(color: Constants.chipColor, ),
+            Text(subtitle),
+            SizedBox(height: Constants.height20,),
+           Divider(color: Constants.chipColor, height: 0,),
            
             Container(
               
@@ -40,7 +44,7 @@ class CustomAlert extends StatelessWidget {
                 
                 children: [
                   Text(
-                    '취소',
+                    option1,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xFF007AFF),
@@ -48,14 +52,25 @@ class CustomAlert extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                 VerticalDivider(
+                  LayoutBuilder(
+                    builder: (context, BoxConstraints constraints) {
+                      return Container(
+                      height: 62,
+                      constraints: BoxConstraints(maxHeight: constraints.maxHeight),
+                      width: 2,
+                      color: Constants.chipColor,
+                      );
+                    }
+                  ),
+                //  VerticalDivider(
+                //  thickness: 3,
+
+                //    indent: 0,
+                //    endIndent: 0,
                  
-                   indent: 0,
-                   endIndent: 0,
-                 
-                 ),
+                //  ),
                   Text(
-                    '등록',
+                    option2,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xFF007AFF),

@@ -9,10 +9,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/custom_alert.dart';
+import 'package:kim/core/ui/dialog_widget.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_poll.dart';
 import 'package:kim/features/gab_write/presentation/widgets/add_tag.dart';
 import 'package:kim/features/gab_write/presentation/widgets/image_bottom_sheet.dart';
-import 'package:kim/features/gab_write/presentation/widgets/image_picker.dart';
+//import 'package:kim/features/gab_write/presentation/widgets/image_picker.dart';
 import 'package:kim/utils/constants.dart';
 
 import '../../../../core/ui/app_button.dart';
@@ -33,12 +34,13 @@ class _WriteVoteState extends State<WriteVote> {
   List<XFile>? imageFileList = [];
 
   void selectImages() async {
-    Get.back();
+    showDialog(context: context, builder: (context) => DialogContet(title: "알 림", content:"사진은 최대 5개까지 선택 가능합니다."),);
+                         
     final List<XFile>? selectedImages = await imagePicker.pickMultiImage();
     if (selectedImages!.isNotEmpty) {
       imageFileList!.addAll(selectedImages);
     }
-    print("Image List Length:" + imageFileList!.length.toString());
+   //print("Image List Length:" + imageFileList!.length.toString());
     setState(() {});
   }
 
@@ -77,7 +79,7 @@ class _WriteVoteState extends State<WriteVote> {
                               onTap: () {
                                 showDialog(
                                     context: context,
-                                    builder: (context) => const CustomAlert());
+                                    builder: (context) => CustomAlert(title:"갭 등록", subtitle: "글을 등록하시겠습니까?", option1: "취소", option2: "등록")  );
                               },
                               child: Text(
                                 "등록",
@@ -240,7 +242,10 @@ class _WriteVoteState extends State<WriteVote> {
                                   text2: "사진 앨범",
                                   btnTxt: "닫기",
                                   onTap1: () => accessImage(),
-                                  onTap2: () => selectImages(),
+                                  onTap2: () => {
+                                    Get.back(),
+                                       
+                                    selectImages()},
                                 ));
                           },
                           child: Image.asset("assets/icons/icon_picture.png")),

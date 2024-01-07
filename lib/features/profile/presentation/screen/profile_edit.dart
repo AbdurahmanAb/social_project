@@ -257,9 +257,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                                       Colors.transparent),
                                   onTap: () {
                                     AddUserame.showUsernameDialog(
-                                      context,
-                                      "유튜브 계정 등록",
-                                    );
+                                        context, "유튜브 계정 등록", true);
                                   },
                                   child: Icon(Icons.add))
                             ],
