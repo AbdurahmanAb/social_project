@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../utils/constants.dart';
@@ -16,16 +17,7 @@ class BottomModal extends StatefulWidget {
 class _BottomModalState extends State<BottomModal> {
 
 
-void initState(){
-  super.initState();
-//   Timer(Duration(seconds: 2), () { 
-// setState(() {
-//   Get.back();
-// });
 
-
-//   });
-}
 
 
   @override
@@ -68,4 +60,14 @@ void initState(){
       ),
     );
   }
+
+
+
+}
+class ShowPopup{
+
+  static void ShowDeletedPopup(){
+    Get.back();
+Get.showSnackbar(GetSnackBar(backgroundColor: Colors.transparent, duration: Duration(seconds: 2),messageText: BottomModal(),));
+}
 }

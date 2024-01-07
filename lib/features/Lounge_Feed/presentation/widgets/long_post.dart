@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kim/core/MyBottomSheet.dart';
+import 'package:kim/core/modal.dart';
 import 'package:kim/core/text/link_text.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
+import 'package:kim/features/Lounge_Feed/presentation/widgets/showBottomSuMenu.dart';
 import 'package:kim/features/explore/presentation/widgets/brand.dart';
 import 'package:kim/utils/constants.dart';
 
@@ -59,7 +61,10 @@ class LongPost extends StatelessWidget {
                         "삭제하기",
                         "닫기",
                         () {},
-                        () {});
+                        () {
+
+                      ShowPopup.ShowDeletedPopup();
+                        });
                   },
                   child: Icon(Icons.more_horiz))
             ],
