@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:kim/core/share/socials.dart';
 import 'package:kim/core/text/MidText.dart';
 import 'package:kim/core/Row_widget.dart';
 import 'package:kim/core/ui/app_button.dart';
 import 'package:kim/core/text/HeaderText.dart';
 
-import '../utils/constants.dart';
+import '../../utils/constants.dart';
 
 class Share {
   static void showBottomSheet(BuildContext context) {
@@ -41,7 +42,7 @@ class Share {
                             children: [
                               Container(
                                 padding: EdgeInsets.all(Constants.height10),
-                                color: Constants.Iconbg,
+                                color: Constants.mainColor,
                                 child: Image.asset(
                                     "assets/avatar/App Icon(1).png"),
                               ),
@@ -218,84 +219,18 @@ class Share {
                   ),
                 ),
                 const Divider(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: const Icon(Icons.cleaning_services_rounded),
-                          ),
-                          const Text(
-                            "AirDrop",
-                            style: TextStyle(fontSize: 8),
-                          )
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: const Icon(Icons.cleaning_services_rounded),
-                          ),
-                          const Text(
-                            "AirDrop",
-                            style: TextStyle(fontSize: 8),
-                          )
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: const Icon(Icons.cleaning_services_rounded),
-                          ),
-                          const Text(
-                            "AirDrop",
-                            style: TextStyle(fontSize: 8),
-                          )
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: const Icon(Icons.cleaning_services_rounded),
-                          ),
-                          const Text(
-                            "AirDrop",
-                            style: TextStyle(fontSize: 8),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+               Socials(),
                 const Divider(),
                 Padding(
                   padding: EdgeInsets.all(Constants.height10),
                   child: Container(
                       padding: EdgeInsets.all(Constants.height10),
                       decoration: BoxDecoration(
-                          color: Constants.Iconbg,
+                          color: Constants.black,
                           borderRadius:
                               BorderRadius.circular(Constants.height10)),
-                      child: const RowWidget( alignment: MainAxisAlignment.spaceBetween,
+                      child: const RowWidget(
+                          alignment: MainAxisAlignment.spaceBetween,
                           content1: MidText(text: "Copy Link"),
                           content2: Icon(Icons.copy))),
                 ),
@@ -304,24 +239,28 @@ class Share {
                   child: Container(
                     padding: EdgeInsets.all(Constants.height10),
                     decoration: BoxDecoration(
-                        color: Constants.Iconbg,
+                        color: Constants.black,
                         borderRadius:
                             BorderRadius.circular(Constants.height10)),
-                    child: const Column(
+                    child:  Column(
                       children: [
-                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
+                        RowWidget(
+                            alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Add to Reading List"),
-                            content2: Icon(Icons.read_more_sharp)),
+                            content2: Image.asset("assets/icons/icon_glass.png")),
                         Divider(),
-                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
+                        RowWidget(
+                            alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Add BookMark"),
-                            content2: Icon(Icons.bookmark_add)),
+                            content2: Image.asset("assets/icons/icon_book.png")),
                         Divider(),
-                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
+                        RowWidget(
+                            alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Add to Favorites"),
                             content2: Icon(Icons.star)),
                         Divider(),
-                        RowWidget( alignment: MainAxisAlignment.spaceBetween,
+                        RowWidget(
+                            alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Find on Page"),
                             content2: Icon(Icons.search)),
                       ],
