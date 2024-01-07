@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kim/core/MyBottomSheet.dart';
 import 'package:kim/core/modal.dart';
 import 'package:kim/core/text/link_text.dart';
+import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/showBottomSuMenu.dart';
@@ -40,12 +41,12 @@ class LongPost extends StatelessWidget {
           Row(
             children: [
               brandPost
-                  ? Brand(
+                  ? const Brand(
                       brand: "assets/avatar/nike.png",
                       brandText: "@나이키",
                       brandText2: "#조던",
                     )
-                  : SizedBox.shrink(),
+                  : const SizedBox.shrink(),
               const Spacer(),
               const Text("24분 전"),
               SizedBox(
@@ -66,13 +67,13 @@ class LongPost extends StatelessWidget {
                       ShowPopup.ShowDeletedPopup();
                         });
                   },
-                  child: Icon(Icons.more_horiz))
+                  child: const Icon(Icons.more_horiz))
             ],
           ),
           !brandPost
               ? Row(
                   children: [
-                    Avatar != null ? Avatar! : AvatarImg(),
+                    Avatar != null ? Avatar! : const AvatarImg(),
                     SizedBox(
                       width: Constants.height10,
                     ),
@@ -112,7 +113,7 @@ class LongPost extends StatelessWidget {
                     )
                   ],
                 )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
           SizedBox(
             height: Constants.height10,
           ),
@@ -122,7 +123,7 @@ class LongPost extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.bold, fontSize: Constants.mdFont),
                 )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
           const SizedBox(
             height: 20,
           ),
@@ -131,69 +132,34 @@ class LongPost extends StatelessWidget {
             height: Constants.height20,
           ),
           img != ""
-              ? ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(img))
+              ? Stack(
+                children: [
+                  ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(img)),
+
+                      Positioned(right: 10,top: 10, child: Container(
+                        padding: EdgeInsets.all(5),
+                      //  width: 20,
+                        decoration: BoxDecoration(
+                          color: Constants.white,
+                          borderRadius: BorderRadius.circular(25)
+                        ),
+                        child: Center(
+                          child: Text("+3",style: TextStyles.style3,),
+                        ),
+                      ))
+                ],
+              )
               : const SizedBox.shrink(),
           SizedBox(
             height: Constants.height15,
           ),
-          // Row(
-          //   children: [
-          //     Text(
-          //       'https://www.hyundai.com/kr-brand',
-          //       style: TextStyle(
-          //         color: Color(0xFF0099FF),
-          //         fontSize: Constants.mdFont,
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          // SizedBox(
-          //   height: Constants.height15,
-          // ),
-          // Container(
-          //   decoration: BoxDecoration(
-          //       borderRadius: BorderRadius.circular(10),
-          //       color: Constants.white),
-          //   child: Column(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //       Row(
-          //         children: [
-          //           SizedBox(
-          //             height: 90,
-          //             child: Image.asset(
-          //               "assets/Lounge/image_feed.png",
-          //               fit: BoxFit.fill,
-          //             ),
-          //           ),
-          //           SizedBox(
-          //             width: Constants.height20,
-          //           ),
-          //           const Expanded(
-          //               child: Column(
-          //             mainAxisAlignment: MainAxisAlignment.center,
-          //             children: [
-          //               Text(
-          //                 "우리의 최종목적은 함께 재밌게 우리의 최종목적은 함께 재밌게 노는 캠핑이란 말이닷! 👏",
-          //                 style: TextStyle(color: Constants.mainColor),
-          //               ),
-          //               Text(
-          //                 "현대자동차",
-          //                 style: TextStyle(color: Constants.mainColor),
-          //               ),
-          //             ],
-          //           )),
-          //         ],
-          //       ),
-          //     ],
-          //   ),
-          // ),
+        
           SizedBox(
             height: Constants.height20,
           ),
-          Row(
+          const Row(
             children: [
               LinkText(text: "https://www.hyundai.com/kr/ko/e")
         
@@ -203,7 +169,7 @@ class LongPost extends StatelessWidget {
           SizedBox(
             height: Constants.height10 / 2,
           ),
-          LinkPreview(url: "https://www.hyundai.com/kr/ko/e"),
+          const LinkPreview(url: "https://www.hyundai.com/kr/ko/e"),
           SizedBox(
             height: Constants.height20,
           ),
