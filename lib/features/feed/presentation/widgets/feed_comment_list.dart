@@ -17,7 +17,7 @@ class FeedCommentList extends StatelessWidget {
   final String text;
   final int index;
 
-  FeedCommentList(
+                                                                                                                                                                                                                                       FeedCommentList(
       {this.brandPost = false,
       super.key,
       this.url = "https://google.com",

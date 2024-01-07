@@ -10,6 +10,7 @@ class CustomAlert extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       insetPadding: EdgeInsets.zero,
       titleTextStyle: TextStyle(
@@ -30,9 +31,9 @@ class CustomAlert extends StatelessWidget {
           children: [
             Text("글을 등록하시겠습니까?"),
             SizedBox(height: Constants.height10,),
-           Divider(color: Constants.chipColor),
+           Divider(color: Constants.chipColor, ),
            
-            IntrinsicHeight(
+            Container(
               
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -47,14 +48,12 @@ class CustomAlert extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                verticaldivider! ?  SizedBox(
-                    height: 60,
-                    child: VerticalDivider(
-                      indent: 0,
-                      endIndent: 0,
-
-                    ),
-                  ):SizedBox.shrink(),
+                 VerticalDivider(
+                 
+                   indent: 0,
+                   endIndent: 0,
+                 
+                 ),
                   Text(
                     '등록',
                     textAlign: TextAlign.center,

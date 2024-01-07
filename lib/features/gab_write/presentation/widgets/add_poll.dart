@@ -21,12 +21,7 @@ class _PollWidgetState extends State<PollWidget> {
   List polls = ["항목 입력"];
   bool haValue = false;
 
-  // void updatePoll(int index, String value) {
-  //   setState(() {
-  //     haValue = controller.text.isNotEmpty;
-  //     pollList[index] = value;
-  //   });
-  // }
+
 
   void removePoll(int index) {
     setState(() {
@@ -37,29 +32,8 @@ class _PollWidgetState extends State<PollWidget> {
   void addNewPoll() {
     if (pollList.length < 12) {
       setState(() {
-        pollList.add("abdu");
-        // pollList.add(Row(
-        //   children: [
-        //     InputPoll(
-        //         text: "항목 입력",
-        //         onChanged: (value) => {},
-        //         controller: controller),
-        //   SizedBox(width: 3,),
-        //     IconButton(
-        //       highlightColor: Colors.transparent,
-        //       hoverColor: Colors.transparent,
-        //       icon: Icon(CupertinoIcons.minus_circle),
-        //       onPressed: () {
-        //         removePoll(index);
-        //       },
-        //     )
-        //   ],
-        // ));
-        // pollList.add(
-        //   SizedBox(
-        //     height: Constants.height15,
-        //   ),
-        // );
+        pollList.add("new poll");
+      
       });
     } else {
       showDialog(
@@ -92,6 +66,25 @@ class _PollWidgetState extends State<PollWidget> {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         child: AlertDialog(
+          actionsAlignment: MainAxisAlignment.start,
+          actions: [
+            
+            SizedBox(height: Constants.height20,),
+      if(pollList.length >= 4)  Row(
+          children: [
+            Text(
+                '*투표는 글 등록 이후 수정이 불가능합니다.',
+                style: TextStyle(
+            color: Color(0xFFFF0089),
+            fontSize: 14,
+            fontFamily: 'KoPubDotum_Pro',
+            fontWeight: FontWeight.w500,
+          
+                ),
+            ),
+          ],
+        )],
+          
             contentPadding: const EdgeInsets.all(13),
             backgroundColor: Constants.Iconbg,
             surfaceTintColor: Colors.transparent,
@@ -129,7 +122,7 @@ class _PollWidgetState extends State<PollWidget> {
                   SizedBox(
                     height: Constants.height15,
                   ),
-
+        
                   Column(
                     children: pollList
                         .mapIndexed((index, e) => Column(
@@ -171,15 +164,8 @@ class _PollWidgetState extends State<PollWidget> {
                                           ),
                                         ],
                                       ),
-                                // IconButton(
-                                //   highlightColor: Colors.transparent,
-                                //   hoverColor: Colors.transparent,
-                                //   icon: Icon(CupertinoIcons.minus_circle),
-                                //   onPressed: () {
-                                //     removePoll(index);
-                                //   },
-                                // ),
-
+                          
+        
                                 SizedBox(
                                   height: Constants.height15,
                                 ),
@@ -187,47 +173,8 @@ class _PollWidgetState extends State<PollWidget> {
                             ))
                         .toList(),
                   ),
-                  // SizedBox(
-                  //   width: 340,
-                  //   height: pollList.length * 46 + 46,
-                  //   child: ListView.separated(
-                  //     separatorBuilder: (context, index) => SizedBox(
-                  //       height: 10,
-                  //     ),
-                  //     itemCount: pollList.length,
-                  //     itemBuilder: (context, index) {
-                  //       return Row(
-                  //         children: [
-                  //           Expanded(
-                  //             child: InputPoll(
-                  //               controller: controller,
-                  //               backgroundColor: haValue
-                  //                   ? index == 0 || index == 1
-                  //                       ? Constants.white
-                  //                       : null
-                  //                   : null,
-                  //               text: pollList[index],
-                  //               onChanged: (value) {
-                  //                 updatePoll(index, value);
-                  //               },
-                  //             ),
-                  //           ),
-                  //           index != 0 && index != 1
-                  //               ? IconButton(
-                  //                   highlightColor: Colors.transparent,
-                  //                   hoverColor: Colors.transparent,
-                  //                   icon: Icon(CupertinoIcons.minus_circle),
-                  //                   onPressed: () {
-                  //                     removePoll(index);
-                  //                   },
-                  //                 )
-                  //               : SizedBox.shrink(),
-                  //         ],
-                  //       );
-                  //     },
-                  //   ),
-                  // ),
-
+                  
+        
                   GestureDetector(
                     onTap: () {
                       addNewPoll();
@@ -247,10 +194,14 @@ class _PollWidgetState extends State<PollWidget> {
                       Transform.scale(
                         scale: .7,
                         child: Switch(
-                            activeColor: Constants.disabled,
-                            activeTrackColor: Constants.black,
+                            activeColor:Constants.black ,
+                            activeTrackColor:  Constants.appColor,
                             materialTapTargetSize: MaterialTapTargetSize.padded,
                             value: switchOn,
+                            inactiveThumbColor: Colors.grey,
+           
+                            inactiveTrackColor: Constants.black,
+
                             onChanged: (value) {
                               SwitchValue(value);
                             }),
