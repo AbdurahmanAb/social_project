@@ -78,7 +78,7 @@ class _AddUserNameState extends State<AddUserName> {
                   focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Constants.chipColor, width: .5, ),  borderRadius: BorderRadius.circular(10)),
                     contentPadding: EdgeInsets.all(8),
                     filled: true,
-                    hintText: "@사용자명 (예 : @wegab)",
+                    hintText: "URL 입력 (예 : https://youtube.com/@wegab)",
                     fillColor: Constants.Iconbg,
                     border:  OutlineInputBorder(borderSide: BorderSide(color: Constants.chipColor, width: .2, ),  borderRadius: BorderRadius.circular(10))),
               ),

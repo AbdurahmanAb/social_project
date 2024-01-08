@@ -69,8 +69,8 @@ class _BottomradionState extends State<Bottomradion> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         _selectedIndex == index
-                            ? Image.asset("assets/icons/radio_check.png")
-                            : Image.asset("assets/icons/radio.png"),
+                            ? Image.asset("assets/icons/radio_check.png",height:20,)
+                            : Image.asset("assets/icons/radio.png",height: 20,),
                         SizedBox(
                           width: 5,
                         ),

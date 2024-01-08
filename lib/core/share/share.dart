@@ -87,9 +87,9 @@ class Share {
                 const Divider(),
 
                 SizedBox(
-                  height: 65,
+                  height: 85,
                   child: ListView.separated(
-                    separatorBuilder: (context, index) => SizedBox(
+                    separatorBuilder: (context, index) =>const SizedBox(
                       width: 10,
                     ),
                     scrollDirection: Axis.horizontal,
@@ -106,7 +106,7 @@ class Share {
 
                 //Share to Social media
                 SizedBox(
-                  height: 65,
+                  height: 95,
                   //  width: 60,
                   child: ListView.builder(
                     itemCount: 8,
@@ -118,56 +118,59 @@ class Share {
                   ),
                 ),
                 const Divider(),
-                Container(
-                  width: 361,
-              //    height: 48,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: ShapeDecoration(
-                    color: Color(0xFF2C2C2E),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13),
+                Padding(
+                  padding: EdgeInsets.all(Constants.height10),
+                  child: Container(
+                                 //   width: 361,
+                                //    height: 48,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFF2C2C2E),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(13),
+                      ),
                     ),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 13),
-                        decoration: ShapeDecoration(
-                          color: Color(0xFF2C2C2E),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(13),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 13),
+                          decoration: ShapeDecoration(
+                            color: Color(0xFF2C2C2E),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(13),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                             const Text(
+                                'Copy Link',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontFamily: 'SF Pro Text',
+                                  fontWeight: FontWeight.w400,
+                    
+                                ),
+                              ),
+                              Image.asset("assets/feed/icon_copy.png", height: Constants.height20*1.2,)
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Copy Link',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontFamily: 'SF Pro Text',
-                                fontWeight: FontWeight.w400,
-                  
-                              ),
-                            ),
-                            Image.asset("assets/feed/icon_copy.png", height: Constants.height20*1.2,)
-                          ],
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
 
                 Padding(
-                  padding:  EdgeInsets.all(Constants.height10),
+                  padding: EdgeInsets.all(Constants.height10),
                   child: ButtonActions(),
                 ),
                 const Padding(

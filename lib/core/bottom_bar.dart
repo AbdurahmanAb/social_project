@@ -32,11 +32,12 @@ class _BottomBarState extends State<BottomBar> {
       onTap: (index) {
         handleTap(index);
       },
-      
+    
       backgroundColor: Constants.black,
       selectedItemColor: Constants.appColor,
       items: [
         BottomNavigationBarItem(
+          backgroundColor: Colors.transparent,
             icon: Image.asset("assets/Lounge/icon__lounge.png"), label: "라운지"),
         BottomNavigationBarItem(
             icon: Image.asset("assets/Lounge/button_gab_write.png"), label: ""),

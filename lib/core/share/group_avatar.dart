@@ -7,7 +7,7 @@ class GroupAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 63,
-      height: 65,
+      height: 85,
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(

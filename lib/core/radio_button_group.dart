@@ -382,11 +382,8 @@ class _BasicButton extends StatelessWidget {
             Row(
               children: [
                 isSelected
-                    ? Icon(
-                        Icons.radio_button_checked,
-                        color: selectedIconColor,
-                      )
-                    : Icon(Icons.radio_button_off, size: 20 ),
+                    ? Image.asset("assets/icons/radio_check.png",height: 20,)
+                    : Image.asset("assets/icons/radio.png",height: 20,),
                 SizedBox(
                   width: Constants.height10,
                 ),

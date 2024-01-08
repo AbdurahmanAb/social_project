@@ -57,7 +57,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                     context,
                     "카메라",
                     "assets/icons/icon_modify.png",
-                    "assets/icons/icon__picture.png",
+                    "assets/icons/icon_picture.png",
                     "사진 앨범",
                     "닫기");
               },
