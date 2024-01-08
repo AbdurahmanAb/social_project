@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:kim/core/share/Shareavatar.dart';
+import 'package:kim/core/share/actions.dart';
 import 'package:kim/core/share/group_avatar.dart';
 import 'package:kim/core/share/socials.dart';
 import 'package:kim/core/text/MidText.dart';
@@ -24,7 +26,7 @@ class Share {
         return SingleChildScrollView(
           child: Container(
             color: Constants.appBgColor,
-            //padding: EdgeInsets.symmetric(vertical:Constants.height20, horizontal: Constants.height10),
+            //  padding: EdgeInsets.symmetric(vertical:Constants.height20, horizontal: Constants.height10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -83,187 +85,90 @@ class Share {
                   ),
                 ),
                 const Divider(),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 0, horizontal: Constants.height10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            SizedBox(
-                                height: 50,
-                                width: 50,
-                                child:
-                                    Image.asset("assets/avatar/AirDrop.png")),
-                            const Text(
-                              "AirDrop",
-                              style: TextStyle(fontSize: 8),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: Constants.height20,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(500),
-                                  child: Image.asset(
-                                    "assets/avatar/post1.jpg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
-                            const Text(
-                              "Firt La",
-                              style: TextStyle(fontSize: 8),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: Constants.height20,
-                        ),
-                        const Column(
-                          children: [
-                             GroupAvatar(),
-                            Text(
-                              "Group",
-                              style: TextStyle(fontSize: 8),
-                            ),
-                            Text(
-                              "2 people",
-                              style: TextStyle(fontSize: 5),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: Constants.height20,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(500),
-                                  child: Image.asset(
-                                    "assets/avatar/post3.jpg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
-                            const Text(
-                              "First",
-                              style: TextStyle(fontSize: 8),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: Constants.height20,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(500),
-                                  child: Image.asset(
-                                    "assets/avatar/post4.jpg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
-                            const Text(
-                              "Third",
-                              style: TextStyle(fontSize: 8),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: Constants.height20,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(500),
-                                  child: Image.asset(
-                                    "assets/avatar/post5.jpg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
-                            const Text(
-                              "Fourth",
-                              style: TextStyle(fontSize: 8),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ), 
-                const Divider(),
-               
-               //Share to Social media
-          SizedBox(
-            height: 60,
-          //  width: 60,
-            child: ListView.builder(
-              itemCount: 8,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-              return   Socials();
-            },),
-          ),
-          const Row(
-            children: [
 
- 
-            ],
-          ),
-             
-             
+                SizedBox(
+                  height: 65,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => SizedBox(
+                      width: 10,
+                    ),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return index == 1
+                          ? GroupAvatar()
+                          : ShareAvatar(path: "assets/aavat");
+                    },
+                  ),
+                ),
                 const Divider(),
-            
-                Padding(
-                  padding: EdgeInsets.all(Constants.height10),
-                  child: Container(
-                    padding: EdgeInsets.all(Constants.height10),
-                    decoration: BoxDecoration(
-                        color: Constants.black,
-                        borderRadius:
-                            BorderRadius.circular(Constants.height10)),
-                    child:  Column(
-                      children: [
-                        RowWidget(
-                            alignment: MainAxisAlignment.spaceBetween,
-                            content1: const MidText(text: "Add to Reading List"),
-                            content2: Image.asset("assets/icons/icon_glass.png")),
-                        const Divider(),
-                        RowWidget(
-                            alignment: MainAxisAlignment.spaceBetween,
-                            content1: const MidText(text: "Add BookMark"),
-                            content2: Image.asset("assets/icons/icon_book.png")),
-                        const Divider(),
-                        const RowWidget(
-                            alignment: MainAxisAlignment.spaceBetween,
-                            content1: MidText(text: "Add to Favorites"),
-                            content2: Icon(Icons.star)),
-                        const Divider(),
-                        const RowWidget(
-                            alignment: MainAxisAlignment.spaceBetween,
-                            content1: MidText(text: "Find on Page"),
-                            content2: Icon(Icons.search)),
-                      ],
+
+                //Share to Social media
+                SizedBox(
+                  height: 65,
+                  //  width: 60,
+                  child: ListView.builder(
+                    itemCount: 8,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return Socials();
+                    },
+                  ),
+                ),
+                const Divider(),
+                Container(
+                  width: 361,
+              //    height: 48,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: ShapeDecoration(
+                    color: Color(0xFF2C2C2E),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(13),
                     ),
                   ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 13),
+                        decoration: ShapeDecoration(
+                          color: Color(0xFF2C2C2E),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(13),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Copy Link',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontFamily: 'SF Pro Text',
+                                fontWeight: FontWeight.w400,
+                  
+                              ),
+                            ),
+                            Image.asset("assets/feed/icon_copy.png", height: Constants.height20*1.2,)
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding:  EdgeInsets.all(Constants.height10),
+                  child: ButtonActions(),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(10.0),

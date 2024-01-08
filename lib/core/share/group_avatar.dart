@@ -7,13 +7,13 @@ class GroupAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 63,
-      height: 63,
+      height: 65,
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(137.78),
         ),
-        shadows: [
+        shadows: const [
           BoxShadow(
             color: Color(0x0C000000),
             blurRadius: 6,
@@ -30,7 +30,7 @@ class GroupAvatar extends StatelessWidget {
             child: Container(
               width: 63,
               height: 63,
-              decoration: BoxDecoration(color: Color(0xFF2C2C2E)),
+              decoration: const BoxDecoration(color: Color(0xFF2C2C2E)),
             ),
           ),
           Positioned(
@@ -44,7 +44,7 @@ class GroupAvatar extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(137.78),
                 ),
-                shadows: [
+                shadows: const [
                   BoxShadow(
                     color: Color(0x0C000000),
                     blurRadius: 6,
@@ -61,7 +61,7 @@ class GroupAvatar extends StatelessWidget {
                   Container(
                     width: 30,
                     height: 30,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image:AssetImage("assets/avatar/avatar2.jpg"),
                          //   NetworkImage("https://via.placeholder.com/30x30"),
@@ -84,7 +84,7 @@ class GroupAvatar extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(137.78),
                 ),
-                shadows: [
+                shadows: const [
                   BoxShadow(
                     color: Color(0x0C000000),
                     blurRadius: 6,
@@ -101,7 +101,7 @@ class GroupAvatar extends StatelessWidget {
                   Container(
                     width: 22,
                     height: 22,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image:
                            AssetImage("assets/avatar/avatar4.jpg"),
@@ -124,7 +124,7 @@ class GroupAvatar extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(137.78),
                 ),
-                shadows: [
+                shadows: const [
                   BoxShadow(
                     color: Color(0x0C000000),
                     blurRadius: 6,
@@ -141,7 +141,7 @@ class GroupAvatar extends StatelessWidget {
                   Container(
                     width: 18,
                     height: 18,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image:AssetImage("assets/avatar/avatar.jpg"),
                
