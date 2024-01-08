@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kim/core/MyBottomSheet.dart';
+import 'package:kim/core/my_bottom_sheet.dart';
 import 'package:kim/core/modal.dart';
 import 'package:kim/core/text/link_text.dart';
 import 'package:kim/core/text/text_styles.dart';

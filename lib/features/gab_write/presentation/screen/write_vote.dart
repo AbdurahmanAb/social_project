@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-import 'package:kim/core/MyBottomSheet.dart';
+import 'package:kim/core/my_bottom_sheet.dart';
 import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/custom_alert.dart';
 import 'package:kim/core/ui/dialog_widget.dart';

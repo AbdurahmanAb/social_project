@@ -126,7 +126,7 @@ class _FeddState extends State<Fedd> {
                           SizedBox(
                             height: Constants.height20,
                           ),
-                          Wrap(
+                       const   Wrap(
                             direction: Axis.horizontal,
                             // alignment: WrapAlignment.spaceBetween,
                             runAlignment: WrapAlignment.start,

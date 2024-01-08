@@ -7,7 +7,7 @@ import 'package:kim/features/profile/presentation/widgets/add_username.dart';
 import 'package:kim/features/profile/presentation/widgets/profile_top_bar.dart';
 import 'package:kim/utils/constants.dart';
 
-import '../../../../core/MyBottomSheet.dart';
+import '../../../../core/my_bottom_sheet.dart';
 import '../widgets/social_row.dart';
 
 class ProfileEdit extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kim/core/MyBottomSheet.dart';
+import 'package:kim/core/my_bottom_sheet.dart';
 import 'package:kim/utils/constants.dart';
 
 class FeedCommentField extends StatefulWidget {
