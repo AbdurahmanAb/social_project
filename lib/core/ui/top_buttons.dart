@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kim/core/ui/app_button.dart';
 
-import 'package:kim/core/share.dart';
+import 'package:kim/core/share/share.dart';
 
 import 'package:kim/core/text/HeaderText.dart';
 import 'package:kim/utils/constants.dart';

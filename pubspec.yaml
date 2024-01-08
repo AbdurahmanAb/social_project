@@ -43,6 +43,7 @@ dependencies:
   image_cropper: ^5.0.1
   dots_indicator: ^3.0.0
   multi_image_picker_view: ^1.0.0
+  flutter_svg: ^2.0.9
   
  
   
@@ -81,6 +82,7 @@ flutter:
     - assets/avatar/
     - assets/feed/
     - assets/icons/
+    - assets/svgs/
   #   - images/a_dot_ham.jpeg4985
 
   # An image asset can refer to one or more resolution-specific "variants", see

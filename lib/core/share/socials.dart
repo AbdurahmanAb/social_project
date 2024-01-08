@@ -14,7 +14,7 @@ class Socials extends StatelessWidget {
             height: 60,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage("https://via.placeholder.com/60x60"),
+                image:AssetImage("assets/icons/appicon.png") ,  // NetworkImage("https://via.placeholder.com/60x60"),
                 fit: BoxFit.fill,
               ),
             ),

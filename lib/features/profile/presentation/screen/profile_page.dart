@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/features/profile/presentation/screen/gab_page.dart';
 
-import '../../../../core/share.dart';
+import '../../../../core/share/share.dart';
 import '../../../../core/ui/avatar.dart';
 import '../../../../utils/constants.dart';
 import '../widgets/brands_list.dart';

@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:kim/core/Row_widget.dart';
-import 'package:kim/core/share.dart';
+import 'package:kim/core/share/share.dart';
 import 'package:kim/core/text/text_styles.dart';
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';

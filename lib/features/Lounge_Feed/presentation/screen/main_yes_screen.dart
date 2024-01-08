@@ -10,28 +10,20 @@ import 'package:kim/core/custom_check_box.dart';
 
 import 'package:kim/core/drawer/custom_drawer.dart';
 
-import 'package:kim/core/MyBottomSheet.dart';
-import 'package:kim/core/link_preview.dart';
-
 import 'package:kim/core/modal.dart';
-import 'package:kim/core/report_bottom.dart';
+
 import 'package:kim/core/ui/avatar.dart';
 import 'package:kim/core/ui/top_buttons.dart';
 import 'package:kim/core/topbar.dart';
-import 'package:kim/features/Lounge_Feed/presentation/widgets/RadioButton.dart';
-import 'package:kim/features/Lounge_Feed/presentation/widgets/comment.dart';
+
 import 'package:kim/features/Lounge_Feed/presentation/widgets/long_post.dart';
 import 'package:kim/features/Lounge_Feed/presentation/widgets/post_card.dart';
 import 'package:kim/features/feed/presentation/widgets/custom_polls.dart';
-import 'package:kim/features/feed/presentation/widgets/feed_comment_field.dart';
-import 'package:kim/features/profile/presentation/screen/others_profile_thumbnail.dart';
-import 'package:kim/features/profile/presentation/screen/profile_thumbnail.dart';
-import 'package:kim/utils/constants.dart';
-import 'package:radio_group_v2/radio_group_v2.dart';
 
-import '../../../../core/radio_button_group.dart';
+import 'package:kim/utils/constants.dart';
+
 import '../../../../core/text/HeaderText.dart';
-import '../../../../core/ui/app_button.dart';
+import '../../../profile/presentation/screen/others_profile_thumbnail.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -50,16 +42,17 @@ class _MainScreenState extends State<MainScreen> {
   void Open() {
     _scaffoldKey.currentState!.openDrawer();
   }
-void initState(){
-  super.initState();
-  Timer(Duration(seconds: 5), () { 
-setState(() {
-  show = false;
-});
 
-  });
- // Get.showSnackbar(GetSnackBar(duration: Duration(seconds: 2), backgroundColor: Constants.white, icon:  Image.asset("assets/feed/icon_popup.png"),));
-}
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 5), () {
+      setState(() {
+        show = false;
+      });
+    });
+    // Get.showSnackbar(GetSnackBar(duration: Duration(seconds: 2), backgroundColor: Constants.white, icon:  Image.asset("assets/feed/icon_popup.png"),));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,7 +104,8 @@ setState(() {
                           //to show the report bottomSheet
                           GestureDetector(
                               onTap: () {
-                                       Get.toNamed("/feed?id=3");
+                                Get.toNamed("/feed?id=3");
+
                                 ///The ReusableBottom Sheet that Accept argument and displays them
                                 //Arguments ("first text", " img url 1","img url 2","second text", "button text")
                                 //There are also optional argument like  third text and third icon and onTap
@@ -135,7 +129,7 @@ setState(() {
                             height: Constants.height10,
                           ),
                           //the radio select Container
-                    
+
                           SizedBox(
                             height: 10,
                           ),
@@ -202,10 +196,7 @@ setState(() {
                                 SizedBox(
                                   height: Constants.height10,
                                 ),
-                                // AppButton(
-                                //   text: "투표하기",
-                                //   disabled: disabled,
-                                // ),
+                           
                                 SizedBox(
                                   height: Constants.height10,
                                 ),
@@ -225,36 +216,31 @@ setState(() {
                             height: Constants.height15,
                           ),
                           GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Get.toNamed("/textFeed");
                             },
                             child: LongPost(
-                              hasTitle: false,
-                              
-                                text:"가치를 만물은 뭇 피고, 꽃이 품에 커다란 봄날의 보라. 우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다.",
-                                   
+                                hasTitle: false,
+                                text:
+                                    "가치를 만물은 뭇 피고, 꽃이 품에 커다란 봄날의 보라. 우는 그리워 이름을 써 사랑과 봄이 이름을 계십니다. 가을 이 위에 아직 잔디가 있습니다.",
                                 Avatar: GestureDetector(
                                   onTap: () {
                                     // Get.toNamed("/profilelg");
-                                    OtherProfileShow.showOtherProfile(
-                                        context, true, 
-                                        "assets/avatar/avatar2.jpg");
+                                    OtherProfileShow.showOtherProfile(context,
+                                        true, "assets/avatar/avatar2.jpg");
                                   },
                                   child: AvatarImg(
                                     ImgUrl: "assets/avatar/avatar2.jpg",
-                                
                                   ),
                                 )),
                           ),
-                     
                         ],
                       ),
                     ),
                   ),
                 ],
               ),
-
-         show?    BottomModal():SizedBox.shrink() 
+              show ? BottomModal() : SizedBox.shrink()
             ],
           ),
         ),

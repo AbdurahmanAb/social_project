@@ -2,12 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:kim/core/share/group_avatar.dart';
 import 'package:kim/core/share/socials.dart';
 import 'package:kim/core/text/MidText.dart';
 import 'package:kim/core/Row_widget.dart';
-import 'package:kim/core/ui/app_button.dart';
 import 'package:kim/core/text/HeaderText.dart';
-
 import '../../utils/constants.dart';
 
 class Share {
@@ -129,23 +128,14 @@ class Share {
                         SizedBox(
                           width: Constants.height20,
                         ),
-                        Column(
+                        const Column(
                           children: [
-                            SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(500),
-                                  child: Image.asset(
-                                    "assets/avatar/post2.jpg",
-                                    fit: BoxFit.cover,
-                                  )),
-                            ),
-                            const Text(
+                             GroupAvatar(),
+                            Text(
                               "Group",
                               style: TextStyle(fontSize: 8),
                             ),
-                            const Text(
+                            Text(
                               "2 people",
                               style: TextStyle(fontSize: 5),
                             )
@@ -217,23 +207,31 @@ class Share {
                       ],
                     ),
                   ),
-                ),
+                ), 
                 const Divider(),
-               Socials(),
+               
+               //Share to Social media
+          SizedBox(
+            height: 60,
+          //  width: 60,
+            child: ListView.builder(
+              itemCount: 8,
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+              return   Socials();
+            },),
+          ),
+          const Row(
+            children: [
+
+ 
+            ],
+          ),
+             
+             
                 const Divider(),
-                Padding(
-                  padding: EdgeInsets.all(Constants.height10),
-                  child: Container(
-                      padding: EdgeInsets.all(Constants.height10),
-                      decoration: BoxDecoration(
-                          color: Constants.black,
-                          borderRadius:
-                              BorderRadius.circular(Constants.height10)),
-                      child: const RowWidget(
-                          alignment: MainAxisAlignment.spaceBetween,
-                          content1: MidText(text: "Copy Link"),
-                          content2: Icon(Icons.copy))),
-                ),
+            
                 Padding(
                   padding: EdgeInsets.all(Constants.height10),
                   child: Container(
@@ -246,20 +244,20 @@ class Share {
                       children: [
                         RowWidget(
                             alignment: MainAxisAlignment.spaceBetween,
-                            content1: MidText(text: "Add to Reading List"),
+                            content1: const MidText(text: "Add to Reading List"),
                             content2: Image.asset("assets/icons/icon_glass.png")),
-                        Divider(),
+                        const Divider(),
                         RowWidget(
                             alignment: MainAxisAlignment.spaceBetween,
-                            content1: MidText(text: "Add BookMark"),
+                            content1: const MidText(text: "Add BookMark"),
                             content2: Image.asset("assets/icons/icon_book.png")),
-                        Divider(),
-                        RowWidget(
+                        const Divider(),
+                        const RowWidget(
                             alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Add to Favorites"),
                             content2: Icon(Icons.star)),
-                        Divider(),
-                        RowWidget(
+                        const Divider(),
+                        const RowWidget(
                             alignment: MainAxisAlignment.spaceBetween,
                             content1: MidText(text: "Find on Page"),
                             content2: Icon(Icons.search)),
